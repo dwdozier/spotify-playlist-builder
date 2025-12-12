@@ -1,0 +1,15 @@
+{
+  "projectContext": {
+    "enabled": true,
+    "files": [".claude/project-context.md"]
+  },
+
+  "excludePatterns": [
+    ".venv/**",
+    "**/__pycache__/**",
+    "*.pyc",
+    ".env",
+    "uv.lock",
+    ".git/**"
+  ]
+}

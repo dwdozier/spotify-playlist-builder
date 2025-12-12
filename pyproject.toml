@@ -24,6 +24,7 @@ classifiers = [
 dependencies = [
     "spotipy>=2.22.1",
     "python-dotenv>=1.0.0",
+    "keyring>=24.0.0",
 ]
 
 [project.optional-dependencies]
@@ -37,9 +38,6 @@ dev = [
 Homepage = "https://github.com/dwdozier/spotify-playlist-builder"
 Repository = "https://github.com/dwdozier/spotify-playlist-builder"
 Issues = "https://github.com/dwdozier/spotify-playlist-builder/issues"
-
-[tool.uv]
-python-version = "3.14"
 
 [tool.black]
 line-length = 100
