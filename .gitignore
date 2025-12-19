@@ -48,3 +48,6 @@ uv.lock
 
 # cached
 .cache
+
+# Gemini
+.gemini

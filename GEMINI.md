@@ -10,14 +10,15 @@ A Python CLI tool to programmatically create and manage Spotify playlists from l
 
 Use the following commands to set up the development environment.
 
-1.  **Install dependencies:**
+1.  **Create and activate the virtual environment:**
     ```bash
-    uv sync
+    uv venv
+    source .venv/bin/activate
     ```
 
-2.  **Activate virtual environment:**
+2.  **Install dependencies in editable mode:**
     ```bash
-    source .venv/bin/activate
+    uv pip install -e .[dev]
     ```
 
 ## 3. Core Architecture
@@ -44,4 +45,9 @@ Use these commands to maintain code quality and run the application.
 -   **Lint code:**
     ```bash
     ruff check .
+    ```
+
+ -   **Run pre-commit manually:**
+    ```bash
+    pre-commit run --all-files
     ```

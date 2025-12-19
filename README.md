@@ -33,16 +33,19 @@ Perfect for curating playlists programmatically and versioning them in git.
 ### 2. Set Up Virtual Environment and Dependencies
 
 ```bash
-# Create project and install dependencies
-uv sync
+# Create the virtual environment
+uv venv
 
 # Activate virtual environment
 source .venv/bin/activate  # macOS/Linux
 # or
 .venv\Scripts\activate  # Windows
+
+# Install dependencies in editable mode
+uv pip install -e .[dev]
 ```
 
-This reads from `pyproject.toml` and creates an isolated environment.
+This installs the project in "editable" mode along with all development dependencies from `pyproject.toml`.
 
 ### 3. Choose Credential Storage Method
 
@@ -101,6 +104,15 @@ op read "op://Personal/Spotify/client_id"
 ```
 
 Should output your Client ID.
+
+### 4. Set Up Pre-commit Hooks
+
+To ensure code quality checks run automatically before every commit:
+
+```bash
+# Install git hooks
+pre-commit install
+```
 
 ## Usage
 
