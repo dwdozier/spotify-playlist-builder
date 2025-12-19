@@ -158,10 +158,10 @@ python spotify_playlist_builder.py playlists/my-playlist.json --source 1password
 
 The script will:
 1. Fetch credentials from your chosen source
-2. Create a new public playlist on your Spotify account
+2. Create a new playlist (or update an existing one if the name matches)
 3. Search for each track and add it if found
 4. Report any missing tracks
-5. Output a link to your new playlist
+5. Output a link to your playlist
 
 ```sh
 Fetching credentials from env...
@@ -193,7 +193,7 @@ spotify-playlist-builder/
 
 - **Spotify Username**: Find it in your profile settings (or the URL when you visit your profile)
 - **Track Not Found**: If a track isn't found, check the spelling. Spotify's search is forgiving but works best with exact artist/track names
-- **Reuse the JSON**: You can run the same JSON multiple times to create duplicate playlists, or modify it and create variations
+- **Update Playlists**: Running the script again with the same playlist name in the JSON will **update** the existing playlist (syncing tracks and description) instead of creating a duplicate.
 - **Version Control**: Keep your playlist JSON files in git to track curation changes over time
 - **Credential Security**: 1Password and the system keychain are more secure than .env—credentials stay encrypted and never committed to git
 - **Team Sharing**: If sharing with your team, have each person use their own credential store locally

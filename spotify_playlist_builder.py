@@ -302,6 +302,19 @@ class SpotifyPlaylistBuilder:
             raise Exception(f"Failed to create playlist '{playlist_name}'")
         return playlist["id"]
 
+    def update_playlist_details(self, playlist_id: str, description: str) -> None:
+        """Update playlist details if they differ."""
+        playlist = self.sp.playlist(playlist_id)
+        if playlist is None:
+            return
+
+        # Check description (handle None from API)
+        current_description = playlist.get("description") or ""
+
+        if current_description != description:
+            print("Updating playlist description...")
+            self.sp.playlist_change_details(playlist_id, description=description)
+
     def _add_track_uris_to_playlist(self, playlist_id: str, track_uris: list[str]) -> None:
         """Add track URIs to a playlist in batches."""
         # Add in batches of 100 (Spotify API limit)
@@ -370,6 +383,9 @@ class SpotifyPlaylistBuilder:
 
         if existing_playlist_id:
             print(f"Found existing playlist (ID: {existing_playlist_id})")
+
+            self.update_playlist_details(existing_playlist_id, description)
+
             current_track_uris = self.get_playlist_tracks(existing_playlist_id)
 
             # Compare current tracks with new tracks
