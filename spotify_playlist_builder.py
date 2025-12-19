@@ -5,16 +5,21 @@ import sys
 import os
 import subprocess
 from pathlib import Path
+from typing import Any
 
 try:
     import keyring
+
     KEYRING_AVAILABLE = True
 except ImportError:
+    # Optional dependency: Set to None if not installed.
+    # Type ignore required because we are assigning None to a module name.
+    keyring = None  # type: ignore
     KEYRING_AVAILABLE = False
 
 
 # Credential Management Functions
-def get_credentials_from_env():
+def get_credentials_from_env() -> tuple[str, str]:
     """Get credentials from .env file."""
     from dotenv import load_dotenv
 
@@ -33,10 +38,12 @@ def get_credentials_from_env():
     return client_id, client_secret
 
 
-def list_1password_vaults():
+def list_1password_vaults() -> None:
     """List available 1Password vaults."""
     try:
-        result = subprocess.run("op vault list", shell=True, capture_output=True, text=True, check=False)
+        result = subprocess.run(
+            "op vault list", shell=True, capture_output=True, text=True, check=False
+        )
         if result.returncode == 0:
             print("Available 1Password vaults:")
             print(result.stdout)
@@ -47,14 +54,21 @@ def list_1password_vaults():
         print("https://developer.1password.com/docs/cli/get-started")
 
 
-def get_credentials_from_1password(vault="Private", item="SpotifyPlaylistBuilder", id_field="client_id", secret_field="client_secret"):
+def get_credentials_from_1password(
+    vault: str = "Private",
+    item: str = "SpotifyPlaylistBuilder",
+    id_field: str = "client_id",
+    secret_field: str = "client_secret",
+) -> tuple[str, str]:
     """Get credentials from 1Password vault."""
     try:
         cmd_id = f'op read "op://{vault}/{item}/{id_field}"'
         cmd_secret = f'op read "op://{vault}/{item}/{secret_field}"'
 
         result_id = subprocess.run(cmd_id, shell=True, capture_output=True, text=True, check=False)
-        result_secret = subprocess.run(cmd_secret, shell=True, capture_output=True, text=True, check=False)
+        result_secret = subprocess.run(
+            cmd_secret, shell=True, capture_output=True, text=True, check=False
+        )
 
         if result_id.returncode != 0 or result_secret.returncode != 0:
             error_msg = result_id.stderr or result_secret.stderr
@@ -67,7 +81,8 @@ def get_credentials_from_1password(vault="Private", item="SpotifyPlaylistBuilder
                 f"\nTo see your available vaults:\n"
                 f"  python spotify_playlist_builder.py --list-vaults\n"
                 f"\nThen specify the correct vault:\n"
-                f"  python spotify_playlist_builder.py playlist.json --source 1password --vault YourVaultName\n"
+                f"  python spotify_playlist_builder.py playlist.json "
+                f"--source 1password --vault YourVaultName\n"
                 f"\nMake sure:\n"
                 f"  1. You're authenticated: eval $(op signin)\n"
                 f"  2. Item named '{item}' exists in vault '{vault}'\n"
@@ -75,6 +90,7 @@ def get_credentials_from_1password(vault="Private", item="SpotifyPlaylistBuilder
                 f"\nError details: {error_msg}"
             )
 
+        # Ensure stdout is not None before stripping
         client_id = result_id.stdout.strip()
         client_secret = result_secret.stdout.strip()
 
@@ -87,13 +103,10 @@ def get_credentials_from_1password(vault="Private", item="SpotifyPlaylistBuilder
         )
 
 
-def get_credentials_from_keyring(service="spotify-playlist-builder"):
+def get_credentials_from_keyring(service: str = "spotify-playlist-builder") -> tuple[str, str]:
     """Get credentials from macOS Keychain (or OS credential store)."""
-    if not KEYRING_AVAILABLE:
-        raise Exception(
-            "keyring library not available. Install it with:\n"
-            "  uv sync"
-        )
+    if keyring is None:
+        raise Exception("keyring library not available. Install it with:\n" "  uv sync")
 
     client_id = keyring.get_password(service, "client_id")
     client_secret = keyring.get_password(service, "client_secret")
@@ -101,9 +114,11 @@ def get_credentials_from_keyring(service="spotify-playlist-builder"):
     if not client_id or not client_secret:
         raise Exception(
             f"Credentials not found in keychain.\n"
-            f"To store credentials, run:\n"
-            f"  python -c \"import keyring; keyring.set_password('{service}', 'client_id', 'YOUR_CLIENT_ID')\"\n"
-            f"  python -c \"import keyring; keyring.set_password('{service}', 'client_secret', 'YOUR_CLIENT_SECRET')\"\n"
+            f"To store credentials, run the helper command:\n"
+            f"  python spotify_playlist_builder.py --store-credentials\n"
+            f"\nOr manually:\n"
+            f'  python -c "import keyring; '
+            f"keyring.set_password('{service}', 'client_secret', 'YOUR_CLIENT_SECRET')\"\n"
             f"\nOr use the helper command (if added):\n"
             f"  python spotify_playlist_builder.py --store-credentials"
         )
@@ -111,9 +126,11 @@ def get_credentials_from_keyring(service="spotify-playlist-builder"):
     return client_id, client_secret
 
 
-def store_credentials_in_keyring(client_id, client_secret, service="spotify-playlist-builder"):
+def store_credentials_in_keyring(
+    client_id: str, client_secret: str, service: str = "spotify-playlist-builder"
+) -> None:
     """Store credentials in macOS Keychain (or OS credential store)."""
-    if not KEYRING_AVAILABLE:
+    if keyring is None:
         raise Exception("keyring library not available")
 
     keyring.set_password(service, "client_id", client_id)
@@ -121,7 +138,9 @@ def store_credentials_in_keyring(client_id, client_secret, service="spotify-play
     print(f"✓ Credentials stored securely in {keyring.get_keyring().__class__.__name__}")
 
 
-def get_credentials(source="env", vault="Private", item="SpotifyPlaylistBuilder"):
+def get_credentials(
+    source: str = "env", vault: str = "Private", item: str = "SpotifyPlaylistBuilder"
+) -> tuple[str, str]:
     """
     Get Spotify credentials from specified source.
 
@@ -140,12 +159,19 @@ def get_credentials(source="env", vault="Private", item="SpotifyPlaylistBuilder"
     elif source.lower() == "1password":
         return get_credentials_from_1password(vault, item)
     else:
-        raise ValueError(f"Unknown credential source: {source}. Use 'env', 'keyring', or '1password'")
+        raise ValueError(
+            f"Unknown credential source: {source}. Use 'env', 'keyring', or '1password'"
+        )
 
 
 # Spotify Playlist Builder Class
 class SpotifyPlaylistBuilder:
-    def __init__(self, client_id, client_secret, redirect_uri="https://127.0.0.1:8888/callback"):
+    def __init__(
+        self,
+        client_id: str,
+        client_secret: str,
+        redirect_uri: str = "https://127.0.0.1:8888/callback",
+    ) -> None:
         """Initialize Spotify API client with OAuth authentication."""
         scope = "playlist-modify-public playlist-modify-private"
         self.sp = spotipy.Spotify(
@@ -154,13 +180,16 @@ class SpotifyPlaylistBuilder:
                 client_secret=client_secret,
                 redirect_uri=redirect_uri,
                 scope=scope,
-                open_browser=True
+                open_browser=True,
             )
         )
         # Get the current authenticated user's ID
-        self.user_id = self.sp.current_user()['id']
+        user = self.sp.current_user()
+        if user is None:
+            raise Exception("Failed to authenticate with Spotify: current_user() returned None")
+        self.user_id = user["id"]
 
-    def search_track(self, artist, track, album=None):
+    def search_track(self, artist: str, track: str, album: str | None = None) -> str | None:
         """
         Search for a track on Spotify, return URI if found.
 
@@ -176,6 +205,8 @@ class SpotifyPlaylistBuilder:
         if album:
             query = f"track:{track} artist:{artist} album:{album}"
             results = self.sp.search(q=query, type="track", limit=5)
+            if results is None:
+                return None
 
             if results["tracks"]["items"]:
                 # Find exact album match if possible
@@ -188,10 +219,21 @@ class SpotifyPlaylistBuilder:
         # Fallback: search without album, prefer studio albums over compilations
         query = f"track:{track} artist:{artist}"
         results = self.sp.search(q=query, type="track", limit=10)
+        if results is None:
+            return None
 
         if results["tracks"]["items"]:
             # Try to avoid compilations/greatest hits
-            compilation_keywords = ["greatest hits", "best of", "collection", "singles", "anthology", "essential", "electrospective", "retrospective"]
+            compilation_keywords = [
+                "greatest hits",
+                "best of",
+                "collection",
+                "singles",
+                "anthology",
+                "essential",
+                "electrospective",
+                "retrospective",
+            ]
 
             # First pass: look for non-compilation albums
             for item in results["tracks"]["items"]:
@@ -204,25 +246,27 @@ class SpotifyPlaylistBuilder:
 
         return None
 
-    def find_playlist_by_name(self, playlist_name):
+    def find_playlist_by_name(self, playlist_name: str) -> str | None:
         """Find a playlist by name for the authenticated user."""
         offset = 0
         limit = 50
 
         while True:
             playlists = self.sp.current_user_playlists(limit=limit, offset=offset)
+            if playlists is None:
+                break
 
-            for playlist in playlists['items']:
-                if playlist['name'] == playlist_name and playlist['owner']['id'] == self.user_id:
-                    return playlist['id']
+            for playlist in playlists["items"]:
+                if playlist["name"] == playlist_name and playlist["owner"]["id"] == self.user_id:
+                    return playlist["id"]
 
-            if not playlists['next']:
+            if not playlists["next"]:
                 break
             offset += limit
 
         return None
 
-    def get_playlist_tracks(self, playlist_id):
+    def get_playlist_tracks(self, playlist_id: str) -> list[str]:
         """Get all track URIs from a playlist."""
         tracks = []
         offset = 0
@@ -230,49 +274,54 @@ class SpotifyPlaylistBuilder:
 
         while True:
             results = self.sp.playlist_tracks(playlist_id, limit=limit, offset=offset)
-            tracks.extend([item['track']['uri'] for item in results['items'] if item['track']])
+            if results is None:
+                break
+            tracks.extend([item["track"]["uri"] for item in results["items"] if item["track"]])
 
-            if not results['next']:
+            if not results["next"]:
                 break
             offset += limit
 
         return tracks
 
-    def clear_playlist(self, playlist_id):
+    def clear_playlist(self, playlist_id: str) -> None:
         """Remove all tracks from a playlist."""
         track_uris = self.get_playlist_tracks(playlist_id)
 
         # Remove in batches of 100 (Spotify API limit)
         for i in range(0, len(track_uris), 100):
-            batch = track_uris[i:i+100]
+            batch = track_uris[i : i + 100]
             self.sp.playlist_remove_all_occurrences_of_items(playlist_id, batch)
 
-    def create_playlist(self, playlist_name, description=""):
+    def create_playlist(self, playlist_name: str, description: str = "") -> str:
         """Create a new playlist for the authenticated user."""
         playlist = self.sp.user_playlist_create(
-            user=self.user_id,
-            name=playlist_name,
-            public=True,
-            description=description
+            user=self.user_id, name=playlist_name, public=True, description=description
         )
+        if playlist is None:
+            raise Exception(f"Failed to create playlist '{playlist_name}'")
         return playlist["id"]
 
-    def _add_track_uris_to_playlist(self, playlist_id, track_uris):
+    def _add_track_uris_to_playlist(self, playlist_id: str, track_uris: list[str]) -> None:
         """Add track URIs to a playlist in batches."""
         # Add in batches of 100 (Spotify API limit)
         for i in range(0, len(track_uris), 100):
-            batch = track_uris[i:i+100]
+            batch = track_uris[i : i + 100]
             self.sp.playlist_add_items(playlist_id, batch)
 
-    def add_tracks_to_playlist(self, playlist_id, tracks):
+    def add_tracks_to_playlist(self, playlist_id: str, tracks: list[dict[str, Any]]) -> list[str]:
         """Add tracks to a playlist, handling batch operations."""
         uris = []
         failed_tracks = []
 
         for i, track in enumerate(tracks):
-            artist = track.get("artist")
-            track_name = track.get("track")
-            album = track.get("album")  # Optional album field
+            # Ensure we have strings, defaulting to empty string if missing
+            artist = str(track.get("artist", ""))
+            track_name = str(track.get("track", ""))
+            album = track.get("album")
+            if album:
+                album = str(album)
+
             uri = self.search_track(artist, track_name, album)
 
             if uri:
@@ -288,7 +337,7 @@ class SpotifyPlaylistBuilder:
 
         return failed_tracks
 
-    def build_playlist_from_json(self, json_file):
+    def build_playlist_from_json(self, json_file: str) -> None:
         """Build or update a playlist from a JSON file."""
         with open(json_file, "r") as f:
             playlist_data = json.load(f)
@@ -327,7 +376,11 @@ class SpotifyPlaylistBuilder:
             if current_track_uris == new_track_uris:
                 print("Playlist is already up to date, no changes needed.")
             else:
-                print(f"Playlist needs updating (current: {len(current_track_uris)} tracks, new: {len(new_track_uris)} tracks)")
+                print(
+                    f"Playlist needs updating "
+                    f"(current: {len(current_track_uris)} tracks, "
+                    f"# new: {len(new_track_uris)} tracks)"
+                )
                 print("Clearing existing tracks...")
                 self.clear_playlist(existing_playlist_id)
                 print("Adding updated tracks...")
@@ -336,7 +389,7 @@ class SpotifyPlaylistBuilder:
 
             playlist_id = existing_playlist_id
         else:
-            print(f"Creating new playlist...")
+            print("Creating new playlist...")
             playlist_id = self.create_playlist(playlist_name, description)
             print(f"Playlist created (ID: {playlist_id})")
             print(f"Adding {len(new_track_uris)} tracks...")
@@ -352,7 +405,7 @@ class SpotifyPlaylistBuilder:
 
 
 # Main Execution
-def main():
+def main() -> None:
     # Handle --list-vaults command
     if "--list-vaults" in sys.argv:
         list_1password_vaults()
@@ -377,16 +430,28 @@ def main():
         return
 
     if len(sys.argv) < 2:
-        print("Usage: python spotify_playlist_builder.py <json_file> [--source env|keyring|1password] [--vault VAULT_NAME]")
+        print(
+            "Usage: python spotify_playlist_builder.py <json_file> "
+            "[--source env|keyring|1password] [--vault VAULT_NAME]"
+        )
         print("\nExamples:")
         print("  python spotify_playlist_builder.py playlist.json")
         print("  python spotify_playlist_builder.py playlist.json --source keyring")
         print("  python spotify_playlist_builder.py playlist.json --source env")
         print("  python spotify_playlist_builder.py playlist.json --source 1password")
-        print("  python spotify_playlist_builder.py playlist.json --source 1password --vault Personal")
+        print(
+            "  python spotify_playlist_builder.py playlist.json "
+            "--source 1password --vault Personal"
+        )
         print("\nHelper commands:")
-        print("  python spotify_playlist_builder.py --store-credentials  # Store credentials in macOS Keychain")
-        print("  python spotify_playlist_builder.py --list-vaults        # List available 1Password vaults")
+        print(
+            "  python spotify_playlist_builder.py --store-credentials  "
+            "# Store credentials in macOS Keychain"
+        )
+        print(
+            "  python spotify_playlist_builder.py --list-vaults        "
+            "# List available 1Password vaults"
+        )
         print("\nNote: The playlist will be created for the authenticated Spotify user.")
         sys.exit(1)
 
