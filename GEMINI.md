@@ -59,3 +59,4 @@ Use these commands to maintain code quality and run the application.
 -   **Docstrings:** Required for all functions and classes.
 -   **Formatter:** Black.
 -   **Linter:** Ruff.
+-   **Type Checker:** Ty.
