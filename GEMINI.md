@@ -49,7 +49,7 @@ Use these commands to maintain code quality and run the application.
 
  -   **Run tests with coverage:**
     ```bash
-    pytest --cov=spotify_playlist_builder test_spotify_playlist_builder.py
+    pytest --cov=spotify_playlist_builder tests/
     ```
 
  -   **Run pre-commit manually:**
