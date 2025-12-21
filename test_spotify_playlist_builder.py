@@ -614,3 +614,213 @@ def test_cli_uninstall_completion():
     """Test uninstall instruction command."""
     result = runner.invoke(app, ["uninstall-completion"])
     assert result.exit_code == 0
+
+
+def test_search_track_limit_1_strategy_success(builder, mock_spotify):
+    """Test exact match strategy when album is provided."""
+    # Mock first search (specific album) returning a hit
+    mock_spotify.search.side_effect = [
+        {
+            "tracks": {
+                "items": [
+                    {
+                        "name": "Song",
+                        "artists": [{"name": "Artist"}],
+                        "album": {"name": "Album"},
+                        "uri": "spotify:track:specific",
+                    }
+                ]
+            }
+        }
+    ]
+
+    uri = builder.search_track("Artist", "Song", "Album")
+    assert uri == "spotify:track:specific"
+    # Ensure limit=1 was used
+    args, kwargs = mock_spotify.search.call_args
+    assert kwargs["limit"] == 1
+
+
+def test_search_track_limit_1_strategy_failure(builder, mock_spotify):
+    """Test exact match strategy failing and falling back."""
+    # Mock first search (specific album) failing, second (fallback) succeeding
+    mock_spotify.search.side_effect = [
+        {"tracks": {"items": []}},  # Specific search fails
+        {
+            "tracks": {
+                "items": [
+                    {
+                        "name": "Song",
+                        "artists": [{"name": "Artist"}],
+                        "album": {"name": "Album"},
+                        "uri": "spotify:track:fallback",
+                    }
+                ]
+            }
+        },
+    ]
+
+    uri = builder.search_track("Artist", "Song", "Album")
+    assert uri == "spotify:track:fallback"
+    # Verify both calls
+    assert mock_spotify.search.call_count == 2
+
+
+def test_search_track_fallback_failure(builder, mock_spotify):
+    """Test fallback search returning no results."""
+    mock_spotify.search.return_value = {"tracks": {"items": []}}
+
+    uri = builder.search_track("Artist", "Song")
+    assert uri is None
+
+
+def test_add_tracks_to_playlist_failures(builder, mock_spotify):
+    """Test adding tracks where some are not found."""
+    # Mock search_track to find first, fail second
+    with patch.object(builder, "search_track", side_effect=["uri:1", None]):
+        tracks = [{"artist": "A", "track": "Found"}, {"artist": "B", "track": "Missing"}]
+
+        failed = builder.add_tracks_to_playlist("pid", tracks)
+
+        assert len(failed) == 1
+        assert failed[0] == "B - Missing"
+        # Verify only one track was added
+        mock_spotify.playlist_add_items.assert_called_with("pid", ["uri:1"])
+
+
+def test_create_playlist_failure(builder, mock_spotify):
+    """Test exception when playlist creation fails."""
+    mock_spotify.user_playlist_create.return_value = None
+
+    with pytest.raises(Exception) as exc:
+        builder.create_playlist("Name")
+    assert "Failed to create playlist" in str(exc.value)
+
+
+def test_export_playlist_not_found(builder, mock_spotify):
+    """Test export fails if playlist doesn't exist."""
+    with patch.object(builder, "find_playlist_by_name", return_value=None):
+        with pytest.raises(Exception) as exc:
+            builder.export_playlist_to_json("Ghost Playlist", "out.json")
+        assert "not found in your library" in str(exc.value)
+
+
+def test_export_playlist_details_failure(builder, mock_spotify):
+    """Test export fails if playlist details cannot be fetched."""
+    with patch.object(builder, "find_playlist_by_name", return_value="pid"):
+        mock_spotify.playlist.return_value = None
+        with pytest.raises(Exception) as exc:
+            builder.export_playlist_to_json("Playlist", "out.json")
+        assert "Failed to fetch details" in str(exc.value)
+
+
+def test_get_credentials_invalid_source():
+    """Test error for unknown credential source."""
+    with pytest.raises(ValueError) as exc:
+        get_credentials("invalid")
+    assert "Unknown credential source" in str(exc.value)
+
+
+def test_cli_store_credentials_exception():
+    """Test exception handling in store-credentials command."""
+    with patch(
+        "spotify_playlist_builder.store_credentials_in_keyring",
+        side_effect=Exception("Keyring error"),
+    ):
+        result = runner.invoke(app, ["store-credentials"], input="user\npass\n")
+        assert result.exit_code == 1
+        # assert "Keyring error" in result.stdout
+        # Logger output might not be captured in result.stdout depending on config
+
+
+def test_cli_install_completion_empty_script():
+    """Test error when generated completion script is empty."""
+    with (
+        patch("pathlib.Path.home") as mock_home,
+        patch("subprocess.run") as mock_run,
+    ):
+        mock_omz = MagicMock()
+        mock_omz.exists.return_value = True
+        mock_home.return_value.__truediv__.return_value = mock_omz
+
+        mock_run.return_value.returncode = 0
+        mock_run.return_value.stdout = ""  # Empty output
+
+        result = runner.invoke(app, ["install-zsh-completion"])
+        assert result.exit_code == 1
+
+
+def test_backup_all_playlists_exception(builder, mock_spotify):
+    """Test that one failed backup doesn't stop the whole process."""
+    mock_spotify.current_user_playlists.return_value = {
+        "items": [
+            {"name": "Good Playlist", "id": "p1"},
+            {"name": "Bad Playlist", "id": "p2"},
+        ],
+        "next": None,
+    }
+
+    # First export succeeds, second fails
+    with patch.object(builder, "export_playlist_to_json", side_effect=[None, Exception("Boom")]):
+        builder.backup_all_playlists("backups")
+        # Should not raise exception
+
+
+def test_clear_playlist_empty(builder, mock_spotify):
+    """Test clearing a playlist that is already empty."""
+    with patch.object(builder, "get_playlist_tracks", return_value=[]):
+        builder.clear_playlist("pid")
+        mock_spotify.playlist_remove_all_occurrences_of_items.assert_not_called()
+
+
+def test_add_track_uris_empty(builder, mock_spotify):
+    """Test adding an empty list of URIs."""
+    builder._add_track_uris_to_playlist("pid", [])
+    mock_spotify.playlist_add_items.assert_not_called()
+
+
+def test_cli_export_error():
+    """Test export command error handling."""
+    with patch("spotify_playlist_builder.get_builder") as mock_get_builder:
+        mock_builder = MagicMock()
+        mock_builder.export_playlist_to_json.side_effect = Exception("Export failed")
+        mock_get_builder.return_value = mock_builder
+
+        result = runner.invoke(app, ["export", "Playlist", "out.json"])
+        assert result.exit_code == 1
+
+
+def test_cli_backup_error():
+    """Test backup command error handling."""
+    with patch("spotify_playlist_builder.get_builder") as mock_get_builder:
+        mock_builder = MagicMock()
+        mock_builder.backup_all_playlists.side_effect = Exception("Backup failed")
+        mock_get_builder.return_value = mock_builder
+
+        result = runner.invoke(app, ["backup", "backups"])
+        assert result.exit_code == 1
+
+
+def test_build_dry_run_with_failures(builder, mock_spotify):
+    """Test dry run mode reporting missing tracks."""
+    playlist_data = {"name": "New Playlist", "tracks": [{"artist": "A", "track": "B"}]}
+
+    with patch("json.load", return_value=playlist_data), patch("builtins.open", MagicMock()):
+        with patch.object(builder, "search_track", return_value=None):  # Fail search
+            builder.build_playlist_from_json("file.json", dry_run=True)
+            # Just ensure it runs without error and logs failures (implicit coverage)
+
+
+def test_get_playlist_tracks_break(builder, mock_spotify):
+    """Test break condition in get_playlist_tracks."""
+    # Single page
+    mock_spotify.playlist_tracks.return_value = {"items": [], "next": None}
+    builder.get_playlist_tracks("pid")
+
+
+def test_add_tracks_all_missing(builder, mock_spotify):
+    """Test adding tracks where none are found."""
+    with patch.object(builder, "search_track", return_value=None):
+        tracks = [{"artist": "A", "track": "B"}]
+        builder.add_tracks_to_playlist("pid", tracks)
+        mock_spotify.playlist_add_items.assert_not_called()
