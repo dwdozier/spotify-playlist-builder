@@ -19,7 +19,7 @@
 - [x] **Code Coverage**: Add `pytest-cov` to track test coverage.
 - [ ] **CI/CD Pipeline**: Add GitHub Actions for linting (Ruff/Black) and running tests.
 - [ ] **Rate Limiting**: Implement backoff strategies for Spotify API rate limits.
-- [ ] **Logging**: Replace print statements with the `logging` module for better control over output verbosity (`--verbose`).
+- [x] **Logging**: Replace print statements with the `logging` module for better control over output verbosity (`--verbose`).
 - [x] **Type Checking**: Add `ty` to pre-commit hooks (via local shim).
 - [x] **Type Hinting**: Ensure full type coverage.
 

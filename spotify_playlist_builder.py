@@ -6,6 +6,7 @@ import os
 import difflib
 import sys
 import subprocess
+import logging
 from pathlib import Path
 from typing import Any, Annotated
 import typer
@@ -21,7 +22,27 @@ except ImportError:
     keyring = None  # type: ignore
     KEYRING_AVAILABLE = False
 
+# Configure logger
+logger = logging.getLogger("spotify_playlist_builder")
+
 app = typer.Typer(help="Spotify Playlist Builder CLI")
+
+
+@app.callback()
+def main(
+    verbose: Annotated[
+        bool, typer.Option("--verbose", "-v", help="Enable verbose logging")
+    ] = False,
+) -> None:
+    """
+    Spotify Playlist Builder CLI to create and manage playlists from JSON files.
+    """
+    level = logging.DEBUG if verbose else logging.INFO
+    logging.basicConfig(
+        level=level,
+        format="%(message)s" if not verbose else "%(levelname)s: %(message)s",
+        force=True,  # Ensure we override any existing config
+    )
 
 
 class CredentialSource(str, Enum):
@@ -81,7 +102,7 @@ def store_credentials_in_keyring(
 
     keyring.set_password(service, "client_id", client_id)
     keyring.set_password(service, "client_secret", client_secret)
-    print(f"✓ Credentials stored securely in {keyring.get_keyring().__class__.__name__}")
+    logger.info(f"✓ Credentials stored securely in {keyring.get_keyring().__class__.__name__}")
 
 
 def get_credentials(source: str = "env") -> tuple[str, str]:
@@ -277,7 +298,7 @@ class SpotifyPlaylistBuilder:
             changes["public"] = public
 
         if changes:
-            print(f"Updating playlist details: {', '.join(changes.keys())}...")
+            logger.info(f"Updating playlist details: {', '.join(changes.keys())}...")
             self.sp.playlist_change_details(playlist_id, **changes)
 
     def _add_track_uris_to_playlist(self, playlist_id: str, track_uris: list[str]) -> None:
@@ -348,7 +369,7 @@ class SpotifyPlaylistBuilder:
 
     def export_playlist_to_json(self, playlist_name: str, output_file: str) -> None:
         """Export an existing playlist to a JSON file."""
-        print(f"Searching for playlist: {playlist_name}")
+        logger.info(f"Searching for playlist: {playlist_name}")
         playlist_id = self.find_playlist_by_name(playlist_name)
 
         if not playlist_id:
@@ -362,7 +383,7 @@ class SpotifyPlaylistBuilder:
         description = playlist_info.get("description") or ""
         public = playlist_info.get("public")
 
-        print(f"Fetching tracks for '{playlist_name}'...")
+        logger.info(f"Fetching tracks for '{playlist_name}'...")
         tracks = self.get_playlist_tracks_details(playlist_id)
 
         export_data = {
@@ -375,13 +396,13 @@ class SpotifyPlaylistBuilder:
         with open(output_file, "w") as f:
             json.dump(export_data, f, indent=2)
 
-        print(f"✓ Successfully exported {len(tracks)} tracks to {output_file}")
+        logger.info(f"✓ Successfully exported {len(tracks)} tracks to {output_file}")
 
     def backup_all_playlists(self, output_dir: str) -> None:
         """Backup all user playlists to JSON files in a directory."""
         Path(output_dir).mkdir(parents=True, exist_ok=True)
 
-        print("Fetching all playlists...")
+        logger.info("Fetching all playlists...")
         offset = 0
         limit = 50
         playlists = []
@@ -395,7 +416,7 @@ class SpotifyPlaylistBuilder:
                 break
             offset += limit
 
-        print(f"Found {len(playlists)} playlists. Starting backup...")
+        logger.info(f"Found {len(playlists)} playlists. Starting backup...")
 
         for i, pl in enumerate(playlists):
             name = pl["name"]
@@ -407,11 +428,11 @@ class SpotifyPlaylistBuilder:
             filename = f"{safe_name}.json"
             filepath = os.path.join(output_dir, filename)
 
-            print(f"[{i+1}/{len(playlists)}] Backing up: {name}")
+            logger.info(f"[{i+1}/{len(playlists)}] Backing up: {name}")
             try:
                 self.export_playlist_to_json(name, filepath)
             except Exception as e:
-                print(f"  Failed to backup '{name}': {e}")
+                logger.error(f"  Failed to backup '{name}': {e}")
 
     def build_playlist_from_json(self, json_file: str, dry_run: bool = False) -> None:
         """Build or update a playlist from a JSON file."""
@@ -423,14 +444,14 @@ class SpotifyPlaylistBuilder:
         public = playlist_data.get("public", False)
         tracks = playlist_data.get("tracks", [])
 
-        print(f"Authenticated as: {self.user_id}")
-        print(f"Processing playlist: {playlist_name}")
+        logger.info(f"Authenticated as: {self.user_id}")
+        logger.info(f"Processing playlist: {playlist_name}")
 
         if dry_run:
-            print("DRY RUN MODE: No changes will be made to your Spotify account.")
+            logger.info("DRY RUN MODE: No changes will be made to your Spotify account.")
 
         # Search for tracks with updated logic (prefer studio albums)
-        print(f"Searching for {len(tracks)} tracks (preferring studio albums)...")
+        logger.info(f"Searching for {len(tracks)} tracks (preferring studio albums)...")
         new_track_uris = []
         failed_tracks = []
 
@@ -446,24 +467,24 @@ class SpotifyPlaylistBuilder:
                 failed_tracks.append(f"{artist} - {track_name}")
 
         if dry_run:
-            print("\n[Dry Run Summary]")
-            print(f"Playlist: {playlist_name}")
-            print(f"Tracks found: {len(new_track_uris)}")
-            print(f"Tracks missing: {len(failed_tracks)}")
+            logger.info("\n[Dry Run Summary]")
+            logger.info(f"Playlist: {playlist_name}")
+            logger.info(f"Tracks found: {len(new_track_uris)}")
+            logger.info(f"Tracks missing: {len(failed_tracks)}")
 
             if failed_tracks:
-                print(f"\n⚠️  {len(failed_tracks)} tracks not found:")
+                logger.warning(f"\n⚠️  {len(failed_tracks)} tracks not found:")
                 for track in failed_tracks:
-                    print(f"  - {track}")
+                    logger.warning(f"  - {track}")
             else:
-                print("\n✓ All tracks found successfully.")
+                logger.info("\n✓ All tracks found successfully.")
             return
 
         # Check if playlist already exists
         existing_playlist_id = self.find_playlist_by_name(playlist_name)
 
         if existing_playlist_id:
-            print(f"Found existing playlist (ID: {existing_playlist_id})")
+            logger.info(f"Found existing playlist (ID: {existing_playlist_id})")
 
             self.update_playlist_details(existing_playlist_id, description, public=public)
 
@@ -471,39 +492,39 @@ class SpotifyPlaylistBuilder:
 
             # Compare current tracks with new tracks
             if current_track_uris == new_track_uris:
-                print("Playlist is already up to date, no changes needed.")
+                logger.info("Playlist is already up to date, no changes needed.")
             else:
-                print(
+                logger.info(
                     f"Playlist needs updating "
                     f"(current: {len(current_track_uris)} tracks, "
                     f"# new: {len(new_track_uris)} tracks)"
                 )
-                print("Clearing existing tracks...")
+                logger.info("Clearing existing tracks...")
                 self.clear_playlist(existing_playlist_id)
-                print("Adding updated tracks...")
+                logger.info("Adding updated tracks...")
                 self._add_track_uris_to_playlist(existing_playlist_id, new_track_uris)
-                print("✓ Playlist updated successfully!")
+                logger.info("✓ Playlist updated successfully!")
 
             playlist_id = existing_playlist_id
         else:
-            print("Creating new playlist...")
+            logger.info("Creating new playlist...")
             playlist_id = self.create_playlist(playlist_name, description, public=public)
-            print(f"Playlist created (ID: {playlist_id})")
-            print(f"Adding {len(new_track_uris)} tracks...")
+            logger.info(f"Playlist created (ID: {playlist_id})")
+            logger.info(f"Adding {len(new_track_uris)} tracks...")
             self._add_track_uris_to_playlist(playlist_id, new_track_uris)
-            print("✓ Playlist created successfully!")
+            logger.info("✓ Playlist created successfully!")
 
         if failed_tracks:
-            print(f"\n⚠️  {len(failed_tracks)} tracks not found:")
+            logger.warning(f"\n⚠️  {len(failed_tracks)} tracks not found:")
             for track in failed_tracks:
-                print(f"  - {track}")
+                logger.warning(f"  - {track}")
 
-        print(f"\nPlaylist ready: https://open.spotify.com/playlist/{playlist_id}")
+        logger.info(f"\nPlaylist ready: https://open.spotify.com/playlist/{playlist_id}")
 
 
 def get_builder(source: CredentialSource) -> SpotifyPlaylistBuilder:
     """Helper to initialize SpotifyPlaylistBuilder with credentials."""
-    print(f"Fetching credentials from {source.value}...")
+    logger.info(f"Fetching credentials from {source.value}...")
 
     client_id, client_secret = get_credentials(source.value)
     return SpotifyPlaylistBuilder(client_id, client_secret)
@@ -524,7 +545,7 @@ def build(
         builder = get_builder(source)
         builder.build_playlist_from_json(str(json_file), dry_run=dry_run)
     except Exception as e:
-        print(f"Error: {e}")
+        logger.error(f"Error: {e}")
         raise typer.Exit(code=1)
 
 
@@ -541,7 +562,7 @@ def export(
         builder = get_builder(source)
         builder.export_playlist_to_json(playlist_name, str(output_file))
     except Exception as e:
-        print(f"Error: {e}")
+        logger.error(f"Error: {e}")
         raise typer.Exit(code=1)
 
 
@@ -559,26 +580,26 @@ def backup(
         builder = get_builder(source)
         builder.backup_all_playlists(str(output_dir))
     except Exception as e:
-        print(f"Error: {e}")
+        logger.error(f"Error: {e}")
         raise typer.Exit(code=1)
 
 
 @app.command("store-credentials")
 def store_credentials_cmd() -> None:
     """Store Spotify credentials in macOS Keychain."""
-    print("Store Spotify credentials in macOS Keychain")
+    logger.info("Store Spotify credentials in macOS Keychain")
     client_id = typer.prompt("Enter Spotify Client ID")
     client_secret = typer.prompt("Enter Spotify Client Secret", hide_input=True)
 
     if client_id and client_secret:
         try:
             store_credentials_in_keyring(client_id, client_secret)
-            print("\nCredentials stored! You can now use: --source keyring")
+            logger.info("\nCredentials stored! You can now use: --source keyring")
         except Exception as e:
-            print(f"Error storing credentials: {e}")
+            logger.error(f"Error storing credentials: {e}")
             raise typer.Exit(code=1)
     else:
-        print("Error: Both Client ID and Client Secret are required")
+        logger.error("Error: Both Client ID and Client Secret are required")
         raise typer.Exit(code=1)
 
 
@@ -588,8 +609,8 @@ def install_zsh_completion() -> None:
     omz_dir = Path.home() / ".oh-my-zsh"
 
     if not omz_dir.exists():
-        print(f"Error: Oh My Zsh directory not found at {omz_dir}")
-        print("This command is intended for Oh My Zsh users.")
+        logger.error(f"Error: Oh My Zsh directory not found at {omz_dir}")
+        logger.error("This command is intended for Oh My Zsh users.")
         raise typer.Exit(code=1)
 
     completions_dir = omz_dir / "completions"
@@ -597,7 +618,7 @@ def install_zsh_completion() -> None:
 
     target_file = completions_dir / "_spotify-playlist-builder"
 
-    print("Generating Zsh completion script...")
+    logger.info("Generating Zsh completion script...")
 
     # Get absolute path to this script
     script_path = os.path.abspath(__file__)
@@ -611,39 +632,41 @@ def install_zsh_completion() -> None:
     )
 
     if result.returncode != 0:
-        print("Error generating completion script:")
-        print(result.stderr)
+        logger.error("Error generating completion script:")
+        logger.error(result.stderr)
         raise typer.Exit(code=1)
 
     completion_script = result.stdout
 
     if not completion_script.strip():
-        print("Error: Generated completion script is empty.")
+        logger.error("Error: Generated completion script is empty.")
         raise typer.Exit(code=1)
 
     with open(target_file, "w") as f:
         f.write(completion_script)
 
-    print(f"✓ Completion script installed to: {target_file}")
-    print("\nTo activate changes:")
-    print("1. Run: rm -f ~/.zcompdump; compinit")
-    print("2. Restart your shell")
+    logger.info(f"✓ Completion script installed to: {target_file}")
+    logger.info("\nTo activate changes:")
+    logger.info("1. Run: rm -f ~/.zcompdump; compinit")
+    logger.info("2. Restart your shell")
 
 
 @app.command("uninstall-completion")
 def uninstall_completion_cmd() -> None:
     """Show instructions to uninstall shell completion."""
-    print("To uninstall shell completion, identify which method you used:")
-    print("\nMethod 1: Automatic Installation (e.g. --install-completion)")
-    print("  1. Open your shell config (e.g., ~/.zshrc, ~/.bashrc).")
-    print("  2. Find the block starting with '# shell completion for spotify-playlist-builder'.")
-    print("  3. Delete that entire block.")
-    print("\nMethod 2: Manual Oh-My-Zsh Installation")
-    print("  1. Remove the completion file:")
-    print("     rm ~/.oh-my-zsh/completions/_spotify-playlist-builder")
-    print("  2. Clear the completion cache:")
-    print("     rm ~/.zcompdump*")
-    print("\nAfter either method, restart your terminal.")
+    logger.info("To uninstall shell completion, identify which method you used:")
+    logger.info("\nMethod 1: Automatic Installation (e.g. --install-completion)")
+    logger.info("  1. Open your shell config (e.g., ~/.zshrc, ~/.bashrc).")
+    logger.info(
+        "  2. Find the block starting with '# shell completion for spotify-playlist-builder'."
+    )
+    logger.info("  3. Delete that entire block.")
+    logger.info("\nMethod 2: Manual Oh-My-Zsh Installation")
+    logger.info("  1. Remove the completion file:")
+    logger.info("     rm ~/.oh-my-zsh/completions/_spotify-playlist-builder")
+    logger.info("  2. Clear the completion cache:")
+    logger.info("     rm ~/.zcompdump*")
+    logger.info("\nAfter either method, restart your terminal.")
 
 
 if __name__ == "__main__":
