@@ -24,9 +24,10 @@ repos:
         args: ["check"]
         language: system
         types: [python]
+        pass_filenames: false
       - id: pytest
         name: pytest
-        entry: uv run pytest
+        entry: uv run pytest --cov=spotify_playlist_builder --cov-fail-under=10
         language: system
         types: [python]
         pass_filenames: false

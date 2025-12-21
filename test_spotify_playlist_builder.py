@@ -30,7 +30,7 @@ def builder(mock_spotify):
 def test_get_credentials_from_env_success():
     """Test retrieving credentials from environment variables."""
     env_vars = {"SPOTIFY_CLIENT_ID": "test_id", "SPOTIFY_CLIENT_SECRET": "test_secret"}
-    with patch.dict(os.environ, env_vars):
+    with patch("dotenv.load_dotenv"), patch.dict(os.environ, env_vars):
         cid, secret = get_credentials_from_env()
         assert cid == "test_id"
         assert secret == "test_secret"
@@ -38,7 +38,7 @@ def test_get_credentials_from_env_success():
 
 def test_get_credentials_from_env_missing():
     """Test error when environment variables are missing."""
-    with patch.dict(os.environ, {}, clear=True):
+    with patch("dotenv.load_dotenv"), patch.dict(os.environ, {}, clear=True):
         with pytest.raises(Exception) as exc:
             get_credentials_from_env()
         assert "SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET not found" in str(exc.value)
