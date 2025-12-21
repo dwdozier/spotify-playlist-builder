@@ -6,7 +6,15 @@ from unittest.mock import MagicMock, patch
 # Ensure we can import the script from the parent directory
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from spotify_playlist_builder import SpotifyPlaylistBuilder, get_credentials_from_env
+from spotify_playlist_builder import (
+    SpotifyPlaylistBuilder,
+    get_credentials_from_env,
+    get_credentials_from_keyring,
+    store_credentials_in_keyring,
+    get_credentials,
+    get_builder,
+    CredentialSource,
+)
 
 
 @pytest.fixture
@@ -318,3 +326,105 @@ def test_build_playlist_from_json_update_existing(builder, mock_spotify):
             mock_update.assert_called()
             mock_clear.assert_called_with("existing_pid")
             mock_add.assert_called_with("existing_pid", ["uri:new"])
+
+
+# --- New Tests for 80% Coverage ---
+
+
+def test_similarity(builder):
+    """Test the string similarity utility."""
+    # Identical strings
+    assert builder._similarity("test", "test") == 1.0
+    # Case insensitive
+    assert builder._similarity("TEST", "test") == 1.0
+    # Completely different
+    assert builder._similarity("abc", "xyz") == 0.0
+    # Partial match
+    assert builder._similarity("hello world", "hello") > 0.4
+
+
+def test_backup_all_playlists(builder, mock_spotify):
+    """Test backing up all playlists."""
+    # Mock finding playlists
+    mock_spotify.current_user_playlists.side_effect = [
+        {
+            "items": [
+                {"name": "Playlist 1", "id": "p1"},
+                {"name": "Playlist/2", "id": "p2"},  # Test filename sanitization
+            ],
+            "next": None,
+        }
+    ]
+
+    with patch.object(builder, "export_playlist_to_json") as mock_export:
+        builder.backup_all_playlists("backups_dir")
+
+        assert mock_export.call_count == 2
+        # Check filename sanitization (slashes removed/replaced)
+        mock_export.assert_any_call("Playlist 1", os.path.join("backups_dir", "Playlist 1.json"))
+        # Implementation strips special chars, check specific sanitization logic
+        # 'Playlist/2' -> 'Playlist2' or similar depending on implementation
+        # The implementation uses: "".join(c for c in name if c.isalnum()
+        # or c in (" ", "-", "_")).strip()
+        mock_export.assert_any_call("Playlist/2", os.path.join("backups_dir", "Playlist2.json"))
+
+
+def test_get_credentials_from_keyring_success():
+    """Test retrieving credentials from keyring."""
+    with patch("spotify_playlist_builder.keyring") as mock_keyring:
+        mock_keyring.get_password.side_effect = ["my_id", "my_secret"]
+
+        cid, secret = get_credentials_from_keyring()
+
+        assert cid == "my_id"
+        assert secret == "my_secret"
+        assert mock_keyring.get_password.call_count == 2
+
+
+def test_get_credentials_from_keyring_missing():
+    """Test error when credentials are missing in keyring."""
+    with patch("spotify_playlist_builder.keyring") as mock_keyring:
+        mock_keyring.get_password.return_value = None
+
+        with pytest.raises(Exception) as exc:
+            get_credentials_from_keyring()
+
+        assert "Credentials not found in keychain" in str(exc.value)
+
+
+def test_store_credentials_in_keyring():
+    """Test storing credentials in keyring."""
+    with patch("spotify_playlist_builder.keyring") as mock_keyring:
+        store_credentials_in_keyring("new_id", "new_secret")
+
+        mock_keyring.set_password.assert_any_call("spotify-playlist-builder", "client_id", "new_id")
+        mock_keyring.set_password.assert_any_call(
+            "spotify-playlist-builder", "client_secret", "new_secret"
+        )
+
+
+def test_get_credentials_dispatch():
+    """Test that get_credentials calls the correct implementation."""
+    with patch(
+        "spotify_playlist_builder.get_credentials_from_env", return_value=("a", "b")
+    ) as mock_env:
+        assert get_credentials("env") == ("a", "b")
+        mock_env.assert_called_once()
+
+    with patch(
+        "spotify_playlist_builder.get_credentials_from_keyring", return_value=("c", "d")
+    ) as mock_keyring:
+        assert get_credentials("keyring") == ("c", "d")
+        mock_keyring.assert_called_once()
+
+
+def test_get_builder():
+    """Test the factory function creates a builder correctly."""
+    with (
+        patch("spotify_playlist_builder.get_credentials", return_value=("cid", "sec")),
+        patch("spotify_playlist_builder.SpotifyPlaylistBuilder") as mock_cls,
+    ):
+
+        get_builder(CredentialSource.env)
+
+        mock_cls.assert_called_with("cid", "sec")
