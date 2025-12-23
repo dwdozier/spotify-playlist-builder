@@ -1,0 +1,79 @@
+{
+  "name": "Electric Light Orchestra",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "Electric Light Orchestra",
+      "track": "Mr. Blue Sky",
+      "album": "Mr. Blue Sky - The Very Best of Electric Light Orchestra",
+      "version": "compilation"
+    },
+    {
+      "artist": "Electric Light Orchestra",
+      "track": "Evil Woman",
+      "album": "Mr. Blue Sky - The Very Best of Electric Light Orchestra",
+      "version": "compilation"
+    },
+    {
+      "artist": "Electric Light Orchestra",
+      "track": "Strange Magic",
+      "album": "Mr. Blue Sky - The Very Best of Electric Light Orchestra",
+      "version": "compilation"
+    },
+    {
+      "artist": "Electric Light Orchestra",
+      "track": "Don't Bring Me Down",
+      "album": "Mr. Blue Sky - The Very Best of Electric Light Orchestra",
+      "version": "compilation"
+    },
+    {
+      "artist": "Electric Light Orchestra",
+      "track": "Turn to Stone",
+      "album": "Mr. Blue Sky - The Very Best of Electric Light Orchestra",
+      "version": "compilation"
+    },
+    {
+      "artist": "Electric Light Orchestra",
+      "track": "Showdown",
+      "album": "Mr. Blue Sky - The Very Best of Electric Light Orchestra",
+      "version": "compilation"
+    },
+    {
+      "artist": "Electric Light Orchestra",
+      "track": "Telephone Line",
+      "album": "Mr. Blue Sky - The Very Best of Electric Light Orchestra",
+      "version": "compilation"
+    },
+    {
+      "artist": "Electric Light Orchestra",
+      "track": "Livin' Thing",
+      "album": "Mr. Blue Sky - The Very Best of Electric Light Orchestra",
+      "version": "compilation"
+    },
+    {
+      "artist": "Electric Light Orchestra",
+      "track": "Evil Woman",
+      "album": "The Essential Electric Light Orchestra",
+      "version": "studio"
+    },
+    {
+      "artist": "Electric Light Orchestra",
+      "track": "Can't Get It Out Of my Head - 7\" Edit",
+      "album": "The Essential Electric Light Orchestra",
+      "version": "studio"
+    },
+    {
+      "artist": "Electric Light Orchestra",
+      "track": "Sweet Talkin' Woman",
+      "album": "The Essential Electric Light Orchestra",
+      "version": "studio"
+    },
+    {
+      "artist": "Electric Light Orchestra",
+      "track": "Xanadu - 2000 version",
+      "album": "The Essential Electric Light Orchestra",
+      "version": "studio"
+    }
+  ]
+}

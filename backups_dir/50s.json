@@ -1,0 +1,79 @@
+{
+  "name": "50's",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "Buddy Holly",
+      "track": "Peggy Sue",
+      "album": "Buddy Holly - Behind The Legend",
+      "version": "studio"
+    },
+    {
+      "artist": "Buddy Holly",
+      "track": "That'll Be The Day",
+      "album": "Buddy Holly - Behind The Legend",
+      "version": "studio"
+    },
+    {
+      "artist": "Buddy Holly",
+      "track": "Everyday",
+      "album": "Buddy Holly - Behind The Legend",
+      "version": "studio"
+    },
+    {
+      "artist": "Buddy Holly",
+      "track": "Oh, Boy",
+      "album": "Buddy Holly - Behind The Legend",
+      "version": "studio"
+    },
+    {
+      "artist": "Buddy Holly",
+      "track": "Not Fade Away",
+      "album": "Buddy Holly - Behind The Legend",
+      "version": "studio"
+    },
+    {
+      "artist": "Buddy Holly",
+      "track": "Maybe Baby",
+      "album": "Buddy Holly - Behind The Legend",
+      "version": "studio"
+    },
+    {
+      "artist": "Buddy Holly",
+      "track": "Rave On",
+      "album": "Buddy Holly - Behind The Legend",
+      "version": "studio"
+    },
+    {
+      "artist": "Buddy Holly",
+      "track": "It's So Easy",
+      "album": "Buddy Holly - Behind The Legend",
+      "version": "studio"
+    },
+    {
+      "artist": "J. Frank Wilson & The Cavaliers",
+      "track": "Last Kiss - Original",
+      "album": "Rock Classics: Our Love Can Still Be Saved",
+      "version": "studio"
+    },
+    {
+      "artist": "Neil Sedaka",
+      "track": "Calendar Girl - Remastered",
+      "album": "The Very Best Of Neil Sedaka",
+      "version": "compilation"
+    },
+    {
+      "artist": "Neil Sedaka",
+      "track": "Breaking Up Is Hard to Do",
+      "album": "Neil Sedaka Sings The Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "Neil Sedaka",
+      "track": "Breaking Up Is Hard To Do (Fast)",
+      "album": "The Definitive Collection",
+      "version": "compilation"
+    }
+  ]
+}

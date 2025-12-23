@@ -1,0 +1,85 @@
+{
+  "name": "Ferris Bueller's Day Off in-Complete Soundtrack",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "Sigue Sigue Sputnik",
+      "track": "Love Missile F1-11",
+      "album": "21st Century Boys - The Best Of",
+      "version": "compilation"
+    },
+    {
+      "artist": "TV Theme Song Maniacs",
+      "track": "Theme From I Dream of Jeannie",
+      "album": "Cover Me: With 99 TV Songs",
+      "version": "studio"
+    },
+    {
+      "artist": "Yello",
+      "track": "Oh Yeah - Remastered 2005",
+      "album": "Stella (Remastered 2005)",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Flowerpot Men",
+      "track": "Beat City (From \"Ferris Bueller's Day Off\")",
+      "album": "Beat City (From \"Ferris Bueller's Day Off\")",
+      "version": "studio"
+    },
+    {
+      "artist": "Big Audio Dynamite",
+      "track": "Bad",
+      "album": "This Is Big Audio Dynamite",
+      "version": "studio"
+    },
+    {
+      "artist": "John Williams",
+      "track": "Star Wars (Main Theme)",
+      "album": "Star Wars: The Empire Strikes Back (Original Motion Picture Soundtrack)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Dream Academy",
+      "track": "Please, Please, Please Let Me Get What I Want",
+      "album": "The Morning Lasted All Day - A Retrospective",
+      "version": "studio"
+    },
+    {
+      "artist": "Wayne Newton",
+      "track": "Danke Schoen",
+      "album": "Danke Schoen",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beatles",
+      "track": "Twist And Shout - Remastered 2009",
+      "album": "Please Please Me (Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Zapp",
+      "track": "Radio People",
+      "album": "The New Zapp IV U",
+      "version": "studio"
+    },
+    {
+      "artist": "General Public",
+      "track": "Taking The Day Off",
+      "album": "Hand To Mouth",
+      "version": "studio"
+    },
+    {
+      "artist": "The Dream Academy",
+      "track": "The Edge of Forever",
+      "album": "The Dream Academy",
+      "version": "studio"
+    },
+    {
+      "artist": "The English Beat",
+      "track": "March Of The Swivel Heads - Bonus Track",
+      "album": "Special Beat Service (Remastered)",
+      "version": "remaster"
+    }
+  ]
+}

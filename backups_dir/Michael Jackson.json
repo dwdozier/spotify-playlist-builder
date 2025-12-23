@@ -1,0 +1,139 @@
+{
+  "name": "Michael Jackson",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "Michael Jackson",
+      "track": "Don't Stop 'Til You Get Enough - Single Version",
+      "album": "Off The Wall",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Rock With You - Single Version",
+      "album": "Off The Wall",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Off The Wall",
+      "album": "Off The Wall",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Get On The Floor",
+      "album": "Off The Wall",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Speed Demon",
+      "album": "Bad",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Bad",
+      "album": "Bad",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "The Way You Make Me Feel",
+      "album": "Bad",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Liberian Girl",
+      "album": "Bad",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "I Just Can't Stop Loving You",
+      "album": "Bad",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Dirty Diana",
+      "album": "Bad",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Smooth Criminal (Radio Edit)",
+      "album": "Bad",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Leave Me Alone",
+      "album": "Bad",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Baby Be Mine",
+      "album": "Thriller (25th Anniversary Edition CD/DVD)",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Wanna Be Startin' Somethin'",
+      "album": "Thriller (25th Anniversary Edition CD/DVD)",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "The Girl Is Mine",
+      "album": "Thriller (25th Anniversary Edition CD/DVD)",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "The Lady In My Life",
+      "album": "Thriller (25th Anniversary Edition CD/DVD)",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "P.Y.T. (Pretty Young Thing)",
+      "album": "Thriller (25th Anniversary Edition CD/DVD)",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Human Nature",
+      "album": "Thriller (25th Anniversary Edition CD/DVD)",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Billie Jean - Single Version",
+      "album": "Thriller (25th Anniversary Edition CD/DVD)",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Beat It - Single Version",
+      "album": "Thriller (25th Anniversary Edition CD/DVD)",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Thriller",
+      "album": "Thriller (25th Anniversary Edition CD/DVD)",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Remember the Time",
+      "album": "Dangerous",
+      "version": "studio"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Oingo Boingo",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "Oingo Boingo",
+      "track": "Only A Lad",
+      "album": "Best O' Boingo",
+      "version": "studio"
+    },
+    {
+      "artist": "Oingo Boingo",
+      "track": "Just Another Day",
+      "album": "Best O' Boingo",
+      "version": "studio"
+    },
+    {
+      "artist": "Oingo Boingo",
+      "track": "Weird Science",
+      "album": "Best O' Boingo",
+      "version": "studio"
+    },
+    {
+      "artist": "Oingo Boingo",
+      "track": "Not My Slave",
+      "album": "Best O' Boingo",
+      "version": "studio"
+    },
+    {
+      "artist": "Oingo Boingo",
+      "track": "Dead Man's Party",
+      "album": "Best O' Boingo",
+      "version": "studio"
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "name": "Phil Collins and Genesis",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "Phil Collins",
+      "track": "In the Air Tonight - 2015 Remaster",
+      "album": "Face Value (2016 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Phil Collins",
+      "track": "This Must Be Love - 2015 Remaster",
+      "album": "Face Value (2016 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Phil Collins",
+      "track": "Hand in Hand - 2015 Remaster",
+      "album": "Face Value (2016 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Phil Collins",
+      "track": "I Missed Again - 2015 Remaster",
+      "album": "Face Value (2016 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Phil Collins",
+      "track": "I Don't Care Anymore - 2016 Remaster",
+      "album": "Hello, I Must Be Going (2016 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Phil Collins",
+      "track": "I Cannot Believe It's True - 2016 Remaster",
+      "album": "Hello, I Must Be Going (2016 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Phil Collins",
+      "track": "Do You Know, Do You Care? - 2016 Remaster",
+      "album": "Hello, I Must Be Going (2016 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Phil Collins",
+      "track": "It Don't Matter to Me - 2016 Remaster",
+      "album": "Hello, I Must Be Going (2016 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Phil Collins",
+      "track": "Long Long Way to Go - 2016 Remaster",
+      "album": "No Jacket Required (2016 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Phil Collins",
+      "track": "One More Night - 2016 Remaster",
+      "album": "No Jacket Required (2016 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Phil Collins",
+      "track": "Don't Lose My Number - 2016 Remaster",
+      "album": "No Jacket Required (2016 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Phil Collins",
+      "track": "Doesn't Anybody Stay Together Anymore - 2016 Remaster",
+      "album": "No Jacket Required (2016 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Phil Collins",
+      "track": "Inside Out - 2016 Remaster",
+      "album": "No Jacket Required (2016 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Phil Collins",
+      "track": "Take Me Home - 2016 Remaster",
+      "album": "No Jacket Required (2016 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Genesis",
+      "track": "Jesus He Knows Me - 2007 Remaster",
+      "album": "We Can't Dance (2007 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Genesis",
+      "track": "Hold on My Heart - 2007 Remaster",
+      "album": "We Can't Dance (2007 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Genesis",
+      "track": "Tonight, Tonight, Tonight - 2007 Remaster",
+      "album": "Invisible Touch (2007 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Genesis",
+      "track": "Land of Confusion - 2007 Remaster",
+      "album": "Invisible Touch (2007 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Genesis",
+      "track": "In Too Deep - 2007 Remaster",
+      "album": "Invisible Touch (2007 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Genesis",
+      "track": "Domino (Pt. 1 & 2) - 2007 Remaster",
+      "album": "Invisible Touch (2007 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Genesis",
+      "track": "The Brazilian - 2007 Remaster",
+      "album": "Invisible Touch (2007 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Genesis",
+      "track": "Mama - 2007 Remaster",
+      "album": "Genesis (2007 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Genesis",
+      "track": "That's All - 2007 Remaster",
+      "album": "Genesis (2007 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Genesis",
+      "track": "Home by the Sea - 2007 Remaster",
+      "album": "Genesis (2007 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Genesis",
+      "track": "Taking It All Too Hard - 2007 Remaster",
+      "album": "Genesis (2007 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Genesis",
+      "track": "Just a Job to Do - 2007 Remaster",
+      "album": "Genesis (2007 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Genesis",
+      "track": "Abacab - 2007 Remaster",
+      "album": "Abacab (2007 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Genesis",
+      "track": "No Reply at All - 2007 Remaster",
+      "album": "Abacab (2007 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Genesis",
+      "track": "Man on the Corner - 2007 Remaster",
+      "album": "Abacab (2007 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Genesis",
+      "track": "Misunderstanding",
+      "album": "Duke",
+      "version": "studio"
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "name": "Queens",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "Wayne Static",
+      "track": "Not Meant for Me",
+      "album": "Queen Of The Damned (Music From The Motion Picture)",
+      "version": "studio"
+    },
+    {
+      "artist": "David Draiman",
+      "track": "Forsaken",
+      "album": "Queen Of The Damned (Music From The Motion Picture)",
+      "version": "studio"
+    },
+    {
+      "artist": "Chester Bennington",
+      "track": "System",
+      "album": "Queen Of The Damned (Music From The Motion Picture)",
+      "version": "studio"
+    },
+    {
+      "artist": "Deftones",
+      "track": "Change (In the House of Flies)",
+      "album": "Queen Of The Damned (Music From The Motion Picture)",
+      "version": "studio"
+    },
+    {
+      "artist": "Marilyn Manson",
+      "track": "Redeemer",
+      "album": "Queen Of The Damned (Music From The Motion Picture)",
+      "version": "studio"
+    },
+    {
+      "artist": "Papa Roach",
+      "track": "Dead Cell",
+      "album": "Queen Of The Damned (Music From The Motion Picture)",
+      "version": "studio"
+    },
+    {
+      "artist": "Godhead",
+      "track": "Penetrate",
+      "album": "Queen Of The Damned (Music From The Motion Picture)",
+      "version": "studio"
+    },
+    {
+      "artist": "Jay Gordon",
+      "track": "Slept so Long",
+      "album": "Queen Of The Damned (Music From The Motion Picture)",
+      "version": "studio"
+    },
+    {
+      "artist": "Disturbed",
+      "track": "Down with the Sickness",
+      "album": "Queen Of The Damned (Music From The Motion Picture)",
+      "version": "studio"
+    },
+    {
+      "artist": "Static-X",
+      "track": "Cold - Radio Mix; aka Deep Freeze Mix",
+      "album": "Queen Of The Damned (Music From The Motion Picture)",
+      "version": "remix"
+    },
+    {
+      "artist": "Earshot",
+      "track": "Headstrong",
+      "album": "Queen Of The Damned (Music From The Motion Picture)",
+      "version": "studio"
+    },
+    {
+      "artist": "Dry Cell",
+      "track": "Body Crumbles",
+      "album": "Queen Of The Damned (Music From The Motion Picture)",
+      "version": "studio"
+    },
+    {
+      "artist": "Tricky",
+      "track": "Excess",
+      "album": "Queen Of The Damned (Music From The Motion Picture)",
+      "version": "studio"
+    },
+    {
+      "artist": "Kidneythieves",
+      "track": "Before I'm Dead",
+      "album": "Queen Of The Damned (Music From The Motion Picture)",
+      "version": "studio"
+    },
+    {
+      "artist": "Queens of the Stone Age",
+      "track": "Keep Your Eyes Peeled",
+      "album": "...Like Clockwork",
+      "version": "studio"
+    },
+    {
+      "artist": "Queens of the Stone Age",
+      "track": "I Sat By The Ocean",
+      "album": "...Like Clockwork",
+      "version": "studio"
+    },
+    {
+      "artist": "Queens of the Stone Age",
+      "track": "The Vampyre of Time And Memory",
+      "album": "...Like Clockwork",
+      "version": "studio"
+    },
+    {
+      "artist": "Queens of the Stone Age",
+      "track": "If I Had A Tail",
+      "album": "...Like Clockwork",
+      "version": "studio"
+    },
+    {
+      "artist": "Queens of the Stone Age",
+      "track": "My God Is The Sun",
+      "album": "...Like Clockwork",
+      "version": "studio"
+    },
+    {
+      "artist": "Queens of the Stone Age",
+      "track": "Kalopsia",
+      "album": "...Like Clockwork",
+      "version": "studio"
+    },
+    {
+      "artist": "Queens of the Stone Age",
+      "track": "Fairweather Friends",
+      "album": "...Like Clockwork",
+      "version": "studio"
+    },
+    {
+      "artist": "Queens of the Stone Age",
+      "track": "Smooth Sailing",
+      "album": "...Like Clockwork",
+      "version": "studio"
+    },
+    {
+      "artist": "Queens of the Stone Age",
+      "track": "I Appear Missing",
+      "album": "...Like Clockwork",
+      "version": "studio"
+    },
+    {
+      "artist": "Queens of the Stone Age",
+      "track": "...Like Clockwork",
+      "album": "...Like Clockwork",
+      "version": "studio"
+    }
+  ]
+}

@@ -1,0 +1,697 @@
+{
+  "name": "Guitar & Instrumental",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "Chet Atkins",
+      "track": "Mister Sandman",
+      "album": "Chet Atkins - The Master And His Music",
+      "version": "studio"
+    },
+    {
+      "artist": "Chet Atkins",
+      "track": "Black Mountain Rag",
+      "album": "Chet Atkins - The Master And His Music",
+      "version": "studio"
+    },
+    {
+      "artist": "Chet Atkins",
+      "track": "A Taste of Honey",
+      "album": "Chet Atkins - The Master And His Music",
+      "version": "studio"
+    },
+    {
+      "artist": "Chet Atkins",
+      "track": "Country Gentleman",
+      "album": "Chet Atkins - The Master And His Music",
+      "version": "studio"
+    },
+    {
+      "artist": "Chet Atkins",
+      "track": "Do I Ever Cross Your Mind",
+      "album": "Chet Atkins - The Master And His Music",
+      "version": "studio"
+    },
+    {
+      "artist": "Chet Atkins and his Guitar Pickers",
+      "track": "Main Street Breakdown - Buddha Remastered - 2000",
+      "album": "Chet Atkins - The Master And His Music",
+      "version": "remaster"
+    },
+    {
+      "artist": "Chet Atkins",
+      "track": "Yesterday",
+      "album": "Chet Atkins - The Master And His Music",
+      "version": "studio"
+    },
+    {
+      "artist": "Chet Atkins",
+      "track": "Blue Angel",
+      "album": "Chet Atkins - The Master And His Music",
+      "version": "studio"
+    },
+    {
+      "artist": "Chet Atkins",
+      "track": "Cascade - Buddha Remastered - 2000",
+      "album": "Chet Atkins - The Master And His Music",
+      "version": "remaster"
+    },
+    {
+      "artist": "Chet Atkins",
+      "track": "Boo Boo Stick Beat",
+      "album": "Chet Atkins - The Master And His Music",
+      "version": "studio"
+    },
+    {
+      "artist": "Chet Atkins",
+      "track": "Silver Bell - Buddha Remastered - 2000",
+      "album": "Chet Atkins - The Master And His Music",
+      "version": "remaster"
+    },
+    {
+      "artist": "Chet Atkins",
+      "track": "The Streets Of Laredo",
+      "album": "Chet Atkins - The Master And His Music",
+      "version": "studio"
+    },
+    {
+      "artist": "Chet Atkins",
+      "track": "It Don't Mean a Thing (If It Ain't Got That Swing)",
+      "album": "Chet Atkins - The Master And His Music",
+      "version": "studio"
+    },
+    {
+      "artist": "Chet Atkins",
+      "track": "Jerry's Breakdown",
+      "album": "Chet Atkins - The Master And His Music",
+      "version": "studio"
+    },
+    {
+      "artist": "Chet Atkins",
+      "track": "Yakety Axe",
+      "album": "Chet Atkins - The Master And His Music",
+      "version": "studio"
+    },
+    {
+      "artist": "Chet Atkins",
+      "track": "Over the Rainbow",
+      "album": "Chet Atkins - The Master And His Music",
+      "version": "studio"
+    },
+    {
+      "artist": "Mason Williams",
+      "track": "Classical Gas",
+      "album": "Rhino Hi-Five: Mason Williams",
+      "version": "studio"
+    },
+    {
+      "artist": "Mason Williams",
+      "track": "Greensleeves",
+      "album": "Rhino Hi-Five: Mason Williams",
+      "version": "studio"
+    },
+    {
+      "artist": "Mason Williams",
+      "track": "Baroque-A-Nova",
+      "album": "Rhino Hi-Five: Mason Williams",
+      "version": "studio"
+    },
+    {
+      "artist": "Mason Williams",
+      "track": "Saturday's Night at the World",
+      "album": "Rhino Hi-Five: Mason Williams",
+      "version": "studio"
+    },
+    {
+      "artist": "Mason Williams",
+      "track": "The Brothers Theme (aka Smother Brothers Theme)",
+      "album": "Rhino Hi-Five: Mason Williams",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Ave Maria",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Seresta (From \"Reminiscencias Op. 78\")",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Caprice",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Variation in E Minor",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Gigue",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Etude No. 1",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Prelude in D Minor (Schneewei\u00df)",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Serenata Andalucia",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Greensleeves (Quartet Style)",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Una Limosna por el Amor de Dios",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Prelude in D Minor (Alternate Take)",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Op. 6 No. 1 (Ardiente)",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "La Mariposa",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Danza No. 5 (Andalucia)",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Romance",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Aria",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Trois Pi\u00e8ces Espagnoles: Zapataedo",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Das Oliveneselchen",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "live"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Prelude No. 1: Andantino Espressivo",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Etude in C Major",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Allemande",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Una Caricia",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Bourr\u00e9e",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Chorus No. 1",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "St\u00e4ndchen",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Angloise",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Prelude in D Minor (Alternate Take II)",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Malaguena",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "El Sueno de la Munequita",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Tango Op. 7",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Prelude in C Minor II",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Fantasia Que Contrahaze la Harpa en la Manera de Ludovico",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Das Eis Essende M\u00e4dchen",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Suite in E Minor: Bourr\u00e9e",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Gigue II",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Mazurka",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "El Noy de la Mare",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Courante",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Recuerdos de la Alhambra",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Gavotte",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Mi Favorita",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Tango en Sky",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Caprice \u00f3 Capricio",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "L\u00e1grima",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "White Day",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Julia Florida",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "La Catedral",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Der kleine Vogel",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Romanza Andantino",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Classical Guitar Masters",
+      "track": "Dedicatoria",
+      "album": "50 Essential Classical Guitar Masterpieces",
+      "version": "studio"
+    },
+    {
+      "artist": "Gipsy Kings",
+      "track": "Bamboleo",
+      "album": "Gipsy Kings",
+      "version": "studio"
+    },
+    {
+      "artist": "Gipsy Kings",
+      "track": "Tu Quieres Volver",
+      "album": "Gipsy Kings",
+      "version": "studio"
+    },
+    {
+      "artist": "Gipsy Kings",
+      "track": "Moorea",
+      "album": "Gipsy Kings",
+      "version": "studio"
+    },
+    {
+      "artist": "Gipsy Kings",
+      "track": "Bem, Bem, Maria",
+      "album": "Gipsy Kings",
+      "version": "studio"
+    },
+    {
+      "artist": "Gipsy Kings",
+      "track": "Un Amor",
+      "album": "Gipsy Kings",
+      "version": "studio"
+    },
+    {
+      "artist": "Gipsy Kings",
+      "track": "Inspiration",
+      "album": "Gipsy Kings",
+      "version": "studio"
+    },
+    {
+      "artist": "Gipsy Kings",
+      "track": "A Mi Manera",
+      "album": "Gipsy Kings",
+      "version": "studio"
+    },
+    {
+      "artist": "Gipsy Kings",
+      "track": "Djobi Djoba",
+      "album": "Gipsy Kings",
+      "version": "studio"
+    },
+    {
+      "artist": "Gipsy Kings",
+      "track": "Faena",
+      "album": "Gipsy Kings",
+      "version": "studio"
+    },
+    {
+      "artist": "Gipsy Kings",
+      "track": "Quiero Saber",
+      "album": "Gipsy Kings",
+      "version": "studio"
+    },
+    {
+      "artist": "Gipsy Kings",
+      "track": "Amor, Amor",
+      "album": "Gipsy Kings",
+      "version": "studio"
+    },
+    {
+      "artist": "Gipsy Kings",
+      "track": "Duende",
+      "album": "Gipsy Kings",
+      "version": "studio"
+    },
+    {
+      "artist": "Paco Pe\u00f1a",
+      "track": "La Rosa",
+      "album": "Flamenco Guitar Music of Ram\u00f3n Montoya and Ni\u00f1o Ricardo",
+      "version": "studio"
+    },
+    {
+      "artist": "Paco Pe\u00f1a",
+      "track": "Ronde\u00f1a",
+      "album": "Flamenco Guitar Music of Ram\u00f3n Montoya and Ni\u00f1o Ricardo",
+      "version": "studio"
+    },
+    {
+      "artist": "Paco Pe\u00f1a",
+      "track": "Solea",
+      "album": "Flamenco Guitar Music of Ram\u00f3n Montoya and Ni\u00f1o Ricardo",
+      "version": "studio"
+    },
+    {
+      "artist": "Paco Pe\u00f1a",
+      "track": "Miner\u00e1",
+      "album": "Flamenco Guitar Music of Ram\u00f3n Montoya and Ni\u00f1o Ricardo",
+      "version": "studio"
+    },
+    {
+      "artist": "Paco Pe\u00f1a",
+      "track": "Grana\u00edna",
+      "album": "Flamenco Guitar Music of Ram\u00f3n Montoya and Ni\u00f1o Ricardo",
+      "version": "studio"
+    },
+    {
+      "artist": "Paco Pe\u00f1a",
+      "track": "Tango mayor y menor",
+      "album": "Flamenco Guitar Music of Ram\u00f3n Montoya and Ni\u00f1o Ricardo",
+      "version": "studio"
+    },
+    {
+      "artist": "Paco Pe\u00f1a",
+      "track": "Alegr\u00edas",
+      "album": "Flamenco Guitar Music of Ram\u00f3n Montoya and Ni\u00f1o Ricardo",
+      "version": "studio"
+    },
+    {
+      "artist": "Paco Pe\u00f1a",
+      "track": "Seguiriyas",
+      "album": "Flamenco Guitar Music of Ram\u00f3n Montoya and Ni\u00f1o Ricardo",
+      "version": "studio"
+    },
+    {
+      "artist": "Paco Pe\u00f1a",
+      "track": "Fandangos",
+      "album": "Flamenco Guitar Music of Ram\u00f3n Montoya and Ni\u00f1o Ricardo",
+      "version": "studio"
+    },
+    {
+      "artist": "Paco Pe\u00f1a",
+      "track": "Farrucas",
+      "album": "Flamenco Guitar Music of Ram\u00f3n Montoya and Ni\u00f1o Ricardo",
+      "version": "studio"
+    },
+    {
+      "artist": "Paco Pe\u00f1a",
+      "track": "Tarantas",
+      "album": "Flamenco Guitar Music of Ram\u00f3n Montoya and Ni\u00f1o Ricardo",
+      "version": "studio"
+    },
+    {
+      "artist": "Paco Pe\u00f1a",
+      "track": "Zambra",
+      "album": "Flamenco Guitar Music of Ram\u00f3n Montoya and Ni\u00f1o Ricardo",
+      "version": "studio"
+    },
+    {
+      "artist": "Paco Pe\u00f1a",
+      "track": "Buler\u00edas",
+      "album": "Flamenco Guitar Music of Ram\u00f3n Montoya and Ni\u00f1o Ricardo",
+      "version": "studio"
+    },
+    {
+      "artist": "Herb Alpert",
+      "track": "1980",
+      "album": "Rise",
+      "version": "studio"
+    },
+    {
+      "artist": "Herb Alpert",
+      "track": "RISE",
+      "album": "Rise",
+      "version": "studio"
+    },
+    {
+      "artist": "Herb Alpert",
+      "track": "Behind The Rain",
+      "album": "Rise",
+      "version": "studio"
+    },
+    {
+      "artist": "Herb Alpert",
+      "track": "ROTATION",
+      "album": "Rise",
+      "version": "studio"
+    },
+    {
+      "artist": "Herb Alpert",
+      "track": "Aranjuez (Mon Amour)",
+      "album": "Rise",
+      "version": "studio"
+    },
+    {
+      "artist": "Herb Alpert",
+      "track": "Love Is",
+      "album": "Rise",
+      "version": "studio"
+    },
+    {
+      "artist": "Herb Alpert",
+      "track": "Angelina",
+      "album": "Rise",
+      "version": "studio"
+    },
+    {
+      "artist": "Herb Alpert",
+      "track": "Street Life",
+      "album": "Rise",
+      "version": "studio"
+    },
+    {
+      "artist": "Herb Alpert",
+      "track": "Rotation (Alternate Version)",
+      "album": "Rise",
+      "version": "studio"
+    },
+    {
+      "artist": "Herb Alpert",
+      "track": "Aranjuez (Mon Amour) 2007 Dance Mix",
+      "album": "Rise",
+      "version": "remix"
+    },
+    {
+      "artist": "Chuck Mangione",
+      "track": "Feels So Good",
+      "album": "Feels So Good",
+      "version": "studio"
+    },
+    {
+      "artist": "Chuck Mangione",
+      "track": "Children Of Sanchez",
+      "album": "Greatest Hits: Chuck Mangione",
+      "version": "compilation"
+    },
+    {
+      "artist": "Chuck Mangione",
+      "track": "Cannonball Run Theme",
+      "album": "Greatest Hits: Chuck Mangione",
+      "version": "compilation"
+    },
+    {
+      "artist": "Maynard Ferguson",
+      "track": "Superbone Meets The Bad Man",
+      "album": "Chameleon",
+      "version": "studio"
+    },
+    {
+      "artist": "Maynard Ferguson",
+      "track": "MacArthur Park",
+      "album": "The Essence Of Maynard Ferguson",
+      "version": "studio"
+    },
+    {
+      "artist": "Maynard Ferguson",
+      "track": "Birdland",
+      "album": "The Essence Of Maynard Ferguson",
+      "version": "studio"
+    },
+    {
+      "artist": "Maynard Ferguson",
+      "track": "Birdland",
+      "album": "One More Trip To Birdland",
+      "version": "studio"
+    },
+    {
+      "artist": "Maynard Ferguson",
+      "track": "Birdland",
+      "album": "This Is Jazz #16",
+      "version": "studio"
+    },
+    {
+      "artist": "Maynard Ferguson",
+      "track": "Theme From \"Battlestar Galactica\"",
+      "album": "Carnival",
+      "version": "studio"
+    }
+  ]
+}

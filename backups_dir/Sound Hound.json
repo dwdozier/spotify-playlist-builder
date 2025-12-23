@@ -1,0 +1,1129 @@
+{
+  "name": "Sound Hound",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "Ambrosia",
+      "track": "How Much I Feel - Remastered Version",
+      "album": "The Essentials: Ambrosia",
+      "version": "remaster"
+    },
+    {
+      "artist": "Gary Numan / Tubeway Army",
+      "track": "Are 'Friends' Electric?",
+      "album": "Replicas (Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "John Legend",
+      "track": "All of Me",
+      "album": "Love In The Future (Expanded Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Dire Straits",
+      "track": "On Every Street",
+      "album": "On Every Street (Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Portishead",
+      "track": "Roads",
+      "album": "Dummy",
+      "version": "studio"
+    },
+    {
+      "artist": "Portishead",
+      "track": "Sour Times",
+      "album": "Dummy",
+      "version": "studio"
+    },
+    {
+      "artist": "Ellie Goulding",
+      "track": "Beating Heart",
+      "album": "Divergent: Original Motion Picture Soundtrack",
+      "version": "studio"
+    },
+    {
+      "artist": "Florence + The Machine",
+      "track": "Breath Of Life",
+      "album": "Breath Of Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Robert Plant",
+      "track": "Satan Your Kingdom Must Come Down",
+      "album": "Band of Joy",
+      "version": "studio"
+    },
+    {
+      "artist": "Curtis Stigers",
+      "track": "This Life",
+      "album": "Songs of Anarchy: Music from Sons of Anarchy Seasons 1-4",
+      "version": "studio"
+    },
+    {
+      "artist": "Alabama 3",
+      "track": "Woke up This Morning (The Sopranos Mix)",
+      "album": "Hits and Exit Wounds",
+      "version": "remix"
+    },
+    {
+      "artist": "Lykke Li",
+      "track": "Sleeping Alone",
+      "album": "I Never Learn",
+      "version": "studio"
+    },
+    {
+      "artist": "The Spinners",
+      "track": "They Just Can't Stop It (Games People Play)",
+      "album": "The Very Best of the Spinners",
+      "version": "compilation"
+    },
+    {
+      "artist": "Heart",
+      "track": "Crazy On You",
+      "album": "Dreamboat Annie",
+      "version": "studio"
+    },
+    {
+      "artist": "Fergie",
+      "track": "L.A.LOVE (la la)",
+      "album": "L.A.LOVE (la la)",
+      "version": "studio"
+    },
+    {
+      "artist": "MAGIC!",
+      "track": "Rude",
+      "album": "Don't Kill the Magic",
+      "version": "studio"
+    },
+    {
+      "artist": "Golden Earring",
+      "track": "Twilight Zone",
+      "album": "The Long Versions - Part One",
+      "version": "studio"
+    },
+    {
+      "artist": "Hozier",
+      "track": "Take Me to Church",
+      "album": "Take Me to Church EP",
+      "version": "studio"
+    },
+    {
+      "artist": "One Way",
+      "track": "Cutie Pie",
+      "album": "Cutie Pie",
+      "version": "studio"
+    },
+    {
+      "artist": "Mary J. Blige",
+      "track": "Family Affair",
+      "album": "No More Drama",
+      "version": "studio"
+    },
+    {
+      "artist": "Gipsy Kings",
+      "track": "You've Got a Friend in Me (para el Buzz Espa\u00f1ol) (from \"Toy Story 3\") - From \"Toy Story 3\" / Soundtrack Version",
+      "album": "Disney-Pixar All Time Favorites",
+      "version": "studio"
+    },
+    {
+      "artist": "Patsy Cline",
+      "track": "Crazy - Single Version",
+      "album": "Gold",
+      "version": "studio"
+    },
+    {
+      "artist": "Alison Mosshart",
+      "track": "Bad Blood - From The Walking Dead",
+      "album": "Bad Blood (From The Walking Dead)",
+      "version": "studio"
+    },
+    {
+      "artist": "Ellie Goulding",
+      "track": "Lights - Single Version",
+      "album": "Halcyon Days",
+      "version": "studio"
+    },
+    {
+      "artist": "David Tavar\u00e9",
+      "track": "Hot Summer Night (feat. 2 Eivissa) - English Extended",
+      "album": "Ultra Weekend 5 (Jason Nevins Presents)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Babys",
+      "track": "Isn't It Time - 2000 Remastered Version",
+      "album": "Anthology",
+      "version": "compilation"
+    },
+    {
+      "artist": "Hozier",
+      "track": "Arsonist's Lullabye",
+      "album": "From Eden EP",
+      "version": "studio"
+    },
+    {
+      "artist": "Noah Gundersen",
+      "track": "Poor Man's Son",
+      "album": "Ledges",
+      "version": "studio"
+    },
+    {
+      "artist": "London Grammar",
+      "track": "Devil Inside",
+      "album": "Devil Inside",
+      "version": "studio"
+    },
+    {
+      "artist": "Santana",
+      "track": "Oye Como Va",
+      "album": "Ultimate Santana",
+      "version": "studio"
+    },
+    {
+      "artist": "Belinda Carlisle",
+      "track": "Circle In The Sand",
+      "album": "Her Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "The Go-Go's",
+      "track": "Our Lips Are Sealed",
+      "album": "Return To The Valley Of The Go-Go's",
+      "version": "studio"
+    },
+    {
+      "artist": "Ready For The World",
+      "track": "Oh Sheila",
+      "album": "Oh Sheila! Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Prince",
+      "track": "Purple Rain",
+      "album": "Purple Rain",
+      "version": "studio"
+    },
+    {
+      "artist": "Belinda Carlisle",
+      "track": "Mad About You",
+      "album": "Belinda",
+      "version": "studio"
+    },
+    {
+      "artist": "Dexys Midnight Runners",
+      "track": "Come On Eileen",
+      "album": "Too Rye Ay",
+      "version": "studio"
+    },
+    {
+      "artist": "Frida",
+      "track": "I Know There's Something Going On",
+      "album": "Something's Going On",
+      "version": "studio"
+    },
+    {
+      "artist": "Next",
+      "track": "Too Close",
+      "album": "Platinum & Gold Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Slow Magic",
+      "track": "Waited 4 U",
+      "album": "How to Run Away",
+      "version": "studio"
+    },
+    {
+      "artist": "Ane Brun",
+      "track": "Directions",
+      "album": "Directions",
+      "version": "studio"
+    },
+    {
+      "artist": "Taco",
+      "track": "Puttin' On The Ritz",
+      "album": "After Eight",
+      "version": "studio"
+    },
+    {
+      "artist": "fun.",
+      "track": "We Are Young (feat. Janelle Mon\u00e1e)",
+      "album": "Some Nights",
+      "version": "studio"
+    },
+    {
+      "artist": "Feist",
+      "track": "1234",
+      "album": "The Reminder",
+      "version": "studio"
+    },
+    {
+      "artist": "The Guess Who",
+      "track": "American Woman - 7\" Single Version",
+      "album": "The Best Of The Guess Who",
+      "version": "compilation"
+    },
+    {
+      "artist": "Kate Bush",
+      "track": "Pi",
+      "album": "Aerial",
+      "version": "studio"
+    },
+    {
+      "artist": "Madonna",
+      "track": "Don't Tell Me",
+      "album": "Celebration (double disc version)",
+      "version": "studio"
+    },
+    {
+      "artist": "Seinabo Sey",
+      "track": "Hard Time",
+      "album": "For Madeleine",
+      "version": "studio"
+    },
+    {
+      "artist": "Big Data",
+      "track": "Dangerous (feat. Joywave)",
+      "album": "2.0",
+      "version": "studio"
+    },
+    {
+      "artist": "Toby Keith",
+      "track": "I'm So Happy I Can't Stop Crying",
+      "album": "Toby Keith 35 Biggest Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "The Ides Of March",
+      "track": "Vehicle",
+      "album": "Vehicle",
+      "version": "studio"
+    },
+    {
+      "artist": "Eagles",
+      "track": "I Can't Tell You Why - 2013 Remaster",
+      "album": "The Long Run (2013 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Paul McCartney",
+      "track": "Jet - 2010 Remaster",
+      "album": "Band On The Run",
+      "version": "remaster"
+    },
+    {
+      "artist": "Andrew McMahon in the Wilderness",
+      "track": "Cecilia And The Satellite",
+      "album": "Andrew McMahon In The Wilderness",
+      "version": "studio"
+    },
+    {
+      "artist": "Florence + The Machine",
+      "track": "Ship To Wreck",
+      "album": "How Big, How Blue, How Beautiful (Deluxe)",
+      "version": "studio"
+    },
+    {
+      "artist": "Paolo Nutini",
+      "track": "Let Me Down Easy",
+      "album": "Caustic Love",
+      "version": "studio"
+    },
+    {
+      "artist": "Allen Stone",
+      "track": "I Know That I Wasn\u2019t Right",
+      "album": "Radius",
+      "version": "studio"
+    },
+    {
+      "artist": "David Gray",
+      "track": "Babylon - US Radio Mix",
+      "album": "Greatest Hits",
+      "version": "remix"
+    },
+    {
+      "artist": "Climax Blues Band",
+      "track": "Couldn't Get It Right",
+      "album": "The 'See For Miles' 10th Anniversary Catalogue",
+      "version": "studio"
+    },
+    {
+      "artist": "Steve Tyrell",
+      "track": "Give Me the Simple Life - From Father of the Bride, Pt. II",
+      "album": "A New Standard",
+      "version": "studio"
+    },
+    {
+      "artist": "Fifth Harmony",
+      "track": "I'm In Love With a Monster",
+      "album": "I'm In Love With a Monster",
+      "version": "studio"
+    },
+    {
+      "artist": "The Greg Kihn Band",
+      "track": "The Break Up Song",
+      "album": "Greg Kihn Band \"Best Of Beserkley\" '75 - '84",
+      "version": "compilation"
+    },
+    {
+      "artist": "Pat Benatar",
+      "track": "Heartbreaker",
+      "album": "Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Dobie Gray",
+      "track": "Drift Away",
+      "album": "Brothers In Blues & Sisters In Soul",
+      "version": "studio"
+    },
+    {
+      "artist": "Elle King",
+      "track": "Ex's & Oh's",
+      "album": "Love Stuff",
+      "version": "studio"
+    },
+    {
+      "artist": "Lonnie Donegan",
+      "track": "The Battle Of New Orleans",
+      "album": "Rock Island Line - The Singles Anthology",
+      "version": "compilation"
+    },
+    {
+      "artist": "X Ambassadors",
+      "track": "Renegades",
+      "album": "VHS",
+      "version": "studio"
+    },
+    {
+      "artist": "The Style Council",
+      "track": "My Ever Changing Moods",
+      "album": "The Sound Of The Style Council",
+      "version": "studio"
+    },
+    {
+      "artist": "Toad The Wet Sprocket",
+      "track": "Walk On the Ocean",
+      "album": "fear",
+      "version": "studio"
+    },
+    {
+      "artist": "Front 242",
+      "track": "Headhunter V1.0",
+      "album": "FRONT BY FRONT",
+      "version": "studio"
+    },
+    {
+      "artist": "\u00c1sgeir",
+      "track": "Higher",
+      "album": "In the Silence",
+      "version": "studio"
+    },
+    {
+      "artist": "Midge Ure",
+      "track": "Dear God",
+      "album": "Breathe Again: Live And Extended",
+      "version": "live"
+    },
+    {
+      "artist": "En Vogue",
+      "track": "Hold On",
+      "album": "Born to Sing",
+      "version": "studio"
+    },
+    {
+      "artist": "Peter Gabriel",
+      "track": "Down to Earth - From \"WALL-E\"",
+      "album": "Disney/Pixar Greatest",
+      "version": "studio"
+    },
+    {
+      "artist": "Coleman Hell",
+      "track": "2 Heads",
+      "album": "2 Heads",
+      "version": "studio"
+    },
+    {
+      "artist": "Nothing But Thieves",
+      "track": "Trip Switch",
+      "album": "Trip Switch",
+      "version": "studio"
+    },
+    {
+      "artist": "Mazzy Star",
+      "track": "Fade Into You",
+      "album": "So Tonight That I Might See",
+      "version": "studio"
+    },
+    {
+      "artist": "Echosmith",
+      "track": "Cool Kids",
+      "album": "Talking Dreams (Deluxe Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Loggins & Messina",
+      "track": "Angry Eyes - Single Version",
+      "album": "Loggins And Messina",
+      "version": "studio"
+    },
+    {
+      "artist": "Gary Wright",
+      "track": "Love Is Alive",
+      "album": "The Dream Weaver",
+      "version": "live"
+    },
+    {
+      "artist": "Our Lady Peace",
+      "track": "Superman's Dead",
+      "album": "Clumsy",
+      "version": "studio"
+    },
+    {
+      "artist": "XTC",
+      "track": "Making Plans For Nigel",
+      "album": "Drums And Wires",
+      "version": "studio"
+    },
+    {
+      "artist": "Fall Out Boy",
+      "track": "My Songs Know What You Did In The Dark (Light Em Up)",
+      "album": "Save Rock And Roll",
+      "version": "studio"
+    },
+    {
+      "artist": "Linda Ronstadt",
+      "track": "Hurt so Bad - 2015 Remaster",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Kool & The Gang",
+      "track": "Too Hot",
+      "album": "The Very Best Of Kool & The Gang",
+      "version": "compilation"
+    },
+    {
+      "artist": "Billy Idol",
+      "track": "Sweet Sixteen",
+      "album": "Whiplash Smile",
+      "version": "studio"
+    },
+    {
+      "artist": "Greg Laswell",
+      "track": "Dodged A Bullet",
+      "album": "Everyone Thinks I Dodged A Bullet",
+      "version": "studio"
+    },
+    {
+      "artist": "St. Paul & The Broken Bones",
+      "track": "All I Ever Wonder",
+      "album": "All I Ever Wonder",
+      "version": "studio"
+    },
+    {
+      "artist": "Roy Ayers Ubiquity",
+      "track": "Everybody Loves the Sunshine",
+      "album": "Anthology",
+      "version": "compilation"
+    },
+    {
+      "artist": "Capital Cities",
+      "track": "Safe And Sound",
+      "album": "In A Tidal Wave Of Mystery (Deluxe Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Blue \u00d6yster Cult",
+      "track": "Burnin' for You",
+      "album": "Fire of Unknown Origin",
+      "version": "studio"
+    },
+    {
+      "artist": "Empire Of The Sun",
+      "track": "Walking On A Dream",
+      "album": "Walking On A Dream",
+      "version": "studio"
+    },
+    {
+      "artist": "Phantogram",
+      "track": "You Don\u2019t Get Me High Anymore",
+      "album": "You Don't Get Me High Anymore",
+      "version": "studio"
+    },
+    {
+      "artist": "Steve Miller Band",
+      "track": "Take The Money And Run",
+      "album": "Greatest Hits 1974-78",
+      "version": "compilation"
+    },
+    {
+      "artist": "Elton John",
+      "track": "Little Jeannie",
+      "album": "The Greatest Hits 1970-2002",
+      "version": "compilation"
+    },
+    {
+      "artist": "Crash Test Dummies",
+      "track": "Afternoons & Coffeespoons",
+      "album": "God Shuffled His Feet",
+      "version": "studio"
+    },
+    {
+      "artist": "Grand Blanc",
+      "track": "Disque sombre",
+      "album": "M\u00e9moires vives",
+      "version": "studio"
+    },
+    {
+      "artist": "The Strokes",
+      "track": "OBLIVIUS",
+      "album": "Future Present Past",
+      "version": "studio"
+    },
+    {
+      "artist": "Raphael Saadiq",
+      "track": "Good Man",
+      "album": "Stone Rollin'",
+      "version": "studio"
+    },
+    {
+      "artist": "Talking Heads",
+      "track": "This Must Be the Place (Naive Melody) - 2005 Remaster",
+      "album": "Speaking in Tongues (Deluxe Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "America",
+      "track": "Tin Man",
+      "album": "Holiday",
+      "version": "studio"
+    },
+    {
+      "artist": "Queen",
+      "track": "Radio Ga Ga - Remastered 2011",
+      "album": "The Works (Deluxe Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Deon Estus",
+      "track": "Heaven Help Me",
+      "album": "Spell",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "The Lady in My Life",
+      "album": "Thriller 25 Super Deluxe Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Muse",
+      "track": "Uprising",
+      "album": "The Resistance",
+      "version": "studio"
+    },
+    {
+      "artist": "The Revivalists",
+      "track": "Wish I Knew You",
+      "album": "Men Amongst Mountains",
+      "version": "studio"
+    },
+    {
+      "artist": "Samantha Sang",
+      "track": "Emotion",
+      "album": "Emotion",
+      "version": "studio"
+    },
+    {
+      "artist": "Visioneers",
+      "track": "Ike's Mood I",
+      "album": "Dirty Old Hip Hop",
+      "version": "studio"
+    },
+    {
+      "artist": "Cherrelle",
+      "track": "Saturday Love",
+      "album": "High Priority",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Faith - From \"Sing\" Original Motion Picture Soundtrack",
+      "album": "Sing (Original Motion Picture Soundtrack / Deluxe)",
+      "version": "studio"
+    },
+    {
+      "artist": "Yusuf / Cat Stevens",
+      "track": "Morning Has Broken",
+      "album": "Teaser And The Firecat",
+      "version": "studio"
+    },
+    {
+      "artist": "",
+      "track": "",
+      "album": "",
+      "version": "studio"
+    },
+    {
+      "artist": "The Clash",
+      "track": "I Fought the Law - Remastered",
+      "album": "Sound System",
+      "version": "remaster"
+    },
+    {
+      "artist": "Kim Wilde",
+      "track": "Kids In America",
+      "album": "The Very Best Of Kim Wilde",
+      "version": "compilation"
+    },
+    {
+      "artist": "Otis Redding",
+      "track": "You Send Me",
+      "album": "Soul Manifesto: 1964-1970",
+      "version": "studio"
+    },
+    {
+      "artist": "Linkin Park",
+      "track": "In the End",
+      "album": "Hybrid Theory (Bonus Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "T. Rex",
+      "track": "Children Of The Revolution",
+      "album": "Children Of The Revolution",
+      "version": "studio"
+    },
+    {
+      "artist": "Culture Club",
+      "track": "The Dream - Remastered 2003",
+      "album": "Waking Up With The House On Fire (Remastered / Expanded Edition)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Phil Oakey",
+      "track": "Together In Electric Dreams",
+      "album": "The Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "R. Kelly",
+      "track": "When a Woman's Fed Up",
+      "album": "R.",
+      "version": "studio"
+    },
+    {
+      "artist": "Nancy Sinatra",
+      "track": "Some Velvet Morning",
+      "album": "Movin' With Nancy",
+      "version": "studio"
+    },
+    {
+      "artist": "Teenage Jesus & The Jerks",
+      "track": "My Eyes - Live at Max's Kansas City, New York, NY, May 17, 1978",
+      "album": "Live 1977-1979",
+      "version": "live"
+    },
+    {
+      "artist": "Justin Timberlake",
+      "track": "CAN'T STOP THE FEELING! (from DreamWorks Animation's \"TROLLS\")",
+      "album": "TROLLS (Original Motion Picture Soundtrack)",
+      "version": "studio"
+    },
+    {
+      "artist": "Anna Kendrick",
+      "track": "Get Back Up Again",
+      "album": "TROLLS (Original Motion Picture Soundtrack)",
+      "version": "studio"
+    },
+    {
+      "artist": "Justin Timberlake",
+      "track": "Hair Up",
+      "album": "TROLLS (Original Motion Picture Soundtrack)",
+      "version": "studio"
+    },
+    {
+      "artist": "Will Smith",
+      "track": "Gettin' Jiggy Wit It",
+      "album": "Big Willie Style",
+      "version": "studio"
+    },
+    {
+      "artist": "DJ Jazzy Jeff & The Fresh Prince",
+      "track": "Summertime - Single Edit",
+      "album": "The Very Best Of D.J. Jazzy Jeff & The Fresh Prince",
+      "version": "compilation"
+    },
+    {
+      "artist": "Adele",
+      "track": "Water Under the Bridge",
+      "album": "25",
+      "version": "studio"
+    },
+    {
+      "artist": "TOTO",
+      "track": "Hold the Line",
+      "album": "Toto",
+      "version": "studio"
+    },
+    {
+      "artist": "Charlie Puth",
+      "track": "Attention",
+      "album": "Attention",
+      "version": "studio"
+    },
+    {
+      "artist": "The Who",
+      "track": "Baba O'Riley",
+      "album": "Who's Next (Deluxe Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Decemberists",
+      "track": "Severed",
+      "album": "Severed",
+      "version": "studio"
+    },
+    {
+      "artist": "Portugal. The Man",
+      "track": "Feel It Still",
+      "album": "Woodstock",
+      "version": "studio"
+    },
+    {
+      "artist": "Sigrid",
+      "track": "Everybody Knows",
+      "album": "Justice League (Original Motion Picture Soundtrack)",
+      "version": "studio"
+    },
+    {
+      "artist": "Nathaniel Rateliff & The Night Sweats",
+      "track": "You Worry Me",
+      "album": "You Worry Me",
+      "version": "studio"
+    },
+    {
+      "artist": "Billy Cobham",
+      "track": "De Cuba y de Panam\u00e1",
+      "album": "De Cuba y de Panam\u00e1",
+      "version": "studio"
+    },
+    {
+      "artist": "KALEO",
+      "track": "Way down We Go",
+      "album": "A/B",
+      "version": "studio"
+    },
+    {
+      "artist": "BADBADNOTGOOD",
+      "track": "Time Moves Slow",
+      "album": "IV",
+      "version": "studio"
+    },
+    {
+      "artist": "The Naked And Famous",
+      "track": "Young Blood",
+      "album": "Passive Me, Aggressive You",
+      "version": "studio"
+    },
+    {
+      "artist": "Arcade Fire",
+      "track": "Reflektor",
+      "album": "Reflektor",
+      "version": "studio"
+    },
+    {
+      "artist": "Beck",
+      "track": "Up All Night",
+      "album": "Up All Night",
+      "version": "studio"
+    },
+    {
+      "artist": "The Pharcyde",
+      "track": "Passin' Me By",
+      "album": "Bizarre Ride II The Pharcyde",
+      "version": "studio"
+    },
+    {
+      "artist": "Alicia Keys",
+      "track": "Fallin'",
+      "album": "Songs In A Minor",
+      "version": "studio"
+    },
+    {
+      "artist": "Nathaniel Rateliff & The Night Sweats",
+      "track": "You Worry Me",
+      "album": "You Worry Me",
+      "version": "studio"
+    },
+    {
+      "artist": "Phoenix",
+      "track": "If I Ever Feel Better",
+      "album": "United",
+      "version": "studio"
+    },
+    {
+      "artist": "Empire Of The Sun",
+      "track": "Standing On The Shore",
+      "album": "Walking On A Dream",
+      "version": "studio"
+    },
+    {
+      "artist": "N.W.A.",
+      "track": "Straight Outta Compton",
+      "album": "Straight Outta Compton",
+      "version": "studio"
+    },
+    {
+      "artist": "Marvin Gaye",
+      "track": "Piece Of Clay - The Master Version",
+      "album": "The Master 1961-1984",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "I Wanna Be Where You Are",
+      "album": "Got To Be There",
+      "version": "studio"
+    },
+    {
+      "artist": "Lee Fields & The Expressions",
+      "track": "Ladies",
+      "album": "My World",
+      "version": "studio"
+    },
+    {
+      "artist": "Wanda Jackson",
+      "track": "Funnel of Love",
+      "album": "Heart Trouble",
+      "version": "studio"
+    },
+    {
+      "artist": "James Blake",
+      "track": "The Wilhelm Scream",
+      "album": "James Blake",
+      "version": "studio"
+    },
+    {
+      "artist": "Paco de Luc\u00eda",
+      "track": "Monasterio De Sal - Instrumental",
+      "album": "Entre Dos Aguas",
+      "version": "studio"
+    },
+    {
+      "artist": "B\u00d8RNS",
+      "track": "10,000 Emerald Pools",
+      "album": "Dopamine",
+      "version": "studio"
+    },
+    {
+      "artist": "Welshly Arms",
+      "track": "Sanctuary",
+      "album": "No Place Is Home",
+      "version": "studio"
+    },
+    {
+      "artist": "The Deele",
+      "track": "Body Talk",
+      "album": "The Deele: Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Roger",
+      "track": "I Want to Be Your Man",
+      "album": "All the Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Nicolas Jaar",
+      "track": "Mi Mujer",
+      "album": "Time for Us",
+      "version": "studio"
+    },
+    {
+      "artist": "Nicolas Jaar",
+      "track": "Space Is Only Noise If You Can See",
+      "album": "Space Is Only Noise",
+      "version": "studio"
+    },
+    {
+      "artist": "Stephen Marley",
+      "track": "You're Gonna Leave - Acoustic Version",
+      "album": "Mind Control (Acoustic)",
+      "version": "studio"
+    },
+    {
+      "artist": "Stephen Marley",
+      "track": "Chase Dem - Main",
+      "album": "Mind Control",
+      "version": "studio"
+    },
+    {
+      "artist": "Lisa Lisa & Cult Jam",
+      "track": "I Wonder If I Take You Home (with Full Force) - Full Force Remix",
+      "album": "Lisa Lisa and Cult Jam with Full Force (Expanded Edition) (with Full Force)",
+      "version": "remix"
+    },
+    {
+      "artist": "MGMT",
+      "track": "Electric Feel",
+      "album": "Oracular Spectacular",
+      "version": "studio"
+    },
+    {
+      "artist": "Clumsy Boy",
+      "track": "You Got Me Going Crazy",
+      "album": "Southland Love Jams Vol. 2",
+      "version": "studio"
+    },
+    {
+      "artist": "The Midnight Hour",
+      "track": "Mission",
+      "album": "The Midnight Hour",
+      "version": "studio"
+    },
+    {
+      "artist": "Rakim",
+      "track": "King's Paradise",
+      "album": "Luke Cage: Season 2",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Kiwanuka",
+      "track": "Cold Little Heart - Radio Edit",
+      "album": "Cold Little Heart (Radio Edit)",
+      "version": "studio"
+    },
+    {
+      "artist": "Alabama",
+      "track": "Take Me Down",
+      "album": "Ultimate Alabama 20 # 1 Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Do I Do - Single Version",
+      "album": "The Definitive Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Rookie Season",
+      "track": "Got a Feelin'",
+      "album": "The Collide",
+      "version": "studio"
+    },
+    {
+      "artist": "Portugal. The Man",
+      "track": "Feel It Still",
+      "album": "Woodstock",
+      "version": "studio"
+    },
+    {
+      "artist": "Class Actress",
+      "track": "Journal of Ardency",
+      "album": "Journal of Ardency",
+      "version": "studio"
+    },
+    {
+      "artist": "Dylan LeBlanc",
+      "track": "Cautionary Tale",
+      "album": "Cautionary Tale",
+      "version": "studio"
+    },
+    {
+      "artist": "Marcy Playground",
+      "track": "Saint Joe On The School Bus",
+      "album": "Marcy Playground",
+      "version": "studio"
+    },
+    {
+      "artist": "William S. Burroughs / Bill Laswell",
+      "track": "Seven Souls",
+      "album": "The Road To The Western Lands",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Love Comes Tumbling",
+      "album": "Wide Awake In America",
+      "version": "studio"
+    },
+    {
+      "artist": "John Cooper Clarke",
+      "track": "Evidently Chickentown",
+      "album": "Snap, Crackle & Bop",
+      "version": "studio"
+    },
+    {
+      "artist": "Quincy Jones",
+      "track": "Summer In The City",
+      "album": "Quincy: A Life Beyond Measure (Music From The Netflix Original Documentary)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Brothers Johnson",
+      "track": "Stomp! - Single Version",
+      "album": "Strawberry Letter 23: The Very Best Of The Brothers Johnson",
+      "version": "compilation"
+    },
+    {
+      "artist": "Jos\u00e9 Gonz\u00e1lez",
+      "track": "Leaf Off / The Cave",
+      "album": "Vestiges & Claws",
+      "version": "studio"
+    },
+    {
+      "artist": "Marc Cohn",
+      "track": "Walking in Memphis",
+      "album": "Marc Cohn",
+      "version": "studio"
+    },
+    {
+      "artist": "Jack White",
+      "track": "Blunderbuss",
+      "album": "Blunderbuss",
+      "version": "studio"
+    },
+    {
+      "artist": "Sister Sparrow",
+      "track": "Gold",
+      "album": "Gold",
+      "version": "studio"
+    },
+    {
+      "artist": "Neil Finn",
+      "track": "Weather With You",
+      "album": "7 Worlds Collide",
+      "version": "studio"
+    },
+    {
+      "artist": "Ministry",
+      "track": "Jesus Built My Hotrod - Red Line / White Line Version",
+      "album": "Box",
+      "version": "studio"
+    },
+    {
+      "artist": "Death Cab for Cutie",
+      "track": "I Will Possess Your Heart",
+      "album": "Narrow Stairs",
+      "version": "studio"
+    },
+    {
+      "artist": "Lee DeWyze",
+      "track": "Blackbird Song - From \"The Walking Dead\"",
+      "album": "Blackbird Song",
+      "version": "studio"
+    },
+    {
+      "artist": "Pearl Jam",
+      "track": "Present Tense",
+      "album": "No Code",
+      "version": "studio"
+    }
+  ]
+}

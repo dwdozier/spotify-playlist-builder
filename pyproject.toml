@@ -40,7 +40,7 @@ dev = [
 ]
 
 [project.scripts]
-spotify-playlist-builder = "spotify_playlist_builder:app"
+spotify-playlist-builder = "spotify_playlist_builder.main:app"
 
 [project.urls]
 Homepage = "https://github.com/dwdozier/spotify-playlist-builder"

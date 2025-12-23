@@ -1,0 +1,283 @@
+{
+  "name": "FolkRockJam",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "Allman Brothers Band",
+      "track": "Whipping Post",
+      "album": "The Best Of The Allman Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Allman Brothers Band",
+      "track": "Dreams",
+      "album": "The Best Of The Allman Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Allman Brothers Band",
+      "track": "Revival",
+      "album": "The Best Of The Allman Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Allman Brothers Band",
+      "track": "Midnight Rider",
+      "album": "The Best Of The Allman Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Allman Brothers Band",
+      "track": "Hot 'Lanta - Live At The Fillmore East/1971",
+      "album": "The Best Of The Allman Brothers 20th Century Masters The Millennium Collection",
+      "version": "live"
+    },
+    {
+      "artist": "Allman Brothers Band",
+      "track": "Melissa",
+      "album": "The Best Of The Allman Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Allman Brothers Band",
+      "track": "Stand Back",
+      "album": "The Best Of The Allman Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Allman Brothers Band",
+      "track": "Blue Sky",
+      "album": "The Best Of The Allman Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Allman Brothers Band",
+      "track": "Ramblin' Man",
+      "album": "The Best Of The Allman Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Allman Brothers Band",
+      "track": "Jessica - Unedited Version",
+      "album": "The Best Of The Allman Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Allman Brothers Band",
+      "track": "Crazy Love",
+      "album": "The Best Of The Allman Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Crosby, Stills, Nash & Young",
+      "track": "Our House",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Crosby, Stills, Nash & Young",
+      "track": "Teach Your Children",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Crosby, Stills, Nash & Young",
+      "track": "Carry On",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Crosby, Stills, Nash & Young",
+      "track": "Ohio - Single Version",
+      "album": "Neil Young Archives Vol. I (1963 - 1972)",
+      "version": "studio"
+    },
+    {
+      "artist": "Crosby, Stills & Nash",
+      "track": "Helplessly Hoping",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Crosby, Stills & Nash",
+      "track": "Southern Cross",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Crosby, Stills & Nash",
+      "track": "Suite: Judy Blue Eyes",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Crosby, Stills & Nash",
+      "track": "Marrakesh Express",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Crosby, Stills & Nash",
+      "track": "Dark Star",
+      "album": "CSN",
+      "version": "studio"
+    },
+    {
+      "artist": "Crosby, Stills & Nash",
+      "track": "Just a Song Before I Go",
+      "album": "CSN",
+      "version": "studio"
+    },
+    {
+      "artist": "The Byrds",
+      "track": "Mr. Tambourine Man",
+      "album": "There Is A Season",
+      "version": "studio"
+    },
+    {
+      "artist": "The Byrds",
+      "track": "Turn! Turn! Turn! (To Everything There Is a Season)",
+      "album": "There Is A Season",
+      "version": "studio"
+    },
+    {
+      "artist": "Grateful Dead",
+      "track": "Casey Jones - 2001 Remaster",
+      "album": "The Very Best of the Grateful Dead",
+      "version": "compilation"
+    },
+    {
+      "artist": "The Bootleggers",
+      "track": "Fire in the Blood / Snake Song (feat. Emmylou Harris & Ralph Stanley)",
+      "album": "Lawless",
+      "version": "studio"
+    },
+    {
+      "artist": "Bob Dylan",
+      "track": "Hurricane",
+      "album": "Desire",
+      "version": "studio"
+    },
+    {
+      "artist": "Bob Dylan",
+      "track": "Lay, Lady, Lay",
+      "album": "Nashville Skyline",
+      "version": "studio"
+    },
+    {
+      "artist": "Bob Dylan",
+      "track": "Blowin' in the Wind",
+      "album": "The Freewheelin' Bob Dylan",
+      "version": "studio"
+    },
+    {
+      "artist": "Bob Dylan",
+      "track": "The Times They Are A-Changin'",
+      "album": "The Times They Are A-Changin'",
+      "version": "studio"
+    },
+    {
+      "artist": "Bob Dylan",
+      "track": "Like a Rolling Stone",
+      "album": "Highway 61 Revisited",
+      "version": "studio"
+    },
+    {
+      "artist": "Bob Dylan",
+      "track": "Subterranean Homesick Blues",
+      "album": "Bringing It All Back Home",
+      "version": "studio"
+    },
+    {
+      "artist": "Bob Dylan",
+      "track": "Maggie's Farm",
+      "album": "Bringing It All Back Home",
+      "version": "studio"
+    },
+    {
+      "artist": "Bob Dylan",
+      "track": "Mr. Tambourine Man",
+      "album": "Bringing It All Back Home",
+      "version": "studio"
+    },
+    {
+      "artist": "Bob Dylan",
+      "track": "Stuck Inside of Mobile with the Memphis Blues Again",
+      "album": "Blonde On Blonde",
+      "version": "studio"
+    },
+    {
+      "artist": "Bob Dylan",
+      "track": "All Along the Watchtower",
+      "album": "John Wesley Harding",
+      "version": "studio"
+    },
+    {
+      "artist": "Bob Dylan",
+      "track": "Girl from the North Country",
+      "album": "Nashville Skyline",
+      "version": "studio"
+    },
+    {
+      "artist": "Bob Dylan",
+      "track": "Knockin' On Heaven's Door",
+      "album": "Pat Garrett & Billy The Kid (Soundtrack From The Motion Picture)",
+      "version": "studio"
+    },
+    {
+      "artist": "Bob Dylan",
+      "track": "Mr. Bojangles",
+      "album": "Dylan (1973)",
+      "version": "studio"
+    },
+    {
+      "artist": "Bob Dylan",
+      "track": "Tangled up in Blue",
+      "album": "Blood On The Tracks",
+      "version": "studio"
+    },
+    {
+      "artist": "Bob Dylan",
+      "track": "Slow Train - Live at Sullivan Stadium, Foxborough, MA - July 1987",
+      "album": "Dylan & The Dead (Live)",
+      "version": "live"
+    },
+    {
+      "artist": "Bob Dylan",
+      "track": "I Want You - Live at Oakland Coliseum, Oakland, CA - July 1987",
+      "album": "Dylan & The Dead (Live)",
+      "version": "live"
+    },
+    {
+      "artist": "Bob Dylan",
+      "track": "Gotta Serve Somebody - Live at Anaheim Stadium, Anaheim, CA - July 1987",
+      "album": "Dylan & The Dead (Live)",
+      "version": "live"
+    },
+    {
+      "artist": "Bob Dylan",
+      "track": "Queen Jane Approximately - Live at Autzen Stadium, Eugne, OR - July 1987",
+      "album": "Dylan & The Dead (Live)",
+      "version": "live"
+    },
+    {
+      "artist": "Bob Dylan",
+      "track": "Joey - Live at Sullivan Stadium, Foxborough, MA - July 1987",
+      "album": "Dylan & The Dead (Live)",
+      "version": "live"
+    },
+    {
+      "artist": "Bob Dylan",
+      "track": "All Along the Watchtower - Live at Anaheim Stadium, Anaheim, CA - July 1987",
+      "album": "Dylan & The Dead (Live)",
+      "version": "live"
+    },
+    {
+      "artist": "Bob Dylan",
+      "track": "Knockin' on Heaven's Door - Live at Anaheim Stadium, Anaheim, CA - July 1987",
+      "album": "Dylan & The Dead (Live)",
+      "version": "live"
+    }
+  ]
+}

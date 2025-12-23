@@ -1,0 +1,781 @@
+{
+  "name": "90's alt/Pop",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "CAKE",
+      "track": "The Distance",
+      "album": "Fashion Nugget",
+      "version": "studio"
+    },
+    {
+      "artist": "CAKE",
+      "track": "Never There",
+      "album": "Prolonging the Magic",
+      "version": "studio"
+    },
+    {
+      "artist": "CAKE",
+      "track": "The Guitar Man",
+      "album": "Pressure Chief",
+      "version": "studio"
+    },
+    {
+      "artist": "The Cardigans",
+      "track": "Lovefool - Radio Edit",
+      "album": "First Band On The Moon",
+      "version": "studio"
+    },
+    {
+      "artist": "Radiohead",
+      "track": "Paranoid Android",
+      "album": "OK Computer (Collector's Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "CAKE",
+      "track": "Mahna Mahna",
+      "album": "For The Kids",
+      "version": "studio"
+    },
+    {
+      "artist": "Sublime",
+      "track": "Santeria",
+      "album": "Sublime Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sublime",
+      "track": "What I Got",
+      "album": "Sublime Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Radiohead",
+      "track": "Karma Police",
+      "album": "OK Computer",
+      "version": "studio"
+    },
+    {
+      "artist": "Radiohead",
+      "track": "Creep",
+      "album": "Pablo Honey (Collector's Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Nine Inch Nails",
+      "track": "Head Like a Hole",
+      "album": "Pretty Hate Machine [2010 Remaster]",
+      "version": "remaster"
+    },
+    {
+      "artist": "Nine Inch Nails",
+      "track": "Closer",
+      "album": "The Downward Spiral",
+      "version": "studio"
+    },
+    {
+      "artist": "Nine Inch Nails",
+      "track": "Hurt",
+      "album": "The Downward Spiral",
+      "version": "studio"
+    },
+    {
+      "artist": "Rage Against The Machine",
+      "track": "Killing In the Name",
+      "album": "Rage Against The Machine",
+      "version": "studio"
+    },
+    {
+      "artist": "Jane's Addiction",
+      "track": "Been Caught Stealing",
+      "album": "Ritual De Lo Habitual",
+      "version": "studio"
+    },
+    {
+      "artist": "Jane's Addiction",
+      "track": "Stop!",
+      "album": "Ritual De Lo Habitual",
+      "version": "studio"
+    },
+    {
+      "artist": "Jane's Addiction",
+      "track": "Mountain Song",
+      "album": "Nothing's Shocking",
+      "version": "studio"
+    },
+    {
+      "artist": "Jane's Addiction",
+      "track": "Jane Says",
+      "album": "Nothing's Shocking",
+      "version": "studio"
+    },
+    {
+      "artist": "Alice In Chains",
+      "track": "Them Bones (2022 Remaster)",
+      "album": "Dirt (2022 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Alice In Chains",
+      "track": "Dam That River (2022 Remaster)",
+      "album": "Dirt (2022 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Alice In Chains",
+      "track": "Rain When I Die (2022 Remaster)",
+      "album": "Dirt (2022 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Alice In Chains",
+      "track": "Down In A Hole (2022 Remaster)",
+      "album": "Dirt (2022 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Alice In Chains",
+      "track": "Sickman (2022 Remaster)",
+      "album": "Dirt (2022 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Alice In Chains",
+      "track": "Rooster (2022 Remaster)",
+      "album": "Dirt (2022 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Alice In Chains",
+      "track": "Junkhead (2022 Remaster)",
+      "album": "Dirt (2022 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Alice In Chains",
+      "track": "Dirt (2022 Remaster)",
+      "album": "Dirt (2022 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Alice In Chains",
+      "track": "God Smack (2022 Remaster)",
+      "album": "Dirt (2022 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Alice In Chains",
+      "track": "Untitled (2022 Remaster)",
+      "album": "Dirt (2022 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Alice In Chains",
+      "track": "Hate To Feel (2022 Remaster)",
+      "album": "Dirt (2022 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Alice In Chains",
+      "track": "Angry Chair (2022 Remaster)",
+      "album": "Dirt (2022 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Alice In Chains",
+      "track": "Would? (2022 Remaster)",
+      "album": "Dirt (2022 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Alice In Chains",
+      "track": "Man in the Box",
+      "album": "The Essential Alice In Chains",
+      "version": "studio"
+    },
+    {
+      "artist": "Soundgarden",
+      "track": "Jesus Christ Pose",
+      "album": "Badmotorfinger",
+      "version": "studio"
+    },
+    {
+      "artist": "Soundgarden",
+      "track": "Rusty Cage",
+      "album": "Badmotorfinger",
+      "version": "studio"
+    },
+    {
+      "artist": "Soundgarden",
+      "track": "Outshined",
+      "album": "Badmotorfinger",
+      "version": "studio"
+    },
+    {
+      "artist": "Soundgarden",
+      "track": "Fell On Black Days",
+      "album": "Superunknown",
+      "version": "studio"
+    },
+    {
+      "artist": "Soundgarden",
+      "track": "Black Hole Sun",
+      "album": "Superunknown",
+      "version": "studio"
+    },
+    {
+      "artist": "Soundgarden",
+      "track": "Spoonman",
+      "album": "Superunknown",
+      "version": "studio"
+    },
+    {
+      "artist": "Korn",
+      "track": "Freak On a Leash",
+      "album": "Follow The Leader",
+      "version": "studio"
+    },
+    {
+      "artist": "Korn",
+      "track": "Got the Life",
+      "album": "Follow The Leader",
+      "version": "studio"
+    },
+    {
+      "artist": "Filter",
+      "track": "Hey Man Nice Shot - 2009 Remastered Version",
+      "album": "The Very Best Things [1995-2008]",
+      "version": "remaster"
+    },
+    {
+      "artist": "Spacehog",
+      "track": "In the Meantime",
+      "album": "Resident Alien",
+      "version": "studio"
+    },
+    {
+      "artist": "Candlebox",
+      "track": "Don't You",
+      "album": "Candlebox",
+      "version": "studio"
+    },
+    {
+      "artist": "Candlebox",
+      "track": "Change",
+      "album": "Love Stories & Other Musings",
+      "version": "studio"
+    },
+    {
+      "artist": "Candlebox",
+      "track": "Far Behind",
+      "album": "Candlebox",
+      "version": "studio"
+    },
+    {
+      "artist": "Candlebox",
+      "track": "Cover Me",
+      "album": "Candlebox",
+      "version": "studio"
+    },
+    {
+      "artist": "Candlebox",
+      "track": "No Sense",
+      "album": "Candlebox",
+      "version": "studio"
+    },
+    {
+      "artist": "Toadies",
+      "track": "Possum Kingdom",
+      "album": "Rubberneck",
+      "version": "studio"
+    },
+    {
+      "artist": "Pearl Jam",
+      "track": "Once",
+      "album": "Ten",
+      "version": "studio"
+    },
+    {
+      "artist": "Pearl Jam",
+      "track": "Even Flow",
+      "album": "Ten",
+      "version": "studio"
+    },
+    {
+      "artist": "Pearl Jam",
+      "track": "Alive",
+      "album": "Ten",
+      "version": "live"
+    },
+    {
+      "artist": "Pearl Jam",
+      "track": "Why Go",
+      "album": "Ten",
+      "version": "studio"
+    },
+    {
+      "artist": "Pearl Jam",
+      "track": "Black",
+      "album": "Ten",
+      "version": "studio"
+    },
+    {
+      "artist": "Pearl Jam",
+      "track": "Jeremy",
+      "album": "Ten",
+      "version": "studio"
+    },
+    {
+      "artist": "Pearl Jam",
+      "track": "Oceans",
+      "album": "Ten",
+      "version": "studio"
+    },
+    {
+      "artist": "Pearl Jam",
+      "track": "Porch",
+      "album": "Ten",
+      "version": "studio"
+    },
+    {
+      "artist": "Pearl Jam",
+      "track": "Garden",
+      "album": "Ten",
+      "version": "studio"
+    },
+    {
+      "artist": "Pearl Jam",
+      "track": "Deep",
+      "album": "Ten",
+      "version": "studio"
+    },
+    {
+      "artist": "Pearl Jam",
+      "track": "Release",
+      "album": "Ten",
+      "version": "studio"
+    },
+    {
+      "artist": "Pearl Jam",
+      "track": "Master/Slave",
+      "album": "Ten",
+      "version": "studio"
+    },
+    {
+      "artist": "Bic Runga",
+      "track": "Sway",
+      "album": "Drive",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Crucify",
+      "album": "Little Earthquakes",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Girl",
+      "album": "Little Earthquakes",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Silent All These Years",
+      "album": "Little Earthquakes",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Precious Things",
+      "album": "Little Earthquakes",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Winter",
+      "album": "Little Earthquakes",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Happy Phantom",
+      "album": "Little Earthquakes",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "China",
+      "album": "Little Earthquakes",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Leather",
+      "album": "Little Earthquakes",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Mother",
+      "album": "Little Earthquakes",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Tear in Your Hand",
+      "album": "Little Earthquakes",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Me and a Gun",
+      "album": "Little Earthquakes",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Little Earthquakes",
+      "album": "Little Earthquakes",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Cornflake Girl",
+      "album": "Under the Pink",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Beauty Queen/Horses",
+      "album": "Boys For Pele",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Blood Roses",
+      "album": "Boys For Pele",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Father Lucifer",
+      "album": "Boys For Pele",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Professional Widow",
+      "album": "Boys For Pele",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Professional Widow - Armand Van Helden's Star Trunk Mix",
+      "album": "Boys For Pele",
+      "version": "remix"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Mr. Zebra",
+      "album": "Boys For Pele",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Marianne",
+      "album": "Boys For Pele",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Caught A Lite Sneeze",
+      "album": "Boys For Pele",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Muhammad My Friend",
+      "album": "Boys For Pele",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Hey Jupiter",
+      "album": "Boys For Pele",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Way Down",
+      "album": "Boys For Pele",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Little Amsterdam",
+      "album": "Boys For Pele",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Talula - The Tornado Mix",
+      "album": "Boys For Pele",
+      "version": "remix"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Not The Red Baron",
+      "album": "Boys For Pele",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Agent Orange",
+      "album": "Boys For Pele",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Doughnut Song",
+      "album": "Boys For Pele",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Putting The Damage On",
+      "album": "Boys For Pele",
+      "version": "studio"
+    },
+    {
+      "artist": "Tori Amos",
+      "track": "Twinkle",
+      "album": "Boys For Pele",
+      "version": "studio"
+    },
+    {
+      "artist": "The Cranberries",
+      "track": "Linger",
+      "album": "Everybody Else Is Doing It, So Why Can't We?",
+      "version": "studio"
+    },
+    {
+      "artist": "The Cranberries",
+      "track": "Zombie",
+      "album": "No Need To Argue",
+      "version": "studio"
+    },
+    {
+      "artist": "Garbage",
+      "track": "I Think I'm Paranoid",
+      "album": "Version 2.0",
+      "version": "studio"
+    },
+    {
+      "artist": "Garbage",
+      "track": "Push It",
+      "album": "Version 2.0",
+      "version": "studio"
+    },
+    {
+      "artist": "Garbage",
+      "track": "The World Is Not Enough",
+      "album": "The World Is Not Enough (Original Soundtrack)",
+      "version": "studio"
+    },
+    {
+      "artist": "Garbage",
+      "track": "Special",
+      "album": "Absolute Garbage (Special Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Garbage",
+      "track": "#1 Crush",
+      "album": "Absolute Garbage (Special Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Garbage",
+      "track": "Stupid Girl - Remastered 2015",
+      "album": "Absolute Garbage",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Breeders",
+      "track": "Cannonball",
+      "album": "Last Splash",
+      "version": "studio"
+    },
+    {
+      "artist": "Veruca Salt",
+      "track": "Seether",
+      "album": "American Thighs",
+      "version": "studio"
+    },
+    {
+      "artist": "Porno for Pyros",
+      "track": "Pets",
+      "album": "Rhino Hi-Five: Porno For Pyros",
+      "version": "studio"
+    },
+    {
+      "artist": "Stabbing Westward",
+      "track": "Save Yourself",
+      "album": "The Essential Stabbing Westward",
+      "version": "studio"
+    },
+    {
+      "artist": "Primus",
+      "track": "Pork Chop's Little Ditty - Edit Version",
+      "album": "Pork Soda",
+      "version": "studio"
+    },
+    {
+      "artist": "Primus",
+      "track": "My Name Is Mud",
+      "album": "Pork Soda",
+      "version": "studio"
+    },
+    {
+      "artist": "Primus",
+      "track": "Welcome To This World",
+      "album": "Pork Soda",
+      "version": "studio"
+    },
+    {
+      "artist": "Primus",
+      "track": "Bob",
+      "album": "Pork Soda",
+      "version": "studio"
+    },
+    {
+      "artist": "Primus",
+      "track": "DMV",
+      "album": "Pork Soda",
+      "version": "studio"
+    },
+    {
+      "artist": "Primus",
+      "track": "The Ol' Diamondback Sturgeon (Fisherman's Chronicles, Part 3)",
+      "album": "Pork Soda",
+      "version": "studio"
+    },
+    {
+      "artist": "Primus",
+      "track": "Nature Boy",
+      "album": "Pork Soda",
+      "version": "studio"
+    },
+    {
+      "artist": "Primus",
+      "track": "Wounded Knee",
+      "album": "Pork Soda",
+      "version": "studio"
+    },
+    {
+      "artist": "Primus",
+      "track": "Pork Soda",
+      "album": "Pork Soda",
+      "version": "studio"
+    },
+    {
+      "artist": "Primus",
+      "track": "The Pressman",
+      "album": "Pork Soda",
+      "version": "studio"
+    },
+    {
+      "artist": "Primus",
+      "track": "Mr. Krinkle",
+      "album": "Pork Soda",
+      "version": "studio"
+    },
+    {
+      "artist": "Primus",
+      "track": "The Air Is Getting Slippery",
+      "album": "Pork Soda",
+      "version": "studio"
+    },
+    {
+      "artist": "Primus",
+      "track": "Hamburger Train",
+      "album": "Pork Soda",
+      "version": "studio"
+    },
+    {
+      "artist": "Primus",
+      "track": "Pork Chop's Little Ditty",
+      "album": "Pork Soda",
+      "version": "studio"
+    },
+    {
+      "artist": "Primus",
+      "track": "Hail Santa",
+      "album": "Pork Soda",
+      "version": "studio"
+    },
+    {
+      "artist": "Primus",
+      "track": "Jerry Was A Race Car Driver",
+      "album": "Sailing The Seas Of Cheese",
+      "version": "studio"
+    },
+    {
+      "artist": "The Presidents Of The United States Of America",
+      "track": "Peaches",
+      "album": "The Presidents of The United States of America: Ten Year Super Bonus Special Anniversary Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "The Presidents Of The United States Of America",
+      "track": "Lump",
+      "album": "The Presidents of The United States of America: Ten Year Super Bonus Special Anniversary Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "The Presidents Of The United States Of America",
+      "track": "Video Killed The Radio Star",
+      "album": "Pure Frosting",
+      "version": "studio"
+    },
+    {
+      "artist": "The Presidents Of The United States Of America",
+      "track": "Kitty",
+      "album": "The Presidents of The United States of America: Ten Year Super Bonus Special Anniversary Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Marcy Playground",
+      "track": "Sex & Candy",
+      "album": "Marcy Playground",
+      "version": "studio"
+    },
+    {
+      "artist": "Matthew Sweet",
+      "track": "Girlfriend",
+      "album": "Girlfriend (Legacy Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Matthew Sweet",
+      "track": "Sick of Myself",
+      "album": "100 % Fun",
+      "version": "studio"
+    },
+    {
+      "artist": "Primitive Radio Gods",
+      "track": "Standing Outside a Broken Phone Booth with Money in My Hand",
+      "album": "Rocket",
+      "version": "studio"
+    },
+    {
+      "artist": "Temple Of The Dog",
+      "track": "Hunger Strike",
+      "album": "Temple Of The Dog",
+      "version": "studio"
+    }
+  ]
+}

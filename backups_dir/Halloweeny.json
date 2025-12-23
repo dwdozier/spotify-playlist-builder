@@ -1,0 +1,73 @@
+{
+  "name": "Halloweeny",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "Halloween",
+      "track": "Theme From Doom",
+      "album": "Halloween",
+      "version": "studio"
+    },
+    {
+      "artist": "Halloween",
+      "track": "Theme From Halo",
+      "album": "Halloween",
+      "version": "studio"
+    },
+    {
+      "artist": "Halloween",
+      "track": "Scary Music",
+      "album": "Halloween Music",
+      "version": "studio"
+    },
+    {
+      "artist": "Halloween",
+      "track": "Theme From Beetlejuice",
+      "album": "Halloween",
+      "version": "studio"
+    },
+    {
+      "artist": "Halloween",
+      "track": "Halloween",
+      "album": "Halloween Songs",
+      "version": "studio"
+    },
+    {
+      "artist": "Halloween",
+      "track": "The Night Has Come",
+      "album": "Halloween Songs",
+      "version": "studio"
+    },
+    {
+      "artist": "Halloween",
+      "track": "Haunted House Sounds",
+      "album": "Halloween Songs",
+      "version": "studio"
+    },
+    {
+      "artist": "Halloween",
+      "track": "Haunted Organ: Spooky Music",
+      "album": "Halloween Songs",
+      "version": "studio"
+    },
+    {
+      "artist": "Halloween",
+      "track": "Halloween Trick or Treats 13",
+      "album": "Halloween Songs",
+      "version": "studio"
+    },
+    {
+      "artist": "Movie Sounds Unlimited",
+      "track": "Theme From Halloween",
+      "album": "50 Best of Movie Themes",
+      "version": "compilation"
+    },
+    {
+      "artist": "China Anne McClain",
+      "track": "Calling All the Monsters",
+      "album": "Calling All the Monsters",
+      "version": "studio"
+    }
+  ]
+}

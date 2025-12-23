@@ -1,0 +1,139 @@
+{
+  "name": "Dream Academy",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "The Dream Academy",
+      "track": "Indian Summer",
+      "album": "Remembrance Days",
+      "version": "studio"
+    },
+    {
+      "artist": "The Dream Academy",
+      "track": "The Lesson of Love",
+      "album": "Remembrance Days",
+      "version": "studio"
+    },
+    {
+      "artist": "The Dream Academy",
+      "track": "Humdrum",
+      "album": "Remembrance Days",
+      "version": "studio"
+    },
+    {
+      "artist": "The Dream Academy",
+      "track": "Power to Believe",
+      "album": "Remembrance Days",
+      "version": "studio"
+    },
+    {
+      "artist": "The Dream Academy",
+      "track": "Hampstead Girl",
+      "album": "Remembrance Days",
+      "version": "studio"
+    },
+    {
+      "artist": "The Dream Academy",
+      "track": "Here",
+      "album": "Remembrance Days",
+      "version": "studio"
+    },
+    {
+      "artist": "The Dream Academy",
+      "track": "In the Hands of Love",
+      "album": "Remembrance Days",
+      "version": "studio"
+    },
+    {
+      "artist": "The Dream Academy",
+      "track": "Ballad in 4/4",
+      "album": "Remembrance Days",
+      "version": "studio"
+    },
+    {
+      "artist": "The Dream Academy",
+      "track": "Doubleminded",
+      "album": "Remembrance Days",
+      "version": "studio"
+    },
+    {
+      "artist": "The Dream Academy",
+      "track": "Everybody's Gotta Learn Sometime",
+      "album": "Remembrance Days",
+      "version": "studio"
+    },
+    {
+      "artist": "The Dream Academy",
+      "track": "In Exile (For Rodrigo Rojas)",
+      "album": "Remembrance Days",
+      "version": "studio"
+    },
+    {
+      "artist": "The Dream Academy",
+      "track": "Life in a Northern Town",
+      "album": "The Dream Academy",
+      "version": "studio"
+    },
+    {
+      "artist": "The Dream Academy",
+      "track": "The Edge of Forever",
+      "album": "The Dream Academy",
+      "version": "studio"
+    },
+    {
+      "artist": "The Dream Academy",
+      "track": "(Johnny) New Light",
+      "album": "The Dream Academy",
+      "version": "studio"
+    },
+    {
+      "artist": "The Dream Academy",
+      "track": "In Places on the Run",
+      "album": "The Dream Academy",
+      "version": "studio"
+    },
+    {
+      "artist": "The Dream Academy",
+      "track": "This World",
+      "album": "The Dream Academy",
+      "version": "studio"
+    },
+    {
+      "artist": "The Dream Academy",
+      "track": "Bound to Be",
+      "album": "The Dream Academy",
+      "version": "studio"
+    },
+    {
+      "artist": "The Dream Academy",
+      "track": "Moving On",
+      "album": "The Dream Academy",
+      "version": "studio"
+    },
+    {
+      "artist": "The Dream Academy",
+      "track": "The Love Parade",
+      "album": "The Dream Academy",
+      "version": "studio"
+    },
+    {
+      "artist": "The Dream Academy",
+      "track": "The Party",
+      "album": "The Dream Academy",
+      "version": "studio"
+    },
+    {
+      "artist": "The Dream Academy",
+      "track": "One Dream",
+      "album": "The Dream Academy",
+      "version": "studio"
+    },
+    {
+      "artist": "The Dream Academy",
+      "track": "Please, Please, Please Let Me Get What I Want",
+      "album": "The Morning Lasted All Day - A Retrospective",
+      "version": "studio"
+    }
+  ]
+}

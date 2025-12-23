@@ -1,0 +1,85 @@
+{
+  "name": "The Beach Boys \u2013 Pet Sounds",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "The Beach Boys",
+      "track": "Wouldn't It Be Nice",
+      "album": "Pet Sounds (Mono)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "You Still Believe In Me - Mono / Remastered 2012",
+      "album": "Pet Sounds (Mono)",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "That's Not Me",
+      "album": "Pet Sounds (Mono)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "Don't Talk (Put Your Head On My Shoulder)",
+      "album": "Pet Sounds (Mono)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "I'm Waiting For The Day",
+      "album": "Pet Sounds (Mono)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "Let's Go Away For Awhile",
+      "album": "Pet Sounds (Mono)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "Sloop John B",
+      "album": "Pet Sounds (Mono)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "God Only Knows",
+      "album": "Pet Sounds (Mono)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "I Know There's An Answer",
+      "album": "Pet Sounds (Mono)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "Here Today",
+      "album": "Pet Sounds (Mono)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "I Just Wasn't Made For These Times",
+      "album": "Pet Sounds (Mono)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "Pet Sounds",
+      "album": "Pet Sounds (Mono)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "Caroline, No",
+      "album": "Pet Sounds (Mono)",
+      "version": "studio"
+    }
+  ]
+}

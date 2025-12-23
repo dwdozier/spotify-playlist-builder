@@ -1,0 +1,1573 @@
+{
+  "name": "Easy Listening",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "Seals and Crofts",
+      "track": "Diamond Girl",
+      "album": "Seals & Crofts' Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Seals and Crofts",
+      "track": "Hummingbird",
+      "album": "Seals & Crofts' Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Seals and Crofts",
+      "track": "Summer Breeze",
+      "album": "Seals & Crofts' Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Seals and Crofts",
+      "track": "We May Never Pass This Way (Again)",
+      "album": "Seals & Crofts' Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Commodores",
+      "track": "Easy",
+      "album": "The Definitive Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Commodores",
+      "track": "Three Times A Lady",
+      "album": "The Definitive Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Commodores",
+      "track": "Still",
+      "album": "The Definitive Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Commodores",
+      "track": "Lady (You Bring Me Up)",
+      "album": "The Definitive Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Bee Gees",
+      "track": "Jive Talkin'",
+      "album": "Mythology",
+      "version": "studio"
+    },
+    {
+      "artist": "Bee Gees",
+      "track": "Tragedy",
+      "album": "Mythology",
+      "version": "studio"
+    },
+    {
+      "artist": "Bee Gees",
+      "track": "More Than A Woman",
+      "album": "Mythology",
+      "version": "studio"
+    },
+    {
+      "artist": "Bee Gees",
+      "track": "If I Can't Have You",
+      "album": "Mythology",
+      "version": "studio"
+    },
+    {
+      "artist": "Bee Gees",
+      "track": "How Deep Is Your Love",
+      "album": "Mythology",
+      "version": "studio"
+    },
+    {
+      "artist": "Bee Gees",
+      "track": "Stayin' Alive",
+      "album": "Mythology",
+      "version": "live"
+    },
+    {
+      "artist": "Bee Gees",
+      "track": "To Love Somebody",
+      "album": "Mythology",
+      "version": "studio"
+    },
+    {
+      "artist": "Bee Gees",
+      "track": "Too Much Heaven",
+      "album": "Mythology",
+      "version": "studio"
+    },
+    {
+      "artist": "Bee Gees",
+      "track": "Night Fever",
+      "album": "Mythology",
+      "version": "studio"
+    },
+    {
+      "artist": "Gerry Rafferty",
+      "track": "Baker Street",
+      "album": "City to City",
+      "version": "studio"
+    },
+    {
+      "artist": "Gerry Rafferty",
+      "track": "Right Down the Line",
+      "album": "City to City",
+      "version": "studio"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "You've Made Me So Very Happy",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "I Can't Quit Her",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "Go Down Gamblin' - Single Version",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "Hi-De-Ho That Old Sweet Roll - Single Version",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "Sometimes In Winter",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "And When I Die - Single Version",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "Spinning Wheel - Single Version",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "Lisa, Listen to Me",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "I Love You More Than You'll Ever Know",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "Lucretia Mac Evil",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "God Bless the Child",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "So Long Dixie",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "More and More - Single Version",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Roger Hodgson",
+      "track": "Had A Dream (Sleeping With The Enemy)",
+      "album": "In The Eye Of The Storm",
+      "version": "studio"
+    },
+    {
+      "artist": "Roger Hodgson",
+      "track": "Lovers In The Wind",
+      "album": "In The Eye Of The Storm",
+      "version": "studio"
+    },
+    {
+      "artist": "Roger Hodgson",
+      "track": "In Jeopardy",
+      "album": "In The Eye Of The Storm",
+      "version": "studio"
+    },
+    {
+      "artist": "The Manhattan Transfer",
+      "track": "Spice Of Life",
+      "album": "Bodies and Souls",
+      "version": "studio"
+    },
+    {
+      "artist": "The Manhattan Transfer",
+      "track": "This Independence",
+      "album": "Bodies and Souls",
+      "version": "studio"
+    },
+    {
+      "artist": "The Manhattan Transfer",
+      "track": "Mystery",
+      "album": "Bodies and Souls",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Your Love Is King - Remastered",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Smooth Operator - Remastered",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Hang on to Your Love - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "The Sweetest Taboo - Remastered",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Is It a Crime - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Never as Good as the First Time - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Jezebel - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Love Is Stronger Than Pride - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Paradise - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Nothing Can Come Between Us - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "No Ordinary Love - Remastered",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Kiss of Life - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Feel No Pain - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Bullet Proof Soul - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Cherish the Day - Remastered",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Pearls - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "By Your Side - Remastered",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Immigrant - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Flow - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "King of Sorrow - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "The Sweetest Gift - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Soldier of Love - Remastered",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "The Moon and the Sky - Remastered",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Babyfather - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Still In Love With You",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Love Is Found",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "I Would Never Have Guessed",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "The Moon and the Sky - Remix",
+      "album": "The Ultimate Collection",
+      "version": "remix"
+    },
+    {
+      "artist": "Sade",
+      "track": "By Your Side - Neptunes Remix - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "remix"
+    },
+    {
+      "artist": "Harold Faltermeyer",
+      "track": "Memories - From \"Top Gun\" Original Soundtrack",
+      "album": "Top Gun - Motion Picture Soundtrack (Special Expanded Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Glenn Frey",
+      "track": "You Belong To The City",
+      "album": "Solo Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Rod Stewart",
+      "track": "Maggie May",
+      "album": "Every Picture Tells A Story",
+      "version": "studio"
+    },
+    {
+      "artist": "Rod Stewart",
+      "track": "Tonight's the Night (Gonna Be Alright)",
+      "album": "A Night on the Town",
+      "version": "studio"
+    },
+    {
+      "artist": "Rod Stewart",
+      "track": "You're in My Heart (The Final Acclaim)",
+      "album": "Foot Loose & Fancy Free",
+      "version": "studio"
+    },
+    {
+      "artist": "Rod Stewart",
+      "track": "Passion",
+      "album": "Foolish Behaviour (Expanded Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Rod Stewart",
+      "track": "Young Turks",
+      "album": "Tonight I'm Yours (Expanded Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Rod Stewart",
+      "track": "Infatuation",
+      "album": "Camouflage",
+      "version": "studio"
+    },
+    {
+      "artist": "Elton John",
+      "track": "Don't Let The Sun Go Down On Me - Remastered 1995",
+      "album": "Caribou (Remastered 1995)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Elton John",
+      "track": "Philadelphia Freedom",
+      "album": "Captain Fantastic And The Brown Dirt Cowboy",
+      "version": "studio"
+    },
+    {
+      "artist": "Cowboy Junkies",
+      "track": "Sweet Jane",
+      "album": "The Trinity Session",
+      "version": "studio"
+    },
+    {
+      "artist": "k.d. lang",
+      "track": "Constant Craving - 2010 Remaster",
+      "album": "Recollection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Little Feat",
+      "track": "Dixie Chicken",
+      "album": "Dixie Chicken",
+      "version": "studio"
+    },
+    {
+      "artist": "Boz Scaggs",
+      "track": "Lido Shuffle",
+      "album": "Silk Degrees",
+      "version": "studio"
+    },
+    {
+      "artist": "Boz Scaggs",
+      "track": "What Can I Say",
+      "album": "Silk Degrees",
+      "version": "studio"
+    },
+    {
+      "artist": "Boz Scaggs",
+      "track": "Georgia",
+      "album": "Silk Degrees",
+      "version": "studio"
+    },
+    {
+      "artist": "Boz Scaggs",
+      "track": "Lowdown - Edit",
+      "album": "Silk Degrees",
+      "version": "studio"
+    },
+    {
+      "artist": "America",
+      "track": "A Horse With No Name",
+      "album": "Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "America",
+      "track": "I Need You",
+      "album": "Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "America",
+      "track": "Sandman",
+      "album": "Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "America",
+      "track": "Ventura Highway",
+      "album": "Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "America",
+      "track": "Tin Man",
+      "album": "Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "America",
+      "track": "Sister Golden Hair",
+      "album": "Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "Christopher Cross",
+      "track": "Never Be the Same",
+      "album": "Christopher Cross",
+      "version": "studio"
+    },
+    {
+      "artist": "Christopher Cross",
+      "track": "Ride Like the Wind",
+      "album": "Christopher Cross",
+      "version": "studio"
+    },
+    {
+      "artist": "Christopher Cross",
+      "track": "Sailing",
+      "album": "Christopher Cross",
+      "version": "studio"
+    },
+    {
+      "artist": "The 5th Dimension",
+      "track": "Up, Up and Away",
+      "album": "Up, Up And Away",
+      "version": "studio"
+    },
+    {
+      "artist": "The 5th Dimension",
+      "track": "Aquarius/Let the Sunshine In (The Flesh Failures) - Remastered",
+      "album": "Up-Up And Away: The Definitive Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "The Mamas & The Papas",
+      "track": "California Dreamin'",
+      "album": "All The Leaves Are Brown The Golden Era Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "The Mamas & The Papas",
+      "track": "Dream A Little Dream Of Me",
+      "album": "Creeque Alley - The History Of The Mamas And The Papas",
+      "version": "studio"
+    },
+    {
+      "artist": "The Mamas & The Papas",
+      "track": "Monday, Monday",
+      "album": "All The Leaves Are Brown The Golden Era Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "The Mamas & The Papas",
+      "track": "Dedicated To The One I Love",
+      "album": "Greatest Hits: The Mamas & The Papas",
+      "version": "compilation"
+    },
+    {
+      "artist": "Grateful Dead",
+      "track": "Scarlet Begonias",
+      "album": "From The Mars Hotel [Expanded]",
+      "version": "studio"
+    },
+    {
+      "artist": "Grateful Dead",
+      "track": "Truckin'",
+      "album": "What a Long Strange Trip It's Been: The Best of the Grateful Dead",
+      "version": "compilation"
+    },
+    {
+      "artist": "Grateful Dead",
+      "track": "Dark Star - Single Version",
+      "album": "What a Long Strange Trip It's Been: The Best of the Grateful Dead",
+      "version": "compilation"
+    },
+    {
+      "artist": "Grateful Dead",
+      "track": "Shakedown Street",
+      "album": "Shakedown Street [Expanded]",
+      "version": "studio"
+    },
+    {
+      "artist": "Grateful Dead",
+      "track": "Fire On The Mountain",
+      "album": "Shakedown Street [Expanded]",
+      "version": "studio"
+    },
+    {
+      "artist": "Grateful Dead",
+      "track": "Touch Of Grey",
+      "album": "In The Dark [Expanded]",
+      "version": "studio"
+    },
+    {
+      "artist": "Grateful Dead",
+      "track": "West L.A. Fadeaway",
+      "album": "In The Dark [Expanded]",
+      "version": "studio"
+    },
+    {
+      "artist": "Grateful Dead",
+      "track": "Throwing Stones",
+      "album": "In The Dark [Expanded]",
+      "version": "studio"
+    },
+    {
+      "artist": "P.M. Dawn",
+      "track": "Set Adrift On Memory Bliss - Radio Edit",
+      "album": "The Best Of P.M. Dawn",
+      "version": "compilation"
+    },
+    {
+      "artist": "P.M. Dawn",
+      "track": "Paper Doll",
+      "album": "The Best Of P.M. Dawn",
+      "version": "compilation"
+    },
+    {
+      "artist": "P.M. Dawn",
+      "track": "I'd Die Without You",
+      "album": "The Best Of P.M. Dawn",
+      "version": "compilation"
+    },
+    {
+      "artist": "P.M. Dawn",
+      "track": "Looking Through Patient Eyes",
+      "album": "The Best Of P.M. Dawn",
+      "version": "compilation"
+    },
+    {
+      "artist": "Digable Planets",
+      "track": "It's Good To Be Here",
+      "album": "Reachin' (A New Refutation Of Time And Space)",
+      "version": "studio"
+    },
+    {
+      "artist": "Digable Planets",
+      "track": "Rebirth Of Slick (Cool Like Dat)",
+      "album": "Reachin' (A New Refutation Of Time And Space)",
+      "version": "studio"
+    },
+    {
+      "artist": "Dr. Hook",
+      "track": "When You're In Love With A Beautiful Woman",
+      "album": "Dr. Hook - The Best Of",
+      "version": "compilation"
+    },
+    {
+      "artist": "Dr. Hook",
+      "track": "Only Sixteen",
+      "album": "Dr. Hook - The Best Of",
+      "version": "compilation"
+    },
+    {
+      "artist": "Dr. Hook",
+      "track": "Sexy Eyes - Single Version",
+      "album": "Dr. Hook - The Best Of",
+      "version": "compilation"
+    },
+    {
+      "artist": "Dr. Hook",
+      "track": "Sharing The Night Together",
+      "album": "Dr. Hook - The Best Of",
+      "version": "compilation"
+    },
+    {
+      "artist": "Jefferson Starship",
+      "track": "Miracles",
+      "album": "Red Octopus",
+      "version": "studio"
+    },
+    {
+      "artist": "Jefferson Starship",
+      "track": "Count on Me",
+      "album": "Earth",
+      "version": "studio"
+    },
+    {
+      "artist": "Jefferson Starship",
+      "track": "Runaway",
+      "album": "Earth",
+      "version": "studio"
+    },
+    {
+      "artist": "King Harvest",
+      "track": "Dancing in the Moonlight",
+      "album": "Dancing in the Moonlight",
+      "version": "studio"
+    },
+    {
+      "artist": "George Benson",
+      "track": "Give Me the Night",
+      "album": "The George Benson Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "George Benson",
+      "track": "Turn Your Love Around",
+      "album": "The George Benson Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "George Benson",
+      "track": "Breezin'",
+      "album": "Breezin'",
+      "version": "studio"
+    },
+    {
+      "artist": "Barry Manilow",
+      "track": "Somewhere In the Night",
+      "album": "Even Now",
+      "version": "studio"
+    },
+    {
+      "artist": "Barry Manilow",
+      "track": "Can't Smile Without You",
+      "album": "Even Now",
+      "version": "studio"
+    },
+    {
+      "artist": "Barry Manilow",
+      "track": "The Old Songs",
+      "album": "Greatest Hits Vol. 3",
+      "version": "compilation"
+    },
+    {
+      "artist": "Barry Manilow",
+      "track": "I Write the Songs",
+      "album": "Greatest Hits Vol. 2",
+      "version": "compilation"
+    },
+    {
+      "artist": "Barry Manilow",
+      "track": "Mandy",
+      "album": "Greatest Hits Vol. 1",
+      "version": "compilation"
+    },
+    {
+      "artist": "Barry Manilow",
+      "track": "Looks Like We Made It",
+      "album": "Greatest Hits Vol. 1",
+      "version": "compilation"
+    },
+    {
+      "artist": "Barry Manilow",
+      "track": "Can't Smile Without You",
+      "album": "Greatest Hits Vol. 1",
+      "version": "compilation"
+    },
+    {
+      "artist": "Neil Sedaka",
+      "track": "Laughter In The Rain",
+      "album": "The Definitive Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Neil Sedaka",
+      "track": "Bad Blood",
+      "album": "The Definitive Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Carpenters",
+      "track": "We've Only Just Begun",
+      "album": "Chronicles",
+      "version": "studio"
+    },
+    {
+      "artist": "Carpenters",
+      "track": "(They Long To Be) Close To You",
+      "album": "Chronicles",
+      "version": "studio"
+    },
+    {
+      "artist": "Carpenters",
+      "track": "I'll Never Fall In Love Again",
+      "album": "Chronicles",
+      "version": "studio"
+    },
+    {
+      "artist": "Carpenters",
+      "track": "Rainy Days And Mondays",
+      "album": "Chronicles",
+      "version": "studio"
+    },
+    {
+      "artist": "Carpenters",
+      "track": "Top Of The World",
+      "album": "Chronicles",
+      "version": "studio"
+    },
+    {
+      "artist": "Carpenters",
+      "track": "Hurting Each Other",
+      "album": "Chronicles",
+      "version": "studio"
+    },
+    {
+      "artist": "Carpenters",
+      "track": "Bless The Beasts And Children",
+      "album": "Chronicles",
+      "version": "studio"
+    },
+    {
+      "artist": "Leo Sayer",
+      "track": "You Make Me Feel Like Dancing - Remastered",
+      "album": "Very Best Of Leo Sayer",
+      "version": "compilation"
+    },
+    {
+      "artist": "Leo Sayer",
+      "track": "When I Need You - Remastered",
+      "album": "Very Best Of Leo Sayer",
+      "version": "compilation"
+    },
+    {
+      "artist": "Champaign",
+      "track": "How 'Bout Us",
+      "album": "'80s Pop Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "Poco",
+      "track": "Heart Of The Night",
+      "album": "20th Century Masters: The Millennium Collection: Best Of Poco",
+      "version": "compilation"
+    },
+    {
+      "artist": "Poco",
+      "track": "Crazy Love - Single Version",
+      "album": "20th Century Masters: The Millennium Collection: Best Of Poco",
+      "version": "compilation"
+    },
+    {
+      "artist": "Don McLean",
+      "track": "Vincent",
+      "album": "The Best Of Don McLean",
+      "version": "compilation"
+    },
+    {
+      "artist": "Don McLean",
+      "track": "Castles In The Air",
+      "album": "The Best Of Don McLean",
+      "version": "compilation"
+    },
+    {
+      "artist": "Don McLean",
+      "track": "Crying",
+      "album": "The Best Of Don McLean",
+      "version": "compilation"
+    },
+    {
+      "artist": "Johnny Lee",
+      "track": "Lookin' for Love (Rerecorded)",
+      "album": "Rare Country Hits - 20 Hard To Find Country Classics",
+      "version": "studio"
+    },
+    {
+      "artist": "Dave Matthews Band",
+      "track": "Jimi Thing",
+      "album": "Under The Table And Dreaming",
+      "version": "studio"
+    },
+    {
+      "artist": "Dave Matthews Band",
+      "track": "Ants Marching",
+      "album": "Under The Table And Dreaming",
+      "version": "studio"
+    },
+    {
+      "artist": "Dave Matthews Band",
+      "track": "What Would You Say",
+      "album": "Under The Table And Dreaming",
+      "version": "studio"
+    },
+    {
+      "artist": "Dave Matthews Band",
+      "track": "Tripping Billies",
+      "album": "Crash",
+      "version": "studio"
+    },
+    {
+      "artist": "Dave Matthews Band",
+      "track": "Crush",
+      "album": "Dave Matthews Band - The Best Of What's Around - Vol.1",
+      "version": "compilation"
+    },
+    {
+      "artist": "Benny Mardones",
+      "track": "Into The Night (Re-Recorded In Stereo)",
+      "album": "Benny Mardones",
+      "version": "studio"
+    },
+    {
+      "artist": "The Hollies",
+      "track": "He Ain't Heavy He's My Brother",
+      "album": "20 Golden Greats",
+      "version": "studio"
+    },
+    {
+      "artist": "The Hollies",
+      "track": "The Air That I Breathe - 2008 Remaster",
+      "album": "Hollies",
+      "version": "remaster"
+    },
+    {
+      "artist": "Scott McKenzie",
+      "track": "San Francisco (Be Sure to Wear Flowers in Your Hair)",
+      "album": "The Graduate - Music From The Broadway Comedy",
+      "version": "studio"
+    },
+    {
+      "artist": "The Lovin' Spoonful",
+      "track": "Daydream",
+      "album": "Playlist: The Very Best Of The Lovin' Spoonful",
+      "version": "compilation"
+    },
+    {
+      "artist": "The Lovin' Spoonful",
+      "track": "You Didn't Have To Be So Nice",
+      "album": "Playlist: The Very Best Of The Lovin' Spoonful",
+      "version": "compilation"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "La Strega",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "The Grand Ball Of The Duljas",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Morning At Boma Park",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "The Five Curtains",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Book Of Roses",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "In Doga Gamee",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Passage To Promise",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "In The Woods Of Kroandal",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Jugglers In Osidian",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Chanson De L'Heure Bleue",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Czippa And The Ursanian Girl",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "The Birds Of Tilmun",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Hirzel",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Jours D'Amour",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Manto's Arrow And The Sphinx",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Letters To A Young Rose",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Unto The Burning Circle",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Dancing With The Lion",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Hippolyte",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Dance Of The Masks",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Pearls & Tears",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Garden Of My Childhood",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Still Life",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "And The Long Shadows",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "See, My Love...",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Silver Dew, Golden Grass",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Ascent From The Circle",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Ouverturli - Live / 1989",
+      "album": "Dancing With The Lion",
+      "version": "live"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "First Piece - Live / 1989",
+      "album": "Dancing With The Lion",
+      "version": "live"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Hey You! Yes, You... - Bonus Track",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Clannad",
+      "track": "Caislean Oir",
+      "album": "Macalla",
+      "version": "studio"
+    },
+    {
+      "artist": "Clannad",
+      "track": "The Wild Cry",
+      "album": "Macalla",
+      "version": "studio"
+    },
+    {
+      "artist": "Clannad",
+      "track": "Closer to Your Heart",
+      "album": "Macalla",
+      "version": "studio"
+    },
+    {
+      "artist": "Clannad",
+      "track": "In A Lifetime",
+      "album": "Macalla",
+      "version": "studio"
+    },
+    {
+      "artist": "Clannad",
+      "track": "Almost Seems (Too Late to Turn)",
+      "album": "Macalla",
+      "version": "studio"
+    },
+    {
+      "artist": "Clannad",
+      "track": "Indoor",
+      "album": "Macalla",
+      "version": "studio"
+    },
+    {
+      "artist": "Clannad",
+      "track": "Buachaill \u00d3n \u00c9irne",
+      "album": "Macalla",
+      "version": "studio"
+    },
+    {
+      "artist": "Clannad",
+      "track": "Blackstairs",
+      "album": "Macalla",
+      "version": "studio"
+    },
+    {
+      "artist": "Clannad",
+      "track": "Journey's End",
+      "album": "Macalla",
+      "version": "studio"
+    },
+    {
+      "artist": "Clannad",
+      "track": "Northern Skyline",
+      "album": "Macalla",
+      "version": "studio"
+    },
+    {
+      "artist": "Jean-Michel Jarre",
+      "track": "Oxygene Pt. 2",
+      "album": "Oxygene",
+      "version": "studio"
+    },
+    {
+      "artist": "Jean-Michel Jarre",
+      "track": "Oxygene Pt. 3",
+      "album": "Oxygene",
+      "version": "studio"
+    },
+    {
+      "artist": "Jean-Michel Jarre",
+      "track": "Oxygene Pt. 4",
+      "album": "Oxygene",
+      "version": "studio"
+    },
+    {
+      "artist": "Jean-Michel Jarre",
+      "track": "Oxygene Pt. 5",
+      "album": "Oxygene",
+      "version": "studio"
+    },
+    {
+      "artist": "Jean-Michel Jarre",
+      "track": "Oxygene Pt. 6",
+      "album": "Oxygene",
+      "version": "studio"
+    },
+    {
+      "artist": "Roy Orbison",
+      "track": "Only the Lonely (Know the Way I Feel)",
+      "album": "The Soul of Rock and Roll",
+      "version": "studio"
+    },
+    {
+      "artist": "Roy Orbison",
+      "track": "Crying",
+      "album": "The Soul of Rock and Roll",
+      "version": "studio"
+    },
+    {
+      "artist": "Roy Orbison",
+      "track": "Blue Bayou",
+      "album": "The Soul of Rock and Roll",
+      "version": "studio"
+    },
+    {
+      "artist": "Roy Orbison",
+      "track": "Dream Baby (How Long Must I Dream)",
+      "album": "The Soul of Rock and Roll",
+      "version": "studio"
+    },
+    {
+      "artist": "Roy Orbison",
+      "track": "Leah",
+      "album": "The Soul of Rock and Roll",
+      "version": "studio"
+    },
+    {
+      "artist": "Roy Orbison",
+      "track": "Oh, Pretty Woman",
+      "album": "The Soul of Rock and Roll",
+      "version": "studio"
+    },
+    {
+      "artist": "Roy Orbison",
+      "track": "In Dreams - 1987 Version",
+      "album": "The Soul of Rock and Roll",
+      "version": "studio"
+    },
+    {
+      "artist": "Al Stewart",
+      "track": "Time Passages",
+      "album": "Time Passages",
+      "version": "studio"
+    },
+    {
+      "artist": "Al Stewart",
+      "track": "Year of the Cat",
+      "album": "Year of the Cat",
+      "version": "studio"
+    },
+    {
+      "artist": "Bread",
+      "track": "Baby I'm-a Want You",
+      "album": "The Best of Bread",
+      "version": "compilation"
+    },
+    {
+      "artist": "Boz Scaggs",
+      "track": "Look What You've Done to Me",
+      "album": "Hits!",
+      "version": "studio"
+    },
+    {
+      "artist": "David Soul",
+      "track": "Don't give up on us",
+      "album": "David Soul",
+      "version": "studio"
+    },
+    {
+      "artist": "Gilbert O'Sullivan",
+      "track": "Alone Again (Naturally)",
+      "album": "The Berry Vest Of Gilbert O'Sullivan",
+      "version": "studio"
+    },
+    {
+      "artist": "Gilbert O'Sullivan",
+      "track": "Clair",
+      "album": "The Berry Vest Of Gilbert O'Sullivan",
+      "version": "studio"
+    },
+    {
+      "artist": "The Love Unlimited Orchestra",
+      "track": "Love's Theme",
+      "album": "Gold",
+      "version": "studio"
+    },
+    {
+      "artist": "Yusuf / Cat Stevens",
+      "track": "Wild World",
+      "album": "The Very Best Of Cat Stevens",
+      "version": "compilation"
+    },
+    {
+      "artist": "Yusuf / Cat Stevens",
+      "track": "Morning Has Broken",
+      "album": "The Very Best Of Cat Stevens",
+      "version": "compilation"
+    },
+    {
+      "artist": "Yusuf / Cat Stevens",
+      "track": "Moonshadow",
+      "album": "The Very Best Of Cat Stevens",
+      "version": "compilation"
+    },
+    {
+      "artist": "Yusuf / Cat Stevens",
+      "track": "Peace Train",
+      "album": "The Very Best Of Cat Stevens",
+      "version": "compilation"
+    },
+    {
+      "artist": "Yusuf / Cat Stevens",
+      "track": "Another Saturday Night",
+      "album": "The Very Best Of Cat Stevens",
+      "version": "compilation"
+    },
+    {
+      "artist": "Jim Croce",
+      "track": "Operator (That's Not The Way It Feels)",
+      "album": "Photographs & Memories: His Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Jim Croce",
+      "track": "Time In A Bottle",
+      "album": "Photographs & Memories: His Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Jim Croce",
+      "track": "I Got A Name - Stereo Version",
+      "album": "Photographs & Memories: His Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Jim Croce",
+      "track": "I'll Have To Say I Love You In A Song",
+      "album": "Photographs & Memories: His Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Jim Croce",
+      "track": "You Don't Mess Around With Jim",
+      "album": "Photographs & Memories: His Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Gordon Lightfoot",
+      "track": "Sundown",
+      "album": "Sundown",
+      "version": "studio"
+    },
+    {
+      "artist": "Gordon Lightfoot",
+      "track": "If You Could Read My Mind",
+      "album": "If You Could Read My Mind",
+      "version": "studio"
+    },
+    {
+      "artist": "Gordon Lightfoot",
+      "track": "The Wreck of the Edmund Fitzgerald",
+      "album": "Summertime Dream",
+      "version": "studio"
+    },
+    {
+      "artist": "Harry Chapin",
+      "track": "Cat's in the Cradle",
+      "album": "Verities & Balderdash",
+      "version": "studio"
+    },
+    {
+      "artist": "Harry Chapin",
+      "track": "Taxi",
+      "album": "Rhino Hi-Five: Harry Chapin",
+      "version": "studio"
+    },
+    {
+      "artist": "Eddie Holman",
+      "track": "Hey There Lonely Girl",
+      "album": "Must Love Dogs-Music from the Motion Picture",
+      "version": "studio"
+    },
+    {
+      "artist": "Ten Years After",
+      "track": "I'd Love To Change The World",
+      "album": "The Best Of Ten Years After",
+      "version": "compilation"
+    },
+    {
+      "artist": "Maria Muldaur",
+      "track": "Midnight at the Oasis",
+      "album": "Rhino Hi-Five: Maria Muldaur",
+      "version": "studio"
+    },
+    {
+      "artist": "The Alan Parsons Project",
+      "track": "Time",
+      "album": "The Turn Of A Friendly Card (Expanded Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Nicolette Larson",
+      "track": "Lotta Love",
+      "album": "Nicolette",
+      "version": "studio"
+    },
+    {
+      "artist": "Marty Balin",
+      "track": "Hearts",
+      "album": "Balin",
+      "version": "studio"
+    },
+    {
+      "artist": "Lindsey Buckingham",
+      "track": "Trouble",
+      "album": "Law and Order",
+      "version": "studio"
+    },
+    {
+      "artist": "Robbie Dupree",
+      "track": "Steal Away",
+      "album": "Robbie Dupree",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Martin Murphey",
+      "track": "Wildfire",
+      "album": "Blue Sky-Night Thunder",
+      "version": "studio"
+    },
+    {
+      "artist": "Melissa Manchester",
+      "track": "Midnight Blue",
+      "album": "Melissa",
+      "version": "studio"
+    },
+    {
+      "artist": "Paul Davis",
+      "track": "I Go Crazy - Single Version",
+      "album": "The Best of Paul Davis (Expanded Edition)",
+      "version": "compilation"
+    },
+    {
+      "artist": "Paul Davis",
+      "track": "Cool Night",
+      "album": "The Best of Paul Davis (Expanded Edition)",
+      "version": "compilation"
+    },
+    {
+      "artist": "The Alan Parsons Project",
+      "track": "Some Other Time",
+      "album": "I Robot (Legacy Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Big Head Todd and The Monsters",
+      "track": "Bittersweet",
+      "album": "Sister Sweetly",
+      "version": "studio"
+    },
+    {
+      "artist": "Toad The Wet Sprocket",
+      "track": "Walk On the Ocean",
+      "album": "fear",
+      "version": "studio"
+    },
+    {
+      "artist": "Firefall",
+      "track": "You Are the Woman",
+      "album": "Firefall",
+      "version": "studio"
+    },
+    {
+      "artist": "10cc",
+      "track": "The Things We Do For Love",
+      "album": "20th Century Masters: The Millennium Collection: Best Of 10CC",
+      "version": "compilation"
+    },
+    {
+      "artist": "Wings",
+      "track": "With A Little Luck - Remastered 1993",
+      "album": "London Town",
+      "version": "remaster"
+    },
+    {
+      "artist": "Bobby Hebb",
+      "track": "Sunny",
+      "album": "Sunny",
+      "version": "studio"
+    },
+    {
+      "artist": "Bread",
+      "track": "Guitar Man",
+      "album": "The Best of Bread",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sanford Townsend Band",
+      "track": "Smoke from a Distant Fire",
+      "album": "Smoke From A Distant Fire",
+      "version": "studio"
+    },
+    {
+      "artist": "Jackie Wilson",
+      "track": "(Your Love Keeps Lifting Me) Higher & Higher",
+      "album": "Higher And Higher",
+      "version": "studio"
+    },
+    {
+      "artist": "Jackie Wilson",
+      "track": "Lonely Teardrops",
+      "album": "Lonely Teardrops",
+      "version": "studio"
+    },
+    {
+      "artist": "Wilson Pickett",
+      "track": "In the Midnight Hour",
+      "album": "In the Midnight Hour",
+      "version": "studio"
+    },
+    {
+      "artist": "Chris Norman",
+      "track": "Stumblin' In",
+      "album": "Licorice Pizza (Original Motion Picture Soundtrack)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Cure",
+      "track": "From the Edge of the Deep Green Sea",
+      "album": "Wish",
+      "version": "studio"
+    }
+  ]
+}

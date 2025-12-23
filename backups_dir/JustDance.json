@@ -1,0 +1,37 @@
+{
+  "name": "JustDance",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "P!nk",
+      "track": "So What",
+      "album": "Greatest Hits...So Far!!!",
+      "version": "compilation"
+    },
+    {
+      "artist": "Europe",
+      "track": "The Final Countdown",
+      "album": "The Final Countdown (Expanded Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "One Direction",
+      "track": "What Makes You Beautiful",
+      "album": "Up All Night",
+      "version": "studio"
+    },
+    {
+      "artist": "Kidz Bop Kids",
+      "track": "Thrift Shop",
+      "album": "KIDZ BOP 24 (Spotify Bonus Track Version)",
+      "version": "studio"
+    },
+    {
+      "artist": "Sarah McLachlan",
+      "track": "The Rainbow Connection",
+      "album": "For The Kids",
+      "version": "studio"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "name": "Foreign",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "Ibrahim Ferrer",
+      "track": "Te Guste O No",
+      "album": "Cuba Le Canta A Serrat",
+      "version": "studio"
+    },
+    {
+      "artist": "Ibrahim Ferrer",
+      "track": "Dos almas",
+      "album": "Mi Sueno",
+      "version": "studio"
+    },
+    {
+      "artist": "Ibrahim Ferrer",
+      "track": "Si te contara",
+      "album": "Mi Sueno",
+      "version": "studio"
+    },
+    {
+      "artist": "Ibrahim Ferrer",
+      "track": "Melodia del rio",
+      "album": "Mi Sueno",
+      "version": "studio"
+    },
+    {
+      "artist": "Ibrahim Ferrer",
+      "track": "Cada noche un amore",
+      "album": "Mi Sueno",
+      "version": "studio"
+    },
+    {
+      "artist": "Ibrahim Ferrer",
+      "track": "Deuda",
+      "album": "Mi Sueno",
+      "version": "studio"
+    },
+    {
+      "artist": "Ibrahim Ferrer",
+      "track": "Uno",
+      "album": "Mi Sueno",
+      "version": "studio"
+    },
+    {
+      "artist": "Ibrahim Ferrer",
+      "track": "Convergencia",
+      "album": "Mi Sueno",
+      "version": "studio"
+    },
+    {
+      "artist": "Ibrahim Ferrer",
+      "track": "Qui\u00e9reme Mucho",
+      "album": "Mi Sueno",
+      "version": "studio"
+    },
+    {
+      "artist": "Ibrahim Ferrer",
+      "track": "Perfidia",
+      "album": "Mi Sueno",
+      "version": "studio"
+    },
+    {
+      "artist": "Ibrahim Ferrer",
+      "track": "Copla guajira",
+      "album": "Mi Sueno",
+      "version": "studio"
+    },
+    {
+      "artist": "Ibrahim Ferrer",
+      "track": "Quiz\u00e1s",
+      "album": "Mi Sueno",
+      "version": "studio"
+    },
+    {
+      "artist": "Ibrahim Ferrer",
+      "track": "Alma Libre",
+      "album": "Mi Sueno",
+      "version": "studio"
+    }
+  ]
+}

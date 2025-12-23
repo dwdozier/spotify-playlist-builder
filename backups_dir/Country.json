@@ -1,0 +1,583 @@
+{
+  "name": "Country",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "Johnny Cash",
+      "track": "God's Gonna Cut You Down",
+      "album": "American V - A Hundred Highways",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "Ring Of Fire",
+      "album": "Super Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "Sunday Mornin' Comin' Down",
+      "album": "Super Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "I Walk the Line - Single Version",
+      "album": "Super Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "Folsom Prison Blues",
+      "album": "Super Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "Big River",
+      "album": "Super Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "Jackson",
+      "album": "Super Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "The Highwaymen",
+      "track": "Highwayman",
+      "album": "16 Biggest Hits Volume II",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "Get Rhythm - 1988 Version",
+      "album": "Classic Cash: Hall Of Fame Series",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "Rusty Cage",
+      "album": "Unchained",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "Daddy Sang Bass",
+      "album": "Johnny Cash - 16 Biggest Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "A Boy Named Sue - Live at San Quentin State Prison, San Quentin, CA - February 1969",
+      "album": "Johnny Cash - 16 Biggest Hits",
+      "version": "live"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "Sunday Morning Coming Down - Live",
+      "album": "Johnny Cash - 16 Biggest Hits",
+      "version": "live"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "Man in Black",
+      "album": "Johnny Cash - 16 Biggest Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "(Ghost) Riders In the Sky",
+      "album": "Johnny Cash - 16 Biggest Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "One Piece at a Time",
+      "album": "Johnny Cash - 16 Biggest Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "The Man Comes Around",
+      "album": "American IV: Man Comes Around",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "Hurt",
+      "album": "American IV: Man Comes Around",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "I Hung My Head",
+      "album": "American IV: Man Comes Around",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "Personal Jesus",
+      "album": "American IV: Man Comes Around",
+      "version": "studio"
+    },
+    {
+      "artist": "Marty Robbins",
+      "track": "Big Iron",
+      "album": "Gunfighter Ballads And Trail Songs",
+      "version": "studio"
+    },
+    {
+      "artist": "Marty Robbins",
+      "track": "El Paso",
+      "album": "Gunfighter Ballads And Trail Songs",
+      "version": "studio"
+    },
+    {
+      "artist": "Marty Robbins",
+      "track": "Ballad Of The Alamo",
+      "album": "More Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Marty Robbins",
+      "track": "Devil Woman",
+      "album": "A Lifetime of Song",
+      "version": "studio"
+    },
+    {
+      "artist": "Marty Robbins",
+      "track": "They're Hanging Me Tonight",
+      "album": "Gunfighter Ballads And Trail Songs",
+      "version": "studio"
+    },
+    {
+      "artist": "Marty Robbins",
+      "track": "Ribbon Of Darkness",
+      "album": "Marty Robbins' All-Time Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Marty Robbins",
+      "track": "Kaw-Liga",
+      "album": "Marty Robbins' All-Time Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Marty Robbins",
+      "track": "My Woman, My Woman, My Wife",
+      "album": "Marty Robbins' All-Time Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Marty Robbins",
+      "track": "A White Sport Coat (And A Pink Carnation)",
+      "album": "The Essential Marty Robbins",
+      "version": "studio"
+    },
+    {
+      "artist": "Ray Price",
+      "track": "Crazy Arms",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Ray Price",
+      "track": "For the Good Times",
+      "album": "Singer/Songwriter",
+      "version": "studio"
+    },
+    {
+      "artist": "Ray Price",
+      "track": "Heartaches By the Number",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Ray Price",
+      "track": "You Took Her Off My Hands (Now Please Take Her Off My Mind) - Single Version",
+      "album": "Burning Memories",
+      "version": "studio"
+    },
+    {
+      "artist": "Ray Price",
+      "track": "Release Me",
+      "album": "The Essential Ray Price",
+      "version": "studio"
+    },
+    {
+      "artist": "Ray Price",
+      "track": "Danny Boy",
+      "album": "The Essential Ray Price",
+      "version": "studio"
+    },
+    {
+      "artist": "Ray Price",
+      "track": "Rock Of Ages",
+      "album": "The Heart and Soul of Ray Price",
+      "version": "studio"
+    },
+    {
+      "artist": "Ray Price",
+      "track": "The Old Rugged Cross",
+      "album": "The Heart and Soul of Ray Price",
+      "version": "studio"
+    },
+    {
+      "artist": "Ray Price",
+      "track": "I Won't Mention It Again",
+      "album": "Ray Price All Time Greatest",
+      "version": "studio"
+    },
+    {
+      "artist": "Waylon Jennings",
+      "track": "Mammas, Don't Let Your Babies Grow Up To Be Cowboys",
+      "album": "The Essential Waylon Jennings",
+      "version": "studio"
+    },
+    {
+      "artist": "Waylon Jennings",
+      "track": "Luckenbach, Texas (Back To The Basics Of Love)",
+      "album": "The Essential Waylon Jennings",
+      "version": "studio"
+    },
+    {
+      "artist": "Waylon Jennings",
+      "track": "Theme from \"The Dukes of Hazzard\" (Good Ol' Boys)",
+      "album": "The Dukes Of Hazzard",
+      "version": "studio"
+    },
+    {
+      "artist": "Jerry Reed",
+      "track": "East Bound and Down",
+      "album": "The Essential Jerry Reed",
+      "version": "studio"
+    },
+    {
+      "artist": "Jerry Reed",
+      "track": "Amos Moses",
+      "album": "My Name Is Earl",
+      "version": "studio"
+    },
+    {
+      "artist": "Jerry Reed",
+      "track": "Guitar Man",
+      "album": "The Essential Jerry Reed",
+      "version": "studio"
+    },
+    {
+      "artist": "Jerry Reed",
+      "track": "When You're Hot, You're Hot",
+      "album": "Hit Row",
+      "version": "studio"
+    },
+    {
+      "artist": "Conway Twitty",
+      "track": "Slow Hand",
+      "album": "Southern Comfort",
+      "version": "studio"
+    },
+    {
+      "artist": "Conway Twitty",
+      "track": "The Clown",
+      "album": "Southern Comfort",
+      "version": "studio"
+    },
+    {
+      "artist": "Conway Twitty",
+      "track": "I'd Just Love To Lay You Down",
+      "album": "Number Ones",
+      "version": "studio"
+    },
+    {
+      "artist": "Conway Twitty",
+      "track": "Hello Darlin'",
+      "album": "Super Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "Conway Twitty",
+      "track": "You've Never Been This Far Before",
+      "album": "Super Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "Conway Twitty",
+      "track": "It's Only Make Believe - Single Version",
+      "album": "20th Century Masters: The Millennium Collection: Best Of Conway Twitty",
+      "version": "compilation"
+    },
+    {
+      "artist": "Glen Campbell",
+      "track": "Rhinestone Cowboy",
+      "album": "Glen Campbell's Twenty Golden Greats",
+      "version": "studio"
+    },
+    {
+      "artist": "Glen Campbell",
+      "track": "Wichita Lineman",
+      "album": "Glen Campbell's Twenty Golden Greats",
+      "version": "studio"
+    },
+    {
+      "artist": "George Jones",
+      "track": "He Stopped Loving Her Today - Single Version",
+      "album": "Discover George Jones",
+      "version": "studio"
+    },
+    {
+      "artist": "George Jones",
+      "track": "She Thinks I Still Care",
+      "album": "All Time Greatest Hits: The Early Years Vol. 1",
+      "version": "compilation"
+    },
+    {
+      "artist": "George Jones",
+      "track": "Good Hearted Woman",
+      "album": "I Am What I Am (Expanded Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "George Jones",
+      "track": "White Lightin'",
+      "album": "All Time Greatest Hits: The Early Years Vol. 1",
+      "version": "compilation"
+    },
+    {
+      "artist": "Ricky Nelson",
+      "track": "Lonesome Town",
+      "album": "Pulp Fiction",
+      "version": "studio"
+    },
+    {
+      "artist": "The Statler Brothers",
+      "track": "Flowers On The Wall",
+      "album": "Pulp Fiction",
+      "version": "studio"
+    },
+    {
+      "artist": "Bobbie Gentry",
+      "track": "Ode To Billie Joe",
+      "album": "Ode To Billie Joe",
+      "version": "studio"
+    },
+    {
+      "artist": "Jeannie C. Riley",
+      "track": "Harper Valley P.T.A.",
+      "album": "Jeannie C. Riley",
+      "version": "studio"
+    },
+    {
+      "artist": "Porter Wagoner",
+      "track": "A Satisfied Mind (Rerecorded)",
+      "album": "Porter Wagoner's Greatest Hits (Rerecorded Version)",
+      "version": "compilation"
+    },
+    {
+      "artist": "Dolly Parton",
+      "track": "Jolene",
+      "album": "Jolene (Expanded Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Dolly Parton",
+      "track": "9 to 5",
+      "album": "Dolly",
+      "version": "studio"
+    },
+    {
+      "artist": "Kenny Rogers",
+      "track": "The Gambler",
+      "album": "The Gambler",
+      "version": "studio"
+    },
+    {
+      "artist": "Lionel Richie",
+      "track": "Lady",
+      "album": "Tuskegee",
+      "version": "studio"
+    },
+    {
+      "artist": "Kenny Rogers",
+      "track": "She Believes In Me",
+      "album": "The Gambler",
+      "version": "studio"
+    },
+    {
+      "artist": "Loretta Lynn",
+      "track": "Coal Miner's Daughter - Rerecorded Version",
+      "album": "Loretta Lynn (Rerecorded Version)",
+      "version": "studio"
+    },
+    {
+      "artist": "Conway Twitty",
+      "track": "Louisiana Woman, Mississippi Man - Single Version",
+      "album": "20th Century Masters: The Millennium Collection: Best Of Conway Twitty & Loretta Lynn",
+      "version": "compilation"
+    },
+    {
+      "artist": "Jerry Reed",
+      "track": "East Bound and Down",
+      "album": "The Essential Jerry Reed",
+      "version": "studio"
+    },
+    {
+      "artist": "Jerry Reed",
+      "track": "Guitar Man",
+      "album": "The Essential Jerry Reed",
+      "version": "studio"
+    },
+    {
+      "artist": "Jerry Reed",
+      "track": "When You're Hot, You're Hot",
+      "album": "The Essential Jerry Reed",
+      "version": "studio"
+    },
+    {
+      "artist": "Jerry Reed",
+      "track": "Amos Moses",
+      "album": "The Essential Jerry Reed",
+      "version": "studio"
+    },
+    {
+      "artist": "Jerry Reed",
+      "track": "Texas Bound and Flyin' (from the Motion Picture \"Smokey and the Bandit II\")",
+      "album": "The Essential Jerry Reed",
+      "version": "studio"
+    },
+    {
+      "artist": "The Statler Brothers",
+      "track": "Flowers On the Wall",
+      "album": "Flowers On The Wall: The Essential Statler Brothers 1964-1969",
+      "version": "studio"
+    },
+    {
+      "artist": "Alabama",
+      "track": "Song of the South",
+      "album": "Super Hits II",
+      "version": "studio"
+    },
+    {
+      "artist": "Alabama",
+      "track": "Dixieland Delight - Single Edit",
+      "album": "For The Record",
+      "version": "studio"
+    },
+    {
+      "artist": "Alabama",
+      "track": "Mountain Music",
+      "album": "Ultimate Alabama 20 # 1 Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "Alabama",
+      "track": "If You're Gonna Play in Texas (You Gotta Have a Fiddle in the Band)",
+      "album": "Ultimate Alabama 20 # 1 Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Paycheck",
+      "track": "Take This Job and Shove It",
+      "album": "Johnny Paycheck - 16 Biggest Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Paycheck",
+      "track": "I'm the Only Hell (Mama Ever Raised)",
+      "album": "Johnny Paycheck - 16 Biggest Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "Merle Haggard",
+      "track": "Swinging Doors",
+      "album": "American Country Legend",
+      "version": "studio"
+    },
+    {
+      "artist": "Merle Haggard",
+      "track": "Workin Man Blues",
+      "album": "American Country Legend",
+      "version": "studio"
+    },
+    {
+      "artist": "Merle Haggard",
+      "track": "Fightin Side Of Me - Re-Recorded Version",
+      "album": "American Country Legend",
+      "version": "studio"
+    },
+    {
+      "artist": "Merle Haggard",
+      "track": "Okie From Muskogee",
+      "album": "American Country Legend",
+      "version": "studio"
+    },
+    {
+      "artist": "Merle Haggard",
+      "track": "Mama Tried",
+      "album": "American Country Legend",
+      "version": "studio"
+    },
+    {
+      "artist": "Hank Williams",
+      "track": "Honky Tonkin'",
+      "album": "His Greatest Hits, Vol. 1",
+      "version": "compilation"
+    },
+    {
+      "artist": "Hank Williams",
+      "track": "Move It on Over",
+      "album": "His Greatest Hits, Vol. 1",
+      "version": "compilation"
+    },
+    {
+      "artist": "Hank Williams",
+      "track": "Hey, Good Lookin' - Original",
+      "album": "Hank Williams Selected Hits Vol. 1",
+      "version": "studio"
+    },
+    {
+      "artist": "Hank Williams",
+      "track": "Kaw-Liga - Original",
+      "album": "Hank Williams Selected Hits Vol. 2",
+      "version": "studio"
+    },
+    {
+      "artist": "Hank Williams",
+      "track": "I'm So Lonesome I Could Cry",
+      "album": "O Brother Is This Americana",
+      "version": "studio"
+    },
+    {
+      "artist": "Hank Williams",
+      "track": "Jambalaya (On The Bayou) - Original",
+      "album": "Hank Williams Selected Hits Vol. 2",
+      "version": "studio"
+    },
+    {
+      "artist": "Hank Williams",
+      "track": "Ramblin' Man",
+      "album": "The Complete Hank Williams",
+      "version": "studio"
+    },
+    {
+      "artist": "Tom T. Hall",
+      "track": "I Like Beer",
+      "album": "20th Century Masters: The Millennium Collection: Best Of Tom T. Hall",
+      "version": "compilation"
+    },
+    {
+      "artist": "Tom T. Hall",
+      "track": "I Love",
+      "album": "20th Century Masters: The Millennium Collection: Best Of Tom T. Hall",
+      "version": "compilation"
+    },
+    {
+      "artist": "Glen Campbell",
+      "track": "Gentle On My Mind - Remastered 2001",
+      "album": "Gentle On My Mind (Remastered)",
+      "version": "remaster"
+    }
+  ]
+}

@@ -1,0 +1,601 @@
+{
+  "name": "Rap",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "The Egyptian Lover",
+      "track": "My House",
+      "album": "On The Nile",
+      "version": "studio"
+    },
+    {
+      "artist": "The Egyptian Lover",
+      "track": "What Is A DJ If He Can't Scratch",
+      "album": "On The Nile",
+      "version": "studio"
+    },
+    {
+      "artist": "The Egyptian Lover",
+      "track": "Girls",
+      "album": "On The Nile",
+      "version": "studio"
+    },
+    {
+      "artist": "The Egyptian Lover",
+      "track": "Computer Love (Sweet Dreams)",
+      "album": "On The Nile",
+      "version": "studio"
+    },
+    {
+      "artist": "The Egyptian Lover",
+      "track": "Egypt Egypt",
+      "album": "On The Nile",
+      "version": "studio"
+    },
+    {
+      "artist": "The Egyptian Lover",
+      "track": "I Cry (Night After Night)",
+      "album": "On The Nile",
+      "version": "studio"
+    },
+    {
+      "artist": "The Egyptian Lover",
+      "track": "Unreal",
+      "album": "On The Nile",
+      "version": "studio"
+    },
+    {
+      "artist": "The Egyptian Lover",
+      "track": "And My Beat Goes Boom",
+      "album": "On The Nile",
+      "version": "studio"
+    },
+    {
+      "artist": "Afrika Bambaataa",
+      "track": "Don't Stop..Planet Rock",
+      "album": "Looking For The Perfect Beat 1980 -1985",
+      "version": "studio"
+    },
+    {
+      "artist": "Afrika Bambaataa",
+      "track": "Looking For The Perfect Beat",
+      "album": "Looking For The Perfect Beat 1980 -1985",
+      "version": "studio"
+    },
+    {
+      "artist": "Afrika Bambaataa",
+      "track": "Renegades Of Funk - 12\" Vocal Version",
+      "album": "Looking For The Perfect Beat 1980 -1985",
+      "version": "studio"
+    },
+    {
+      "artist": "Afrika Bambaataa & Soul Sonic Force with Shango",
+      "track": "Frantic Situation - Vocal Version",
+      "album": "Looking For The Perfect Beat 1980 -1985",
+      "version": "studio"
+    },
+    {
+      "artist": "Kraftwerk",
+      "track": "Tour de France - 2009 Remaster",
+      "album": "Tour de France (2009 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Kraftwerk",
+      "track": "Computer Love",
+      "album": "Computer World",
+      "version": "studio"
+    },
+    {
+      "artist": "Run\u2013D.M.C.",
+      "track": "Rock Box",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Run\u2013D.M.C.",
+      "track": "Hard Times",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Run\u2013D.M.C.",
+      "track": "It's Like That",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "LL COOL J",
+      "track": "Rock The Bells",
+      "album": "All World 2",
+      "version": "studio"
+    },
+    {
+      "artist": "LL COOL J",
+      "track": "Around The Way Girl",
+      "album": "All World 2",
+      "version": "studio"
+    },
+    {
+      "artist": "LL COOL J",
+      "track": "I Can't Live Without My Radio",
+      "album": "All World",
+      "version": "live"
+    },
+    {
+      "artist": "LL COOL J",
+      "track": "I'm Bad",
+      "album": "All World",
+      "version": "studio"
+    },
+    {
+      "artist": "LL COOL J",
+      "track": "The Boomin' System",
+      "album": "All World",
+      "version": "studio"
+    },
+    {
+      "artist": "LL COOL J",
+      "track": "Mama Said Knock You Out",
+      "album": "All World",
+      "version": "studio"
+    },
+    {
+      "artist": "LL COOL J",
+      "track": "Going Back To Cali",
+      "album": "All World",
+      "version": "studio"
+    },
+    {
+      "artist": "Kanye West",
+      "track": "Jesus Walks",
+      "album": "The College Dropout",
+      "version": "studio"
+    },
+    {
+      "artist": "Whodini",
+      "track": "Magic's Wand",
+      "album": "Funky Beat: The Best Of Whodini",
+      "version": "compilation"
+    },
+    {
+      "artist": "Whodini",
+      "track": "Freaks Come Out at Night",
+      "album": "Funky Beat: The Best Of Whodini",
+      "version": "compilation"
+    },
+    {
+      "artist": "Whodini",
+      "track": "Friends",
+      "album": "Funky Beat: The Best Of Whodini",
+      "version": "compilation"
+    },
+    {
+      "artist": "Whodini",
+      "track": "One Love",
+      "album": "Funky Beat: The Best Of Whodini",
+      "version": "compilation"
+    },
+    {
+      "artist": "Whodini",
+      "track": "Funky Beat",
+      "album": "Funky Beat: The Best Of Whodini",
+      "version": "compilation"
+    },
+    {
+      "artist": "Whodini",
+      "track": "Haunted House of Rock",
+      "album": "Funky Beat: The Best Of Whodini",
+      "version": "compilation"
+    },
+    {
+      "artist": "Rock Master Scott & The Dynamic Three",
+      "track": "The Roof Is on Fire (Re-Recorded / Remastered)",
+      "album": "50 Hip Hop Classics",
+      "version": "remaster"
+    },
+    {
+      "artist": "Kurtis Blow",
+      "track": "The Breaks (Re-Recorded / Remastered)",
+      "album": "50 Hip Hop Classics",
+      "version": "remaster"
+    },
+    {
+      "artist": "Kool Moe Dee",
+      "track": "I Go to Work (Re-Recorded / Remastered)",
+      "album": "50 Hip Hop Classics",
+      "version": "remaster"
+    },
+    {
+      "artist": "Grandmaster Flash",
+      "track": "The Message (Re-Recorded / Remastered)",
+      "album": "50 Hip Hop Classics",
+      "version": "remaster"
+    },
+    {
+      "artist": "Roxanne Shante",
+      "track": "Roxanne's Revenge (Re-Recorded / Remastered)",
+      "album": "50 Hip Hop Classics",
+      "version": "remaster"
+    },
+    {
+      "artist": "Fat Boys",
+      "track": "Human Beat Box (Re-Recorded / Remastered)",
+      "album": "50 Hip Hop Classics",
+      "version": "remaster"
+    },
+    {
+      "artist": "Shannon",
+      "track": "Let the Music Play (Re-Recorded / Remastered)",
+      "album": "50 Hip Hop Classics",
+      "version": "remaster"
+    },
+    {
+      "artist": "Newcleus",
+      "track": "Jam on It (Re-Recorded / Remastered)",
+      "album": "50 Hip Hop Classics",
+      "version": "remaster"
+    },
+    {
+      "artist": "Newcleus",
+      "track": "Computer Age (Push The Button)",
+      "album": "Destination: Earth - The Definitive Newcleus Recordings",
+      "version": "studio"
+    },
+    {
+      "artist": "Newcleus",
+      "track": "Jam On Revenge (The Wikki Wikki Song)",
+      "album": "Destination: Earth - The Definitive Newcleus Recordings",
+      "version": "studio"
+    },
+    {
+      "artist": "The KLF",
+      "track": "3 A.M. Eternal - Ancients Of Mu Mu/La",
+      "album": "The White Room",
+      "version": "studio"
+    },
+    {
+      "artist": "The KLF",
+      "track": "Church Of The KLF",
+      "album": "The White Room",
+      "version": "studio"
+    },
+    {
+      "artist": "The KLF",
+      "track": "Last Train To Trancetral",
+      "album": "The White Room",
+      "version": "studio"
+    },
+    {
+      "artist": "The KLF",
+      "track": "What Time Is Love? - Kick Out The Jams",
+      "album": "The White Room",
+      "version": "studio"
+    },
+    {
+      "artist": "Digable Planets",
+      "track": "It's Good To Be Here",
+      "album": "Reachin' (A New Refutation Of Time And Space)",
+      "version": "studio"
+    },
+    {
+      "artist": "Digable Planets",
+      "track": "Pacifics - From The Original Motion Picture Soundtrack \u201cN.Y. Is Red Hot\"",
+      "album": "Reachin' (A New Refutation Of Time And Space)",
+      "version": "studio"
+    },
+    {
+      "artist": "Digable Planets",
+      "track": "Where I'm From",
+      "album": "Reachin' (A New Refutation Of Time And Space)",
+      "version": "studio"
+    },
+    {
+      "artist": "Digable Planets",
+      "track": "What Cool Breezes Do",
+      "album": "Reachin' (A New Refutation Of Time And Space)",
+      "version": "studio"
+    },
+    {
+      "artist": "Digable Planets",
+      "track": "Time & Space (A New Refutation Of)",
+      "album": "Reachin' (A New Refutation Of Time And Space)",
+      "version": "studio"
+    },
+    {
+      "artist": "Digable Planets",
+      "track": "Rebirth Of Slick (Cool Like Dat)",
+      "album": "Reachin' (A New Refutation Of Time And Space)",
+      "version": "studio"
+    },
+    {
+      "artist": "Digable Planets",
+      "track": "Last Of The Spiddyocks",
+      "album": "Reachin' (A New Refutation Of Time And Space)",
+      "version": "studio"
+    },
+    {
+      "artist": "Digable Planets",
+      "track": "Jimmi Diggin' Cats",
+      "album": "Reachin' (A New Refutation Of Time And Space)",
+      "version": "studio"
+    },
+    {
+      "artist": "Digable Planets",
+      "track": "La Femme Fetal",
+      "album": "Reachin' (A New Refutation Of Time And Space)",
+      "version": "studio"
+    },
+    {
+      "artist": "Digable Planets",
+      "track": "Escapism (Gettin' Free)",
+      "album": "Reachin' (A New Refutation Of Time And Space)",
+      "version": "studio"
+    },
+    {
+      "artist": "Digable Planets",
+      "track": "Appointment At The Fat Clinic",
+      "album": "Reachin' (A New Refutation Of Time And Space)",
+      "version": "studio"
+    },
+    {
+      "artist": "Digable Planets",
+      "track": "Nickel Bags",
+      "album": "Reachin' (A New Refutation Of Time And Space)",
+      "version": "studio"
+    },
+    {
+      "artist": "Digable Planets",
+      "track": "Swoon Units",
+      "album": "Reachin' (A New Refutation Of Time And Space)",
+      "version": "studio"
+    },
+    {
+      "artist": "Digable Planets",
+      "track": "Examination Of What",
+      "album": "Reachin' (A New Refutation Of Time And Space)",
+      "version": "studio"
+    },
+    {
+      "artist": "Arrested Development",
+      "track": "People Everyday",
+      "album": "3 Years, 5 Months And 2 Days In The Life Of...",
+      "version": "studio"
+    },
+    {
+      "artist": "JUVENILE",
+      "track": "Back That Azz Up",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Puff Daddy",
+      "track": "I'll Be Missing You (feat. Faith Evans & 112)",
+      "album": "No Way Out",
+      "version": "studio"
+    },
+    {
+      "artist": "DJ Jazzy Jeff & The Fresh Prince",
+      "track": "Summertime",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Skee-Lo",
+      "track": "I Wish",
+      "album": "I Wish",
+      "version": "studio"
+    },
+    {
+      "artist": "Cypress Hill",
+      "track": "Insane in the Brain",
+      "album": "Greatest Hits From The Bong",
+      "version": "compilation"
+    },
+    {
+      "artist": "House Of Pain",
+      "track": "Jump Around",
+      "album": "House Of Pain",
+      "version": "studio"
+    },
+    {
+      "artist": "DMX",
+      "track": "Party Up",
+      "album": "The Best Of DMX",
+      "version": "compilation"
+    },
+    {
+      "artist": "DMX",
+      "track": "Ruff Ryders' Anthem - Re-Recorded",
+      "album": "Greatest Hits with a Twist - Deluxe Edition",
+      "version": "compilation"
+    },
+    {
+      "artist": "Arrested Development",
+      "track": "Mr Wendal - Remastered 2002",
+      "album": "Classic Masters",
+      "version": "remaster"
+    },
+    {
+      "artist": "Arrested Development",
+      "track": "Tennessee - Remastered 2001",
+      "album": "Classic Masters",
+      "version": "remaster"
+    },
+    {
+      "artist": "Warren G",
+      "track": "Regulate",
+      "album": "Regulate\u2026 G Funk Era",
+      "version": "studio"
+    },
+    {
+      "artist": "Public Enemy",
+      "track": "911 Is A Joke",
+      "album": "Fear Of A Black Planet",
+      "version": "studio"
+    },
+    {
+      "artist": "Public Enemy",
+      "track": "Fight The Power",
+      "album": "Fear Of A Black Planet",
+      "version": "studio"
+    },
+    {
+      "artist": "Digable Planets",
+      "track": "Rebirth of Slick (Cool Like Dat)",
+      "album": "Beyond The Spectrum - The Creamy Spy Chronicles",
+      "version": "studio"
+    },
+    {
+      "artist": "Heavy D & The Boyz",
+      "track": "Now That We Found Love",
+      "album": "Heavy Hitz",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Sheep",
+      "track": "The Choice Is Yours",
+      "album": "The Document II",
+      "version": "studio"
+    },
+    {
+      "artist": "Method Man",
+      "track": "I'll Be There For You/You're All I Need To Get By",
+      "album": "Def Jam 1985-2001: The History Of Hip Hop, Vol. 1 (Explicit Version)",
+      "version": "studio"
+    },
+    {
+      "artist": "Master P",
+      "track": "Make Em' Say Uhh",
+      "album": "Best Of Master P",
+      "version": "compilation"
+    },
+    {
+      "artist": "The Notorious B.I.G.",
+      "track": "Juicy - 2005 Remaster",
+      "album": "Ready to Die (The Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Notorious B.I.G.",
+      "track": "Hypnotize - 2007 Remaster",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "The Notorious B.I.G.",
+      "track": "Big Poppa - 2007 Remaster",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "JAY-Z",
+      "track": "Can I Get A...",
+      "album": "Vol.2... Hard Knock Life",
+      "version": "studio"
+    },
+    {
+      "artist": "JAY-Z",
+      "track": "Hard Knock Life",
+      "album": "Vol.2... Hard Knock Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Naughty By Nature",
+      "track": "Hip Hop Hooray",
+      "album": "Booty Phat Classics",
+      "version": "studio"
+    },
+    {
+      "artist": "Naughty By Nature",
+      "track": "O.P.P. (Re-Recorded)",
+      "album": "Anthem Inc.",
+      "version": "studio"
+    },
+    {
+      "artist": "Ms. Lauryn Hill",
+      "track": "Doo Wop (That Thing)",
+      "album": "Pop Music: The Modern Era 1976-1999",
+      "version": "studio"
+    },
+    {
+      "artist": "Wu-Tang Clan",
+      "track": "C.R.E.A.M. (Cash Rules Everything Around Me)",
+      "album": "Enter The Wu-Tang (36 Chambers) [Expanded Edition]",
+      "version": "studio"
+    },
+    {
+      "artist": "Missy Elliott",
+      "track": "The Rain (Supa Dupa Fly)",
+      "album": "Supa Dupa Fly",
+      "version": "studio"
+    },
+    {
+      "artist": "India.Arie",
+      "track": "Video",
+      "album": "Acoustic Soul",
+      "version": "studio"
+    },
+    {
+      "artist": "Kanye West",
+      "track": "Gold Digger",
+      "album": "Late Registration",
+      "version": "studio"
+    },
+    {
+      "artist": "Grandmaster Flash & The Furious Five",
+      "track": "The Message (Re-Recorded / Remastered)",
+      "album": "White Lines",
+      "version": "remaster"
+    },
+    {
+      "artist": "Geto Boys",
+      "track": "Damn It Feels Good to Be a Gangsta",
+      "album": "Uncut Dope",
+      "version": "studio"
+    },
+    {
+      "artist": "Ice Cube",
+      "track": "It Was A Good Day",
+      "album": "The Predator (World) [Clean]",
+      "version": "studio"
+    },
+    {
+      "artist": "Bone Thugs-N-Harmony",
+      "track": "Tha Crossroads",
+      "album": "E.Eternal 1999",
+      "version": "studio"
+    },
+    {
+      "artist": "Snoop Dogg",
+      "track": "Gin And Juice (feat. Dat Nigga Daz)",
+      "album": "Doggystyle",
+      "version": "studio"
+    },
+    {
+      "artist": "Grandmaster Flash",
+      "track": "White Lines (Don't Don't Do It) - Long Version",
+      "album": "The Sugar Hill Records Story",
+      "version": "studio"
+    },
+    {
+      "artist": "Grandmaster Flash & The Furious Five",
+      "track": "White Lines",
+      "album": "White Lines",
+      "version": "studio"
+    },
+    {
+      "artist": "Grandmaster Flash & The Furious Five",
+      "track": "The Message (Re-Recorded / Remastered)",
+      "album": "Old School Hip Hop Greats",
+      "version": "remaster"
+    },
+    {
+      "artist": "Grandmaster Flash & The Furious Five",
+      "track": "Scorpio",
+      "album": "The Message",
+      "version": "studio"
+    }
+  ]
+}

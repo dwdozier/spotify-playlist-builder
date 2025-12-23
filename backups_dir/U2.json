@@ -1,0 +1,619 @@
+{
+  "name": "U2",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "U2",
+      "track": "Where The Streets Have No Name",
+      "album": "The Joshua Tree",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "I Still Haven't Found What I'm Looking For",
+      "album": "The Joshua Tree",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "With Or Without You",
+      "album": "The Joshua Tree",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Bullet The Blue Sky",
+      "album": "The Joshua Tree",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Running To Stand Still",
+      "album": "The Joshua Tree",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Red Hill Mining Town",
+      "album": "The Joshua Tree",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "In God's Country",
+      "album": "The Joshua Tree",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Trip Through Your Wires",
+      "album": "The Joshua Tree",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "One Tree Hill",
+      "album": "The Joshua Tree",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Exit",
+      "album": "The Joshua Tree",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Mothers Of The Disappeared",
+      "album": "The Joshua Tree",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Helter Skelter - Live",
+      "album": "Rattle And Hum",
+      "version": "live"
+    },
+    {
+      "artist": "U2",
+      "track": "Van Diemen's Land - Live - Rattle & Hum Version",
+      "album": "Rattle And Hum",
+      "version": "live"
+    },
+    {
+      "artist": "U2",
+      "track": "Desire",
+      "album": "Rattle And Hum",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Hawkmoon 269",
+      "album": "Rattle And Hum",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "All Along The Watchtower - Live - Rattle & Hum Version",
+      "album": "Rattle And Hum",
+      "version": "live"
+    },
+    {
+      "artist": "U2",
+      "track": "I Still Haven't Found What I'm Looking For - Live - Rattle & Hum Version",
+      "album": "Rattle And Hum",
+      "version": "live"
+    },
+    {
+      "artist": "Adam Gussow",
+      "track": "Freedom For My People - Excerpt",
+      "album": "Rattle And Hum",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Silver And Gold - Live - Rattle & Hum Version",
+      "album": "Rattle And Hum",
+      "version": "live"
+    },
+    {
+      "artist": "U2",
+      "track": "Pride (In The Name Of Love) - Live - Rattle & Hum Version",
+      "album": "Rattle And Hum",
+      "version": "live"
+    },
+    {
+      "artist": "U2",
+      "track": "Angel Of Harlem",
+      "album": "Rattle And Hum",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Love Rescue Me",
+      "album": "Rattle And Hum",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "When Love Comes To Town",
+      "album": "Rattle And Hum",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Heartland",
+      "album": "Rattle And Hum",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "God Part II",
+      "album": "Rattle And Hum",
+      "version": "studio"
+    },
+    {
+      "artist": "Jimi Hendrix",
+      "track": "The Star Spangled Banner - Woodstock Festival Excerpt",
+      "album": "Rattle And Hum",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Bullet The Blue Sky - Live - Rattle & Hum Version",
+      "album": "Rattle And Hum",
+      "version": "live"
+    },
+    {
+      "artist": "U2",
+      "track": "All I Want Is You",
+      "album": "Rattle And Hum",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Zoo Station",
+      "album": "Achtung Baby (Deluxe Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Even Better Than The Real Thing",
+      "album": "Achtung Baby (Deluxe Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "One",
+      "album": "Achtung Baby (Deluxe Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Until The End Of The World",
+      "album": "Achtung Baby (Deluxe Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Who's Gonna Ride Your Wild Horses",
+      "album": "Achtung Baby (Deluxe Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "So Cruel",
+      "album": "Achtung Baby (Deluxe Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "The Fly",
+      "album": "Achtung Baby (Deluxe Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Mysterious Ways",
+      "album": "Achtung Baby (Deluxe Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Tryin' To Throw Your Arms Around The World",
+      "album": "Achtung Baby (Deluxe Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Ultra Violet (Light My Way)",
+      "album": "Achtung Baby (Deluxe Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Acrobat",
+      "album": "Achtung Baby (Deluxe Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Love Is Blindness",
+      "album": "Achtung Baby (Deluxe Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Numb",
+      "album": "Zooropa",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "A Sort Of Homecoming - Remastered 2009",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Pride (In The Name Of Love) - Remastered 2009",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Wire - Remastered 2009",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "The Unforgettable Fire - Remastered 2009",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Promenade - Remastered 2009",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "4th Of July - Remastered 2009",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Bad - Remastered 2009",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Indian Summer Sky - Remastered 2009",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Elvis Presley And America - Remastered 2009",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "MLK - Remastered 2009",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Disappearing Act",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "A Sort Of Homecoming - Live",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "live"
+    },
+    {
+      "artist": "U2",
+      "track": "Bad - Live",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "live"
+    },
+    {
+      "artist": "U2",
+      "track": "Love Comes Tumbling - Remastered 2009",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "The Three Sunrises - Remastered 2009",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Yoshino Blossom",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Wire - Kevorkian 12\" Vocal Remix",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remix"
+    },
+    {
+      "artist": "U2",
+      "track": "Boomerang 1",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Pride (In The Name Of Love) - Remastered",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "A Sort Of Homecoming - Danny Lanois Remix",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remix"
+    },
+    {
+      "artist": "U2",
+      "track": "11 O'Clock Tick Tock - Long Version",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Wire - Celtic Dub Mix",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remix"
+    },
+    {
+      "artist": "U2",
+      "track": "Bass Trap",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Boomerang II - Remastered",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "4th Of July - Single Version",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Sixty Seconds in Kingdom Come",
+      "album": "The Unforgettable Fire (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Sunday Bloody Sunday - Remastered 2008",
+      "album": "War (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Seconds - Remastered 2008",
+      "album": "War (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "New Year's Day - Remastered 2008",
+      "album": "War (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Like A Song... - Remastered 2008",
+      "album": "War (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Drowning Man - Remastered 2008",
+      "album": "War (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "The Refugee - Remastered 2008",
+      "album": "War (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Two Hearts Beat As One - Remastered 2008",
+      "album": "War (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Red Light - Remastered 2008",
+      "album": "War (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Surrender - Remastered 2008",
+      "album": "War (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "\"40\" - Remastered 2008",
+      "album": "War (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Gloria - Remastered 2008",
+      "album": "October (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "I Fall Down - Remastered 2008",
+      "album": "October (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "I Threw A Brick Through A Window - Remastered 2008",
+      "album": "October (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Rejoice - Remastered 2008",
+      "album": "October (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Fire - Remastered 2008",
+      "album": "October (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Tomorrow - Remastered 2008",
+      "album": "October (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "October - Remastered 2008",
+      "album": "October (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "With A Shout (Jerusalem) - Remastered 2008",
+      "album": "October (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Stranger In A Strange Land - Remastered 2008",
+      "album": "October (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Scarlet - Remastered 2008",
+      "album": "October (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Is That All? - Remastered 2008",
+      "album": "October (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "I Will Follow - Remastered 2008",
+      "album": "Boy (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Twilight - Remastered 2008",
+      "album": "Boy (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "An Cat Dubh - Remastered 2008",
+      "album": "Boy (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Into The Heart - Remastered 2008",
+      "album": "Boy (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Out Of Control - Remastered 2008",
+      "album": "Boy (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Stories For Boys - Remastered 2008",
+      "album": "Boy (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "The Ocean - Remastered 2008",
+      "album": "Boy (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "A Day Without Me - Remastered 2008",
+      "album": "Boy (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Another Time Another Place - Remastered 2008",
+      "album": "Boy (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "The Electric Co. - Remastered 2008",
+      "album": "Boy (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Shadows And Tall Trees / Saturday Matinee - Remastered 2008",
+      "album": "Boy (Deluxe Edition Remastered)",
+      "version": "remaster"
+    },
+    {
+      "artist": "U2",
+      "track": "Beautiful Day",
+      "album": "All That You Can't Leave Behind",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Vertigo",
+      "album": "How To Dismantle An Atomic Bomb",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Ordinary Love",
+      "album": "Mandela \u2013 Long Walk To Freedom (Original Motion Picture Soundtrack)",
+      "version": "studio"
+    }
+  ]
+}

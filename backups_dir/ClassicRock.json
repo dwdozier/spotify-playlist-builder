@@ -1,0 +1,157 @@
+{
+  "name": "ClassicRock",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "Cream",
+      "track": "Sunshine Of Your Love",
+      "album": "Disraeli Gears",
+      "version": "studio"
+    },
+    {
+      "artist": "The Doors",
+      "track": "Break on Through (To the Other Side)",
+      "album": "The Doors",
+      "version": "studio"
+    },
+    {
+      "artist": "The Doors",
+      "track": "Soul Kitchen",
+      "album": "The Doors",
+      "version": "studio"
+    },
+    {
+      "artist": "The Doors",
+      "track": "The Crystal Ship",
+      "album": "The Doors",
+      "version": "studio"
+    },
+    {
+      "artist": "The Doors",
+      "track": "Twentieth Century Fox",
+      "album": "The Doors",
+      "version": "studio"
+    },
+    {
+      "artist": "The Doors",
+      "track": "Alabama Song (Whisky Bar)",
+      "album": "The Doors",
+      "version": "studio"
+    },
+    {
+      "artist": "The Doors",
+      "track": "Light My Fire",
+      "album": "The Doors",
+      "version": "studio"
+    },
+    {
+      "artist": "The Doors",
+      "track": "Back Door Man",
+      "album": "The Doors",
+      "version": "studio"
+    },
+    {
+      "artist": "The Doors",
+      "track": "The End",
+      "album": "The Doors",
+      "version": "studio"
+    },
+    {
+      "artist": "Jimi Hendrix",
+      "track": "Little Wing",
+      "album": "Axis: Bold As Love",
+      "version": "studio"
+    },
+    {
+      "artist": "Jimi Hendrix",
+      "track": "Castles Made of Sand",
+      "album": "Axis: Bold As Love",
+      "version": "studio"
+    },
+    {
+      "artist": "Jefferson Airplane",
+      "track": "Somebody to Love",
+      "album": "Surrealistic Pillow",
+      "version": "studio"
+    },
+    {
+      "artist": "Jefferson Airplane",
+      "track": "White Rabbit",
+      "album": "Surrealistic Pillow",
+      "version": "studio"
+    },
+    {
+      "artist": "Led Zeppelin",
+      "track": "Good Times Bad Times - 1993 Remaster",
+      "album": "Led Zeppelin",
+      "version": "remaster"
+    },
+    {
+      "artist": "Led Zeppelin",
+      "track": "Babe I'm Gonna Leave You - 1990 Remaster",
+      "album": "Led Zeppelin",
+      "version": "remaster"
+    },
+    {
+      "artist": "Led Zeppelin",
+      "track": "You Shook Me - 1993 Remaster",
+      "album": "Led Zeppelin",
+      "version": "remaster"
+    },
+    {
+      "artist": "Led Zeppelin",
+      "track": "Dazed and Confused - 1990 Remaster",
+      "album": "Led Zeppelin",
+      "version": "remaster"
+    },
+    {
+      "artist": "Led Zeppelin",
+      "track": "Your Time Is Gonna Come - 1990 Remaster",
+      "album": "Led Zeppelin",
+      "version": "remaster"
+    },
+    {
+      "artist": "Led Zeppelin",
+      "track": "Immigrant Song - Remaster",
+      "album": "Led Zeppelin III (Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Led Zeppelin",
+      "track": "Black Dog - Remaster",
+      "album": "Led Zeppelin IV (Deluxe Edition)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Deep Purple",
+      "track": "Smoke on the Water",
+      "album": "Machine Head",
+      "version": "studio"
+    },
+    {
+      "artist": "Jimi Hendrix",
+      "track": "All Along the Watchtower",
+      "album": "Electric Ladyland",
+      "version": "studio"
+    },
+    {
+      "artist": "Jimi Hendrix",
+      "track": "Hey Joe",
+      "album": "Are You Experienced",
+      "version": "studio"
+    },
+    {
+      "artist": "The Who",
+      "track": "Behind Blue Eyes",
+      "album": "Who's Next (Deluxe Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Traffic",
+      "track": "Dear Mr. Fantasy",
+      "album": "Mr. Fantasy",
+      "version": "studio"
+    }
+  ]
+}

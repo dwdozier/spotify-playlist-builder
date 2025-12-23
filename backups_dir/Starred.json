@@ -1,0 +1,6817 @@
+{
+  "name": "Starred",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "David Bowie",
+      "track": "Five Years - 1999 Digital Remaster",
+      "album": "The Rise And Fall Of Ziggy Stardust And The Spiders From Mars",
+      "version": "remaster"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "Soul Love - 1999 Digital Remaster",
+      "album": "The Rise And Fall Of Ziggy Stardust And The Spiders From Mars",
+      "version": "remaster"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "Moonage Daydream - 1999 Digital Remaster",
+      "album": "The Rise And Fall Of Ziggy Stardust And The Spiders From Mars",
+      "version": "remaster"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "Starman - 1999 Digital Remaster",
+      "album": "The Rise And Fall Of Ziggy Stardust And The Spiders From Mars",
+      "version": "remaster"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "It Ain't Easy - 1999 Digital Remaster",
+      "album": "The Rise And Fall Of Ziggy Stardust And The Spiders From Mars",
+      "version": "remaster"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "Lady Stardust - 1999 Digital Remaster",
+      "album": "The Rise And Fall Of Ziggy Stardust And The Spiders From Mars",
+      "version": "remaster"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "Star - 1999 Digital Remaster",
+      "album": "The Rise And Fall Of Ziggy Stardust And The Spiders From Mars",
+      "version": "remaster"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "Hang On To Yourself - 1999 Digital Remaster",
+      "album": "The Rise And Fall Of Ziggy Stardust And The Spiders From Mars",
+      "version": "remaster"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "Ziggy Stardust - 1999 Digital Remaster",
+      "album": "The Rise And Fall Of Ziggy Stardust And The Spiders From Mars",
+      "version": "remaster"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "Suffragette City - 1999 Digital Remaster",
+      "album": "The Rise And Fall Of Ziggy Stardust And The Spiders From Mars",
+      "version": "remaster"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "Rock 'N' Roll Suicide - 1999 Digital Remaster",
+      "album": "The Rise And Fall Of Ziggy Stardust And The Spiders From Mars",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Fixx",
+      "track": "One Thing Leads To Another",
+      "album": "Reach The Beach",
+      "version": "studio"
+    },
+    {
+      "artist": "The Fixx",
+      "track": "The Sign Of Fire",
+      "album": "Reach The Beach",
+      "version": "studio"
+    },
+    {
+      "artist": "The Fixx",
+      "track": "Running",
+      "album": "Reach The Beach",
+      "version": "studio"
+    },
+    {
+      "artist": "The Fixx",
+      "track": "Saved By Zero",
+      "album": "Reach The Beach",
+      "version": "studio"
+    },
+    {
+      "artist": "The Fixx",
+      "track": "Opinions",
+      "album": "Reach The Beach",
+      "version": "studio"
+    },
+    {
+      "artist": "The Fixx",
+      "track": "Reach The Beach",
+      "album": "Reach The Beach",
+      "version": "studio"
+    },
+    {
+      "artist": "The Fixx",
+      "track": "Changing",
+      "album": "Reach The Beach",
+      "version": "studio"
+    },
+    {
+      "artist": "The Fixx",
+      "track": "Liner",
+      "album": "Reach The Beach",
+      "version": "studio"
+    },
+    {
+      "artist": "The Fixx",
+      "track": "Priviledge",
+      "album": "Reach The Beach",
+      "version": "studio"
+    },
+    {
+      "artist": "The Fixx",
+      "track": "Outside",
+      "album": "Reach The Beach",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "La Strega",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "The Grand Ball Of The Duljas",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Morning At Boma Park",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "The Five Curtains",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Book Of Roses",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "In Doga Gamee",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Passage To Promise",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "In The Woods Of Kroandal",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Jugglers In Osidian",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Chanson De L'Heure Bleue",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Czippa And The Ursanian Girl",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "The Birds Of Tilmun",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Hirzel",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Jours D'Amour",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Manto's Arrow And The Sphinx",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Letters To A Young Rose",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Overtuerli - Live",
+      "album": "Book of Roses",
+      "version": "live"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Book Of Roses - Live",
+      "album": "Book of Roses",
+      "version": "live"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Hey You! Yes, You... - Special Edit",
+      "album": "Book of Roses",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Unto The Burning Circle",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Dancing With The Lion",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Hippolyte",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Dance Of The Masks",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Pearls & Tears",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Garden Of My Childhood",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Still Life",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "And The Long Shadows",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "See, My Love...",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Silver Dew, Golden Grass",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Ascent From The Circle",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Ouverturli - Live / 1989",
+      "album": "Dancing With The Lion",
+      "version": "live"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "First Piece - Live / 1989",
+      "album": "Dancing With The Lion",
+      "version": "live"
+    },
+    {
+      "artist": "Andreas Vollenweider",
+      "track": "Hey You! Yes, You... - Bonus Track",
+      "album": "Dancing With The Lion",
+      "version": "studio"
+    },
+    {
+      "artist": "Ratt",
+      "track": "Round and Round",
+      "album": "Out of the Cellar",
+      "version": "studio"
+    },
+    {
+      "artist": "Ratt",
+      "track": "You're in Love",
+      "album": "Invasion of Your Privacy",
+      "version": "studio"
+    },
+    {
+      "artist": "Ratt",
+      "track": "Lay It Down",
+      "album": "Invasion of Your Privacy",
+      "version": "studio"
+    },
+    {
+      "artist": "Winger",
+      "track": "Seventeen",
+      "album": "Winger",
+      "version": "studio"
+    },
+    {
+      "artist": "Winger",
+      "track": "Madalaine",
+      "album": "Winger",
+      "version": "studio"
+    },
+    {
+      "artist": "Winger",
+      "track": "Hangin On",
+      "album": "Winger",
+      "version": "studio"
+    },
+    {
+      "artist": "Winger",
+      "track": "Headed for a Heartbreak",
+      "album": "Winger",
+      "version": "studio"
+    },
+    {
+      "artist": "Great White",
+      "track": "Rock Me",
+      "album": "Once Bitten",
+      "version": "studio"
+    },
+    {
+      "artist": "Tesla",
+      "track": "Modern Day Cowboy",
+      "album": "Gold",
+      "version": "studio"
+    },
+    {
+      "artist": "Bonham",
+      "track": "Wait for You",
+      "album": "The Disregard of Timekeeping",
+      "version": "studio"
+    },
+    {
+      "artist": "Atlanta Rhythm Section",
+      "track": "So Into You",
+      "album": "20th Century Masters: The Millennium Collection: Best Of Atlanta Rhythm Section",
+      "version": "compilation"
+    },
+    {
+      "artist": "Atlanta Rhythm Section",
+      "track": "Imaginary Lover",
+      "album": "20th Century Masters: The Millennium Collection: Best Of Atlanta Rhythm Section",
+      "version": "compilation"
+    },
+    {
+      "artist": "Atlanta Rhythm Section",
+      "track": "Spooky",
+      "album": "20th Century Masters: The Millennium Collection: Best Of Atlanta Rhythm Section",
+      "version": "compilation"
+    },
+    {
+      "artist": "Thomas Dolby",
+      "track": "Dissidents - 2009 Remastered Version",
+      "album": "The Flat Earth [Collector's Edition]",
+      "version": "remaster"
+    },
+    {
+      "artist": "Thomas Dolby",
+      "track": "The Flat Earth - 2009 Remastered Version",
+      "album": "The Flat Earth [Collector's Edition]",
+      "version": "remaster"
+    },
+    {
+      "artist": "Thomas Dolby",
+      "track": "Screen Kiss - 2009 Remastered Version",
+      "album": "The Flat Earth [Collector's Edition]",
+      "version": "remaster"
+    },
+    {
+      "artist": "Thomas Dolby",
+      "track": "White City - 2009 Remastered Version",
+      "album": "The Flat Earth [Collector's Edition]",
+      "version": "remaster"
+    },
+    {
+      "artist": "Thomas Dolby",
+      "track": "Mulu The Rain Forest - 2009 Remastered Version",
+      "album": "The Flat Earth [Collector's Edition]",
+      "version": "remaster"
+    },
+    {
+      "artist": "Thomas Dolby",
+      "track": "I Scare Myself - 2009 Remastered Version",
+      "album": "The Flat Earth [Collector's Edition]",
+      "version": "remaster"
+    },
+    {
+      "artist": "Thomas Dolby",
+      "track": "Hyperactive! - 2009 Remastered Version",
+      "album": "The Flat Earth [Collector's Edition]",
+      "version": "remaster"
+    },
+    {
+      "artist": "Thomas Dolby",
+      "track": "She Blinded Me With Science",
+      "album": "The Golden Age Of Wireless",
+      "version": "studio"
+    },
+    {
+      "artist": "Thomas Dolby",
+      "track": "Airwaves",
+      "album": "The Golden Age Of Wireless",
+      "version": "studio"
+    },
+    {
+      "artist": "Oingo Boingo",
+      "track": "Only A Lad",
+      "album": "Best O' Boingo",
+      "version": "studio"
+    },
+    {
+      "artist": "Oingo Boingo",
+      "track": "Just Another Day",
+      "album": "Best O' Boingo",
+      "version": "studio"
+    },
+    {
+      "artist": "Oingo Boingo",
+      "track": "Weird Science",
+      "album": "Best O' Boingo",
+      "version": "studio"
+    },
+    {
+      "artist": "Oingo Boingo",
+      "track": "Not My Slave",
+      "album": "Best O' Boingo",
+      "version": "studio"
+    },
+    {
+      "artist": "Oingo Boingo",
+      "track": "Dead Man's Party",
+      "album": "Best O' Boingo",
+      "version": "studio"
+    },
+    {
+      "artist": "Danny Elfman",
+      "track": "Overture - (The Nightmare Before Christmas)",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Patrick Stewart",
+      "track": "Opening - (The Nightmare Before Christmas)",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "The Citizens of Halloween",
+      "track": "This Is Halloween",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Danny Elfman",
+      "track": "Jack's Lament",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Danny Elfman",
+      "track": "Doctor Finklestein / In The Forest",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Danny Elfman",
+      "track": "What's This?",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Cast - The Nightmare Before Christmas",
+      "track": "Town Meeting Song",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Danny Elfman",
+      "track": "Jack and Sally Montage",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Cast - The Nightmare Before Christmas",
+      "track": "Jack's Obsession",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Danny Elfman",
+      "track": "Kidnap The Sandy Claws",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "The Citizens of Halloween",
+      "track": "Making Christmas",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Danny Elfman",
+      "track": "Nabbed",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Ed Ivory",
+      "track": "Oogie Boogie's Song",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Catherine O'Hara",
+      "track": "Sally's Song",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Danny Elfman",
+      "track": "Christmas Eve Montage",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Danny Elfman",
+      "track": "Poor Jack",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Danny Elfman",
+      "track": "To The Rescue",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Danny Elfman",
+      "track": "Finale / Reprise",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Danny Elfman",
+      "track": "Closing",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Danny Elfman",
+      "track": "End Title",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Marilyn Manson",
+      "track": "This Is Halloween",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Fiona Apple",
+      "track": "Sally's Song",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Fall Out Boy",
+      "track": "What's This?",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "She Wants Revenge",
+      "track": "Kidnap the Sandy Claws",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Panic! At The Disco",
+      "track": "This is Halloween",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Danny Elfman",
+      "track": "Making Christmas",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Danny Elfman",
+      "track": "Oogie Boogie's Song",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Danny Elfman",
+      "track": "Kidnap the Sandy Claws",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Danny Elfman",
+      "track": "This is Halloween",
+      "album": "Nightmare Before Christmas Special Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Get A Life",
+      "album": "Volume II - 1990 A New Decade",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Love Come Through",
+      "album": "Volume II - 1990 A New Decade",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "People",
+      "album": "Volume II - 1990 A New Decade",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Missing You",
+      "album": "Volume II - 1990 A New Decade",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Courtney Blows",
+      "album": "Volume II - 1990 A New Decade",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "1990 A New Decade",
+      "album": "Volume II - 1990 A New Decade",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "A Dream's A Dream",
+      "album": "Volume II - 1990 A New Decade",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Time (Untitled)",
+      "album": "Volume II - 1990 A New Decade",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "In The Heat Of The Night",
+      "album": "Volume II - 1990 A New Decade",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Our Time Has Now Come",
+      "album": "Volume II - 1990 A New Decade",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Joy",
+      "album": "Volume III - Just Right",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Take Me Higher",
+      "album": "Volume III - Just Right",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Storm",
+      "album": "Volume III - Just Right",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Direction",
+      "album": "Volume III - Just Right",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Just Right",
+      "album": "Volume III - Just Right",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Move Me No Mountain",
+      "album": "Volume III - Just Right",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Intelligence",
+      "album": "Volume III - Just Right",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Future",
+      "album": "Volume III - Just Right",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Mood",
+      "album": "Volume III - Just Right",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Everywhere",
+      "album": "Volume III - Just Right",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Keep On Movin'",
+      "album": "Keep On Movin'",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Fairplay",
+      "album": "Keep On Movin'",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Holdin' On",
+      "album": "Keep On Movin'",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Feeling Free - Live From Westside Studios,United Kingdom/1989",
+      "album": "Keep On Movin'",
+      "version": "live"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "African Dance",
+      "album": "Keep On Movin'",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Dance",
+      "album": "Keep On Movin'",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Feel Free",
+      "album": "Keep On Movin'",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Happiness - Dub",
+      "album": "Keep On Movin'",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Back To Life",
+      "album": "Keep On Movin'",
+      "version": "studio"
+    },
+    {
+      "artist": "Soul II Soul",
+      "track": "Jazzie's Groove",
+      "album": "Keep On Movin'",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Don't Stop 'Til You Get Enough - Single Version",
+      "album": "Off The Wall",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Rock With You - Single Version",
+      "album": "Off The Wall",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Off The Wall",
+      "album": "Off The Wall",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Get On The Floor",
+      "album": "Off The Wall",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Speed Demon",
+      "album": "Bad",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Bad",
+      "album": "Bad",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "The Way You Make Me Feel",
+      "album": "Bad",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Liberian Girl",
+      "album": "Bad",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "I Just Can't Stop Loving You",
+      "album": "Bad",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Dirty Diana",
+      "album": "Bad",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Smooth Criminal (Radio Edit)",
+      "album": "Bad",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Leave Me Alone",
+      "album": "Bad",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Wanna Be Startin' Somethin'",
+      "album": "Thriller (25th Anniversary Edition CD/DVD)",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Baby Be Mine",
+      "album": "Thriller (25th Anniversary Edition CD/DVD)",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "The Girl Is Mine",
+      "album": "Thriller (25th Anniversary Edition CD/DVD)",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Thriller",
+      "album": "Thriller (25th Anniversary Edition CD/DVD)",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Beat It - Single Version",
+      "album": "Thriller (25th Anniversary Edition CD/DVD)",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Billie Jean - Single Version",
+      "album": "Thriller (25th Anniversary Edition CD/DVD)",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Human Nature",
+      "album": "Thriller (25th Anniversary Edition CD/DVD)",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "P.Y.T. (Pretty Young Thing)",
+      "album": "Thriller (25th Anniversary Edition CD/DVD)",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "The Lady In My Life",
+      "album": "Thriller (25th Anniversary Edition CD/DVD)",
+      "version": "studio"
+    },
+    {
+      "artist": "Michael Jackson",
+      "track": "Remember the Time",
+      "album": "Dangerous",
+      "version": "studio"
+    },
+    {
+      "artist": "Player",
+      "track": "Baby Come Back",
+      "album": "The Best Of Player: Baby Come Back",
+      "version": "compilation"
+    },
+    {
+      "artist": "Ace",
+      "track": "How Long",
+      "album": "Late Night Tales: Groove Armada (Remastered Edition)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Christopher Cross",
+      "track": "Never Be the Same",
+      "album": "Christopher Cross",
+      "version": "studio"
+    },
+    {
+      "artist": "Christopher Cross",
+      "track": "Ride Like the Wind",
+      "album": "Christopher Cross",
+      "version": "studio"
+    },
+    {
+      "artist": "Christopher Cross",
+      "track": "Sailing",
+      "album": "Christopher Cross",
+      "version": "studio"
+    },
+    {
+      "artist": "Elvis Costello",
+      "track": "Alison",
+      "album": "My Aim Is True",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Do It Again",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Dirty Work",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Your Gold Teeth",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "King Of The World",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Rikki Don't Lose That Number",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Night By Night",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Pretzel Logic",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "With A Gun",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Black Friday",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Bad Sneakers",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Rose Darling",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Daddy Don't Live In That New York City No More",
+      "album": "Citizen 1972-1980",
+      "version": "live"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Doctor Wu",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Any World (That I'm Welcome To)",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Throw Back The Little Ones",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Kid Charlemagne",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "The Caves Of Altamira",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Don't Take Me Alive",
+      "album": "Citizen 1972-1980",
+      "version": "live"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Sign In Stranger",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "The Fez",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Green Earrings",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Haitian Divorce",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Everything You Did",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "The Royal Scam",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Here At The Western World",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Black Cow",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Aja",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Peg",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Deacon Blues",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Josie",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "FM",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Babylon Sisters",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Steely Dan",
+      "track": "Hey Nineteen",
+      "album": "Citizen 1972-1980",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Pump It",
+      "album": "Monkey Business",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Don't Phunk With My Heart",
+      "album": "Monkey Business",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "My Style",
+      "album": "Monkey Business",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Don't Lie",
+      "album": "Monkey Business",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "My Humps",
+      "album": "Monkey Business",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Like That",
+      "album": "Monkey Business",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Dum Diddly",
+      "album": "Monkey Business",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Feel It",
+      "album": "Monkey Business",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Gone Going",
+      "album": "Monkey Business",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "They Don't Want Music",
+      "album": "Monkey Business",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Disco Club",
+      "album": "Monkey Business",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Bebot",
+      "album": "Monkey Business",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Ba Bump",
+      "album": "Monkey Business",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Audio Delite at Low Fidelity",
+      "album": "Monkey Business",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Union",
+      "album": "Monkey Business",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Let's Get Retarded",
+      "album": "Elephunk",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Hands Up",
+      "album": "Elephunk",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Labor Day (It's A Holiday)",
+      "album": "Elephunk",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Hey Mama",
+      "album": "Elephunk",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Shut Up",
+      "album": "Elephunk",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Smells Like Funk",
+      "album": "Elephunk",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Latin Girls",
+      "album": "Elephunk",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Sexy",
+      "album": "Elephunk",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Fly Away",
+      "album": "Elephunk",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "The Boogie That Be",
+      "album": "Elephunk",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "The Apl Song",
+      "album": "Elephunk",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Anxiety",
+      "album": "Elephunk",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Where Is The Love?",
+      "album": "Elephunk",
+      "version": "studio"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Let's Get It Started - Spike Mix",
+      "album": "Elephunk",
+      "version": "remix"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "track": "Third Eye",
+      "album": "Elephunk",
+      "version": "studio"
+    },
+    {
+      "artist": "Seals and Crofts",
+      "track": "We May Never Pass This Way (Again)",
+      "album": "Seals & Crofts' Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Seals and Crofts",
+      "track": "Hummingbird",
+      "album": "Seals & Crofts' Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Seals and Crofts",
+      "track": "Diamond Girl",
+      "album": "Seals & Crofts' Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Seals and Crofts",
+      "track": "Summer Breeze",
+      "album": "Seals & Crofts' Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Commodores",
+      "track": "Easy",
+      "album": "The Definitive Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Commodores",
+      "track": "Three Times A Lady",
+      "album": "The Definitive Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Commodores",
+      "track": "Still",
+      "album": "The Definitive Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Commodores",
+      "track": "Lady (You Bring Me Up)",
+      "album": "The Definitive Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Superstition",
+      "album": "Original Musiquarium",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "You Haven't Done Nothin'",
+      "album": "Original Musiquarium",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Living For The City - 1982 Musiquarium Version",
+      "album": "Original Musiquarium",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Front Line - 1982 Musiquarium Version",
+      "album": "Original Musiquarium",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Superwoman (Where Were You When I Needed You)",
+      "album": "Original Musiquarium",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Send One Your Love",
+      "album": "Original Musiquarium",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "You Are The Sunshine Of My Life - Single Version With Horns",
+      "album": "Original Musiquarium",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Ribbon In The Sky - 1982 Musiquarium Version",
+      "album": "Original Musiquarium",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Higher Ground",
+      "album": "Original Musiquarium",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Sir Duke",
+      "album": "Original Musiquarium",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Master Blaster (Jammin')",
+      "album": "Original Musiquarium",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Boogie On Reggae Woman - 1982 Musiquarium Intro",
+      "album": "Original Musiquarium",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "That Girl",
+      "album": "Original Musiquarium",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "I Wish",
+      "album": "Original Musiquarium",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Isn't She Lovely",
+      "album": "Original Musiquarium",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Do I Do - 1982 Musiquarium Version",
+      "album": "Original Musiquarium",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Love's In Need Of Love Today",
+      "album": "Songs In The Key Of Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Have A Talk With God",
+      "album": "Songs In The Key Of Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Village Ghetto Land",
+      "album": "Songs In The Key Of Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Contusion",
+      "album": "Songs In The Key Of Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Sir Duke",
+      "album": "Songs In The Key Of Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "I Wish",
+      "album": "Songs In The Key Of Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Knocks Me Off My Feet",
+      "album": "Songs In The Key Of Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Pastime Paradise",
+      "album": "Songs In The Key Of Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Summer Soft",
+      "album": "Songs In The Key Of Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Ordinary Pain",
+      "album": "Songs In The Key Of Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Isn't She Lovely",
+      "album": "Songs In The Key Of Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Joy Inside My Tears",
+      "album": "Songs In The Key Of Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Black Man",
+      "album": "Songs In The Key Of Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Ngiculela-Es Una Historia-I Am Singing",
+      "album": "Songs In The Key Of Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "If It's Magic",
+      "album": "Songs In The Key Of Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "As",
+      "album": "Songs In The Key Of Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Another Star",
+      "album": "Songs In The Key Of Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Saturn",
+      "album": "Songs In The Key Of Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Ebony Eyes",
+      "album": "Songs In The Key Of Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "All Day Sucker",
+      "album": "Songs In The Key Of Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Easy Goin' Evening (My Mama's Call)",
+      "album": "Songs In The Key Of Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Bee Gees",
+      "track": "Jive Talkin'",
+      "album": "Mythology",
+      "version": "studio"
+    },
+    {
+      "artist": "Bee Gees",
+      "track": "Tragedy",
+      "album": "Mythology",
+      "version": "studio"
+    },
+    {
+      "artist": "Bee Gees",
+      "track": "More Than A Woman",
+      "album": "Mythology",
+      "version": "studio"
+    },
+    {
+      "artist": "Bee Gees",
+      "track": "If I Can't Have You",
+      "album": "Mythology",
+      "version": "studio"
+    },
+    {
+      "artist": "Bee Gees",
+      "track": "How Deep Is Your Love",
+      "album": "Mythology",
+      "version": "studio"
+    },
+    {
+      "artist": "Bee Gees",
+      "track": "Stayin' Alive",
+      "album": "Mythology",
+      "version": "live"
+    },
+    {
+      "artist": "Bee Gees",
+      "track": "To Love Somebody",
+      "album": "Mythology",
+      "version": "studio"
+    },
+    {
+      "artist": "Bee Gees",
+      "track": "Too Much Heaven",
+      "album": "Mythology",
+      "version": "studio"
+    },
+    {
+      "artist": "Bee Gees",
+      "track": "Night Fever",
+      "album": "Mythology",
+      "version": "studio"
+    },
+    {
+      "artist": "Billy Joel",
+      "track": "Movin' Out (Anthony's Song)",
+      "album": "The Stranger (Legacy Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Billy Joel",
+      "track": "The Stranger",
+      "album": "The Stranger (Legacy Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Billy Joel",
+      "track": "Just the Way You Are",
+      "album": "The Stranger (Legacy Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Billy Joel",
+      "track": "Scenes from an Italian Restaurant",
+      "album": "The Stranger (Legacy Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Billy Joel",
+      "track": "Vienna",
+      "album": "The Stranger (Legacy Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Billy Joel",
+      "track": "Only the Good Die Young",
+      "album": "The Stranger (Legacy Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Billy Joel",
+      "track": "She's Always a Woman",
+      "album": "The Stranger (Legacy Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Billy Joel",
+      "track": "Get It Right the First Time",
+      "album": "The Stranger (Legacy Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Billy Joel",
+      "track": "Everybody Has a Dream",
+      "album": "The Stranger (Legacy Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Billy Joel",
+      "track": "You May Be Right",
+      "album": "Glass Houses",
+      "version": "studio"
+    },
+    {
+      "artist": "Billy Joel",
+      "track": "Don't Ask Me Why",
+      "album": "Glass Houses",
+      "version": "studio"
+    },
+    {
+      "artist": "Billy Joel",
+      "track": "It's Still Rock and Roll to Me",
+      "album": "Glass Houses",
+      "version": "studio"
+    },
+    {
+      "artist": "Billy Joel",
+      "track": "Piano Man",
+      "album": "Piano Man",
+      "version": "studio"
+    },
+    {
+      "artist": "Billy Joel",
+      "track": "Captain Jack",
+      "album": "Piano Man",
+      "version": "studio"
+    },
+    {
+      "artist": "Gerry Rafferty",
+      "track": "Right Down the Line",
+      "album": "City to City",
+      "version": "studio"
+    },
+    {
+      "artist": "Gerry Rafferty",
+      "track": "Baker Street",
+      "album": "City to City",
+      "version": "studio"
+    },
+    {
+      "artist": "The Alan Parsons Project",
+      "track": "Eye In The Sky",
+      "album": "Eye In The Sky (Expanded Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Alan Parsons Project",
+      "track": "I Robot",
+      "album": "I Robot",
+      "version": "studio"
+    },
+    {
+      "artist": "The Alan Parsons Project",
+      "track": "I Wouldn't Want To Be Like You",
+      "album": "I Robot",
+      "version": "studio"
+    },
+    {
+      "artist": "The Alan Parsons Project",
+      "track": "Games People Play",
+      "album": "The Best Of The Alan Parsons Project",
+      "version": "compilation"
+    },
+    {
+      "artist": "Gorillaz",
+      "track": "Welcome to the World of the Plastic Beach (feat. Snoop Dogg and Hypnotic Brass Ensemble)",
+      "album": "Plastic Beach",
+      "version": "studio"
+    },
+    {
+      "artist": "Gorillaz",
+      "track": "Rhinestone Eyes",
+      "album": "Plastic Beach",
+      "version": "studio"
+    },
+    {
+      "artist": "Gorillaz",
+      "track": "Superfast Jellyfish (feat. Gruff Rhys and De La Soul)",
+      "album": "Plastic Beach",
+      "version": "studio"
+    },
+    {
+      "artist": "Gorillaz",
+      "track": "Stylo (feat. Mos Def and Bobby Womack)",
+      "album": "Plastic Beach",
+      "version": "studio"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "You've Made Me So Very Happy",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "I Can't Quit Her",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "Go Down Gamblin' - Single Version",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "Hi-De-Ho That Old Sweet Roll - Single Version",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "Sometimes In Winter",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "And When I Die - Single Version",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "Spinning Wheel - Single Version",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "Lisa, Listen to Me",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "I Love You More Than You'll Ever Know",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "Lucretia Mac Evil",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "God Bless the Child",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "So Long Dixie",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Blood, Sweat & Tears",
+      "track": "More and More - Single Version",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Gorillaz",
+      "track": "Empire Ants (feat. Little Dragon)",
+      "album": "Plastic Beach",
+      "version": "studio"
+    },
+    {
+      "artist": "Roger Hodgson",
+      "track": "Had A Dream (Sleeping With The Enemy)",
+      "album": "In The Eye Of The Storm",
+      "version": "studio"
+    },
+    {
+      "artist": "Roger Hodgson",
+      "track": "Lovers In The Wind",
+      "album": "In The Eye Of The Storm",
+      "version": "studio"
+    },
+    {
+      "artist": "Roger Hodgson",
+      "track": "In Jeopardy",
+      "album": "In The Eye Of The Storm",
+      "version": "studio"
+    },
+    {
+      "artist": "The Manhattan Transfer",
+      "track": "Spice Of Life",
+      "album": "Bodies and Souls",
+      "version": "studio"
+    },
+    {
+      "artist": "The Manhattan Transfer",
+      "track": "Mystery",
+      "album": "Bodies and Souls",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Shout",
+      "album": "Songs From The Big Chair (Remastered With Bonus Tracks)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "The Working Hour",
+      "album": "Songs From The Big Chair (Remastered With Bonus Tracks)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Everybody Wants To Rule The World",
+      "album": "Songs From The Big Chair (Remastered With Bonus Tracks)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Mothers Talk",
+      "album": "Songs From The Big Chair (Remastered With Bonus Tracks)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "I Believe",
+      "album": "Songs From The Big Chair (Remastered With Bonus Tracks)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Broken",
+      "album": "Songs From The Big Chair (Remastered With Bonus Tracks)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Head Over Heels / Broken",
+      "album": "Songs From The Big Chair (Remastered With Bonus Tracks)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Listen",
+      "album": "Songs From The Big Chair (Remastered With Bonus Tracks)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "The Big Chair",
+      "album": "Songs From The Big Chair (Remastered With Bonus Tracks)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Empire Building",
+      "album": "Songs From The Big Chair (Remastered With Bonus Tracks)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "The Marauders",
+      "album": "Songs From The Big Chair (Remastered With Bonus Tracks)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Broken Revisited",
+      "album": "Songs From The Big Chair (Remastered With Bonus Tracks)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "The Conflict",
+      "album": "Songs From The Big Chair (Remastered With Bonus Tracks)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Mothers Talk - U.S. Remix",
+      "album": "Songs From The Big Chair (Remastered With Bonus Tracks)",
+      "version": "remix"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Shout - U.S. Remix",
+      "album": "Songs From The Big Chair (Remastered With Bonus Tracks)",
+      "version": "remix"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "The Hurting",
+      "album": "The Hurting",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Mad World",
+      "album": "The Hurting",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Pale Shelter - 2nd Single Version",
+      "album": "The Hurting",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Ideas As Opiates",
+      "album": "The Hurting",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Memories Fade",
+      "album": "The Hurting",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Suffer The Children",
+      "album": "The Hurting",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Watch Me Bleed",
+      "album": "The Hurting",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Change",
+      "album": "The Hurting",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "The Prisoner",
+      "album": "The Hurting",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Start Of The Breakdown",
+      "album": "The Hurting",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Pale Shelter - Long Version",
+      "album": "The Hurting",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "The Way You Are - Extended",
+      "album": "The Hurting",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Mad World - World Remix",
+      "album": "The Hurting",
+      "version": "remix"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Change - Extended Version",
+      "album": "The Hurting",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Woman In Chains",
+      "album": "The Seeds Of Love",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Bad Man's Song",
+      "album": "The Seeds Of Love",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Sowing The Seeds Of Love",
+      "album": "The Seeds Of Love",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Advice For The Young At Heart",
+      "album": "The Seeds Of Love",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Standing On The Corner Of The Third World",
+      "album": "The Seeds Of Love",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Swords And Knives",
+      "album": "The Seeds Of Love",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Year Of The Knife",
+      "album": "The Seeds Of Love",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Famous Last Words",
+      "album": "The Seeds Of Love",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Tears Roll Down",
+      "album": "The Seeds Of Love",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Always In The Past",
+      "album": "The Seeds Of Love",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Music For Tables",
+      "album": "The Seeds Of Love",
+      "version": "studio"
+    },
+    {
+      "artist": "Tears For Fears",
+      "track": "Johnny Panic And The Bible Of Dreams",
+      "album": "The Seeds Of Love",
+      "version": "studio"
+    },
+    {
+      "artist": "The Egyptian Lover",
+      "track": "My House",
+      "album": "On The Nile",
+      "version": "studio"
+    },
+    {
+      "artist": "The Egyptian Lover",
+      "track": "What Is A DJ If He Can't Scratch",
+      "album": "On The Nile",
+      "version": "studio"
+    },
+    {
+      "artist": "The Egyptian Lover",
+      "track": "Girls",
+      "album": "On The Nile",
+      "version": "studio"
+    },
+    {
+      "artist": "The Egyptian Lover",
+      "track": "Computer Love (Sweet Dreams)",
+      "album": "On The Nile",
+      "version": "studio"
+    },
+    {
+      "artist": "The Egyptian Lover",
+      "track": "Egypt Egypt",
+      "album": "On The Nile",
+      "version": "studio"
+    },
+    {
+      "artist": "The Egyptian Lover",
+      "track": "I Cry (Night After Night)",
+      "album": "On The Nile",
+      "version": "studio"
+    },
+    {
+      "artist": "The Egyptian Lover",
+      "track": "Unreal",
+      "album": "On The Nile",
+      "version": "studio"
+    },
+    {
+      "artist": "The Egyptian Lover",
+      "track": "And My Beat Goes Boom",
+      "album": "On The Nile",
+      "version": "studio"
+    },
+    {
+      "artist": "Kraftwerk",
+      "track": "Tour de France - 2009 Remaster",
+      "album": "Tour de France (2009 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Prince",
+      "track": "I Wanna Be Your Lover",
+      "album": "Prince",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Why You Wanna Treat Me so Bad?",
+      "album": "Prince",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Sign 'O' the Times",
+      "album": "Sign \"O\" the Times",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "U Got the Look",
+      "album": "Sign \"O\" the Times",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "If I Was Your Girlfriend",
+      "album": "Sign \"O\" the Times",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "I Could Never Take the Place of Your Man",
+      "album": "Sign \"O\" the Times",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Can't Stop This Feeling I Got",
+      "album": "Music from Graffiti Bridge",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "New Power Generation",
+      "album": "Music from Graffiti Bridge",
+      "version": "studio"
+    },
+    {
+      "artist": "The Time",
+      "track": "Release It",
+      "album": "Music from Graffiti Bridge",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "The Question of U",
+      "album": "Music from Graffiti Bridge",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Elephants & Flowers",
+      "album": "Music from Graffiti Bridge",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Round and Round",
+      "album": "Music from Graffiti Bridge",
+      "version": "studio"
+    },
+    {
+      "artist": "George Clinton",
+      "track": "We Can Funk",
+      "album": "Music from Graffiti Bridge",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Joy in Repetition",
+      "album": "Music from Graffiti Bridge",
+      "version": "studio"
+    },
+    {
+      "artist": "The Time",
+      "track": "Love Machine",
+      "album": "Music from Graffiti Bridge",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Tick, Tick, Bang",
+      "album": "Music from Graffiti Bridge",
+      "version": "studio"
+    },
+    {
+      "artist": "The Time",
+      "track": "Shake",
+      "album": "Music from Graffiti Bridge",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Thieves in the Temple",
+      "album": "Music from Graffiti Bridge",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "The Latest Fashion",
+      "album": "Music from Graffiti Bridge",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Melody Cool",
+      "album": "Music from Graffiti Bridge",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Still Would Stand All Time",
+      "album": "Music from Graffiti Bridge",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Graffiti Bridge",
+      "album": "Music from Graffiti Bridge",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "New Power Generation - Pt.II",
+      "album": "Music from Graffiti Bridge",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "The Future",
+      "album": "Batman",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Electric Chair",
+      "album": "Batman",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "The Arms of Orion",
+      "album": "Batman",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Partyman",
+      "album": "Batman",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Vicki Waiting",
+      "album": "Batman",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Trust",
+      "album": "Batman",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Lemon Crush",
+      "album": "Batman",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Scandalous",
+      "album": "Batman",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Batdance",
+      "album": "Batman",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Christopher Tracy's Parade",
+      "album": "Parade - Music from the Motion Picture Under the Cherry Moon",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Around the World in a Day",
+      "album": "Around the World in a Day",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Paisley Park",
+      "album": "Around the World in a Day",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Condition of the Heart",
+      "album": "Around the World in a Day",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Raspberry Beret",
+      "album": "Around the World in a Day",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Tamborine",
+      "album": "Around the World in a Day",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "America",
+      "album": "Around the World in a Day",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Pop Life",
+      "album": "Around the World in a Day",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "The Ladder",
+      "album": "Around the World in a Day",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Temptation",
+      "album": "Around the World in a Day",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Let's Go Crazy",
+      "album": "Purple Rain",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Take Me with U",
+      "album": "Purple Rain",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "The Beautiful Ones",
+      "album": "Purple Rain",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Computer Blue",
+      "album": "Purple Rain",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Darling Nikki",
+      "album": "Purple Rain",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "When Doves Cry",
+      "album": "Purple Rain",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "I Would Die 4 U",
+      "album": "Purple Rain",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Baby I'm a Star",
+      "album": "Purple Rain",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Purple Rain",
+      "album": "Purple Rain",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "1999",
+      "album": "1999",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Little Red Corvette",
+      "album": "1999",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Delirious",
+      "album": "1999",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Let's Pretend We're Married",
+      "album": "1999",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "D.M.S.R.",
+      "album": "1999",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Automatic",
+      "album": "1999",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Something in the Water (Does Not Compute)",
+      "album": "1999",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Free",
+      "album": "1999",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Lady Cab Driver",
+      "album": "1999",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "All the Critics Love U in New York",
+      "album": "1999",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "International Lover",
+      "album": "1999",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Controversy",
+      "album": "Controversy",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Sexuality",
+      "album": "Controversy",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Do Me, Baby",
+      "album": "Controversy",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Private Joy",
+      "album": "Controversy",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Ronnie, Talk to Russia",
+      "album": "Controversy",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Let's Work",
+      "album": "Controversy",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Annie Christian",
+      "album": "Controversy",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Jack U Off",
+      "album": "Controversy",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Dirty Mind",
+      "album": "Dirty Mind",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "When You Were Mine",
+      "album": "Dirty Mind",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Do It All Night",
+      "album": "Dirty Mind",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Gotta Broken Heart Again",
+      "album": "Dirty Mind",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Uptown",
+      "album": "Dirty Mind",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Head",
+      "album": "Dirty Mind",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Sister",
+      "album": "Dirty Mind",
+      "version": "studio"
+    },
+    {
+      "artist": "Prince",
+      "track": "Partyup",
+      "album": "Dirty Mind",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Your Love Is King - Remastered",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Smooth Operator - Remastered",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Hang on to Your Love - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "The Sweetest Taboo - Remastered",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Is It a Crime - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Never as Good as the First Time - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Jezebel - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Love Is Stronger Than Pride - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Paradise - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Nothing Can Come Between Us - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "No Ordinary Love - Remastered",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Kiss of Life - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Feel No Pain - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Bullet Proof Soul - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Cherish the Day - Remastered",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Pearls - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "By Your Side - Remastered",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Immigrant - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Flow - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "King of Sorrow - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "The Sweetest Gift - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Soldier of Love - Remastered",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "The Moon and the Sky - Remastered",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Babyfather - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Still In Love With You",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "Love Is Found",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "I Would Never Have Guessed",
+      "album": "The Ultimate Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "The Moon and the Sky - Remix",
+      "album": "The Ultimate Collection",
+      "version": "remix"
+    },
+    {
+      "artist": "Sade",
+      "track": "By Your Side - Neptunes Remix - Remastered Version",
+      "album": "The Ultimate Collection",
+      "version": "remix"
+    },
+    {
+      "artist": "Sade",
+      "track": "Love Is Stronger Than Pride - Video Version",
+      "album": "Stronger Than Pride",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Paradise",
+      "album": "Stronger Than Pride",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Nothing Can Come Between Us - Video Version",
+      "album": "Stronger Than Pride",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Haunt Me",
+      "album": "Stronger Than Pride",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Turn My Back On You",
+      "album": "Stronger Than Pride",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Keep Looking",
+      "album": "Stronger Than Pride",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "CLEAN HEART",
+      "album": "Stronger Than Pride",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Give It Up",
+      "album": "Stronger Than Pride",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "I Never Thought I'd See the Day",
+      "album": "Stronger Than Pride",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Siempre Hay Esperanza",
+      "album": "Stronger Than Pride",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "No Ordinary Love",
+      "album": "Love Deluxe",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Feel No Pain",
+      "album": "Love Deluxe",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "I Couldn't Love You More",
+      "album": "Love Deluxe",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Like a Tattoo",
+      "album": "Love Deluxe",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Kiss of Life",
+      "album": "Love Deluxe",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Cherish the Day",
+      "album": "Love Deluxe",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Pearls",
+      "album": "Love Deluxe",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Bullet Proof Soul",
+      "album": "Love Deluxe",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Mermaid",
+      "album": "Love Deluxe",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Is It a Crime",
+      "album": "Promise",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "The Sweetest Taboo",
+      "album": "Promise",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "War of the Hearts",
+      "album": "Promise",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "You're Not the Man",
+      "album": "Promise",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Jezebel",
+      "album": "Promise",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Mr Wrong",
+      "album": "Promise",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Punch Drunk",
+      "album": "Promise",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Never as Good as the First Time",
+      "album": "Promise",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Fear",
+      "album": "Promise",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Tar Baby",
+      "album": "Promise",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Maureen",
+      "album": "Promise",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Smooth Operator",
+      "album": "Diamond Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Your Love Is King",
+      "album": "Diamond Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Hang On To Your Love",
+      "album": "Diamond Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Frankie's First Affair",
+      "album": "Diamond Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "When Am I Going To Make A Living",
+      "album": "Diamond Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Cherry Pie",
+      "album": "Diamond Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Sally",
+      "album": "Diamond Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "I Will Be Your Friend",
+      "album": "Diamond Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Why Can't We Live Together",
+      "album": "Diamond Life",
+      "version": "live"
+    },
+    {
+      "artist": "The Time",
+      "track": "Ice Cream Castles",
+      "album": "Ice Cream Castle",
+      "version": "studio"
+    },
+    {
+      "artist": "The Time",
+      "track": "My Drawers",
+      "album": "Ice Cream Castle",
+      "version": "studio"
+    },
+    {
+      "artist": "The Time",
+      "track": "Chili Sauce",
+      "album": "Ice Cream Castle",
+      "version": "studio"
+    },
+    {
+      "artist": "The Time",
+      "track": "Jungle Love",
+      "album": "Ice Cream Castle",
+      "version": "studio"
+    },
+    {
+      "artist": "The Time",
+      "track": "If the Kid Can't Make You Come",
+      "album": "Ice Cream Castle",
+      "version": "studio"
+    },
+    {
+      "artist": "The Time",
+      "track": "The Bird",
+      "album": "Ice Cream Castle",
+      "version": "studio"
+    },
+    {
+      "artist": "Sheila E.",
+      "track": "Sister Fate",
+      "album": "Romance 1600",
+      "version": "studio"
+    },
+    {
+      "artist": "Sheila E.",
+      "track": "Dear Michaelangelo",
+      "album": "Romance 1600",
+      "version": "studio"
+    },
+    {
+      "artist": "Sheila E.",
+      "track": "A Love Bizarre",
+      "album": "Romance 1600",
+      "version": "studio"
+    },
+    {
+      "artist": "Sheila E.",
+      "track": "Toy Box",
+      "album": "Romance 1600",
+      "version": "studio"
+    },
+    {
+      "artist": "Sheila E.",
+      "track": "Yellow",
+      "album": "Romance 1600",
+      "version": "studio"
+    },
+    {
+      "artist": "Sheila E.",
+      "track": "Romance 1600",
+      "album": "Romance 1600",
+      "version": "studio"
+    },
+    {
+      "artist": "Sheila E.",
+      "track": "Merci for the Speed of a Mad Clown in Summer",
+      "album": "Romance 1600",
+      "version": "studio"
+    },
+    {
+      "artist": "Sheila E.",
+      "track": "Bedtime Story",
+      "album": "Romance 1600",
+      "version": "studio"
+    },
+    {
+      "artist": "Sheila E.",
+      "track": "The Belle of St. Mark",
+      "album": "The Glamorous Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Sheila E.",
+      "track": "Shortberry Strawcake - LPVersion",
+      "album": "The Glamorous Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Sheila E.",
+      "track": "Noon Rendezvous",
+      "album": "The Glamorous Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Sheila E.",
+      "track": "Oliver's House",
+      "album": "The Glamorous Life",
+      "version": "live"
+    },
+    {
+      "artist": "Sheila E.",
+      "track": "Next Time Wipe the Lipstick off Your Collar",
+      "album": "The Glamorous Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Sheila E.",
+      "track": "The Glamorous Life",
+      "album": "The Glamorous Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Dwight David",
+      "track": "The Last Dragon - From \"The Last Dragon\" Soundtrack",
+      "album": "Berry Gordy's The Last Dragon",
+      "version": "studio"
+    },
+    {
+      "artist": "Vanity",
+      "track": "7th Heaven - From \"The Last Dragon\" Soundtrack",
+      "album": "Berry Gordy's The Last Dragon",
+      "version": "studio"
+    },
+    {
+      "artist": "Alfie",
+      "track": "Star - From \"The Last Dragon\" Soundtrack",
+      "album": "Berry Gordy's The Last Dragon",
+      "version": "studio"
+    },
+    {
+      "artist": "Charlene",
+      "track": "Fire - From \"The Last Dragon\" Soundtrack",
+      "album": "Berry Gordy's The Last Dragon",
+      "version": "studio"
+    },
+    {
+      "artist": "Willie Hutch",
+      "track": "The Glow - From \"The Last Dragon\" Soundtrack",
+      "album": "Berry Gordy's The Last Dragon",
+      "version": "studio"
+    },
+    {
+      "artist": "DeBarge",
+      "track": "Rhythm Of The Night - From \"The Last Dragon\" Soundtrack",
+      "album": "Berry Gordy's The Last Dragon",
+      "version": "studio"
+    },
+    {
+      "artist": "Stevie Wonder",
+      "track": "Upset Stomach - From \"The Last Dragon\" Soundtrack",
+      "album": "Berry Gordy's The Last Dragon",
+      "version": "studio"
+    },
+    {
+      "artist": "Syreeta",
+      "track": "First Time On A Ferris Wheel - From \"The Last Dragon\" Soundtrack",
+      "album": "Berry Gordy's The Last Dragon",
+      "version": "studio"
+    },
+    {
+      "artist": "Rockwell",
+      "track": "Peeping Tom",
+      "album": "Berry Gordy's The Last Dragon",
+      "version": "studio"
+    },
+    {
+      "artist": "Willie Hutch",
+      "track": "Inside You - From \"The Last Dragon\" Soundtrack",
+      "album": "Berry Gordy's The Last Dragon",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Mr. Roboto",
+      "album": "Kilroy Was Here",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Cold War",
+      "album": "Kilroy Was Here",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Don't Let It End",
+      "album": "Kilroy Was Here",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "High Time",
+      "album": "Kilroy Was Here",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Heavy Metal Poisoning",
+      "album": "Kilroy Was Here",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Just Get Through This Night",
+      "album": "Kilroy Was Here",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Double Life",
+      "album": "Kilroy Was Here",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Haven't We Been Here Before?",
+      "album": "Kilroy Was Here",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Don't Let It End",
+      "album": "Kilroy Was Here",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Rockin' The Paradise",
+      "album": "Paradise Theatre",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Too Much Time On My Hands",
+      "album": "Paradise Theatre",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "The Best Of Times",
+      "album": "Paradise Theatre",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Snowblind",
+      "album": "Paradise Theatre",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "The Grand Illusion",
+      "album": "The Grand Illusion",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Fooling Yourself (The Angry Young Man)",
+      "album": "The Grand Illusion",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Come Sail Away",
+      "album": "The Grand Illusion",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Miss America",
+      "album": "The Grand Illusion",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Superstars",
+      "album": "The Grand Illusion",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Man In The Wilderness",
+      "album": "The Grand Illusion",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Castle Walls",
+      "album": "The Grand Illusion",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "The Grand Finale",
+      "album": "The Grand Illusion",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Crystal Ball",
+      "album": "Crystal Ball",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Suite Madame Blue",
+      "album": "Equinox",
+      "version": "studio"
+    },
+    {
+      "artist": "Al Stewart",
+      "track": "Year of the Cat",
+      "album": "Year of the Cat",
+      "version": "studio"
+    },
+    {
+      "artist": "Al Stewart",
+      "track": "Time Passages",
+      "album": "Time Passages",
+      "version": "studio"
+    },
+    {
+      "artist": "TOTO",
+      "track": "Hold the Line",
+      "album": "The Essential Toto",
+      "version": "studio"
+    },
+    {
+      "artist": "TOTO",
+      "track": "Rosanna",
+      "album": "The Essential Toto",
+      "version": "studio"
+    },
+    {
+      "artist": "TOTO",
+      "track": "Africa",
+      "album": "The Essential Toto",
+      "version": "studio"
+    },
+    {
+      "artist": "TOTO",
+      "track": "99",
+      "album": "The Essential Toto",
+      "version": "studio"
+    },
+    {
+      "artist": "TOTO",
+      "track": "I'll Be Over You",
+      "album": "The Essential Toto",
+      "version": "studio"
+    },
+    {
+      "artist": "TOTO",
+      "track": "Make Believe",
+      "album": "The Essential Toto",
+      "version": "studio"
+    },
+    {
+      "artist": "TOTO",
+      "track": "I'll Supply the Love",
+      "album": "The Essential Toto",
+      "version": "studio"
+    },
+    {
+      "artist": "TOTO",
+      "track": "Georgy Porgy",
+      "album": "The Essential Toto",
+      "version": "studio"
+    },
+    {
+      "artist": "TOTO",
+      "track": "I Won't Hold You Back",
+      "album": "The Essential Toto",
+      "version": "studio"
+    },
+    {
+      "artist": "TOTO",
+      "track": "Pamela",
+      "album": "The Essential Toto",
+      "version": "studio"
+    },
+    {
+      "artist": "Rupert Holmes",
+      "track": "Escape (The Pina Colada Song)",
+      "album": "Partners In Crime",
+      "version": "studio"
+    },
+    {
+      "artist": "Herb Alpert",
+      "track": "RISE",
+      "album": "Rise",
+      "version": "studio"
+    },
+    {
+      "artist": "Herb Alpert",
+      "track": "1980",
+      "album": "Rise",
+      "version": "studio"
+    },
+    {
+      "artist": "10cc",
+      "track": "I'm Not In Love",
+      "album": "The Very Best Of 10 CC",
+      "version": "compilation"
+    },
+    {
+      "artist": "Frankie Valli & The Four Seasons",
+      "track": "Oh What a Night",
+      "album": "Essential 80's. Funky Dance",
+      "version": "studio"
+    },
+    {
+      "artist": "Pablo Cruise",
+      "track": "Love Will Find A Way",
+      "album": "Worlds Away",
+      "version": "studio"
+    },
+    {
+      "artist": "Little River Band",
+      "track": "It's A Long Way There - Album Version / 2002 Digital Remaster",
+      "album": "The Definitive Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Little River Band",
+      "track": "Help Is On Its Way",
+      "album": "The Definitive Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Little River Band",
+      "track": "Happy Anniversary - 2002 Digital Remaster",
+      "album": "The Definitive Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Little River Band",
+      "track": "Reminiscing - 2002 Digital Remaster",
+      "album": "The Definitive Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Little River Band",
+      "track": "Lady",
+      "album": "The Definitive Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Little River Band",
+      "track": "Cool Change - Remastered 2002",
+      "album": "The Definitive Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Little River Band",
+      "track": "The Night Owls - 2002 Digital Remaster / 24-Bit Digitally Remastered",
+      "album": "The Definitive Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Little River Band",
+      "track": "Take It Easy On Me - 24-Bit Digitally Remastered",
+      "album": "The Definitive Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Little River Band",
+      "track": "Man On Your Mind - 2002 Digital Remaster / 24 Bit Mastering",
+      "album": "The Definitive Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Little River Band",
+      "track": "The Other Guy - 24-Bit Digitally Remastered 02",
+      "album": "The Definitive Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "The Temptations",
+      "track": "Papa Was A Rollin' Stone",
+      "album": "Playlist Plus",
+      "version": "studio"
+    },
+    {
+      "artist": "The Isley Brothers",
+      "track": "Contagious",
+      "album": "Eternal",
+      "version": "studio"
+    },
+    {
+      "artist": "The Neville Brothers",
+      "track": "Sister Rosa",
+      "album": "The Best Of The Neville Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "The Neville Brothers",
+      "track": "Ain't No Sunshine",
+      "album": "The Best Of The Neville Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "The Neville Brothers",
+      "track": "A Change Is Gonna Come",
+      "album": "The Best Of The Neville Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "The Neville Brothers",
+      "track": "Yellow Moon",
+      "album": "The Best Of The Neville Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "The Neville Brothers",
+      "track": "Brother Jake",
+      "album": "Brother's Keeper",
+      "version": "studio"
+    },
+    {
+      "artist": "The Neville Brothers",
+      "track": "A Change Is Gonna Come",
+      "album": "Yellow Moon",
+      "version": "studio"
+    },
+    {
+      "artist": "The Neville Brothers",
+      "track": "Voodoo",
+      "album": "Yellow Moon",
+      "version": "studio"
+    },
+    {
+      "artist": "Gorillaz",
+      "track": "Last Living Souls",
+      "album": "Demon Days",
+      "version": "studio"
+    },
+    {
+      "artist": "Gorillaz",
+      "track": "Kids with Guns",
+      "album": "Demon Days",
+      "version": "studio"
+    },
+    {
+      "artist": "Gorillaz",
+      "track": "O Green World",
+      "album": "Demon Days",
+      "version": "studio"
+    },
+    {
+      "artist": "Gorillaz",
+      "track": "El Ma\u00f1ana",
+      "album": "Demon Days",
+      "version": "studio"
+    },
+    {
+      "artist": "Gorillaz",
+      "track": "Every Planet We Reach Is Dead",
+      "album": "Demon Days",
+      "version": "studio"
+    },
+    {
+      "artist": "Gorillaz",
+      "track": "Intro",
+      "album": "Demon Days",
+      "version": "studio"
+    },
+    {
+      "artist": "Gorillaz",
+      "track": "Dirty Harry (feat. Bootie Brown)",
+      "album": "Demon Days",
+      "version": "studio"
+    },
+    {
+      "artist": "Gorillaz",
+      "track": "Feel Good Inc.",
+      "album": "Demon Days",
+      "version": "studio"
+    },
+    {
+      "artist": "Gorillaz",
+      "track": "November Has Come",
+      "album": "Demon Days",
+      "version": "studio"
+    },
+    {
+      "artist": "Gorillaz",
+      "track": "All Alone",
+      "album": "Demon Days",
+      "version": "studio"
+    },
+    {
+      "artist": "Gorillaz",
+      "track": "White Light",
+      "album": "Demon Days",
+      "version": "studio"
+    },
+    {
+      "artist": "Gorillaz",
+      "track": "DARE (feat. Shaun Ryder & Roses Gabor)",
+      "album": "Demon Days",
+      "version": "studio"
+    },
+    {
+      "artist": "Gorillaz",
+      "track": "Fire Coming out of the Monkey's Head",
+      "album": "Demon Days",
+      "version": "studio"
+    },
+    {
+      "artist": "Gorillaz",
+      "track": "Don't Get Lost in Heaven",
+      "album": "Demon Days",
+      "version": "studio"
+    },
+    {
+      "artist": "Gorillaz",
+      "track": "Demon Days",
+      "album": "Demon Days",
+      "version": "studio"
+    },
+    {
+      "artist": "Gorillaz",
+      "track": "Latin Simone (Que Pasa Contigo)",
+      "album": "Gorillaz",
+      "version": "studio"
+    },
+    {
+      "artist": "Alicia Keys",
+      "track": "Empire State of Mind (Part II) Broken Down",
+      "album": "The Element Of Freedom",
+      "version": "studio"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "The Heart's Filthy Lesson",
+      "album": "Outside",
+      "version": "studio"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "Glass Spider - 1999 Remaster",
+      "album": "Never Let Me Down (1999 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Robert Plant",
+      "track": "Heaven Knows - 2006 Remaster",
+      "album": "Now and Zen",
+      "version": "remaster"
+    },
+    {
+      "artist": "Robert Plant",
+      "track": "Tall Cool One - 2006 Remaster",
+      "album": "Now and Zen",
+      "version": "remaster"
+    },
+    {
+      "artist": "Robert Plant",
+      "track": "Ship of Fools - 2006 Remaster",
+      "album": "Now and Zen",
+      "version": "remaster"
+    },
+    {
+      "artist": "Robert Plant",
+      "track": "In the Mood - 2006 Remaster",
+      "album": "The Principle of Moments",
+      "version": "remaster"
+    },
+    {
+      "artist": "Robert Plant",
+      "track": "Big Log - 2006 Remaster",
+      "album": "The Principle of Moments",
+      "version": "remaster"
+    },
+    {
+      "artist": "Ambrosia",
+      "track": "Holdin' on to Yesterday",
+      "album": "Rhino Hi Five: Ambrosia",
+      "version": "studio"
+    },
+    {
+      "artist": "Ambrosia",
+      "track": "Biggest Part of Me",
+      "album": "Rhino Hi Five: Ambrosia",
+      "version": "studio"
+    },
+    {
+      "artist": "Harry Chapin",
+      "track": "Taxi",
+      "album": "The Gold Medal Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Harry Nilsson",
+      "track": "Everybody's Talkin' - From \"Midnight Cowboy\"",
+      "album": "Everybody's Talkin': The Very Best of Harry Nilsson",
+      "version": "compilation"
+    },
+    {
+      "artist": "Harry Nilsson",
+      "track": "Coconut",
+      "album": "Everybody's Talkin': The Very Best of Harry Nilsson",
+      "version": "compilation"
+    },
+    {
+      "artist": "Dan Fogelberg",
+      "track": "Same Old Lang Syne",
+      "album": "Portrait: The Music Of Dan Fogelberg From 1972-1997",
+      "version": "studio"
+    },
+    {
+      "artist": "Dan Fogelberg",
+      "track": "Longer",
+      "album": "Portrait: The Music Of Dan Fogelberg From 1972-1997",
+      "version": "studio"
+    },
+    {
+      "artist": "Dan Fogelberg",
+      "track": "Heart Hotels",
+      "album": "Portrait: The Music Of Dan Fogelberg From 1972-1997",
+      "version": "studio"
+    },
+    {
+      "artist": "Dan Fogelberg",
+      "track": "Make Love Stay",
+      "album": "Portrait: The Music Of Dan Fogelberg From 1972-1997",
+      "version": "studio"
+    },
+    {
+      "artist": "Dan Fogelberg",
+      "track": "Missing You",
+      "album": "Portrait: The Music Of Dan Fogelberg From 1972-1997",
+      "version": "studio"
+    },
+    {
+      "artist": "Bloodhound Gang",
+      "track": "The Bad Touch",
+      "album": "The Bad Touch",
+      "version": "studio"
+    },
+    {
+      "artist": "Bloodhound Gang",
+      "track": "The Ballad Of Chasey Lain",
+      "album": "Show Us Your Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "Bloodhound Gang",
+      "track": "Kids In America",
+      "album": "Use Your Fingers",
+      "version": "studio"
+    },
+    {
+      "artist": "Dire Straits",
+      "track": "Sultans of Swing",
+      "album": "Dire Straits",
+      "version": "studio"
+    },
+    {
+      "artist": "Dire Straits",
+      "track": "So Far Away",
+      "album": "Brothers in Arms",
+      "version": "studio"
+    },
+    {
+      "artist": "Dire Straits",
+      "track": "Money for Nothing",
+      "album": "Brothers in Arms",
+      "version": "studio"
+    },
+    {
+      "artist": "Dire Straits",
+      "track": "Once Upon a Time in the West",
+      "album": "Communiqu\u00e9",
+      "version": "studio"
+    },
+    {
+      "artist": "Dire Straits",
+      "track": "Communiqu\u00e9",
+      "album": "Communiqu\u00e9",
+      "version": "studio"
+    },
+    {
+      "artist": "Dire Straits",
+      "track": "Lady Writer",
+      "album": "Communiqu\u00e9",
+      "version": "studio"
+    },
+    {
+      "artist": "Dire Straits",
+      "track": "Down to the Waterline",
+      "album": "Dire Straits",
+      "version": "studio"
+    },
+    {
+      "artist": "Dire Straits",
+      "track": "Calling Elvis",
+      "album": "On Every Street (Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Dire Straits",
+      "track": "On Every Street",
+      "album": "On Every Street (Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Dire Straits",
+      "track": "Fade to Black",
+      "album": "On Every Street (Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Dire Straits",
+      "track": "The Bug",
+      "album": "On Every Street (Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Dire Straits",
+      "track": "Heavy Fuel",
+      "album": "On Every Street (Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Dire Straits",
+      "track": "My Parties",
+      "album": "On Every Street (Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Dire Straits",
+      "track": "Planet of New Orleans",
+      "album": "On Every Street (Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Bruce Springsteen",
+      "track": "Tunnel of Love",
+      "album": "Tunnel Of Love",
+      "version": "studio"
+    },
+    {
+      "artist": "Bruce Springsteen",
+      "track": "I'm On Fire",
+      "album": "Born In The U.S.A.",
+      "version": "studio"
+    },
+    {
+      "artist": "Bruce Springsteen",
+      "track": "Dancing In The Dark",
+      "album": "Born In The U.S.A.",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Bullet The Blue Sky",
+      "album": "The Joshua Tree",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Running To Stand Still",
+      "album": "The Joshua Tree",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Red Hill Mining Town",
+      "album": "The Joshua Tree",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "In God's Country",
+      "album": "The Joshua Tree",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Trip Through Your Wires",
+      "album": "The Joshua Tree",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "One Tree Hill",
+      "album": "The Joshua Tree",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Angel Of Harlem",
+      "album": "Rattle And Hum",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Until The End Of The World",
+      "album": "Achtung Baby",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Who's Gonna Ride Your Wild Horses",
+      "album": "Achtung Baby",
+      "version": "studio"
+    },
+    {
+      "artist": "Passengers",
+      "track": "Miss Sarajevo",
+      "album": "The Best Of 1990-2000",
+      "version": "compilation"
+    },
+    {
+      "artist": "ABC",
+      "track": "How To Be A Millionaire",
+      "album": "How To Be A Zillionaire",
+      "version": "studio"
+    },
+    {
+      "artist": "ABC",
+      "track": "Be Near Me",
+      "album": "How To Be A Zillionaire",
+      "version": "studio"
+    },
+    {
+      "artist": "ABC",
+      "track": "Poison Arrow",
+      "album": "The Lexicon Of Love",
+      "version": "studio"
+    },
+    {
+      "artist": "ABC",
+      "track": "The Look Of Love, Pt.1",
+      "album": "The Lexicon Of Love",
+      "version": "studio"
+    },
+    {
+      "artist": "ABC",
+      "track": "When Smokey Sings",
+      "album": "20th Century Masters: The Millennium Collection: Best Of ABC",
+      "version": "compilation"
+    },
+    {
+      "artist": "Spandau Ballet",
+      "track": "True - Single Edit",
+      "album": "Gold - The Best of Spandau Ballet",
+      "version": "compilation"
+    },
+    {
+      "artist": "Spandau Ballet",
+      "track": "Gold",
+      "album": "Gold - The Best of Spandau Ballet",
+      "version": "compilation"
+    },
+    {
+      "artist": "Spandau Ballet",
+      "track": "Only When You Leave",
+      "album": "Gold - The Best of Spandau Ballet",
+      "version": "compilation"
+    },
+    {
+      "artist": "The Cure",
+      "track": "Lullaby - Extended Mix",
+      "album": "Mixed Up",
+      "version": "remix"
+    },
+    {
+      "artist": "The Cure",
+      "track": "Close to Me - Closest Mix",
+      "album": "Mixed Up",
+      "version": "remix"
+    },
+    {
+      "artist": "The Cure",
+      "track": "Fascination Street - Extended Mix",
+      "album": "Mixed Up",
+      "version": "remix"
+    },
+    {
+      "artist": "The Cure",
+      "track": "The Walk - Everything Mix",
+      "album": "Mixed Up",
+      "version": "remix"
+    },
+    {
+      "artist": "The Cure",
+      "track": "Lovesong - Extended Mix",
+      "album": "Mixed Up",
+      "version": "remix"
+    },
+    {
+      "artist": "The Cure",
+      "track": "A Forest - Remix Mix",
+      "album": "Mixed Up",
+      "version": "remix"
+    },
+    {
+      "artist": "The Cure",
+      "track": "Pictures of You - Extended Dub Mix",
+      "album": "Mixed Up",
+      "version": "remix"
+    },
+    {
+      "artist": "The Cure",
+      "track": "Hot Hot Hot!!! - Extended Mix",
+      "album": "Mixed Up",
+      "version": "remix"
+    },
+    {
+      "artist": "The Cure",
+      "track": "The Caterpillar - Flicker Mix",
+      "album": "Mixed Up",
+      "version": "remix"
+    },
+    {
+      "artist": "The Cure",
+      "track": "In Between Days - Shiver Mix",
+      "album": "Mixed Up",
+      "version": "remix"
+    },
+    {
+      "artist": "The Cure",
+      "track": "Never Enough",
+      "album": "Mixed Up",
+      "version": "studio"
+    },
+    {
+      "artist": "The Cure",
+      "track": "Friday I'm in Love",
+      "album": "Wish",
+      "version": "studio"
+    },
+    {
+      "artist": "The Cure",
+      "track": "A Letter to Elise",
+      "album": "Wish",
+      "version": "studio"
+    },
+    {
+      "artist": "The Cure",
+      "track": "A Letter to Elise - Live Paris Version",
+      "album": "Paris (Live)",
+      "version": "live"
+    },
+    {
+      "artist": "The Cure",
+      "track": "Apart - Live in Paris",
+      "album": "Paris (Live)",
+      "version": "live"
+    },
+    {
+      "artist": "The Cure",
+      "track": "In Between Days - 2006 Remaster",
+      "album": "The Head on the Door (Deluxed Edition)",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Cure",
+      "track": "Kyoto Song - 2006 Remaster",
+      "album": "The Head on the Door (Deluxed Edition)",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Cure",
+      "track": "Close to Me - 2006 Remaster",
+      "album": "The Head on the Door (Deluxed Edition)",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Cure",
+      "track": "A Night like This - 2006 Remaster",
+      "album": "The Head on the Door (Deluxed Edition)",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Cure",
+      "track": "Fight - 2006 Remaster",
+      "album": "Kiss Me Kiss Me Kiss Me",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Cure",
+      "track": "Shiver and Shake - 2006 Remaster",
+      "album": "Kiss Me Kiss Me Kiss Me",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Cure",
+      "track": "The Perfect Girl - 2006 Remaster",
+      "album": "Kiss Me Kiss Me Kiss Me",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Cure",
+      "track": "Icing Sugar - 2006 Remaster",
+      "album": "Kiss Me Kiss Me Kiss Me",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Cure",
+      "track": "Like Cockatoos - 2006 Remaster",
+      "album": "Kiss Me Kiss Me Kiss Me",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Cure",
+      "track": "One More Time - 2006 Remaster",
+      "album": "Kiss Me Kiss Me Kiss Me",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Cure",
+      "track": "Hot Hot Hot!!! - 2006 Remaster",
+      "album": "Kiss Me Kiss Me Kiss Me",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Cure",
+      "track": "All I Want - 2006 Remaster",
+      "album": "Kiss Me Kiss Me Kiss Me",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Cure",
+      "track": "Just like Heaven - 2006 Remaster",
+      "album": "Kiss Me Kiss Me Kiss Me",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Cure",
+      "track": "Hey You!!! - 2006 Remaster",
+      "album": "Kiss Me Kiss Me Kiss Me",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Cure",
+      "track": "The Snakepit - 2006 Remaster",
+      "album": "Kiss Me Kiss Me Kiss Me",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Cure",
+      "track": "How Beautiful You Are - 2006 Remaster",
+      "album": "Kiss Me Kiss Me Kiss Me",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Cure",
+      "track": "Why Can't I Be You? - 2006 Remaster",
+      "album": "Kiss Me Kiss Me Kiss Me",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Cure",
+      "track": "If Only Tonight We Could Sleep - 2006 Remaster",
+      "album": "Kiss Me Kiss Me Kiss Me",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Cure",
+      "track": "Torture - 2006 Remaster",
+      "album": "Kiss Me Kiss Me Kiss Me",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Cure",
+      "track": "Catch - 2006 Remaster",
+      "album": "Kiss Me Kiss Me Kiss Me",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Cure",
+      "track": "The Kiss - 2006 Remaster",
+      "album": "Kiss Me Kiss Me Kiss Me",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Cure",
+      "track": "The Lovecats",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Phil Collins",
+      "track": "In The Air Tonight",
+      "album": "Face Value",
+      "version": "studio"
+    },
+    {
+      "artist": "Phil Collins",
+      "track": "I Missed Again",
+      "album": "Face Value",
+      "version": "studio"
+    },
+    {
+      "artist": "Phil Collins",
+      "track": "I Don't Care Anymore",
+      "album": "Hello, I Must Be Going",
+      "version": "studio"
+    },
+    {
+      "artist": "Phil Collins",
+      "track": "Take Me Home",
+      "album": "No Jacket Required",
+      "version": "studio"
+    },
+    {
+      "artist": "Genesis",
+      "track": "The Carpet Crawlers - Platinum Collection Version",
+      "album": "Platinum Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Genesis",
+      "track": "Home by the Sea - Platinum Collection Version",
+      "album": "Platinum Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Genesis",
+      "track": "Mama - Platinum Collection Version",
+      "album": "Platinum Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Genesis",
+      "track": "Land of Confusion - Platinum Collection Version",
+      "album": "Platinum Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Genesis",
+      "track": "Tonight, Tonight, Tonight - Platinum Collection Version",
+      "album": "Platinum Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Genesis",
+      "track": "Jesus He Knows Me - Platinum Collection Version",
+      "album": "Platinum Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Genesis",
+      "track": "Illegal Alien - Platinum Collection Version",
+      "album": "Platinum Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Genesis",
+      "track": "Abacab - Platinum Collection Version",
+      "album": "Platinum Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Genesis",
+      "track": "Misunderstanding - Platinum Collection Version",
+      "album": "Platinum Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Supertramp",
+      "track": "Give A Little Bit",
+      "album": "Even In The Quietest Moments",
+      "version": "studio"
+    },
+    {
+      "artist": "Supertramp",
+      "track": "Take The Long Way Home",
+      "album": "Breakfast In America",
+      "version": "studio"
+    },
+    {
+      "artist": "Supertramp",
+      "track": "Goodbye Stranger",
+      "album": "Breakfast In America",
+      "version": "studio"
+    },
+    {
+      "artist": "Supertramp",
+      "track": "The Logical Song",
+      "album": "Breakfast In America",
+      "version": "studio"
+    },
+    {
+      "artist": "Camouflage",
+      "track": "One Fine Day",
+      "album": "Methods Of Silence",
+      "version": "studio"
+    },
+    {
+      "artist": "Camouflage",
+      "track": "Love Is A Shield",
+      "album": "Methods Of Silence",
+      "version": "studio"
+    },
+    {
+      "artist": "Camouflage",
+      "track": "Anyone",
+      "album": "Methods Of Silence",
+      "version": "studio"
+    },
+    {
+      "artist": "Camouflage",
+      "track": "Your Skinhead Is The Dream",
+      "album": "Methods Of Silence",
+      "version": "studio"
+    },
+    {
+      "artist": "Camouflage",
+      "track": "On Islands",
+      "album": "Methods Of Silence",
+      "version": "studio"
+    },
+    {
+      "artist": "Camouflage",
+      "track": "Feeling Down",
+      "album": "Methods Of Silence",
+      "version": "studio"
+    },
+    {
+      "artist": "Camouflage",
+      "track": "Sooner Than We Think",
+      "album": "Methods Of Silence",
+      "version": "studio"
+    },
+    {
+      "artist": "Camouflage",
+      "track": "A Picture Of Life",
+      "album": "Methods Of Silence",
+      "version": "studio"
+    },
+    {
+      "artist": "Camouflage",
+      "track": "Les Rues",
+      "album": "Methods Of Silence",
+      "version": "studio"
+    },
+    {
+      "artist": "Camouflage",
+      "track": "Rue De Moorslede",
+      "album": "Methods Of Silence",
+      "version": "studio"
+    },
+    {
+      "artist": "Queen",
+      "track": "Flash - Single Version",
+      "album": "Flash Gordon (Deluxe Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Queen",
+      "track": "Staying Power - Remastered 2011",
+      "album": "Hot Space (Deluxe Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Queen",
+      "track": "Dancer - Remastered 2011",
+      "album": "Hot Space (Deluxe Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Queen",
+      "track": "Back Chat - Remastered 2011",
+      "album": "Hot Space (Deluxe Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Queen",
+      "track": "Body Language - Remastered 2011",
+      "album": "Hot Space (Deluxe Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Queen",
+      "track": "Action This Day - Remastered 2011",
+      "album": "Hot Space (Deluxe Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Queen",
+      "track": "Put Out The Fire - Remastered 2011",
+      "album": "Hot Space (Deluxe Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Queen",
+      "track": "Life Is Real (Song For Lennon) - Remastered 2011",
+      "album": "Hot Space (Deluxe Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Queen",
+      "track": "Calling All Girls - Remastered 2011",
+      "album": "Hot Space (Deluxe Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Queen",
+      "track": "Las Palabras De Amor (The Words Of Love) - Remastered 2011",
+      "album": "Hot Space (Deluxe Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Queen",
+      "track": "Cool Cat - Remastered 2011",
+      "album": "Hot Space (Deluxe Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Queen",
+      "track": "Under Pressure - Remastered 2011",
+      "album": "Hot Space (Deluxe Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Queen",
+      "track": "One Vision",
+      "album": "A Kind Of Magic",
+      "version": "studio"
+    },
+    {
+      "artist": "Queen",
+      "track": "A Kind Of Magic",
+      "album": "A Kind Of Magic",
+      "version": "studio"
+    },
+    {
+      "artist": "Queen",
+      "track": "One Year Of Love",
+      "album": "A Kind Of Magic",
+      "version": "studio"
+    },
+    {
+      "artist": "Queen",
+      "track": "Pain Is So Close To Pleasure",
+      "album": "A Kind Of Magic",
+      "version": "studio"
+    },
+    {
+      "artist": "Queen",
+      "track": "Friends Will Be Friends",
+      "album": "A Kind Of Magic",
+      "version": "studio"
+    },
+    {
+      "artist": "Queen",
+      "track": "Who Wants To Live Forever",
+      "album": "A Kind Of Magic",
+      "version": "live"
+    },
+    {
+      "artist": "Queen",
+      "track": "Gimme The Prize (Kurgan's Theme)",
+      "album": "A Kind Of Magic",
+      "version": "studio"
+    },
+    {
+      "artist": "Queen",
+      "track": "Don't Lose Your Head",
+      "album": "A Kind Of Magic",
+      "version": "studio"
+    },
+    {
+      "artist": "Queen",
+      "track": "Princes Of The Universe",
+      "album": "A Kind Of Magic",
+      "version": "studio"
+    },
+    {
+      "artist": "Queen",
+      "track": "Forever - Remix",
+      "album": "A Kind Of Magic",
+      "version": "remix"
+    },
+    {
+      "artist": "Queen",
+      "track": "One Vision",
+      "album": "A Kind Of Magic",
+      "version": "studio"
+    },
+    {
+      "artist": "Queen",
+      "track": "Radio Ga Ga",
+      "album": "Classic Queen",
+      "version": "studio"
+    },
+    {
+      "artist": "Queen",
+      "track": "Crazy Little Thing Called Love - Remastered 2011",
+      "album": "The Game (Deluxe Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Fleetwood Mac",
+      "track": "Tusk",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Donna Summer",
+      "track": "Love To Love You Baby",
+      "album": "On The Radio: Greatest Hits Volumes I & II",
+      "version": "compilation"
+    },
+    {
+      "artist": "Howard Jones",
+      "track": "What is Love? - 2008 Remastered Version",
+      "album": "Human's Lib",
+      "version": "remaster"
+    },
+    {
+      "artist": "Howard Jones",
+      "track": "Things Can Only Get Better",
+      "album": "Best Of",
+      "version": "compilation"
+    },
+    {
+      "artist": "Howard Jones",
+      "track": "Like To Get To Know You Well",
+      "album": "Best Of",
+      "version": "compilation"
+    },
+    {
+      "artist": "Howard Jones",
+      "track": "No One Is To Blame",
+      "album": "Best Of",
+      "version": "compilation"
+    },
+    {
+      "artist": "Howard Jones",
+      "track": "What Is Love?",
+      "album": "Best Of",
+      "version": "compilation"
+    },
+    {
+      "artist": "Howard Jones",
+      "track": "Life In One Day",
+      "album": "Best Of",
+      "version": "compilation"
+    },
+    {
+      "artist": "Breathe",
+      "track": "How Can I Fall ?",
+      "album": "All That Jazz",
+      "version": "studio"
+    },
+    {
+      "artist": "Breathe",
+      "track": "Hands To Heaven",
+      "album": "All That Jazz",
+      "version": "studio"
+    },
+    {
+      "artist": "The Church",
+      "track": "Under The Milky Way",
+      "album": "Starfish",
+      "version": "studio"
+    },
+    {
+      "artist": "Iron Maiden",
+      "track": "Aces High",
+      "album": "Powerslave",
+      "version": "studio"
+    },
+    {
+      "artist": "Iron Maiden",
+      "track": "2 Minutes To Midnight",
+      "album": "Powerslave",
+      "version": "studio"
+    },
+    {
+      "artist": "Iron Maiden",
+      "track": "Losfer Words (Big 'Orra)",
+      "album": "Powerslave",
+      "version": "studio"
+    },
+    {
+      "artist": "Iron Maiden",
+      "track": "Flash Of The Blade",
+      "album": "Powerslave",
+      "version": "studio"
+    },
+    {
+      "artist": "Iron Maiden",
+      "track": "The Duelists",
+      "album": "Powerslave",
+      "version": "studio"
+    },
+    {
+      "artist": "Iron Maiden",
+      "track": "Back In The Village",
+      "album": "Powerslave",
+      "version": "studio"
+    },
+    {
+      "artist": "Iron Maiden",
+      "track": "Powerslave",
+      "album": "Powerslave",
+      "version": "studio"
+    },
+    {
+      "artist": "Iron Maiden",
+      "track": "Rime Of The Ancient Mariner",
+      "album": "Powerslave",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Love Is The Seventh Wave",
+      "album": "The Dream Of The Blue Turtles",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Shadows In The Rain",
+      "album": "The Dream Of The Blue Turtles",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Fortress Around Your Heart",
+      "album": "The Dream Of The Blue Turtles",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "If You Love Somebody Set Them Free",
+      "album": "The Dream Of The Blue Turtles",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Russians",
+      "album": "The Dream Of The Blue Turtles",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Children's Crusade",
+      "album": "The Dream Of The Blue Turtles",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "We Work The Black Seam",
+      "album": "The Dream Of The Blue Turtles",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Consider Me Gone",
+      "album": "The Dream Of The Blue Turtles",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "The Dream Of The Blue Turtles",
+      "album": "The Dream Of The Blue Turtles",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Moon Over Bourbon Street",
+      "album": "The Dream Of The Blue Turtles",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "The Lazarus Heart",
+      "album": "...Nothing Like The Sun",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Be Still My Beating Heart",
+      "album": "...Nothing Like The Sun",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Englishman In New York",
+      "album": "...Nothing Like The Sun",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "History Will Teach Us Nothing",
+      "album": "...Nothing Like The Sun",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "They Dance Alone (Gueca Solo)",
+      "album": "...Nothing Like The Sun",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Fragile",
+      "album": "...Nothing Like The Sun",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "We'll Be Together",
+      "album": "...Nothing Like The Sun",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Straight To My Heart",
+      "album": "...Nothing Like The Sun",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Rock Steady",
+      "album": "...Nothing Like The Sun",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Sister Moon",
+      "album": "...Nothing Like The Sun",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Little Wing",
+      "album": "...Nothing Like The Sun",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "The Secret Marriage",
+      "album": "...Nothing Like The Sun",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Island Of Souls",
+      "album": "The Soul Cages",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "All This Time",
+      "album": "The Soul Cages",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Mad About You",
+      "album": "The Soul Cages",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Jeremiah Blues (Part 1)",
+      "album": "The Soul Cages",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Why Should I Cry For You?",
+      "album": "The Soul Cages",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Saint Agnes And The Burning Train",
+      "album": "The Soul Cages",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "The Wild Wild Sea",
+      "album": "The Soul Cages",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "The Soul Cages",
+      "album": "The Soul Cages",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "When The Angels Fall",
+      "album": "The Soul Cages",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Heavy Cloud No Rain",
+      "album": "Ten Summoner's Tales",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Love Is Stronger Than Justice (The Munificent Seven)",
+      "album": "Ten Summoner's Tales",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Something The Boy Said",
+      "album": "Ten Summoner's Tales",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Shape Of My Heart",
+      "album": "Ten Summoner's Tales",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "I Hung My Head",
+      "album": "Mercury Falling",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "A Thousand Years",
+      "album": "Brand New Day",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Desert Rose",
+      "album": "Brand New Day",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Big Lie Small World",
+      "album": "Brand New Day",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "After The Rain Has Fallen",
+      "album": "Brand New Day",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Perfect Love...Gone Wrong",
+      "album": "Brand New Day",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Tomorrow We'll See",
+      "album": "Brand New Day",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Prelude To The End Of The Game",
+      "album": "Brand New Day",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Fill Her Up",
+      "album": "Brand New Day",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Ghost Story",
+      "album": "Brand New Day",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Brand New Day",
+      "album": "Brand New Day",
+      "version": "studio"
+    },
+    {
+      "artist": "Sting",
+      "track": "Send Your Love",
+      "album": "Sacred Love",
+      "version": "studio"
+    },
+    {
+      "artist": "The Police",
+      "track": "Don't Stand So Close To Me - Remastered 2003",
+      "album": "Zenyatta Mondatta",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Driven To Tears - Remastered 2003",
+      "album": "Zenyatta Mondatta",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "When The World Is Running Down, You Make The Best Of What's Still Around - Remastered 2003",
+      "album": "Zenyatta Mondatta",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Canary In A Coalmine - Remastered 2003",
+      "album": "Zenyatta Mondatta",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Voices Inside My Head - Remastered 2003",
+      "album": "Zenyatta Mondatta",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Bombs Away - Remastered 2003",
+      "album": "Zenyatta Mondatta",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "De Do Do Do, De Da Da Da - Remastered 2003",
+      "album": "Zenyatta Mondatta",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Behind My Camel - Remastered 2003",
+      "album": "Zenyatta Mondatta",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Man In A Suitcase - Remastered 2003",
+      "album": "Zenyatta Mondatta",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Shadows In The Rain - Remastered 2003",
+      "album": "Zenyatta Mondatta",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "The Other Way Of Stopping - Remastered 2003",
+      "album": "Zenyatta Mondatta",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Synchronicity I - Remastered 2003",
+      "album": "Synchronicity",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Walking In Your Footsteps - Remastered 2003",
+      "album": "Synchronicity",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "O My God - Remastered 2003",
+      "album": "Synchronicity",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Mother - Remastered 2003",
+      "album": "Synchronicity",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Miss Gradenko - Remastered 2003",
+      "album": "Synchronicity",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Synchronicity II - Remastered 2003",
+      "album": "Synchronicity",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Every Breath You Take - Remastered 2003",
+      "album": "Synchronicity",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "King Of Pain - Remastered 2003",
+      "album": "Synchronicity",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Wrapped Around Your Finger - Remastered 2003",
+      "album": "Synchronicity",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Tea In The Sahara - Remastered 2003",
+      "album": "Synchronicity",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Murder By Numbers - Remastered 2003",
+      "album": "Synchronicity",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Message In A Bottle - Remastered 2003",
+      "album": "Reggatta De Blanc",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Reggatta De Blanc - Remastered 2003",
+      "album": "Reggatta De Blanc",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "It's Alright For You - Remastered 2003",
+      "album": "Reggatta De Blanc",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Bring On The Night - Remastered 2003",
+      "album": "Reggatta De Blanc",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Deathwish - Remastered 2003",
+      "album": "Reggatta De Blanc",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Walking On The Moon - Remastered 2003",
+      "album": "Reggatta De Blanc",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "On Any Other Day - Remastered 2003",
+      "album": "Reggatta De Blanc",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "The Bed's Too Big Without You - Remastered 2003",
+      "album": "Reggatta De Blanc",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Contact - Remastered 2003",
+      "album": "Reggatta De Blanc",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Does Everyone Stare - Remastered 2003",
+      "album": "Reggatta De Blanc",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "No Time This Time - Remastered 2003",
+      "album": "Reggatta De Blanc",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Next To You - Remastered 2003",
+      "album": "Outlandos D'Amour",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "So Lonely - Remastered 2003",
+      "album": "Outlandos D'Amour",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Roxanne - Remastered 2003",
+      "album": "Outlandos D'Amour",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Hole In My Life - Remastered 2003",
+      "album": "Outlandos D'Amour",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Peanuts - Remastered 2003",
+      "album": "Outlandos D'Amour",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Can't Stand Losing You - Remastered 2003",
+      "album": "Outlandos D'Amour",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Truth Hits Everybody - Remastered 2003",
+      "album": "Outlandos D'Amour",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Born In The 50's - Remastered 2003",
+      "album": "Outlandos D'Amour",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Be My Girl - Sally - Remastered 2003",
+      "album": "Outlandos D'Amour",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Masoko Tanga - Remastered 2003",
+      "album": "Outlandos D'Amour",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Spirits In The Material World - Remastered 2003",
+      "album": "Ghost In The Machine",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Every Little Thing She Does Is Magic - Remastered 2003",
+      "album": "Ghost In The Machine",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Invisible Sun - Remastered 2003",
+      "album": "Ghost In The Machine",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Hungry For You - Remastered 2003",
+      "album": "Ghost In The Machine",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Demolition Man - Remastered 2003",
+      "album": "Ghost In The Machine",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Too Much Information - Remastered 2003",
+      "album": "Ghost In The Machine",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Re-Humanise Yourself - Remastered 2003",
+      "album": "Ghost In The Machine",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "One World (Not Three) - Remastered 2003",
+      "album": "Ghost In The Machine",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Omegaman - Remastered 2003",
+      "album": "Ghost In The Machine",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Secret Journey - Remastered 2003",
+      "album": "Ghost In The Machine",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Police",
+      "track": "Darkness - Remastered 2003",
+      "album": "Ghost In The Machine",
+      "version": "remaster"
+    },
+    {
+      "artist": "Allman Brothers Band",
+      "track": "Whipping Post",
+      "album": "The Best Of The Allman Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Allman Brothers Band",
+      "track": "Dreams",
+      "album": "The Best Of The Allman Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Allman Brothers Band",
+      "track": "Midnight Rider",
+      "album": "The Best Of The Allman Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Allman Brothers Band",
+      "track": "Melissa",
+      "album": "The Best Of The Allman Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Allman Brothers Band",
+      "track": "Jessica - Unedited Version",
+      "album": "The Best Of The Allman Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Allman Brothers Band",
+      "track": "Revival",
+      "album": "The Best Of The Allman Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Allman Brothers Band",
+      "track": "Blue Sky",
+      "album": "The Best Of The Allman Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Allman Brothers Band",
+      "track": "Ramblin' Man",
+      "album": "The Best Of The Allman Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Allman Brothers Band",
+      "track": "Crazy Love",
+      "album": "The Best Of The Allman Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Allman Brothers Band",
+      "track": "Stand Back",
+      "album": "The Best Of The Allman Brothers 20th Century Masters The Millennium Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Allman Brothers Band",
+      "track": "Hot 'Lanta - Live At The Fillmore East/1971",
+      "album": "The Best Of The Allman Brothers 20th Century Masters The Millennium Collection",
+      "version": "live"
+    },
+    {
+      "artist": "Wayne Static",
+      "track": "Not Meant for Me",
+      "album": "Queen Of The Damned (Music From The Motion Picture)",
+      "version": "studio"
+    },
+    {
+      "artist": "David Draiman",
+      "track": "Forsaken",
+      "album": "Queen Of The Damned (Music From The Motion Picture)",
+      "version": "studio"
+    },
+    {
+      "artist": "Crosby, Stills, Nash & Young",
+      "track": "Carry On",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Crosby, Stills, Nash & Young",
+      "track": "Ohio - Single Version",
+      "album": "Neil Young Archives Vol. I (1963 - 1972)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beat",
+      "track": "Mirror In The Bathroom",
+      "album": "I Just Can't Stop It",
+      "version": "studio"
+    },
+    {
+      "artist": "Conway Twitty",
+      "track": "Hello Darlin'",
+      "album": "Super Hits",
+      "version": "studio"
+    },
+    {
+      "artist": "Jerry Reed",
+      "track": "East Bound and Down",
+      "album": "The Essential Jerry Reed",
+      "version": "studio"
+    },
+    {
+      "artist": "Aldo Nova",
+      "track": "Fantasy",
+      "album": "Aldo Nova",
+      "version": "studio"
+    },
+    {
+      "artist": "Boz Scaggs",
+      "track": "Look What You've Done to Me",
+      "album": "Hits!",
+      "version": "studio"
+    },
+    {
+      "artist": "Fleetwood Mac",
+      "track": "Big Love",
+      "album": "Tango In The Night",
+      "version": "studio"
+    },
+    {
+      "artist": "Mahna Mahna and The Two Snowths",
+      "track": "Mah Na Mah Na",
+      "album": "The Muppets (Original Motion Picture Soundtrack)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Muppets",
+      "track": "Rainbow Connection",
+      "album": "The Muppets (Original Motion Picture Soundtrack)",
+      "version": "studio"
+    },
+    {
+      "artist": "Clannad",
+      "track": "Caislean Oir",
+      "album": "Macalla",
+      "version": "studio"
+    },
+    {
+      "artist": "Clannad",
+      "track": "The Wild Cry",
+      "album": "Macalla",
+      "version": "studio"
+    },
+    {
+      "artist": "Clannad",
+      "track": "Closer to Your Heart",
+      "album": "Macalla",
+      "version": "studio"
+    },
+    {
+      "artist": "Clannad",
+      "track": "In A Lifetime",
+      "album": "Macalla",
+      "version": "studio"
+    },
+    {
+      "artist": "Clannad",
+      "track": "Almost Seems (Too Late to Turn)",
+      "album": "Macalla",
+      "version": "studio"
+    },
+    {
+      "artist": "Clannad",
+      "track": "Indoor",
+      "album": "Macalla",
+      "version": "studio"
+    },
+    {
+      "artist": "Clannad",
+      "track": "Buachaill \u00d3n \u00c9irne",
+      "album": "Macalla",
+      "version": "studio"
+    },
+    {
+      "artist": "Clannad",
+      "track": "Blackstairs",
+      "album": "Macalla",
+      "version": "studio"
+    },
+    {
+      "artist": "Clannad",
+      "track": "Journey's End",
+      "album": "Macalla",
+      "version": "studio"
+    },
+    {
+      "artist": "Clannad",
+      "track": "Northern Skyline",
+      "album": "Macalla",
+      "version": "studio"
+    },
+    {
+      "artist": "Electric Light Orchestra",
+      "track": "Evil Woman",
+      "album": "ELO's Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Electric Light Orchestra",
+      "track": "Livin' Thing",
+      "album": "ELO's Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Electric Light Orchestra",
+      "track": "Can't Get It Out Of My Head",
+      "album": "ELO's Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Electric Light Orchestra",
+      "track": "Showdown",
+      "album": "ELO's Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Electric Light Orchestra",
+      "track": "Turn To Stone",
+      "album": "ELO's Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Electric Light Orchestra",
+      "track": "Rockaria!",
+      "album": "ELO's Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Electric Light Orchestra",
+      "track": "Sweet Talkin' Woman",
+      "album": "ELO's Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Electric Light Orchestra",
+      "track": "Telephone Line",
+      "album": "ELO's Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Electric Light Orchestra",
+      "track": "Ma-Ma-Ma Belle",
+      "album": "ELO's Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Electric Light Orchestra",
+      "track": "Strange Magic",
+      "album": "ELO's Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Electric Light Orchestra",
+      "track": "Mr. Blue Sky",
+      "album": "ELO's Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "George Russell Sextet",
+      "track": "Sippin' At Bells",
+      "album": "George Russell Sextet At The Five Spot",
+      "version": "studio"
+    },
+    {
+      "artist": "George Russell Sextet",
+      "track": "Dance Class",
+      "album": "George Russell Sextet At The Five Spot",
+      "version": "studio"
+    },
+    {
+      "artist": "George Russell Sextet",
+      "track": "Swingdom Come",
+      "album": "George Russell Sextet At The Five Spot",
+      "version": "studio"
+    },
+    {
+      "artist": "George Russell Sextet",
+      "track": "121 Bank Street",
+      "album": "George Russell Sextet At The Five Spot",
+      "version": "studio"
+    },
+    {
+      "artist": "George Russell Sextet",
+      "track": "Beast Blues",
+      "album": "George Russell Sextet At The Five Spot",
+      "version": "studio"
+    },
+    {
+      "artist": "George Russell Sextet",
+      "track": "Moment's Notice",
+      "album": "George Russell Sextet At The Five Spot",
+      "version": "studio"
+    },
+    {
+      "artist": "The Zombies",
+      "track": "She's Not There",
+      "album": "The Original Studio Recordings (Volume One)",
+      "version": "studio"
+    },
+    {
+      "artist": "LL COOL J",
+      "track": "I Can't Live Without My Radio",
+      "album": "Radio",
+      "version": "live"
+    },
+    {
+      "artist": "Public Enemy",
+      "track": "Bring The Noise",
+      "album": "It Takes A Nation Of Millions To Hold Us Back",
+      "version": "studio"
+    },
+    {
+      "artist": "LL COOL J",
+      "track": "Going Back To Cali",
+      "album": "Walking With A Panther",
+      "version": "studio"
+    },
+    {
+      "artist": "LL COOL J",
+      "track": "Mama Said Knock You Out",
+      "album": "Mama Said Knock You Out",
+      "version": "studio"
+    },
+    {
+      "artist": "Warren G",
+      "track": "Regulate",
+      "album": "Regulate...G Funk Era (Explicit Version)",
+      "version": "studio"
+    },
+    {
+      "artist": "Gary Moore",
+      "track": "Still Got The Blues",
+      "album": "The Platinum Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Van Halen",
+      "track": "Panama",
+      "album": "1984",
+      "version": "studio"
+    },
+    {
+      "artist": "Van Halen",
+      "track": "Top Jimmy",
+      "album": "1984",
+      "version": "studio"
+    },
+    {
+      "artist": "Van Halen",
+      "track": "Drop Dead Legs",
+      "album": "1984",
+      "version": "studio"
+    },
+    {
+      "artist": "Van Halen",
+      "track": "Hot For Teacher",
+      "album": "1984",
+      "version": "studio"
+    },
+    {
+      "artist": "Van Halen",
+      "track": "I'll Wait",
+      "album": "1984",
+      "version": "studio"
+    },
+    {
+      "artist": "Van Halen",
+      "track": "Girl Gone Bad",
+      "album": "1984",
+      "version": "studio"
+    },
+    {
+      "artist": "Gotye",
+      "track": "Somebody That I Used To Know",
+      "album": "Making Mirrors",
+      "version": "studio"
+    },
+    {
+      "artist": "Neil Diamond",
+      "track": "Brother Love's Traveling Salvation Show",
+      "album": "Sweet Caroline",
+      "version": "studio"
+    },
+    {
+      "artist": "Neil Diamond",
+      "track": "Sweet Caroline",
+      "album": "Sweet Caroline",
+      "version": "studio"
+    },
+    {
+      "artist": "Rod Stewart",
+      "track": "Da Ya Think I'm Sexy?",
+      "album": "Blondes Have More Fun",
+      "version": "studio"
+    },
+    {
+      "artist": "Elton John",
+      "track": "Madman Across The Water",
+      "album": "Madman Across The Water",
+      "version": "studio"
+    },
+    {
+      "artist": "Rush",
+      "track": "Tom Sawyer",
+      "album": "Moving Pictures (2011 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Rush",
+      "track": "Red Barchetta",
+      "album": "Moving Pictures (2011 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Rush",
+      "track": "YYZ",
+      "album": "Moving Pictures (2011 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Rush",
+      "track": "Limelight",
+      "album": "Moving Pictures (2011 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Rush",
+      "track": "The Camera Eye",
+      "album": "Moving Pictures (2011 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Rush",
+      "track": "Witch Hunt",
+      "album": "Moving Pictures (2011 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Rush",
+      "track": "Vital Signs",
+      "album": "Moving Pictures (2011 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "The Man Comes Around",
+      "album": "American IV: The Man Comes Around",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "Hurt",
+      "album": "American IV: The Man Comes Around",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "Give My Love To Rose",
+      "album": "American IV: The Man Comes Around",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "Bridge Over Troubled Water",
+      "album": "American IV: The Man Comes Around",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "I Hung My Head",
+      "album": "American IV: The Man Comes Around",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "First Time I Ever Saw Your Face",
+      "album": "American IV: The Man Comes Around",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "Personal Jesus",
+      "album": "American IV: The Man Comes Around",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "In My Life",
+      "album": "American IV: The Man Comes Around",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "Sam Hall",
+      "album": "American IV: The Man Comes Around",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "Danny Boy",
+      "album": "American IV: The Man Comes Around",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "Desperado",
+      "album": "American IV: The Man Comes Around",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "I'm So Lonesome I Could Cry",
+      "album": "American IV: The Man Comes Around",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "Tear Stained Letter",
+      "album": "American IV: The Man Comes Around",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "Streets Of Laredo",
+      "album": "American IV: The Man Comes Around",
+      "version": "studio"
+    },
+    {
+      "artist": "Johnny Cash",
+      "track": "We'll Meet Again",
+      "album": "American IV: The Man Comes Around",
+      "version": "studio"
+    },
+    {
+      "artist": "Kenny Rogers",
+      "track": "The Gambler",
+      "album": "The Gambler",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "Wouldn't It Be Nice - Mono",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "You Still Believe In Me - Mono",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "That's Not Me - Mono",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "Don't Talk (Put Your Head On My Shoulder) - Mono",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "I'm Waiting For The Day - Mono",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "Let's Go Away For A While - Mono",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "Sloop John B",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "God Only Knows - Mono",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "I Know There's An Answer - Mono",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "Here Today - Mono",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "I Just Wasn't Made For These Times - Mono",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "Pet Sounds - Mono",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "Caroline, No - Mono",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "Hang On To Your Ego - Mono",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "Wouldn't It Be Nice",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "You Still Believe In Me",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "That's Not Me",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "Don't Talk (Put Your Head On My Shoulder)",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "I'm Waiting For The Day",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "Let's Go Away For Awhile",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "Sloop John B",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "God Only Knows - Remastered 1996",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "I Know There's An Answer",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "Here Today",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "I Just Wasn't Made For These Times",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "Pet Sounds",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Beach Boys",
+      "track": "Caroline, No",
+      "album": "Pet Sounds (Original Mono & Stereo Mix)",
+      "version": "studio"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "Five Years - 2012 Remastered Version",
+      "album": "The Rise and Fall of Ziggy Stardust and the Spiders from Mars (Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "Soul Love - 2012 Remastered Version",
+      "album": "The Rise and Fall of Ziggy Stardust and the Spiders from Mars (Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "Moonage Daydream - 2012 Remastered Version",
+      "album": "The Rise and Fall of Ziggy Stardust and the Spiders from Mars (Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "Starman - 2012 Remastered Version",
+      "album": "The Rise and Fall of Ziggy Stardust and the Spiders from Mars (Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "It Ain't Easy - 2012 Remastered Version",
+      "album": "The Rise and Fall of Ziggy Stardust and the Spiders from Mars (Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "Lady Stardust - 2012 Remastered Version",
+      "album": "The Rise and Fall of Ziggy Stardust and the Spiders from Mars (Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "Star - 2012 Remastered Version",
+      "album": "The Rise and Fall of Ziggy Stardust and the Spiders from Mars (Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "Hang On To Yourself - 2012 Remastered Version",
+      "album": "The Rise and Fall of Ziggy Stardust and the Spiders from Mars (Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "Ziggy Stardust - 2012 Remastered Version",
+      "album": "The Rise and Fall of Ziggy Stardust and the Spiders from Mars (Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "Suffragette City - 2012 Remastered Version",
+      "album": "The Rise and Fall of Ziggy Stardust and the Spiders from Mars (Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "Rock 'N' Roll Suicide - 2012 Remastered Version",
+      "album": "The Rise and Fall of Ziggy Stardust and the Spiders from Mars (Remastered Version)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Hank Williams",
+      "track": "Ramblin' Man",
+      "album": "The Complete Hank Williams",
+      "version": "studio"
+    },
+    {
+      "artist": "Sheena Easton",
+      "track": "Sugar Walls",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Pink Floyd",
+      "track": "Speak To Me/Breathe (Breathe In The Air)",
+      "album": "The Dark Side Of The Moon",
+      "version": "studio"
+    },
+    {
+      "artist": "Pink Floyd",
+      "track": "On The Run",
+      "album": "The Dark Side Of The Moon",
+      "version": "studio"
+    },
+    {
+      "artist": "Pink Floyd",
+      "track": "Time",
+      "album": "The Dark Side Of The Moon",
+      "version": "studio"
+    },
+    {
+      "artist": "Pink Floyd",
+      "track": "Eclipse",
+      "album": "The Dark Side Of The Moon",
+      "version": "studio"
+    },
+    {
+      "artist": "The Blues Brothers",
+      "track": "Opening: I Can't Turn You Loose - Live",
+      "album": "Briefcase Full of Blues",
+      "version": "live"
+    },
+    {
+      "artist": "The Blues Brothers",
+      "track": "Hey Bartender - Live",
+      "album": "Briefcase Full of Blues",
+      "version": "live"
+    },
+    {
+      "artist": "The Blues Brothers",
+      "track": "Messin' with the Kid - Live",
+      "album": "Briefcase Full of Blues",
+      "version": "live"
+    },
+    {
+      "artist": "The Blues Brothers",
+      "track": "(I Got Everything I Need) Almost - Live",
+      "album": "Briefcase Full of Blues",
+      "version": "live"
+    },
+    {
+      "artist": "The Blues Brothers",
+      "track": "Rubber Biscuit - Live",
+      "album": "Briefcase Full of Blues",
+      "version": "live"
+    },
+    {
+      "artist": "The Blues Brothers",
+      "track": "Shot Gun Blues - Live",
+      "album": "Briefcase Full of Blues",
+      "version": "live"
+    },
+    {
+      "artist": "The Blues Brothers",
+      "track": "Groove Me - Live",
+      "album": "Briefcase Full of Blues",
+      "version": "live"
+    },
+    {
+      "artist": "The Blues Brothers",
+      "track": "I Don't Know - Live",
+      "album": "Briefcase Full of Blues",
+      "version": "live"
+    },
+    {
+      "artist": "The Blues Brothers",
+      "track": "Soul Man - Live",
+      "album": "Briefcase Full of Blues",
+      "version": "live"
+    },
+    {
+      "artist": "The Blues Brothers",
+      "track": "\"B\" Movie Box Car Blues - Live",
+      "album": "Briefcase Full of Blues",
+      "version": "live"
+    },
+    {
+      "artist": "The Blues Brothers",
+      "track": "Flip, Flop & Fly - Live",
+      "album": "Briefcase Full of Blues",
+      "version": "live"
+    },
+    {
+      "artist": "The Blues Brothers",
+      "track": "Closing: I Can't Turn You Loose - Live",
+      "album": "Briefcase Full of Blues",
+      "version": "live"
+    },
+    {
+      "artist": "David Bowie",
+      "track": "As The World Falls Down",
+      "album": "Labyrinth",
+      "version": "studio"
+    },
+    {
+      "artist": "George Benson",
+      "track": "Give Me the Night",
+      "album": "The George Benson Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Emerson, Lake & Palmer",
+      "track": "Lucky Man",
+      "album": "Emerson, Lake & Palmer (Deluxe Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Dave Brubeck",
+      "track": "Take Five",
+      "album": "On Time",
+      "version": "studio"
+    },
+    {
+      "artist": "Dave Brubeck",
+      "track": "Blue Rondo \u00e0 la Turk",
+      "album": "Dave Brubeck's Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Johann Pachelbel",
+      "track": "Pachelbel: Canon and Gigue in D Major for 3 Violins and Continuo, P. 37: I. Canon (Orchestral Version)",
+      "album": "Relax",
+      "version": "studio"
+    },
+    {
+      "artist": "Johann Sebastian Bach",
+      "track": "Overture (Suite) No. 3 in D Major, BWV 1068: II: Air on a G String",
+      "album": "Great Composers - J.S. Bach",
+      "version": "studio"
+    },
+    {
+      "artist": "Herbie Hancock",
+      "track": "Cantaloupe Island",
+      "album": "Cantaloupe Island",
+      "version": "studio"
+    },
+    {
+      "artist": "Herbie Hancock",
+      "track": "Watermelon Man",
+      "album": "Head Hunters",
+      "version": "studio"
+    },
+    {
+      "artist": "Lana Del Rey",
+      "track": "Summertime Sadness",
+      "album": "Born To Die (Bonus Track Version)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Power Station",
+      "track": "Some Like It Hot - 2005 Remaster",
+      "album": "The Power Station",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Power Station",
+      "track": "Murderess - 2005 Remaster",
+      "album": "The Power Station",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Power Station",
+      "track": "Lonely Tonight - 2005 Remaster",
+      "album": "The Power Station",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Power Station",
+      "track": "Communication - 2005 Remaster",
+      "album": "The Power Station",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Power Station",
+      "track": "Get It On (Bang a Gong) - 2005 Remaster",
+      "album": "The Power Station",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Power Station",
+      "track": "Go to Zero - 2005 Remaster",
+      "album": "The Power Station",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Power Station",
+      "track": "Harvest for the World - 2005 Remaster",
+      "album": "The Power Station",
+      "version": "remaster"
+    },
+    {
+      "artist": "The Power Station",
+      "track": "Still in Your Heart - 2005 Remaster",
+      "album": "The Power Station",
+      "version": "remaster"
+    },
+    {
+      "artist": "Shriekback",
+      "track": "Underwaterboys",
+      "album": "Big Night Music",
+      "version": "studio"
+    },
+    {
+      "artist": "Shriekback",
+      "track": "Sticky Jazz",
+      "album": "Big Night Music",
+      "version": "studio"
+    },
+    {
+      "artist": "Van Morrison",
+      "track": "And It Stoned Me",
+      "album": "Moondance",
+      "version": "studio"
+    },
+    {
+      "artist": "Van Morrison",
+      "track": "Moondance",
+      "album": "Moondance",
+      "version": "studio"
+    },
+    {
+      "artist": "Van Morrison",
+      "track": "Caravan",
+      "album": "Moondance",
+      "version": "studio"
+    },
+    {
+      "artist": "Van Morrison",
+      "track": "Into The Mystic",
+      "album": "Moondance",
+      "version": "studio"
+    },
+    {
+      "artist": "Van Morrison",
+      "track": "These Dreams Of You",
+      "album": "Moondance",
+      "version": "studio"
+    },
+    {
+      "artist": "Van Morrison",
+      "track": "Brand New Day",
+      "album": "Moondance",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "No Ordinary Love",
+      "album": "Love Deluxe",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Is It a Crime",
+      "album": "Promise",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "The Sweetest Taboo",
+      "album": "Promise",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Never as Good as the First Time",
+      "album": "Promise",
+      "version": "studio"
+    },
+    {
+      "artist": "Sade",
+      "track": "Smooth Operator",
+      "album": "Diamond Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Molly Hatchet",
+      "track": "Dreams I'll Never See",
+      "album": "Molly Hatchet",
+      "version": "studio"
+    },
+    {
+      "artist": "KISS",
+      "track": "I Was Made For Lovin' You",
+      "album": "Dynasty",
+      "version": "studio"
+    },
+    {
+      "artist": "Jesse Johnson",
+      "track": "Be Your Man",
+      "album": "Jesse Johnson's Revue",
+      "version": "studio"
+    },
+    {
+      "artist": "Jesse Johnson",
+      "track": "I Want My Girl",
+      "album": "Jesse Johnson's Revue",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Blue Collar Man (Long Nights)",
+      "album": "Classics, Volume 15",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Come Sail Away",
+      "album": "Classics, Volume 15",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Crystal Ball",
+      "album": "Classics, Volume 15",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Fooling Yourself (The Angry Young Man)",
+      "album": "Classics, Volume 15",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Mr. Roboto",
+      "album": "Classics, Volume 15",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Renegade",
+      "album": "Classics, Volume 15",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Don't Let It End",
+      "album": "Classics, Volume 15",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Suite Madame Blue",
+      "album": "Classics, Volume 15",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Too Much Time On My Hands",
+      "album": "Classics, Volume 15",
+      "version": "studio"
+    },
+    {
+      "artist": "Styx",
+      "track": "Miss America",
+      "album": "Classics, Volume 15",
+      "version": "studio"
+    },
+    {
+      "artist": "Sarah McLachlan",
+      "track": "Circle",
+      "album": "Fumbling Towards Ecstasy",
+      "version": "studio"
+    },
+    {
+      "artist": "Dido",
+      "track": "Here With Me",
+      "album": "No Angel",
+      "version": "studio"
+    },
+    {
+      "artist": "Dido",
+      "track": "Don't Think of Me",
+      "album": "No Angel",
+      "version": "studio"
+    },
+    {
+      "artist": "Dido",
+      "track": "My Lover's Gone",
+      "album": "No Angel",
+      "version": "studio"
+    },
+    {
+      "artist": "Alice In Chains",
+      "track": "Rain When I Die (2022 Remaster)",
+      "album": "Dirt (2022 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Alice In Chains",
+      "track": "Down In A Hole (2022 Remaster)",
+      "album": "Dirt (2022 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Alice In Chains",
+      "track": "Rooster (2022 Remaster)",
+      "album": "Dirt (2022 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Alice In Chains",
+      "track": "Dirt (2022 Remaster)",
+      "album": "Dirt (2022 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Alice In Chains",
+      "track": "Would? (2022 Remaster)",
+      "album": "Dirt (2022 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Winx Club",
+      "track": "Dreamin In My Way",
+      "album": "Winx In Concert",
+      "version": "studio"
+    },
+    {
+      "artist": "Winx Club",
+      "track": "The Chiwambo Song",
+      "album": "Winx In Concert",
+      "version": "studio"
+    },
+    {
+      "artist": "Winx Club",
+      "track": "Crazy In Love With You",
+      "album": "Winx In Concert",
+      "version": "studio"
+    },
+    {
+      "artist": "Winx Club",
+      "track": "Live My Life",
+      "album": "Winx In Concert",
+      "version": "live"
+    },
+    {
+      "artist": "Winx Club",
+      "track": "Chain Reaction",
+      "album": "Winx In Concert",
+      "version": "studio"
+    },
+    {
+      "artist": "Winx Club",
+      "track": "Heart of Stone",
+      "album": "Winx In Concert",
+      "version": "studio"
+    },
+    {
+      "artist": "Winx Club",
+      "track": "Superheroes",
+      "album": "Winx In Concert",
+      "version": "studio"
+    },
+    {
+      "artist": "Winx Club",
+      "track": "The World Belongs To Me",
+      "album": "Winx In Concert",
+      "version": "studio"
+    },
+    {
+      "artist": "Winx Club",
+      "track": "Winx Are Back",
+      "album": "Winx Club - Songs from Season 4",
+      "version": "studio"
+    },
+    {
+      "artist": "Winx Club",
+      "track": "Love and Pet",
+      "album": "Winx Club - Songs from Season 4",
+      "version": "studio"
+    },
+    {
+      "artist": "Winx Club",
+      "track": "Now That's Me and You",
+      "album": "Winx Club - Songs from Season 4",
+      "version": "studio"
+    },
+    {
+      "artist": "Winx Club",
+      "track": "The Magic Light of Winx",
+      "album": "Winx Club - Songs from Season 4",
+      "version": "studio"
+    },
+    {
+      "artist": "Winx Club",
+      "track": "We'll Be Together",
+      "album": "Winx Club - Songs from Season 4",
+      "version": "studio"
+    },
+    {
+      "artist": "Winx Club",
+      "track": "Winx Open Up Your Heart",
+      "album": "Winx Club - Songs from Season 4",
+      "version": "studio"
+    },
+    {
+      "artist": "Billy Idol",
+      "track": "Prodigal Blues",
+      "album": "Charmed Life",
+      "version": "studio"
+    },
+    {
+      "artist": "Billy Idol",
+      "track": "Rebel Yell - 1999 - Remaster",
+      "album": "Rebel Yell",
+      "version": "remaster"
+    },
+    {
+      "artist": "Billy Idol",
+      "track": "Eyes Without A Face - 1999 - Remaster",
+      "album": "Rebel Yell",
+      "version": "remaster"
+    },
+    {
+      "artist": "Billy Idol",
+      "track": "Flesh For Fantasy - 1999 Digital Remaster",
+      "album": "Rebel Yell",
+      "version": "remaster"
+    },
+    {
+      "artist": "Billy Idol",
+      "track": "Catch My Fall - 1999 Digital Remaster",
+      "album": "Rebel Yell",
+      "version": "remaster"
+    },
+    {
+      "artist": "Billy Idol",
+      "track": "Crank Call - 1999 Digital Remaster",
+      "album": "Rebel Yell",
+      "version": "remaster"
+    },
+    {
+      "artist": "Bruce Cockburn",
+      "track": "Creation Dream",
+      "album": "Dancing In The Dragon'S Jaws",
+      "version": "studio"
+    },
+    {
+      "artist": "Exile",
+      "track": "Kiss You All Over",
+      "album": "The Best Of Exile",
+      "version": "compilation"
+    },
+    {
+      "artist": "Don Henley",
+      "track": "Sunset Grill",
+      "album": "Building The Perfect Beast",
+      "version": "studio"
+    },
+    {
+      "artist": "Alex Boy\u00e9",
+      "track": "Let It Go - Africanized Cover (feat. One Voice Childrens Choir)",
+      "album": "Let It Go - Africanized Cover (feat. One Voice Childrens Choir)",
+      "version": "studio"
+    },
+    {
+      "artist": "Pharrell Williams",
+      "track": "Happy - From \"Despicable Me 2\"",
+      "album": "Happy (From \"Despicable Me 2\")",
+      "version": "studio"
+    },
+    {
+      "artist": "Supertramp",
+      "track": "Bloody Well Right - Remastered 2010",
+      "album": "Crime Of The Century (Deluxe)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Supertramp",
+      "track": "Dreamer - Remastered 2010",
+      "album": "Crime Of The Century (Deluxe)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Bob Welch",
+      "track": "Sentimental Lady",
+      "album": "French Kiss",
+      "version": "studio"
+    },
+    {
+      "artist": "Bob Welch",
+      "track": "Hypnotized",
+      "album": "Greatest Hits",
+      "version": "compilation"
+    },
+    {
+      "artist": "Poets of the Fall",
+      "track": "Maybe Tomorrow Is a Better Day",
+      "album": "Carnival of Rust",
+      "version": "studio"
+    },
+    {
+      "artist": "The Alan Parsons Project",
+      "track": "The Raven - Original 1976 Version",
+      "album": "Tales Of Mystery And Imagination (Deluxe Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Bruce Cockburn",
+      "track": "If I Had A Rocket Launcher",
+      "album": "Stealing Fire",
+      "version": "studio"
+    },
+    {
+      "artist": "The Alan Parsons Project",
+      "track": "Some Other Time",
+      "album": "I Robot (Legacy Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "The Stone Roses",
+      "track": "Love Spreads",
+      "album": "Second Coming",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Where The Streets Have No Name",
+      "album": "The Joshua Tree",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "I Still Haven't Found What I'm Looking For",
+      "album": "The Joshua Tree",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "With Or Without You",
+      "album": "The Joshua Tree",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Exit",
+      "album": "The Joshua Tree",
+      "version": "studio"
+    },
+    {
+      "artist": "U2",
+      "track": "Mothers Of The Disappeared",
+      "album": "The Joshua Tree",
+      "version": "studio"
+    }
+  ]
+}

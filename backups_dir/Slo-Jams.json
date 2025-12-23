@@ -1,0 +1,73 @@
+{
+  "name": "Slo-Jams",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "Michael Jackson",
+      "track": "The Lady in My Life",
+      "album": "Thriller 25 Super Deluxe Edition",
+      "version": "studio"
+    },
+    {
+      "artist": "The System",
+      "track": "Don't Disturb This Groove",
+      "album": "Don't Disturb This Groove",
+      "version": "studio"
+    },
+    {
+      "artist": "The Manhattan Transfer",
+      "track": "Mystery - 2006 Remastered Version",
+      "album": "Bodies And Souls",
+      "version": "remaster"
+    },
+    {
+      "artist": "Cameo",
+      "track": "She's Strange",
+      "album": "She's Strange",
+      "version": "studio"
+    },
+    {
+      "artist": "Cameo",
+      "track": "Love You Anyway",
+      "album": "She's Strange",
+      "version": "studio"
+    },
+    {
+      "artist": "Champaign",
+      "track": "How 'Bout Us - Single Version",
+      "album": "How 'Bout Us (Expanded Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Ambrosia",
+      "track": "Biggest Part of Me",
+      "album": "Rhino Hi Five: Ambrosia",
+      "version": "studio"
+    },
+    {
+      "artist": "Ambrosia",
+      "track": "How Much I Feel - Remastered Version",
+      "album": "The Essentials: Ambrosia",
+      "version": "remaster"
+    },
+    {
+      "artist": "Bobby Caldwell",
+      "track": "What You Won't Do For Love",
+      "album": "What You Won't Do For Love",
+      "version": "studio"
+    },
+    {
+      "artist": "George Benson",
+      "track": "Give Me the Night",
+      "album": "The George Benson Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Kenny Loggins",
+      "track": "This Is It",
+      "album": "Keep The Fire",
+      "version": "studio"
+    }
+  ]
+}

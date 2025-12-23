@@ -1,0 +1,25 @@
+{
+  "name": "My 2023 Playlist in a Bottle",
+  "description": "A musical time capsule from the past has been unsealed\u2026!",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "Depeche Mode",
+      "track": "My Secret Garden - 2006 Remaster",
+      "album": "A Broken Frame (2006 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Johnny Hates Jazz",
+      "track": "Shattered Dreams",
+      "album": "The Very Best Of Johnny Hates Jazz",
+      "version": "compilation"
+    },
+    {
+      "artist": "Sade",
+      "track": "No Ordinary Love",
+      "album": "Love Deluxe",
+      "version": "studio"
+    }
+  ]
+}

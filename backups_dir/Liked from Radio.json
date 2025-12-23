@@ -1,0 +1,31 @@
+{
+  "name": "Liked from Radio",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "Prefab Sprout",
+      "track": "Bonny - 2007 Remastered Version",
+      "album": "Steve McQueen",
+      "version": "remaster"
+    },
+    {
+      "artist": "Paolo Nutini",
+      "track": "Million Faces",
+      "album": "These Streets",
+      "version": "studio"
+    },
+    {
+      "artist": "The Alan Parsons Project",
+      "track": "Some Other Time",
+      "album": "I Robot (Legacy Edition)",
+      "version": "studio"
+    },
+    {
+      "artist": "Emerson, Lake & Palmer",
+      "track": "Still... You Turn Me On",
+      "album": "Brain Salad Surgery",
+      "version": "studio"
+    }
+  ]
+}

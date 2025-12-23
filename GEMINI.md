@@ -67,3 +67,7 @@ Use these commands to maintain code quality and run the application.
 -   **Testing:** Unit tests required for new features. Maintain high coverage.
 -   **Type Checker:** Ty (via pre-commit).
 -   **Pre-Commit:** **MANDATORY**: Run `black .` and `ruff check . --fix` before every code submission to prevent CI/pre-commit failures.
+
+## 6. Critical Rules
+
+- **CRITICAL RULE:** Never use write_file on an existing file unless specifically told to "overwrite" or "replace" it. Always read_file first to perform a merge, or use run_shell_command with cat >> for appending. If a file is over 50 lines, always prefer incremental edits.

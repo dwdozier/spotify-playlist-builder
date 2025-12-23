@@ -1,0 +1,151 @@
+{
+  "name": "The Eagles",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "Eagles",
+      "track": "Hotel California - 2013 Remaster",
+      "album": "Hotel California (2013 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Eagles",
+      "track": "New Kid in Town - 2013 Remaster",
+      "album": "Hotel California (2013 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Eagles",
+      "track": "Life in the Fast Lane - 2013 Remaster",
+      "album": "Hotel California (2013 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Eagles",
+      "track": "Victim of Love - 2013 Remaster",
+      "album": "Hotel California (2013 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Eagles",
+      "track": "One of These Nights - 2013 Remaster",
+      "album": "One of These Nights (2013 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Eagles",
+      "track": "Lyin' Eyes - 2013 Remaster",
+      "album": "One of These Nights (2013 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Eagles",
+      "track": "Take It to the Limit - 2013 Remaster",
+      "album": "One of These Nights (2013 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Eagles",
+      "track": "The Best of My Love - 2013 Remaster",
+      "album": "On the Border (2013 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Eagles",
+      "track": "Tequila Sunrise - 2013 Remaster",
+      "album": "Desperado (2013 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Eagles",
+      "track": "Desperado - 2013 Remaster",
+      "album": "Desperado (2013 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Eagles",
+      "track": "Take It Easy - 2013 Remaster",
+      "album": "Eagles (2013 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Eagles",
+      "track": "Witchy Woman - 2013 Remaster",
+      "album": "Eagles (2013 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Eagles",
+      "track": "Peaceful Easy Feeling - 2013 Remaster",
+      "album": "Eagles (2013 Remaster)",
+      "version": "remaster"
+    },
+    {
+      "artist": "Don Henley",
+      "track": "The End Of The Innocence",
+      "album": "The End Of The Innocence",
+      "version": "studio"
+    },
+    {
+      "artist": "Don Henley",
+      "track": "New York Minute",
+      "album": "The End Of The Innocence",
+      "version": "studio"
+    },
+    {
+      "artist": "Don Henley",
+      "track": "The Boys Of Summer",
+      "album": "Building The Perfect Beast",
+      "version": "studio"
+    },
+    {
+      "artist": "Don Henley",
+      "track": "Sunset Grill",
+      "album": "Building The Perfect Beast",
+      "version": "studio"
+    },
+    {
+      "artist": "Don Henley",
+      "track": "All She Wants To Do Is Dance",
+      "album": "Building The Perfect Beast",
+      "version": "studio"
+    },
+    {
+      "artist": "Glenn Frey",
+      "track": "Smuggler's Blues",
+      "album": "The Allnighter",
+      "version": "studio"
+    },
+    {
+      "artist": "Glenn Frey",
+      "track": "You Belong To The City",
+      "album": "Solo Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Glenn Frey",
+      "track": "The Heat Is On - From \"Beverly Hills Cop\" Soundtrack",
+      "album": "Solo Collection",
+      "version": "compilation"
+    },
+    {
+      "artist": "Joe Walsh",
+      "track": "Ordinary Average Guy",
+      "album": "Ordinary Average Guy",
+      "version": "studio"
+    },
+    {
+      "artist": "Joe Walsh",
+      "track": "Rocky Mountain Way",
+      "album": "The Smoker You Drink, The Player You Get",
+      "version": "studio"
+    },
+    {
+      "artist": "Joe Walsh",
+      "track": "Life's Been Good",
+      "album": "But Seriously, Folks...",
+      "version": "studio"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "name": "Scrubs",
+  "description": "",
+  "public": true,
+  "tracks": [
+    {
+      "artist": "Lazlo Bane",
+      "track": "Superman",
+      "album": "Scrubs",
+      "version": "studio"
+    },
+    {
+      "artist": "Shawn Mullins",
+      "track": "All In My Head",
+      "album": "Scrubs",
+      "version": "studio"
+    },
+    {
+      "artist": "Eels",
+      "track": "Fresh Feeling",
+      "album": "Scrubs",
+      "version": "studio"
+    },
+    {
+      "artist": "Leroy",
+      "track": "Good Time",
+      "album": "Scrubs",
+      "version": "studio"
+    },
+    {
+      "artist": "Francis Dunnery",
+      "track": "Good Life",
+      "album": "Scrubs",
+      "version": "studio"
+    },
+    {
+      "artist": "The Shins",
+      "track": "New Slang",
+      "album": "Scrubs",
+      "version": "studio"
+    },
+    {
+      "artist": "Colin Hay",
+      "track": "Beautiful World",
+      "album": "Scrubs",
+      "version": "studio"
+    },
+    {
+      "artist": "Guided By Voices",
+      "track": "Hold On Hope",
+      "album": "Scrubs",
+      "version": "studio"
+    },
+    {
+      "artist": "Nil Lara",
+      "track": "Fighting For My Love",
+      "album": "Scrubs",
+      "version": "studio"
+    },
+    {
+      "artist": "Butthole Surfers",
+      "track": "Dracula From Houston",
+      "album": "Scrubs",
+      "version": "studio"
+    },
+    {
+      "artist": "Everything",
+      "track": "Hooch",
+      "album": "Scrubs",
+      "version": "studio"
+    },
+    {
+      "artist": "John Cale",
+      "track": "Hallelujah",
+      "album": "Scrubs",
+      "version": "studio"
+    },
+    {
+      "artist": "Jeremy Kay",
+      "track": "Have It All",
+      "album": "Scrubs",
+      "version": "studio"
+    },
+    {
+      "artist": "Jan Stevens",
+      "track": "End Credit Score - Instrumental",
+      "album": "Scrubs",
+      "version": "studio"
+    },
+    {
+      "artist": "Colin Hay",
+      "track": "Overkill",
+      "album": "Scrubs",
+      "version": "studio"
+    }
+  ]
+}
