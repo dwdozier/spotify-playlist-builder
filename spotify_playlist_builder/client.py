@@ -259,6 +259,7 @@ class SpotifyPlaylistBuilder:
                     artist_name = track["artists"][0]["name"] if track["artists"] else "Unknown"
                     tracks.append(
                         {
+                            "uri": track["uri"],
                             "artist": artist_name,
                             "track": track["name"],
                             "album": track["album"]["name"],
@@ -320,7 +321,8 @@ class SpotifyPlaylistBuilder:
         with open(json_file, "r") as f:
             data = json.load(f)
         playlist_name = data.get("name", "New Playlist")
-        new_track_uris, failed_tracks = [], []
+        new_track_uris, failed_items = [], []
+
         for track in data.get("tracks", []):
             uri = self.search_track(
                 track.get("artist"), track.get("track"), track.get("album"), track.get("version")
@@ -328,11 +330,11 @@ class SpotifyPlaylistBuilder:
             if uri:
                 new_track_uris.append(uri)
             else:
-                failed_tracks.append(f"{track.get('artist')} - {track.get('track')}")
+                failed_items.append(track)
 
         if dry_run:
             logger.info(
-                f"Dry run complete. Found {len(new_track_uris)}, missing {len(failed_tracks)}."
+                f"Dry run complete. Found {len(new_track_uris)}, missing {len(failed_items)}."
             )
             return
 
@@ -341,11 +343,48 @@ class SpotifyPlaylistBuilder:
             self.update_playlist_details(
                 existing_pid, data.get("description", ""), data.get("public", False)
             )
+
+            # Attempt to preserve unplayable/unsearchable tracks if they already exist
+            if failed_items:
+                current_details = self.get_playlist_tracks_details(existing_pid)
+                # Map "Artist - Track" (normalized) to URI
+                current_map = {}
+                for t in current_details:
+                    key = f"{t['artist']} - {t['track']}".lower()
+                    current_map[key] = t["uri"]
+
+                rescued_count = 0
+                for item in failed_items:
+                    search_key = f"{item.get('artist', '')} - {item.get('track', '')}".lower()
+                    # Try exact match first
+                    if search_key in current_map:
+                        new_track_uris.append(current_map[search_key])
+                        rescued_count += 1
+                        logger.info(
+                            f"Preserved existing track: {item.get('artist')} - {item.get('track')}"
+                        )
+                    else:
+                        # Fallback: fuzzy match on existing tracks?
+                        # For safety, strict match is better to avoid keeping wrong songs.
+                        # But unplayable tracks might have slightly different metadata.
+                        # Let's stick to strict match on Artist - Title for now.
+                        logger.warning(
+                            f"Could not find or preserve: {item.get('artist')} - "
+                            f"{item.get('track')}"
+                        )
+
             if self.get_playlist_tracks(existing_pid) != new_track_uris:
                 self.clear_playlist(existing_pid)
                 self._add_track_uris_to_playlist(existing_pid, new_track_uris)
             playlist_id = existing_pid
         else:
+            if failed_items:
+                for item in failed_items:
+                    logger.warning(
+                        f"Track not found (new playlist): {item.get('artist')} - "
+                        f"{item.get('track')}"
+                    )
+
             playlist_id = self.create_playlist(
                 playlist_name, data.get("description", ""), data.get("public", False)
             )
