@@ -272,9 +272,13 @@ class SpotifyPlaylistBuilder:
             offset += limit
         return tracks
 
-    def export_playlist_to_json(self, playlist_name: str, output_file: str) -> None:
+    def export_playlist_to_json(
+        self, playlist_name: str, output_file: str, playlist_id: str | None = None
+    ) -> None:
         """Export an existing playlist to a JSON file."""
-        playlist_id = self.find_playlist_by_name(playlist_name)
+        if not playlist_id:
+            playlist_id = self.find_playlist_by_name(playlist_name)
+
         if not playlist_id:
             raise Exception(f"Playlist '{playlist_name}' not found.")
         playlist_info = self.sp.playlist(playlist_id)
@@ -307,7 +311,7 @@ class SpotifyPlaylistBuilder:
             safe_name = to_snake_case(pl["name"])
             filepath = os.path.join(output_dir, f"{safe_name or pl['id']}.json")
             try:
-                self.export_playlist_to_json(pl["name"], filepath)
+                self.export_playlist_to_json(pl["name"], filepath, playlist_id=pl["id"])
             except Exception as e:
                 logger.error(f"Failed to backup '{pl['name']}': {e}")
 
