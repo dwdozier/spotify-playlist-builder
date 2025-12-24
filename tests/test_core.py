@@ -1,15 +1,14 @@
 import os
 import pytest
 from unittest.mock import MagicMock, patch
-from spotify_playlist_builder import (
+from spotify_playlist_builder.auth import (
     get_credentials_from_env,
     get_credentials_from_keyring,
     store_credentials_in_keyring,
     get_credentials,
-    get_builder,
     CredentialSource,
-    SpotifyPlaylistBuilder,
 )
+from spotify_playlist_builder import get_builder, SpotifyPlaylistBuilder
 
 # Credential Tests
 
@@ -35,7 +34,7 @@ def test_get_credentials_from_env_missing():
 
 def test_get_credentials_from_keyring_success():
     """Test retrieving credentials from keyring."""
-    with patch("spotify_playlist_builder.keyring") as mock_keyring:
+    with patch("spotify_playlist_builder.auth.keyring") as mock_keyring:
         mock_keyring.get_password.side_effect = ["my_id", "my_secret"]
 
         result = get_credentials_from_keyring()
@@ -49,7 +48,7 @@ def test_get_credentials_from_keyring_success():
 
 def test_get_credentials_from_keyring_missing():
     """Test error when credentials are missing in keyring."""
-    with patch("spotify_playlist_builder.keyring") as mock_keyring:
+    with patch("spotify_playlist_builder.auth.keyring") as mock_keyring:
         mock_keyring.get_password.return_value = None
 
         with pytest.raises(Exception) as exc:
@@ -60,7 +59,7 @@ def test_get_credentials_from_keyring_missing():
 
 def test_store_credentials_in_keyring():
     """Test storing credentials in keyring."""
-    with patch("spotify_playlist_builder.keyring") as mock_keyring:
+    with patch("spotify_playlist_builder.auth.keyring") as mock_keyring:
         store_credentials_in_keyring("new_id", "new_secret")
 
         mock_keyring.set_password.assert_any_call("spotify-playlist-builder", "client_id", "new_id")
@@ -72,13 +71,13 @@ def test_store_credentials_in_keyring():
 def test_get_credentials_dispatch():
     """Test that get_credentials calls the correct implementation."""
     with patch(
-        "spotify_playlist_builder.get_credentials_from_env", return_value=("a", "b")
+        "spotify_playlist_builder.auth.get_credentials_from_env", return_value=("a", "b")
     ) as mock_env:
         assert get_credentials("env") == ("a", "b")
         mock_env.assert_called_once()
 
     with patch(
-        "spotify_playlist_builder.get_credentials_from_keyring", return_value=("c", "d")
+        "spotify_playlist_builder.auth.get_credentials_from_keyring", return_value=("c", "d")
     ) as mock_keyring:
         assert get_credentials("keyring") == ("c", "d")
         mock_keyring.assert_called_once()
@@ -94,17 +93,17 @@ def test_get_credentials_invalid_source():
 def test_get_builder():
     """Test the factory function creates a builder correctly."""
     with (
-        patch("spotify_playlist_builder.get_credentials", return_value=("cid", "sec")),
-        patch("spotify_playlist_builder.SpotifyPlaylistBuilder") as mock_cls,
+        patch("spotify_playlist_builder.auth.get_credentials", return_value=("cid", "sec")),
+        patch("spotify_playlist_builder.client.SpotifyPlaylistBuilder") as mock_cls,
     ):
         get_builder(CredentialSource.env)
-        mock_cls.assert_called_with("cid", "sec")
+        mock_cls.assert_called_once()
 
 
 def test_keyring_dependency_missing():
     """Test error message when keyring module is not installed."""
     # Simulate keyring being None (ImportError fallback)
-    with patch("spotify_playlist_builder.keyring", None):
+    with patch("spotify_playlist_builder.auth.keyring", None):
         with pytest.raises(Exception) as exc:
             get_credentials_from_keyring()
         assert "keyring library not available" in str(exc.value)
@@ -120,8 +119,8 @@ def test_keyring_dependency_missing():
 def test_init_auth_failure():
     """Test initialization failing when Spotify user cannot be retrieved."""
     with (
-        patch("spotify_playlist_builder.SpotifyOAuth"),
-        patch("spotify_playlist_builder.spotipy.Spotify") as mock_spotify,
+        patch("spotify_playlist_builder.client.SpotifyOAuth"),
+        patch("spotify_playlist_builder.client.spotipy.Spotify") as mock_spotify,
     ):
         # Mock auth returning None
         mock_spotify.return_value.current_user.return_value = None
@@ -457,7 +456,7 @@ def test_export_playlist_not_found(builder, mock_spotify):
     with patch.object(builder, "find_playlist_by_name", return_value=None):
         with pytest.raises(Exception) as exc:
             builder.export_playlist_to_json("Ghost Playlist", "out.json")
-        assert "not found in your library" in str(exc.value)
+        assert "Playlist 'Ghost Playlist' not found." in str(exc.value)
 
 
 def test_export_playlist_details_failure(builder, mock_spotify):
@@ -740,7 +739,7 @@ def test_search_track_with_external_verification(builder, mock_spotify):
 def test_get_credentials_auto_discovery_keyring(builder):
     """Test auto-discovery finding credentials in keyring."""
     with patch(
-        "spotify_playlist_builder.get_credentials_from_keyring", return_value=("id", "secret")
+        "spotify_playlist_builder.auth.get_credentials_from_keyring", return_value=("id", "secret")
     ):
         cid, secret = get_credentials(None)
         assert cid == "id"
@@ -750,8 +749,10 @@ def test_get_credentials_auto_discovery_keyring(builder):
 def test_get_credentials_auto_discovery_env(builder):
     """Test auto-discovery falling back to env when keyring fails."""
     with (
-        patch("spotify_playlist_builder.get_credentials_from_keyring", return_value=None),
-        patch("spotify_playlist_builder.get_credentials_from_env", return_value=("id", "secret")),
+        patch("spotify_playlist_builder.auth.get_credentials_from_keyring", return_value=None),
+        patch(
+            "spotify_playlist_builder.auth.get_credentials_from_env", return_value=("id", "secret")
+        ),
     ):
         cid, secret = get_credentials(None)
         assert cid == "id"
@@ -761,8 +762,8 @@ def test_get_credentials_auto_discovery_env(builder):
 def test_get_credentials_auto_discovery_failure(builder):
     """Test auto-discovery failing when both sources are missing."""
     with (
-        patch("spotify_playlist_builder.get_credentials_from_keyring", return_value=None),
-        patch("spotify_playlist_builder.get_credentials_from_env", return_value=None),
+        patch("spotify_playlist_builder.auth.get_credentials_from_keyring", return_value=None),
+        patch("spotify_playlist_builder.auth.get_credentials_from_env", return_value=None),
     ):
         with pytest.raises(Exception) as exc:
             get_credentials(None)

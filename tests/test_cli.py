@@ -1,13 +1,13 @@
 from unittest.mock import MagicMock, patch
 from typer.testing import CliRunner
-from spotify_playlist_builder import app
+from spotify_playlist_builder.cli import app
 
 runner = CliRunner()
 
 
 def test_cli_build_success():
     """Test the build command."""
-    with patch("spotify_playlist_builder.get_builder") as mock_get_builder:
+    with patch("spotify_playlist_builder.cli.get_builder") as mock_get_builder:
         mock_builder = MagicMock()
         mock_get_builder.return_value = mock_builder
         # Create a dummy file for the argument
@@ -21,7 +21,7 @@ def test_cli_build_success():
 
 def test_cli_build_error():
     """Test the build command handling errors."""
-    with patch("spotify_playlist_builder.get_builder") as mock_get_builder:
+    with patch("spotify_playlist_builder.cli.get_builder") as mock_get_builder:
         mock_builder = MagicMock()
         mock_builder.build_playlist_from_json.side_effect = Exception("Build failed")
         mock_get_builder.return_value = mock_builder
@@ -35,7 +35,7 @@ def test_cli_build_error():
 
 def test_cli_export_success():
     """Test the export command."""
-    with patch("spotify_playlist_builder.get_builder") as mock_get_builder:
+    with patch("spotify_playlist_builder.cli.get_builder") as mock_get_builder:
         mock_builder = MagicMock()
         mock_get_builder.return_value = mock_builder
         result = runner.invoke(app, ["export", "My Playlist", "out.json"])
@@ -45,7 +45,7 @@ def test_cli_export_success():
 
 def test_cli_export_error():
     """Test export command error handling."""
-    with patch("spotify_playlist_builder.get_builder") as mock_get_builder:
+    with patch("spotify_playlist_builder.cli.get_builder") as mock_get_builder:
         mock_builder = MagicMock()
         mock_builder.export_playlist_to_json.side_effect = Exception("Export failed")
         mock_get_builder.return_value = mock_builder
@@ -55,7 +55,7 @@ def test_cli_export_error():
 
 def test_cli_backup_success():
     """Test the backup command."""
-    with patch("spotify_playlist_builder.get_builder") as mock_get_builder:
+    with patch("spotify_playlist_builder.cli.get_builder") as mock_get_builder:
         mock_builder = MagicMock()
         mock_get_builder.return_value = mock_builder
         result = runner.invoke(app, ["backup", "backups_dir"])
@@ -65,7 +65,7 @@ def test_cli_backup_success():
 
 def test_cli_backup_error():
     """Test backup command error handling."""
-    with patch("spotify_playlist_builder.get_builder") as mock_get_builder:
+    with patch("spotify_playlist_builder.cli.get_builder") as mock_get_builder:
         mock_builder = MagicMock()
         mock_builder.backup_all_playlists.side_effect = Exception("Backup failed")
         mock_get_builder.return_value = mock_builder
@@ -75,7 +75,7 @@ def test_cli_backup_error():
 
 def test_cli_store_credentials():
     """Test storing credentials interactively."""
-    with patch("spotify_playlist_builder.store_credentials_in_keyring") as mock_store:
+    with patch("spotify_playlist_builder.cli.store_credentials_in_keyring") as mock_store:
         # Simulate user input: client_id, then client_secret
         result = runner.invoke(app, ["store-credentials"], input="my_id\nmy_secret\n")
         assert result.exit_code == 0
@@ -91,7 +91,7 @@ def test_cli_store_credentials_missing_input():
 def test_cli_store_credentials_exception():
     """Test exception handling in store-credentials command."""
     with patch(
-        "spotify_playlist_builder.store_credentials_in_keyring",
+        "spotify_playlist_builder.cli.store_credentials_in_keyring",
         side_effect=Exception("Keyring error"),
     ):
         result = runner.invoke(app, ["store-credentials"], input="user\npass\n")
