@@ -485,8 +485,12 @@ def test_backup_all_playlists(builder, mock_spotify):
 
         assert mock_export.call_count == 2
         # Check filename sanitization (slashes removed/replaced)
-        mock_export.assert_any_call("Playlist 1", os.path.join("backups_dir", "playlist_1.json"))
-        mock_export.assert_any_call("Playlist/2", os.path.join("backups_dir", "playlist_2.json"))
+        mock_export.assert_any_call(
+            "Playlist 1", os.path.join("backups_dir", "playlist_1.json"), playlist_id="p1"
+        )
+        mock_export.assert_any_call(
+            "Playlist/2", os.path.join("backups_dir", "playlist_2.json"), playlist_id="p2"
+        )
 
 
 def test_backup_all_playlists_exception(builder, mock_spotify):
@@ -782,3 +786,28 @@ def test_to_snake_case():
     assert to_snake_case("Playlist-with-Dashes") == "playlist_with_dashes"
     assert to_snake_case("  Spaces and Symbols! @# ") == "spaces_and_symbols"
     assert to_snake_case("Multiple___Underscores") == "multiple_underscores"
+
+
+def test_backup_all_playlists_includes_followed(builder, mock_spotify):
+    """Test that followed playlists (not owned by user) are backed up."""
+    # Mock current_user_playlists returning one owned and one followed playlist
+    mock_spotify.current_user_playlists.return_value = {
+        "items": [
+            {"name": "Owned", "id": "owned_id", "owner": {"id": "test_user_id"}},
+            {"name": "Followed", "id": "followed_id", "owner": {"id": "other_user_id"}},
+        ],
+        "next": None,
+    }
+
+    with patch.object(builder, "export_playlist_to_json") as mock_export:
+        builder.backup_all_playlists("backups")
+
+        # Both should be backed up
+        assert mock_export.call_count == 2
+        # Verify the IDs are passed correctly
+        mock_export.assert_any_call(
+            "Owned", os.path.join("backups", "owned.json"), playlist_id="owned_id"
+        )
+        mock_export.assert_any_call(
+            "Followed", os.path.join("backups", "followed.json"), playlist_id="followed_id"
+        )
