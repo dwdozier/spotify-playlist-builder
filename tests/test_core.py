@@ -403,38 +403,34 @@ def test_add_track_uris_empty(builder, mock_spotify):
     builder._add_track_uris_to_playlist("pid", [])
     mock_spotify.playlist_add_items.assert_not_called()
 
-    def test_get_playlist_tracks_details(builder, mock_spotify):
-        """Test retrieving full track details."""
 
-        mock_spotify.playlist_tracks.return_value = {
-            "items": [
-                {
-                    "track": {
-                        "uri": "spotify:track:1",
-                        "name": "Track 1",
-                        "artists": [{"name": "Artist 1"}],
-                        "album": {"name": "Album 1"},
-                    }
-                },
-                {
-                    "track": {
-                        "uri": "spotify:track:2",
-                        "name": "Track 2",
-                        "artists": [{"name": "Artist 2"}],
-                        "album": {"name": "Album 2"},
-                    }
-                },
-            ],
-            "next": None,
-        }
-
-        details = builder.get_playlist_tracks_details("pid")
-
-        assert len(details) == 2
-
-        assert details[0]["artist"] == "Artist 1"
-
-        assert "version" in details[0]
+def test_get_playlist_tracks_details(builder, mock_spotify):
+    """Test retrieving full track details."""
+    mock_spotify.playlist_tracks.return_value = {
+        "items": [
+            {
+                "track": {
+                    "uri": "spotify:track:1",
+                    "name": "Track 1",
+                    "artists": [{"name": "Artist 1"}],
+                    "album": {"name": "Album 1"},
+                }
+            },
+            {
+                "track": {
+                    "uri": "spotify:track:2",
+                    "name": "Track 2",
+                    "artists": [{"name": "Artist 2"}],
+                    "album": {"name": "Album 2"},
+                }
+            },
+        ],
+        "next": None,
+    }
+    details = builder.get_playlist_tracks_details("pid")
+    assert len(details) == 2
+    assert details[0]["artist"] == "Artist 1"
+    assert "version" in details[0]
 
 
 def test_export_playlist_to_json(builder, mock_spotify):
@@ -874,3 +870,38 @@ def test_build_playlist_preserves_unplayable_tracks(builder, mock_spotify):
 
                         # 2. We called add_items with BOTH URIs (found + rescued)
                         mock_add.assert_called_with("pid", ["uri:found", "uri:unplayable"])
+
+
+def test_build_playlist_uses_provided_uri_fallback(builder, mock_spotify):
+    """Test that build process falls back to provided URI if search fails."""
+    playlist_data = {
+        "name": "Restore Playlist",
+        "tracks": [
+            {"artist": "Searchable", "track": "Found", "uri": "uri:ignored_if_found"},
+            {"artist": "Unsearchable", "track": "Lost", "uri": "uri:fallback"},
+        ],
+    }
+
+    # Mock file read
+    with (
+        patch("spotify_playlist_builder.client.json.load", return_value=playlist_data),
+        patch("builtins.open", MagicMock()),
+    ):
+        # Mock search: Find first, fail second
+        with patch.object(builder, "search_track") as mock_search:
+            mock_search.side_effect = ["uri:found", None]
+
+            # Mock playlist operations
+            with (
+                patch.object(builder, "find_playlist_by_name", return_value=None),
+                patch.object(builder, "create_playlist", return_value="new_pid"),
+                patch.object(builder, "_add_track_uris_to_playlist") as mock_add,
+            ):
+                builder.build_playlist_from_json("file.json")
+
+                # Verify:
+                # 1. We searched for both
+                assert mock_search.call_count == 2
+
+                # 2. We called add_items with found URI and fallback URI
+                mock_add.assert_called_with("new_pid", ["uri:found", "uri:fallback"])
