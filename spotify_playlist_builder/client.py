@@ -329,6 +329,13 @@ class SpotifyPlaylistBuilder:
             )
             if uri:
                 new_track_uris.append(uri)
+            elif track.get("uri"):
+                # Use provided URI from backup if search fails
+                new_track_uris.append(track["uri"])
+                logger.info(
+                    f"Using provided URI for unsearchable track: {track.get('artist')} - "
+                    f"{track.get('track')}"
+                )
             else:
                 failed_items.append(track)
 

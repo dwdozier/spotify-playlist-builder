@@ -37,6 +37,10 @@
             "type": "string",
             "enum": ["live", "studio", "compilation", "remix", "original", "remaster"],
             "description": "Preferred version of the track (optional)"
+          },
+          "uri": {
+            "type": "string",
+            "description": "Spotify URI of the track (optional, used for backup/restore)"
           }
         },
         "required": ["artist", "track"]
