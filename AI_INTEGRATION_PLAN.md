@@ -108,11 +108,12 @@ key. Users can choose to store it in:
 
 ### Phase 1: PoC
 
-* [ ] Create branch `feature/ai-integration-poc`.
-* [ ] Add `google-generativeai` to `pyproject.toml`.
-* [ ] Implement `ai.py` with basic Gemini connection.
-* [ ] Add `setup-ai` command to CLI for API key management (Keyring/.env).
-* [ ] Add basic `generate` command to CLI (takes prompt, prints raw JSON).
+* [x] Create branch `feature/ai-integration-poc`.
+* [x] Add `google-genai` to `pyproject.toml`.
+* [x] Implement `ai.py` with basic Gemini connection.
+
+* [x] Add `setup-ai` command to CLI for API key management (Keyring/.env).
+* [x] Add basic `generate` command to CLI (takes prompt, prints raw JSON).
 
 ### Phase 2: Verification
 

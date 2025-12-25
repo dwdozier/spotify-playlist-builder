@@ -28,7 +28,7 @@ dependencies = [
     "typer",
     "tenacity",
     "musicbrainzngs",
-    "google-generativeai>=0.8.6",
+    "google-genai>=1.56.0",
 ]
 
 [project.optional-dependencies]
@@ -62,4 +62,7 @@ select = ["E", "F", "W"]
 [tool.pytest.ini_options]
 markers = [
     "ci: marks tests as ci-only (deselect with '-m \"not ci\"')",
+]
+filterwarnings = [
+    "ignore:'_UnionGenericAlias' is deprecated:DeprecationWarning"
 ]

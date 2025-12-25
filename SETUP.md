@@ -41,7 +41,9 @@ Spotify Playlist Builder.
 You need to provide your Spotify credentials to the application. You can do this using either a
 `.env` file (easier) or your system's secure keychain (more secure).
 
-### Option A: Use .env File (Default)
+### 1. Spotify Credentials
+
+#### Option A: Use .env File (Default)
 
 1. Create a `.env` file in the project root:
 
@@ -58,7 +60,7 @@ You need to provide your Spotify credentials to the application. You can do this
 
     **Note:** The `.env` file is ignored by git to protect your secrets.
 
-### Option B: Use System Keychain (Secure)
+#### Option B: Use System Keychain (Secure)
 
 This method stores your credentials encrypted in your operating system's default keychain
 (e.g., macOS Keychain, Windows Credential Manager).
@@ -70,6 +72,19 @@ This method stores your credentials encrypted in your operating system's default
     ```
 
 2. Enter your **Client ID** and **Client Secret** when prompted.
+
+### 2. AI Configuration (Optional)
+
+To enable AI playlist generation features using Google Gemini:
+
+1. Obtain a free API Key from [Google AI Studio](https://aistudio.google.com/app/apikey).
+2. Run the setup command:
+
+    ```bash
+    spotify-playlist-builder setup-ai
+    ```
+
+See the [AI Setup Guide](AI_SETUP.md) for more details.
 
 ## Optional Setup
 

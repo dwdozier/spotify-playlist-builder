@@ -1,8 +1,10 @@
 import os
 import json
 import logging
-import google.generativeai as genai
 from typing import Any
+from google import genai
+from google.genai import types
+from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
 
 logger = logging.getLogger("spotify_playlist_builder.ai")
 
@@ -22,8 +24,6 @@ If the user specifies a number of songs, try to meet that count. Default to 20 i
 
 def get_ai_api_key() -> str:
     """Retrieve the AI API Key from keyring or env."""
-    # We reuse the auth logic but look for a specific key
-    # For now, let's look for GEMINI_API_KEY in env or keyring
     try:
         # Check env first
         key = os.getenv("GEMINI_API_KEY")
@@ -49,12 +49,45 @@ def get_ai_api_key() -> str:
         raise ValueError(f"Failed to retrieve API Key: {e}")
 
 
-def generate_playlist(description: str, count: int = 20) -> list[dict[str, Any]]:
-    """Generate a playlist structure using Google Gemini."""
-    api_key = get_ai_api_key()
-    genai.configure(api_key=api_key)
+@retry(
+    retry=retry_if_exception_type(Exception),
+    stop=stop_after_attempt(3),
+    wait=wait_exponential(multiplier=1, min=4, max=60),
+    reraise=True,
+)
+def generate_content_with_retry(client, model, contents, config):
+    """Wrapper for generate_content with retry logic."""
+    return client.models.generate_content(model=model, contents=contents, config=config)
 
-    model = genai.GenerativeModel("gemini-1.5-flash")
+
+def get_gemini_model_name() -> str:
+    """Get the Gemini model name from env or default."""
+    # Updated default to 2.0-flash as 1.5-flash availability varies
+    return os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
+
+
+def list_available_models(client: genai.Client | None = None) -> list[str]:
+    """List available Gemini models for the configured key."""
+    if not client:
+        api_key = get_ai_api_key()
+        client = genai.Client(api_key=api_key)
+    models = []
+    try:
+        for m in client.models.list():
+            methods = getattr(m, "supported_generation_methods", [])
+            if "generateContent" in methods:
+                models.append(m.name)
+        return models
+    except Exception as e:
+        logger.error(f"Failed to list models: {e}")
+        return []
+
+
+def generate_playlist(description: str, count: int = 20) -> list[dict[str, Any]]:
+    """Generate a playlist structure using Google Gemini (via google-genai SDK)."""
+    api_key = get_ai_api_key()
+    client = genai.Client(api_key=api_key)
+    model_name = get_gemini_model_name()
 
     # Construct the user prompt
     user_message = f"""
@@ -63,16 +96,22 @@ def generate_playlist(description: str, count: int = 20) -> list[dict[str, Any]]
     """
 
     try:
-        logger.info("Sending request to Gemini...")
-        response = model.generate_content(
+        logger.info(f"Sending request to Gemini (Model: {model_name})...")
+
+        response = generate_content_with_retry(
+            client=client,
+            model=model_name,
             contents=[SYSTEM_PROMPT, user_message],
-            generation_config={"response_mime_type": "application/json"},
+            config=types.GenerateContentConfig(
+                response_mime_type="application/json",
+            ),
         )
 
         logger.info("Received response from Gemini.")
 
-        # Clean up response text if it accidentally contains markdown
         text = response.text.strip()
+
+        # Clean up response text if it accidentally contains markdown
         if text.startswith("```json"):
             text = text[7:]
         if text.startswith("```"):
@@ -83,7 +122,6 @@ def generate_playlist(description: str, count: int = 20) -> list[dict[str, Any]]
         data = json.loads(text)
 
         if not isinstance(data, list):
-            # Sometimes it might return {"tracks": [...]}
             if isinstance(data, dict) and "tracks" in data:
                 return data["tracks"]
             raise ValueError("AI response was not a list of tracks.")
@@ -91,5 +129,11 @@ def generate_playlist(description: str, count: int = 20) -> list[dict[str, Any]]
         return data
 
     except Exception as e:
+        if "404" in str(e):
+            logger.error(f"Model '{model_name}' not found.")
+            available = list_available_models(client)
+            if available:
+                logger.info(f"Available models: {', '.join(available)}")
+                logger.info("Set GEMINI_MODEL environment variable to one of the above.")
         logger.error(f"AI Generation failed: {e}")
         raise

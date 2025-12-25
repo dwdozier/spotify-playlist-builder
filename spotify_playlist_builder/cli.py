@@ -144,6 +144,20 @@ def setup_ai_cmd() -> None:
             logger.error(f"Error: {e}")
 
 
+@app.command("ai-models")
+def ai_models_cmd() -> None:
+    """List available Gemini models for your API key."""
+    from .ai import list_available_models
+
+    try:
+        models = list_available_models()
+        logger.info("Available Gemini Models:")
+        for model in models:
+            print(f"- {model}")
+    except Exception as e:
+        logger.error(f"Error fetching models: {e}")
+
+
 @app.command("generate")
 def generate_cmd(
     prompt: Annotated[
