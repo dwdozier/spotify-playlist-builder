@@ -18,7 +18,8 @@ Perfect for curating playlists programmatically and versioning them in git.
 
 1. **Register a Spotify App**: Get your API credentials by following the
    [App Registration Guide](APP_REGISTRATION.md).
-2. **Install & Configure**: Follow the [Setup Guide](SETUP.md) to install dependencies and
+2. **Setup AI (Optional)**: To use AI playlist generation, follow the [AI Setup Guide](AI_SETUP.md).
+3. **Install & Configure**: Follow the [Setup Guide](SETUP.md) to install dependencies and
    configure your credentials.
 
 ## Usage
