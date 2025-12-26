@@ -88,3 +88,7 @@ Use these commands to maintain code quality and run the application.
   "overwrite" or "replace" it. Always read_file first to perform a merge, or use
   run_shell_command with cat >> for appending. If a file is over 50 lines, always prefer
   incremental edits.
+- **CRITICAL RULE:** Force pushing is strictly forbidden as it rewrites history and can disrupt
+  collaboration. It should only be used as a last resort and REQUIRES explicit user approval.
+  Prefer accumulating multiple commits within an open PR, as they will be squash-merged upon
+  completion.
