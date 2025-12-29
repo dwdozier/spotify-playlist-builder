@@ -1,20 +1,22 @@
 services:
   db:
     image: postgres:16-alpine
+    container_name: vibomat-db
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_DB=playlistbuilder
+      - POSTGRES_DB=vibomat
       - POSTGRES_USER=user
       - POSTGRES_PASSWORD=pass
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U user -d playlistbuilder"]
+      test: ["CMD-SHELL", "pg_isready -U user -d vibomat"]
       interval: 5s
       timeout: 5s
       retries: 5
 
   redis:
     image: redis:7-alpine
+    container_name: vibomat-redis
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 5s
@@ -25,13 +27,14 @@ services:
     build:
       context: .
       dockerfile: backend/Dockerfile
+    container_name: vibomat-api
     depends_on:
       db:
         condition: service_healthy
       redis:
         condition: service_healthy
     environment:
-      - DATABASE_URL=postgresql+asyncpg://user:pass@db:5432/playlistbuilder
+      - DATABASE_URL=postgresql+asyncpg://user:pass@db:5432/vibomat
       - REDIS_URL=redis://redis:6379
       - FASTAPI_SECRET=${FASTAPI_SECRET:-devsecret}
       - SPOTIFY_CLIENT_ID=${SPOTIFY_CLIENT_ID}
@@ -44,6 +47,7 @@ services:
     build:
       context: .
       dockerfile: backend/Dockerfile
+    container_name: vibomat-worker
     command: taskiq worker backend.app.core.tasks:broker
     depends_on:
       db:
@@ -51,7 +55,7 @@ services:
       redis:
         condition: service_healthy
     environment:
-      - DATABASE_URL=postgresql+asyncpg://user:pass@db:5432/playlistbuilder
+      - DATABASE_URL=postgresql+asyncpg://user:pass@db:5432/vibomat
       - REDIS_URL=redis://redis:6379
       - SPOTIFY_CLIENT_ID=${SPOTIFY_CLIENT_ID}
       - SPOTIFY_CLIENT_SECRET=${SPOTIFY_CLIENT_SECRET}
@@ -61,6 +65,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+    container_name: vibomat-ui
     ports:
       - "80:80"
     depends_on:

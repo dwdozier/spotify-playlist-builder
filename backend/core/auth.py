@@ -39,7 +39,7 @@ def get_credentials_from_env(silent: bool = False) -> Tuple[str, str] | None:
 
 
 def get_credentials_from_keyring(
-    service: str = "spotify-playlist-builder", silent: bool = False
+    service: str = "vibomat", silent: bool = False
 ) -> Tuple[str, str] | None:
     """Get credentials from macOS Keychain (or OS credential store)."""
     if keyring is None:
@@ -59,7 +59,7 @@ def get_credentials_from_keyring(
 
 
 def store_credentials_in_keyring(
-    client_id: str, client_secret: str, service: str = "spotify-playlist-builder"
+    client_id: str, client_secret: str, service: str = "vibomat"
 ) -> None:
     """Store credentials in macOS Keychain (or OS credential store)."""
     if keyring is None:

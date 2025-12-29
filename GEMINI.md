@@ -5,8 +5,9 @@ project.
 
 ## 1. Project Summary
 
-A Python CLI tool to programmatically create and manage Spotify playlists from local JSON data files.
-It supports multiple methods for securely handling Spotify API credentials.
+Vibomat is a universal music platform to generate and manage playlists using Generative AI and
+external metadata verification. It supports multiple streaming services and uses a FastAPI backend
+with a TanStack/React frontend.
 
 ## 2. Development Environment
 
@@ -43,7 +44,7 @@ Use these commands to maintain code quality and run the application.
 - **Run the application:**
 
     ```bash
-    spotify-playlist-builder build playlists/your-playlist.json --source [env|keyring]
+    vibomat build playlists/your-playlist.json --source [env|keyring]
     ```
 
 - **Format code:**

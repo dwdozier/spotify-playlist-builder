@@ -1,12 +1,12 @@
 # Setup and Installation
 
-This guide provides comprehensive instructions for setting up the Playlist Builder on macOS, Linux,
+This guide provides comprehensive instructions for setting up Vibomat on macOS, Linux,
 and Windows.
 
 ## Prerequisites
 
 - **Python 3.12+**
-- **Node.js 20+ & npm** (for Frontend)
+- **Node.js 20+ & npm**
 - **Docker & Docker Compose** (Recommended for easiest setup)
 - **Redis** (Required if not using Docker)
 - **uv package manager**: [Installation](https://docs.astral.sh/uv/getting-started/)
@@ -114,4 +114,26 @@ PYTHONPATH=. pytest backend/tests/
 
 # Frontend
 cd frontend && npm test
+```
+
+### CLI Tool Usage
+
+```bash
+vibomat build playlists/your-file.json
+```
+
+---
+
+## Optional Setup
+
+### Pre-commit Hooks
+
+```bash
+pre-commit install
+```
+
+### Shell Completion (CLI)
+
+```bash
+vibomat install-zsh-completion
 ```

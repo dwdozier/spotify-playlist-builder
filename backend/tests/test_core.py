@@ -62,10 +62,8 @@ def test_store_credentials_in_keyring():
     with patch("backend.core.auth.keyring") as mock_keyring:
         store_credentials_in_keyring("new_id", "new_secret")
 
-        mock_keyring.set_password.assert_any_call("spotify-playlist-builder", "client_id", "new_id")
-        mock_keyring.set_password.assert_any_call(
-            "spotify-playlist-builder", "client_secret", "new_secret"
-        )
+        mock_keyring.set_password.assert_any_call("vibomat", "client_id", "new_id")
+        mock_keyring.set_password.assert_any_call("vibomat", "client_secret", "new_secret")
 
 
 def test_get_credentials_dispatch():
