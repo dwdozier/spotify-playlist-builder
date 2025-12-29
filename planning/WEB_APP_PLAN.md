@@ -43,16 +43,25 @@ external metadata verification.
 
 **Goal:** Decouple "User Identity" from "Streaming Service Integration".
 
-* [ ] **Database Setup:** Configure Async SQLAlchemy & Alembic.
-* [ ] **Identity System:**
+* [x] **Database Setup:** Configure Async SQLAlchemy & Alembic.
+
+* [x] **Identity System:**
+
   * Implement generic User Login (Google/GitHub/Email).
+
   * Create `User` model.
-* [ ] **Service Connection System:**
+
+* [x] **Service Connection System:**
+
   * Create `ServiceConnection` model.
+
   * Implement "Connect Spotify" OAuth flow.
-* [ ] **Playlist Persistence:**
+
+* [x] **Playlist Persistence:**
+
   * Create `Playlist` model.
-* [ ] **Testing:** Integration tests for DB models, Auth flows (mocked), and Token refreshing.
+
+* [x] **Testing:** Integration tests for DB models, Auth flows (mocked), and Token refreshing.
 
 ### Phase 3: Web Frontend (MVP) & Component Testing
 
