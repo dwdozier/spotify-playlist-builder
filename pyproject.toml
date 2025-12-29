@@ -75,7 +75,6 @@ select = ["E", "F", "W"]
 [tool.pytest.ini_options]
 testpaths = ["backend/tests"]
 asyncio_mode = "auto"
-asyncio_default_test_loop_scope = "function"
 markers = [
     "ci: marks tests as ci-only (deselect with '-m \"not ci\"')",
 ]

@@ -24,6 +24,8 @@ jobs:
         uses: astral-sh/setup-uv@v5
       - name: Install dependencies
         run: uv sync --frozen --all-extras
+      - name: Install Playwright Browsers
+        run: uv run playwright install chromium --with-deps
       - name: Run tests with coverage
         run: |
           PYTHONPATH=. uv run pytest --cov=backend/core --cov=backend/app --cov-fail-under=95 backend/tests/
