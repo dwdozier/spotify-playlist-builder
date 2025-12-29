@@ -111,7 +111,7 @@ external metadata verification.
 
 * [x] **CI/CD:** GitHub Actions (Lint, Test Backend, Test Frontend). Enforce 95% coverage.
 
-* [ ] **Deployment:** Reference configs for cloud providers.
+* [x] **Deployment:** Reference configs for cloud providers (`render.yaml`).
 
 ## 4. Quality Assurance Guidelines
 
