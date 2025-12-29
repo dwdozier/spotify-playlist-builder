@@ -43,7 +43,7 @@ dev = [
 ]
 
 [project.scripts]
-spotify-playlist-builder = "spotify_playlist_builder.main:app"
+spotify-playlist-builder = "backend.core.main:app"
 
 [project.urls]
 Homepage = "https://github.com/dwdozier/spotify-playlist-builder"
@@ -51,7 +51,7 @@ Repository = "https://github.com/dwdozier/spotify-playlist-builder"
 Issues = "https://github.com/dwdozier/spotify-playlist-builder/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = ["backend/spotify_playlist_builder"]
+packages = ["backend"]
 
 [tool.black]
 line-length = 100

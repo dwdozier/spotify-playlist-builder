@@ -1,4 +1,4 @@
-from spotify_playlist_builder.metadata import MetadataVerifier
+from backend.core.metadata import MetadataVerifier
 
 
 class MetadataService:

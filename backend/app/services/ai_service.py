@@ -1,5 +1,5 @@
 from typing import List, Dict, Any, Optional
-from spotify_playlist_builder.ai import generate_playlist, verify_ai_tracks
+from backend.core.ai import generate_playlist, verify_ai_tracks
 
 
 class AIService:
