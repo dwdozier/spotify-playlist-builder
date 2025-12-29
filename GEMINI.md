@@ -92,7 +92,12 @@ Use these commands to maintain code quality and run the application.
   collaboration. It should only be used as a last resort and REQUIRES explicit user approval.
   Prefer accumulating multiple commits within an open PR, as they will be squash-merged upon
   completion.
-- **CRITICAL RULE:** Feature branches should always branch off of the latest `main` branch,
-  unless directed otherwise. If a PR has been created for a branch and there are subsequent
-  changes and bug fixes, they should stay with the unmerged PR's branch and not spawn a new
-  branch until the current working PR has been merged to `main`
+- **CRITICAL RULE: Branching Strategy:** Feature branches must always branch off the latest `main`
+  branch.
+  - **No Chaining:** Never create a feature branch from another unmerged feature branch. This
+      prevents complex "chained" dependencies that clutter history and complicate reviews.
+  - **Related Changes:** If a request involves bug fixes or refinements to an existing open PR,
+      apply those changes directly to that PR's branch.
+  - **Unrelated Changes:** For new, unrelated features or tasks, always return to `main`, pull the
+      latest changes, and create a new branch. If the new work depends on an unmerged PR, inform the
+      user and wait for the merge or seek explicit approval to branch off the feature.
