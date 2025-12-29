@@ -5,7 +5,7 @@ from spotify_playlist_builder.ai import (
     get_ai_api_key,
     generate_playlist,
     list_available_models,
-    get_best_flash_model,
+    discover_fallback_model,
 )
 
 
@@ -78,7 +78,7 @@ def test_generate_playlist_json_cleanup():
 
 
 def test_generate_playlist_failure():
-    """Test failure from API."""
+    """Test failure from API (non-404)."""
     with (
         patch("spotify_playlist_builder.ai.get_ai_api_key", return_value="key"),
         patch("google.genai.Client") as mock_client_cls,
@@ -130,68 +130,87 @@ def test_list_available_models_no_client_init():
         assert list_available_models() == []
 
 
-def test_get_best_flash_model_env_var():
-    """Test environment variable override."""
-    with patch.dict(os.environ, {"GEMINI_MODEL": "custom-model"}):
-        # We don't need a real client for this test
-        assert get_best_flash_model(MagicMock()) == "custom-model"
-
-
-def test_get_best_flash_model_auto_detect():
-    """Test dynamic auto-detection of flash models."""
+def test_discover_fallback_model_dynamic():
+    """Test dynamic discovery of fallback models."""
     mock_client = MagicMock()
 
     with patch("spotify_playlist_builder.ai.list_available_models") as mock_list:
-        # 1. Alias exists
-        mock_list.return_value = [
-            "models/gemini-1.0-pro",
-            "models/gemini-flash-latest",
-            "models/gemini-2.0-flash",
-        ]
-        assert get_best_flash_model(mock_client) == "gemini-flash-latest"
-
-        # 2. No alias, pick highest version (2.0 > 1.5)
+        # 1. Standard sort (gemini-2.0 > gemini-1.5)
         mock_list.return_value = ["gemini-1.5-flash", "gemini-2.0-flash"]
-        assert get_best_flash_model(mock_client) == "gemini-2.0-flash"
+        assert discover_fallback_model(mock_client) == "gemini-2.0-flash"
 
-        # 3. No alias, pick highest version (1.5-flash-002 > 1.5-flash-001)
+        # 2. Version sort (002 > 001)
         mock_list.return_value = ["gemini-1.5-flash-001", "gemini-1.5-flash-002"]
-        assert get_best_flash_model(mock_client) == "gemini-1.5-flash-002"
+        assert discover_fallback_model(mock_client) == "gemini-1.5-flash-002"
+
+        # 3. Random flash model
+        mock_list.return_value = ["models/some-random-flash-v9"]
+        assert discover_fallback_model(mock_client) == "some-random-flash-v9"
 
 
-def test_get_best_flash_model_fallback():
-    """Test fallback when no known models match."""
+def test_discover_fallback_model_fallback():
+    """Test fallback when no flash models match."""
     mock_client = MagicMock()
     with patch("spotify_playlist_builder.ai.list_available_models") as mock_list:
-        # No known models, but a flash model exists
-        mock_list.return_value = ["models/some-random-flash-v9"]
-        assert get_best_flash_model(mock_client) == "some-random-flash-v9"
-
-        # No flash models at all
         mock_list.return_value = ["gemini-pro"]
-        # Should return default hardcoded fallback
-        assert get_best_flash_model(mock_client) == "gemini-2.0-flash"
+        assert discover_fallback_model(mock_client) == "gemini-2.0-flash"
 
 
-def test_get_best_flash_model_exception():
-    """Test get_best_flash_model exception handling."""
+def test_discover_fallback_model_exception():
+    """Test discover_fallback_model exception handling."""
     mock_client = MagicMock()
     with patch("spotify_playlist_builder.ai.list_available_models", side_effect=Exception("Error")):
-        assert get_best_flash_model(mock_client) == "gemini-2.0-flash"
+        assert discover_fallback_model(mock_client) == "gemini-2.0-flash"
 
 
-def test_generate_playlist_404_handling():
-    """Test handling of 404 errors with model listing suggestion."""
+def test_generate_playlist_404_retry():
+    """Test that generation retries with a discovered fallback model on 404."""
+    mock_response = MagicMock()
+    mock_response.text = "[]"
+
     with (
         patch("spotify_playlist_builder.ai.get_ai_api_key", return_value="key"),
         patch("google.genai.Client") as mock_client_cls,
-        patch("spotify_playlist_builder.ai.list_available_models", return_value=["valid-model"]),
+        patch("spotify_playlist_builder.ai.discover_fallback_model", return_value="fallback-model"),
+        patch.dict(os.environ, {}, clear=True),  # Ensure no env var overrides
     ):
         mock_client = MagicMock()
-        mock_client.models.generate_content.side_effect = Exception("404 Not Found")
+        # First call fails, Second call succeeds
+        mock_client.models.generate_content.side_effect = [
+            Exception("404 Model not found"),
+            mock_response,
+        ]
         mock_client_cls.return_value = mock_client
 
-        with pytest.raises(Exception, match="404 Not Found"):
+        generate_playlist("mood")
+
+        assert mock_client.models.generate_content.call_count == 2
+        # First call with default
+        assert (
+            mock_client.models.generate_content.call_args_list[0][1]["model"]
+            == "gemini-flash-latest"
+        )
+        # Second call with fallback
+        assert mock_client.models.generate_content.call_args_list[1][1]["model"] == "fallback-model"
+
+
+def test_generate_playlist_404_retry_same_model():
+    """Test that we don't retry if fallback is same as initial model."""
+    with (
+        patch("spotify_playlist_builder.ai.get_ai_api_key", return_value="key"),
+        patch("google.genai.Client") as mock_client_cls,
+        patch(
+            "spotify_playlist_builder.ai.discover_fallback_model",
+            return_value="gemini-flash-latest",
+        ),
+        patch.dict(os.environ, {}, clear=True),
+    ):
+        mock_client = MagicMock()
+        mock_client.models.generate_content.side_effect = Exception("404 Model not found")
+        mock_client_cls.return_value = mock_client
+
+        with pytest.raises(Exception, match="404 Model not found"):
             generate_playlist("mood")
-        # Ensure list_available_models was called to provide suggestions
-        # We can't easily assert on log output without caplog fixture, but coverage will count it
+
+        # Should call discovery but NOT retry generation
+        assert mock_client.models.generate_content.call_count == 1
