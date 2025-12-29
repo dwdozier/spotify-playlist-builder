@@ -96,7 +96,16 @@ external metadata verification.
 * **E2E:** Focus on happy paths and critical failure modes (e.g., API down). Avoid testing
     third-party login pages directly (mock the auth success callback).
 
-## 5. Immediate Next Steps
+## 5. CLI Evolution & Parity
+
+While the focus is on the Web Application, the CLI remains a first-class interface:
+
+* **Current State:** CLI interacts directly with `backend.core` logic.
+* **Future Goal:** Refactor CLI commands to act as a thin client for the FastAPI API. This ensures
+    unified logic and allows the CLI to work against remote hosted instances.
+* **Timeline:** This refactor will be scheduled for Phase 4 (Advanced Features & Polish).
+
+## 6. Immediate Next Steps
 
 1. **Approval:** Confirm this plan.
 2. **Phase 1:** Begin structure refactor.
