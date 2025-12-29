@@ -82,40 +82,33 @@ def list_available_models(client: genai.Client | None = None) -> list[str]:
 
 
 def get_best_flash_model(client: genai.Client) -> str:
-    """Determine the best available Flash model."""
+    """Determine the best available Flash model dynamically."""
     env_model = os.getenv("GEMINI_MODEL")
     if env_model:
         return env_model
 
-    # Known models in order of preference (latest first)
-    known_models = [
-        "gemini-flash-latest",
-        "gemini-2.0-flash",
-        "gemini-2.0-flash-exp",
-        "gemini-1.5-flash",
-        "gemini-1.5-flash-latest",
-        "gemini-1.5-flash-001",
-    ]
-
     try:
         available = list_available_models(client)
-        # Check for known models in available list
-        for candidate in known_models:
-            # Check for exact match or 'models/' prefix match
-            if candidate in available or f"models/{candidate}" in available:
-                return candidate
+        available_set = set(available)  # For faster lookup
 
-        # If no known flash model found, try to find *any* model with 'flash' in name
-        flash_models = [m for m in available if "flash" in m.lower()]
+        # 1. Prefer the stable alias if it exists
+        if "gemini-flash-latest" in available_set or "models/gemini-flash-latest" in available_set:
+            return "gemini-flash-latest"
+
+        # 2. Dynamic search: Find all 'flash' models
+        # We strip 'models/' prefix for cleaner sorting/comparison
+        flash_models = [m.replace("models/", "") for m in available if "flash" in m.lower()]
+
         if flash_models:
-            # Sort to pick the one that looks "newest" (highest number/version)
+            # Sort reverse alphabetically to prioritize newer versions/dates
+            # e.g. gemini-2.0-flash > gemini-1.5-flash
             flash_models.sort(reverse=True)
-            return flash_models[0].replace("models/", "")
+            return flash_models[0]
 
     except Exception as e:
         logger.warning(f"Could not auto-detect models: {e}")
 
-    # Fallback default if detection fails
+    # 3. Fallback default
     return "gemini-2.0-flash"
 
 

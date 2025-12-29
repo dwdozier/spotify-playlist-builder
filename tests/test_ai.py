@@ -138,17 +138,25 @@ def test_get_best_flash_model_env_var():
 
 
 def test_get_best_flash_model_auto_detect():
-    """Test auto-detection of flash models."""
+    """Test dynamic auto-detection of flash models."""
     mock_client = MagicMock()
 
     with patch("spotify_playlist_builder.ai.list_available_models") as mock_list:
-        mock_list.return_value = ["models/gemini-1.0-pro", "models/gemini-1.5-flash"]
-        # Should pick 1.5-flash from the known list
-        assert get_best_flash_model(mock_client) == "gemini-1.5-flash"
+        # 1. Alias exists
+        mock_list.return_value = [
+            "models/gemini-1.0-pro",
+            "models/gemini-flash-latest",
+            "models/gemini-2.0-flash",
+        ]
+        assert get_best_flash_model(mock_client) == "gemini-flash-latest"
 
-        mock_list.return_value = ["gemini-2.0-flash-exp", "gemini-1.5-flash"]
-        # Should pick 2.0-flash-exp (higher priority in known list)
-        assert get_best_flash_model(mock_client) == "gemini-2.0-flash-exp"
+        # 2. No alias, pick highest version (2.0 > 1.5)
+        mock_list.return_value = ["gemini-1.5-flash", "gemini-2.0-flash"]
+        assert get_best_flash_model(mock_client) == "gemini-2.0-flash"
+
+        # 3. No alias, pick highest version (1.5-flash-002 > 1.5-flash-001)
+        mock_list.return_value = ["gemini-1.5-flash-001", "gemini-1.5-flash-002"]
+        assert get_best_flash_model(mock_client) == "gemini-1.5-flash-002"
 
 
 def test_get_best_flash_model_fallback():
@@ -187,11 +195,3 @@ def test_generate_playlist_404_handling():
             generate_playlist("mood")
         # Ensure list_available_models was called to provide suggestions
         # We can't easily assert on log output without caplog fixture, but coverage will count it
-
-
-def test_get_best_flash_model_latest_alias():
-    """Test prioritization of gemini-flash-latest."""
-    mock_client = MagicMock()
-    with patch("spotify_playlist_builder.ai.list_available_models") as mock_list:
-        mock_list.return_value = ["models/gemini-2.0-flash", "models/gemini-flash-latest"]
-        assert get_best_flash_model(mock_client) == "gemini-flash-latest"
