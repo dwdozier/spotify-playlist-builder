@@ -3,10 +3,12 @@ import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 
 export const Route = createRootRoute({
   component: () => (
-    <>
-      <div className="p-4 flex gap-4 bg-slate-900 text-white items-center">
-        <div className="font-bold mr-4 text-xl tracking-tight">Playlist Builder</div>
-        <Link to="/" className="hover:text-indigo-300 [&.active]:text-indigo-400 [&.active]:font-bold transition-colors">
+        <>
+          <div className="p-4 flex gap-4 bg-slate-900 text-white items-center">
+            <div className="font-bold mr-4 text-xl tracking-tight italic">Vibomat</div>
+            <Link
+              to="/"
+     className="hover:text-indigo-300 [&.active]:text-indigo-400 [&.active]:font-bold transition-colors">
           Home
         </Link>
         <Link to="/playlists" className="hover:text-indigo-300 [&.active]:text-indigo-400 [&.active]:font-bold transition-colors">

@@ -100,7 +100,7 @@ def install_zsh_completion() -> None:
         raise typer.Exit(code=1)
     completions_dir = omz_dir / "completions"
     completions_dir.mkdir(parents=True, exist_ok=True)
-    target_file = completions_dir / "_spotify-playlist-builder"
+    target_file = completions_dir / "_vibomat"
     logger.info("Generating Zsh completion script...")
     result = subprocess.run(
         [sys.executable, "-m", "backend.core.cli", "--show-completion", "zsh"],

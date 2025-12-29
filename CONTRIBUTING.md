@@ -1,4 +1,4 @@
-# Contributing to Playlist Builder
+# Contributing to Vibomat
 
 We welcome contributions! As a full-stack project, we maintain high standards for type safety,
 testing, and clean architecture.
