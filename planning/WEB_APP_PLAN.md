@@ -97,9 +97,9 @@ external metadata verification.
 
 * [x] **Discogs Integration:** API endpoint for managing Discogs PAT.
 
-* [ ] **E2E Tests:** Implement Critical User Journeys (CUJs).
+* [x] **E2E Tests:** Implement Critical User Journeys (CUJs).
 
-* [ ] **Background Tasks:** Celery/Redis for long-running builds.
+* [x] **Background Tasks:** TaskIQ/Redis for long-running builds.
 
 ### Phase 5: Infrastructure & Deployment
 
