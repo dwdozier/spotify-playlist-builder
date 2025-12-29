@@ -1,4 +1,4 @@
-# Playlist Builder
+# Vibomat
 
 An intelligent, full-stack application to generate and manage music playlists using Generative AI
 and external metadata verification.

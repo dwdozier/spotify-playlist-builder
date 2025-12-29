@@ -1,19 +1,19 @@
 services:
   # Backend API
   - type: web
-    name: playlist-builder-api
+    name: vibomat-api
     env: python
     buildCommand: uv sync --frozen --no-dev
     startCommand: uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: playlist-builder-db
+          name: vibomat-db
           property: connectionString
       - key: REDIS_URL
         fromService:
           type: redis
-          name: playlist-builder-redis
+          name: vibomat-redis
           property: connectionString
       - key: FASTAPI_SECRET
         generateValue: true
@@ -26,43 +26,43 @@ services:
 
   # Background Worker
   - type: worker
-    name: playlist-builder-worker
+    name: vibomat-worker
     env: python
     buildCommand: uv sync --frozen --no-dev
     startCommand: taskiq worker backend.app.core.tasks:broker
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: playlist-builder-db
+          name: vibomat-db
           property: connectionString
       - key: REDIS_URL
         fromService:
           type: redis
-          name: playlist-builder-redis
+          name: vibomat-redis
           property: connectionString
 
   # Frontend UI
   - type: web
-    name: playlist-builder-ui
+    name: vibomat-ui
     env: static
     buildCommand: cd frontend && npm install && npm run build
     staticPublishDir: frontend/dist
     routes:
       - type: rewrite
         source: /api/*
-        destination: https://playlist-builder-api.onrender.com/api/*
+        destination: https://vibomat-api.onrender.com/api/*
       - type: rewrite
         source: /*
         destination: /index.html
 
 # Infrastructure
 databases:
-  - name: playlist-builder-db
+  - name: vibomat-db
     plan: free
 
 # Note: Redis is often a 'service' type in Render blueprint spec
 # but can be defined under 'redis' if using specific providers.
 # For standard Render blueprint:
 redis:
-  - name: playlist-builder-redis
+  - name: vibomat-redis
     plan: free

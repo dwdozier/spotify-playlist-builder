@@ -3,9 +3,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "spotify-playlist-builder"
+name = "vibomat"
 version = "0.1.0"
-description = "CLI tool to create Spotify playlists from JSON data files"
+description = "Universal music platform to generate and manage playlists using AI"
 readme = "README.md"
 requires-python = ">=3.11"
 authors = [
@@ -51,7 +51,7 @@ dev = [
 ]
 
 [project.scripts]
-spotify-playlist-builder = "backend.core.main:app"
+vibomat = "backend.core.main:app"
 
 [project.urls]
 Homepage = "https://github.com/dwdozier/spotify-playlist-builder"
