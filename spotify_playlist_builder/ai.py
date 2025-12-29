@@ -4,7 +4,7 @@ import logging
 from typing import Any
 from google import genai
 from google.genai import types
-from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
+from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception
 from .metadata import MetadataVerifier
 
 logger = logging.getLogger("spotify_playlist_builder.ai")
@@ -21,6 +21,12 @@ Each object must follow this schema:
 }
 If the user specifies a number of songs, try to meet that count. Default to 20 if unspecified.
 """
+
+
+def is_retryable_error(e: BaseException) -> bool:
+    """Check if the exception is retryable (not a 404/Not Found error)."""
+    msg = str(e).lower()
+    return "404" not in msg and "not found" not in msg
 
 
 def get_ai_api_key() -> str:
@@ -51,7 +57,7 @@ def get_ai_api_key() -> str:
 
 
 @retry(
-    retry=retry_if_exception_type(Exception),
+    retry=retry_if_exception(is_retryable_error),
     stop=stop_after_attempt(3),
     wait=wait_exponential(multiplier=1, min=4, max=60),
     reraise=True,
@@ -81,40 +87,22 @@ def list_available_models(client: genai.Client | None = None) -> list[str]:
         return []
 
 
-def get_best_flash_model(client: genai.Client) -> str:
-    """Determine the best available Flash model."""
-    env_model = os.getenv("GEMINI_MODEL")
-    if env_model:
-        return env_model
-
-    # Known models in order of preference (latest first)
-    known_models = [
-        "gemini-2.0-flash",
-        "gemini-2.0-flash-exp",
-        "gemini-1.5-flash",
-        "gemini-1.5-flash-latest",
-        "gemini-1.5-flash-001",
-    ]
-
+def discover_fallback_model(client: genai.Client) -> str:
+    """Dynamically discover the best available Flash model as a fallback."""
     try:
         available = list_available_models(client)
-        # Check for known models in available list
-        for candidate in known_models:
-            # Check for exact match or 'models/' prefix match
-            if candidate in available or f"models/{candidate}" in available:
-                return candidate
+        # Filter for 'flash' models and strip 'models/' prefix
+        flash_models = [m.replace("models/", "") for m in available if "flash" in m.lower()]
 
-        # If no known flash model found, try to find *any* model with 'flash' in name
-        flash_models = [m for m in available if "flash" in m.lower()]
         if flash_models:
-            # Sort to pick the one that looks "newest" (highest number)
+            # Sort reverse alphabetically (e.g. gemini-2.0 > gemini-1.5)
             flash_models.sort(reverse=True)
-            return flash_models[0].replace("models/", "")
+            return flash_models[0]
 
     except Exception as e:
-        logger.warning(f"Could not auto-detect models: {e}")
+        logger.warning(f"Could not discovery fallback models: {e}")
 
-    # Fallback default if detection fails
+    # Ultimate fallback
     return "gemini-2.0-flash"
 
 
@@ -122,7 +110,9 @@ def generate_playlist(description: str, count: int = 20) -> list[dict[str, Any]]
     """Generate a playlist structure using Google Gemini (via google-genai SDK)."""
     api_key = get_ai_api_key()
     client = genai.Client(api_key=api_key)
-    model_name = get_best_flash_model(client)
+
+    # Default to user preference or the latest alias
+    model_name = os.getenv("GEMINI_MODEL", "gemini-flash-latest")
 
     # Construct the user prompt
     user_message = f"""
@@ -130,48 +120,49 @@ def generate_playlist(description: str, count: int = 20) -> list[dict[str, Any]]
     "{description}"
     """
 
+    contents = [SYSTEM_PROMPT, user_message]
+    config = types.GenerateContentConfig(response_mime_type="application/json")
+
+    response = None
     try:
         logger.info(f"Sending request to Gemini (Model: {model_name})...")
-
         response = generate_content_with_retry(
-            client=client,
-            model=model_name,
-            contents=[SYSTEM_PROMPT, user_message],
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json",
-            ),
+            client=client, model=model_name, contents=contents, config=config
         )
-
-        logger.info("Received response from Gemini.")
-
-        text = response.text.strip()
-
-        # Clean up response text if it accidentally contains markdown
-        if text.startswith("```json"):
-            text = text[7:]
-        if text.startswith("```"):
-            text = text[3:]
-        if text.endswith("```"):
-            text = text[:-3]
-
-        data = json.loads(text)
-
-        if not isinstance(data, list):
-            if isinstance(data, dict) and "tracks" in data:
-                return data["tracks"]
-            raise ValueError("AI response was not a list of tracks.")
-
-        return data
-
     except Exception as e:
-        if "404" in str(e):
-            logger.error(f"Model '{model_name}' not found.")
-            available = list_available_models(client)
-            if available:
-                logger.info(f"Available models: {', '.join(available)}")
-                logger.info("Set GEMINI_MODEL environment variable to one of the above.")
-        logger.error(f"AI Generation failed: {e}")
-        raise
+        if not is_retryable_error(e):
+            logger.warning(f"Model '{model_name}' not found or unavailable. Attempting fallback...")
+            fallback = discover_fallback_model(client)
+            if fallback and fallback != model_name:
+                logger.info(f"Retrying with fallback model: {fallback}")
+                response = generate_content_with_retry(
+                    client=client, model=fallback, contents=contents, config=config
+                )
+            else:
+                raise
+        else:
+            raise
+
+    logger.info("Received response from Gemini.")
+
+    text = response.text.strip()
+
+    # Clean up response text if it accidentally contains markdown
+    if text.startswith("```json"):
+        text = text[7:]
+    if text.startswith("```"):
+        text = text[3:]
+    if text.endswith("```"):
+        text = text[:-3]
+
+    data = json.loads(text)
+
+    if not isinstance(data, list):
+        if isinstance(data, dict) and "tracks" in data:
+            return data["tracks"]
+        raise ValueError("AI response was not a list of tracks.")
+
+    return data
 
 
 def verify_ai_tracks(tracks: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[str]]:
