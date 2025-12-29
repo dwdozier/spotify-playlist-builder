@@ -81,7 +81,7 @@ external metadata verification.
 
 * [x] **Build/Sync:** Select *Connected Service* to push to (UI logic).
 
-* [ ] **Testing:** Unit tests for complex components (Review List, Auth Hooks). **Target: 95%
+* [x] **Testing:** Unit tests for complex components (Review List, Auth Hooks). **Target: 95%
 
     Logic Coverage.**
 
