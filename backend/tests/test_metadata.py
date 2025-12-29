@@ -1,5 +1,6 @@
 import pytest
 import os
+import time
 from unittest.mock import MagicMock, patch
 from spotify_playlist_builder.metadata import MetadataVerifier
 import requests
@@ -295,3 +296,19 @@ def test_discogs_verify_no_token():
     with patch("spotify_playlist_builder.metadata.get_discogs_token", return_value=None):
         verifier = DiscogsVerifier()
         assert verifier.verify_track_version("Artist", "Track", "studio") is False
+
+
+def test_metadata_verifier_rate_limit(verifier):
+    """Test the rate limit enforcement in MetadataVerifier."""
+    verifier.last_request_time = time.time()
+    # This should trigger the sleep branch logic
+    verifier._enforce_rate_limit()
+
+
+def test_discogs_verifier_rate_limit():
+    """Test the rate limit enforcement in DiscogsVerifier."""
+    from spotify_playlist_builder.metadata import DiscogsVerifier
+
+    v = DiscogsVerifier()
+    v.last_request_time = time.time()
+    v._enforce_rate_limit()

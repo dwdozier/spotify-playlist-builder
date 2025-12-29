@@ -616,30 +616,82 @@ def test_search_track_version_preference_studio(builder, mock_spotify):
     assert uri == "spotify:track:studio"
 
 
-def test_search_track_version_preference_remix(builder, mock_spotify):
-    """Test preferring remix version."""
-    mock_spotify.search.return_value = {
+def test_search_track_compilation_score(builder):
+    """Test search_track with compilation version preference."""
+    mock_results = {
+        "tracks": {
+            "items": [
+                {
+                    "name": "Song",
+                    "artists": [{"name": "Artist"}],
+                    "album": {"name": "Greatest Hits"},
+                    "uri": "spotify:track:123",
+                }
+            ]
+        }
+    }
+    builder.sp.search.return_value = mock_results
+    with patch.object(builder, "_determine_version", return_value="compilation"):
+        uri = builder.search_track("Artist", "Song", version="compilation")
+        assert uri == "spotify:track:123"
+
+
+def test_search_track_original_score(builder):
+    """Test search_track with original version preference."""
+    mock_results = {
         "tracks": {
             "items": [
                 {
                     "name": "Song",
                     "artists": [{"name": "Artist"}],
                     "album": {"name": "Album"},
-                    "uri": "spotify:track:studio",
-                },
-                {
-                    "name": "Song (Remix)",
-                    "artists": [{"name": "Artist"}],
-                    "album": {"name": "Album"},
-                    "uri": "spotify:track:remix",
-                },
+                    "uri": "spotify:track:123",
+                }
             ]
         }
     }
+    builder.sp.search.return_value = mock_results
+    with patch.object(builder, "_determine_version", return_value="studio"):
+        uri = builder.search_track("Artist", "Song", version="original")
+        assert uri == "spotify:track:123"
 
-    # Expect remix version
-    uri = builder.search_track("Artist", "Song", version="remix")
-    assert uri == "spotify:track:remix"
+
+def test_search_track_no_results(builder):
+    """Test search_track with no results from Spotify."""
+    builder.sp.search.return_value = {"tracks": {"items": []}}
+    uri = builder.search_track("Artist", "Song")
+    assert uri is None
+
+
+def test_search_track_with_album(builder):
+    """Test search_track with album provided."""
+    mock_results = {"tracks": {"items": [{"uri": "spotify:track:album_track"}]}}
+    builder.sp.search.return_value = mock_results
+    uri = builder.search_track("Artist", "Song", album="Album")
+    assert uri == "spotify:track:album_track"
+    # Verify query included album
+    builder.sp.search.assert_called_with(
+        q="track:Song artist:Artist album:Album", type="track", limit=1
+    )
+
+
+def test_search_track_low_score(builder):
+    """Test search_track returns None if best score is too low."""
+    mock_results = {
+        "tracks": {
+            "items": [
+                {
+                    "name": "X",
+                    "artists": [{"name": "Y"}],
+                    "album": {"name": "Z"},
+                    "uri": "spotify:track:123",
+                }
+            ]
+        }
+    }
+    builder.sp.search.return_value = mock_results
+    uri = builder.search_track("Artist", "Song")
+    assert uri is None
 
 
 def test_determine_version(builder):
@@ -905,3 +957,16 @@ def test_build_playlist_uses_provided_uri_fallback(builder, mock_spotify):
 
                 # 2. We called add_items with found URI and fallback URI
                 mock_add.assert_called_with("new_pid", ["uri:found", "uri:fallback"])
+
+
+def test_get_credentials_auto_discovery_fallback():
+    """Test get_credentials auto-discovery falls back to env."""
+    from spotify_playlist_builder.auth import get_credentials
+
+    with (
+        patch("spotify_playlist_builder.auth.get_credentials_from_keyring", return_value=None),
+        patch(
+            "spotify_playlist_builder.auth.get_credentials_from_env", return_value=("id", "secret")
+        ),
+    ):
+        assert get_credentials(None) == ("id", "secret")

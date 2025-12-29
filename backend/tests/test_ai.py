@@ -214,3 +214,65 @@ def test_generate_playlist_404_retry_same_model():
 
         # Should call discovery but NOT retry generation
         assert mock_client.models.generate_content.call_count == 1
+
+
+def test_generate_playlist_dict_response():
+    """Test generating a playlist where the AI returns a dict with 'tracks' key."""
+    mock_response = MagicMock()
+    mock_response.text = '{"tracks": [{"artist": "A", "track": "B"}]}'
+    with (
+        patch("spotify_playlist_builder.ai.get_ai_api_key", return_value="key"),
+        patch("google.genai.Client") as mock_client_cls,
+    ):
+        mock_client = MagicMock()
+        mock_client.models.generate_content.return_value = mock_response
+        mock_client_cls.return_value = mock_client
+        result = generate_playlist("mood")
+        assert result == [{"artist": "A", "track": "B"}]
+
+
+def test_verify_ai_tracks_success():
+    """Test successful track verification."""
+    from spotify_playlist_builder.ai import verify_ai_tracks
+
+    tracks = [{"artist": "A", "track": "T", "version": "studio"}]
+    with patch("spotify_playlist_builder.ai.MetadataVerifier") as mock_verifier_cls:
+        mock_verifier = MagicMock()
+        mock_verifier.verify_track_version.return_value = True
+        mock_verifier_cls.return_value = mock_verifier
+
+        verified, rejected = verify_ai_tracks(tracks)
+        assert len(verified) == 1
+        assert len(rejected) == 0
+
+
+def test_verify_ai_tracks_rejected():
+    """Test track verification with rejections."""
+    from spotify_playlist_builder.ai import verify_ai_tracks
+
+    tracks = [{"artist": "A", "track": "T"}]
+    with patch("spotify_playlist_builder.ai.MetadataVerifier") as mock_verifier_cls:
+        mock_verifier = MagicMock()
+        mock_verifier.verify_track_version.return_value = False
+        mock_verifier_cls.return_value = mock_verifier
+
+        verified, rejected = verify_ai_tracks(tracks)
+        assert len(verified) == 0
+        assert len(rejected) == 1
+        assert rejected[0] == "A - T"
+
+
+def test_verify_ai_tracks_exception():
+    """Test track verification when the verifier raises an exception."""
+    from spotify_playlist_builder.ai import verify_ai_tracks
+
+    tracks = [{"artist": "A", "track": "T"}]
+    with patch("spotify_playlist_builder.ai.MetadataVerifier") as mock_verifier_cls:
+        mock_verifier = MagicMock()
+        mock_verifier.verify_track_version.side_effect = Exception("MB Down")
+        mock_verifier_cls.return_value = mock_verifier
+
+        # We lean towards keeping tracks if verification fails technically
+        verified, rejected = verify_ai_tracks(tracks)
+        assert len(verified) == 1
+        assert len(rejected) == 0

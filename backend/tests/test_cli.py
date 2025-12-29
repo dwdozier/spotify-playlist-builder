@@ -296,3 +296,65 @@ def test_cli_generate_chain_build():
         result = runner.invoke(app, ["generate", "-p", "test", "-o", "out.json", "--build"])
         assert result.exit_code == 0
         mock_build.assert_called_once()
+
+
+def test_cli_generate_no_verified_tracks():
+    """Test generate command when no tracks are verified."""
+    with (
+        patch(
+            "spotify_playlist_builder.ai.generate_playlist",
+            return_value=[{"artist": "A", "track": "T"}],
+        ),
+        patch("spotify_playlist_builder.ai.verify_ai_tracks", return_value=([], ["Rejected"])),
+    ):
+        # Provide empty input for the artists prompt
+        result = runner.invoke(app, ["generate", "--prompt", "test"], input="\n")
+        assert result.exit_code == 0
+        assert "No tracks were verified" in result.output
+
+
+def test_cli_generate_with_rejections():
+    """Test generate command showing rejections."""
+    mock_tracks = [{"artist": "A", "track": "T"}]
+    with (
+        patch("spotify_playlist_builder.ai.generate_playlist", return_value=mock_tracks),
+        patch(
+            "spotify_playlist_builder.ai.verify_ai_tracks",
+            return_value=(mock_tracks, ["Rejected - Song"]),
+        ),
+        runner.isolated_filesystem(),
+    ):
+        result = runner.invoke(app, ["generate", "--prompt", "test", "--output", "out.json"])
+        assert result.exit_code == 0
+        assert "1 tracks could not be verified" in result.output
+
+
+def test_cli_ai_models_error():
+    """Test ai-models command failure."""
+    with patch(
+        "spotify_playlist_builder.ai.list_available_models",
+        side_effect=Exception("API Error"),
+    ):
+        result = runner.invoke(app, ["ai-models"])
+        assert result.exit_code == 0
+        assert "Error fetching models" in result.output
+
+
+def test_cli_setup_ai_error():
+    """Test setup-ai command failure."""
+    mock_keyring = MagicMock()
+    mock_keyring.set_password.side_effect = Exception("Keyring error")
+    with patch.dict("sys.modules", {"keyring": mock_keyring}):
+        result = runner.invoke(app, ["setup-ai"], input="key\n")
+        assert result.exit_code == 0
+        assert "Error: Keyring error" in result.output
+
+
+def test_cli_setup_discogs_error():
+    """Test setup-discogs command failure."""
+    mock_keyring = MagicMock()
+    mock_keyring.set_password.side_effect = Exception("Keyring error")
+    with patch.dict("sys.modules", {"keyring": mock_keyring}):
+        result = runner.invoke(app, ["setup-discogs"], input="token\n")
+        assert result.exit_code == 0
+        assert "Error: Keyring error" in result.output
