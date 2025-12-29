@@ -1,48 +1,52 @@
-# Contributing to Spotify Playlist Builder
+# Contributing to Playlist Builder
 
-Thank you for your interest in contributing! Here is a guide to help you get started.
+We welcome contributions! As a full-stack project, we maintain high standards for type safety,
+testing, and clean architecture.
 
-## Development Setup
+## 1. Development Principles
 
-1. **Prerequisites:**
-    - Python 3.11+
-    - `uv` package manager
+- **Type Safety**: We use Pydantic for Backend schemas and TanStack Router/Query for Frontend types.
+- **Decoupling**: Identity is decoupled from service providers (Spotify).
+- **Quality**: We maintain **95% minimum test coverage** for all new logic.
 
-2. **Installation:**
+## 2. Setting Up for Development
 
-    ```bash
-    # Create virtual environment
-    uv venv
-    source .venv/bin/activate
+Follow the [SETUP.md](SETUP.md) guide to get your environment running.
 
-    # Install dependencies
-    uv pip install -e .[dev]
+## 3. Workflow
 
-    # Install pre-commit hooks
-    pre-commit install
-    ```
+1. **Branching**: Always branch off `main`.
+2. **Naming**: Use `feat/`, `fix/`, `docs/`, or `test/` prefixes.
+3. **No Chaining**: Do not branch off unmerged feature branches.
 
-## Development Workflow
+## 4. Testing Requirements
 
-### Running Tests
+### Backend (Python)
 
-We use `pytest` for testing.
+We use `pytest`. All logic in `backend/core` and `backend/app` must be tested.
 
 ```bash
-# Run all tests
-pytest
-
-# Run with coverage
-pytest --cov=spotify_playlist_builder tests/
+PYTHONPATH=. uv run pytest --cov=backend/core --cov=backend/app --cov-fail-under=95 backend/tests/
 ```
 
-### Static Analysis & Formatting
+### Frontend (TypeScript)
 
-We use `ruff` for linting, `black` for formatting, and `ty` for type checking.
+We use `Vitest` and `React Testing Library`.
 
-## Coding Standards
+```bash
+cd frontend && npm test
+```
 
-- **Line Length:** 100 characters.
-- **Type Hinting:** Required for all function signatures.
-- **Docstrings:** Required for all public functions and classes.
-- **New Features:** Must include unit tests.
+### Pre-Commit Hooks
+
+MANDATORY. Install before committing:
+
+```bash
+pre-commit install
+```
+
+## 5. Pull Requests
+
+- Provide a clear description of the change.
+- Ensure all CI checks pass (Linting, Coverage, Tests).
+- Requests will be squashed and merged once approved.

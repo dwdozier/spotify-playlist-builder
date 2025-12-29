@@ -1,138 +1,117 @@
 # Setup and Installation
 
-This guide covers the prerequisites, installation, and configuration required to run the
-Playlist Builder (CLI and Web API).
+This guide provides comprehensive instructions for setting up the Playlist Builder on macOS, Linux,
+and Windows.
 
 ## Prerequisites
 
-- **Python 3.11+**
-- **Node.js & npm** (for Frontend)
-- **Redis** (Required for background tasks)
-- **uv package manager**: [Installation Instructions](https://docs.astral.sh/uv/getting-started/)
-- **Spotify Developer Credentials**: Follow the [App Registration Guide](APP_REGISTRATION.md) to
-  get your Client ID and Client Secret.
+- **Python 3.12+**
+- **Node.js 20+ & npm** (for Frontend)
+- **Docker & Docker Compose** (Recommended for easiest setup)
+- **Redis** (Required if not using Docker)
+- **uv package manager**: [Installation](https://docs.astral.sh/uv/getting-started/)
 
-## Installation
+---
 
-1. **Clone the repository:**
+## 1. Spotify API Registration
+
+To interact with Spotify, you must register an application:
+
+1. Go to the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard).
+2. Click **"Create app"**.
+3. **Redirect URIs** (Crucial): Add both:
+    - `https://127.0.0.1:8888/callback` (for CLI)
+    - `http://localhost:8000/api/v1/integrations/spotify/callback` (for Web API)
+4. Copy your **Client ID** and **Client Secret**.
+
+---
+
+## 2. Local Installation
+
+1. **Clone & Environment**:
 
     ```bash
     git clone https://github.com/dwdozier/spotify-playlist-builder.git
     cd spotify-playlist-builder
-    ```
-
-2. **Create and activate the virtual environment:**
-
-    ```bash
     uv venv
-    source .venv/bin/activate  # macOS/Linux
+    source .venv/bin/activate # Linux/Mac
+    # .venv\Scripts\activate # Windows
     ```
 
-3. **Install Backend dependencies:**
+2. **Install Dependencies**:
 
     ```bash
     uv pip install -e .[dev]
-    ```
-
-4. **Install Frontend dependencies:**
-
-    ```bash
     cd frontend && npm install && cd ..
     ```
 
-## Configuration
+3. **Environment Configuration**:
+    Create a `.env` file in the root:
 
-### 1. Environment Variables (.env)
+    ```env
+    SPOTIFY_CLIENT_ID=your_id
+    SPOTIFY_CLIENT_SECRET=your_secret
+    SPOTIFY_REDIRECT_URI=http://localhost:8000/api/v1/integrations/spotify/callback
+    FASTAPI_SECRET=random_secure_string
+    GEMINI_API_KEY=your_google_ai_key # Optional
+    ```
 
-Create a `.env` file in the project root:
+---
 
-```env
-# Spotify Credentials
-SPOTIFY_CLIENT_ID=your_id_here
-SPOTIFY_CLIENT_SECRET=your_secret_here
+## 3. Platform Specifics
 
-# Web API Configuration
-SPOTIFY_REDIRECT_URI=http://localhost:8000/api/v1/integrations/spotify/callback
-FASTAPI_SECRET=your_random_secret_here
+### macOS
 
-# AI Features (Optional)
-GEMINI_API_KEY=your_gemini_key_here
+- **Redis**: `brew install redis && brew services start redis`
+- **Docker**: Install [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 
-# Infrastructure (Optional defaults)
-# DATABASE_URL=postgresql+asyncpg://user:pass@localhost/dbname
-# REDIS_URL=redis://localhost:6379
-```
+### Linux (Ubuntu/Debian)
 
-### 2. Database Migrations
+- **Redis**: `sudo apt install redis-server`
+- **Docker**: Follow official [Docker Engine](https://docs.docker.com/engine/install/ubuntu/)
+  instructions.
 
-Initialize the database using Alembic:
+### Windows
 
-```bash
-PYTHONPATH=. alembic upgrade head
-```
+- **Recommendation**: Use **WSL2** (Windows Subsystem for Linux).
+- **WSL Setup**: Install Ubuntu from the MS Store, then follow the Linux instructions.
+- **Native**: If using native Windows, ensure `Redis` is running (via Memurai or WSL) and use
+  PowerShell for commands.
 
-## Running the App
+---
 
-### Web API (Backend)
+## 4. Running the Application
 
-```bash
-uv run uvicorn backend.app.main:app --reload
-```
+### Option A: Docker Compose (Easiest)
 
-### Background Worker (TaskIQ)
-
-In a separate terminal:
+This starts the Database, Redis, Backend, Worker, and Frontend in one command.
 
 ```bash
-PYTHONPATH=. uv run taskiq worker backend.app.core.tasks:broker
+docker-compose up --build
 ```
 
-### Web UI (Frontend)
+- API: `http://localhost:8000`
+- Web UI: `http://localhost:80`
 
-In a separate terminal:
+### Option B: Manual (Development)
+
+You will need 4 terminal tabs:
+
+1. **Backend**: `uv run uvicorn backend.app.main:app --reload`
+2. **Worker**: `PYTHONPATH=. uv run taskiq worker backend.app.core.tasks:broker`
+3. **Frontend**: `cd frontend && npm run dev`
+4. **Redis**: `redis-server` (if not running as service)
+
+---
+
+## 5. Verification
+
+Run the test suite to ensure everything is configured correctly:
 
 ```bash
-cd frontend && npm run dev
-```
-
-### CLI Tool
-
-```bash
-spotify-playlist-builder build playlists/your-file.json
-```
-
-## Testing
-
-### Backend & Core
-
-```bash
+# Backend
 PYTHONPATH=. pytest backend/tests/
-```
 
-### Frontend
-
-```bash
+# Frontend
 cd frontend && npm test
-```
-
-### End-to-End (Playwright)
-
-Ensure both Frontend and Backend are running, then:
-
-```bash
-PYTHONPATH=. pytest backend/tests/e2e/
-```
-
-## Optional Setup
-
-### Pre-commit Hooks
-
-```bash
-pre-commit install
-```
-
-### Shell Completion (CLI)
-
-```bash
-spotify-playlist-builder install-zsh-completion
 ```
