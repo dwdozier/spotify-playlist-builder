@@ -5,6 +5,7 @@ from typing import Any
 from google import genai
 from google.genai import types
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
+from .metadata import MetadataVerifier
 
 logger = logging.getLogger("spotify_playlist_builder.ai")
 
@@ -60,17 +61,14 @@ def generate_content_with_retry(client, model, contents, config):
     return client.models.generate_content(model=model, contents=contents, config=config)
 
 
-def get_gemini_model_name() -> str:
-    """Get the Gemini model name from env or default."""
-    # Updated default to 2.0-flash as 1.5-flash availability varies
-    return os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
-
-
 def list_available_models(client: genai.Client | None = None) -> list[str]:
     """List available Gemini models for the configured key."""
     if not client:
-        api_key = get_ai_api_key()
-        client = genai.Client(api_key=api_key)
+        try:
+            api_key = get_ai_api_key()
+            client = genai.Client(api_key=api_key)
+        except Exception:
+            return []
     models = []
     try:
         for m in client.models.list():
@@ -83,11 +81,48 @@ def list_available_models(client: genai.Client | None = None) -> list[str]:
         return []
 
 
+def get_best_flash_model(client: genai.Client) -> str:
+    """Determine the best available Flash model."""
+    env_model = os.getenv("GEMINI_MODEL")
+    if env_model:
+        return env_model
+
+    # Known models in order of preference (latest first)
+    known_models = [
+        "gemini-2.0-flash",
+        "gemini-2.0-flash-exp",
+        "gemini-1.5-flash",
+        "gemini-1.5-flash-latest",
+        "gemini-1.5-flash-001",
+    ]
+
+    try:
+        available = list_available_models(client)
+        # Check for known models in available list
+        for candidate in known_models:
+            # Check for exact match or 'models/' prefix match
+            if candidate in available or f"models/{candidate}" in available:
+                return candidate
+
+        # If no known flash model found, try to find *any* model with 'flash' in name
+        flash_models = [m for m in available if "flash" in m.lower()]
+        if flash_models:
+            # Sort to pick the one that looks "newest" (highest number)
+            flash_models.sort(reverse=True)
+            return flash_models[0].replace("models/", "")
+
+    except Exception as e:
+        logger.warning(f"Could not auto-detect models: {e}")
+
+    # Fallback default if detection fails
+    return "gemini-2.0-flash"
+
+
 def generate_playlist(description: str, count: int = 20) -> list[dict[str, Any]]:
     """Generate a playlist structure using Google Gemini (via google-genai SDK)."""
     api_key = get_ai_api_key()
     client = genai.Client(api_key=api_key)
-    model_name = get_gemini_model_name()
+    model_name = get_best_flash_model(client)
 
     # Construct the user prompt
     user_message = f"""
@@ -137,3 +172,35 @@ def generate_playlist(description: str, count: int = 20) -> list[dict[str, Any]]
                 logger.info("Set GEMINI_MODEL environment variable to one of the above.")
         logger.error(f"AI Generation failed: {e}")
         raise
+
+
+def verify_ai_tracks(tracks: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[str]]:
+    """Verify AI-generated tracks against MusicBrainz."""
+    verifier = MetadataVerifier()
+    verified_tracks = []
+    rejected_tracks = []
+
+    logger.info(f"Verifying {len(tracks)} tracks against MusicBrainz...")
+
+    for item in tracks:
+        artist = item.get("artist")
+        track = item.get("track")
+        version = item.get("version")
+
+        if not artist or not track:
+            continue
+
+        try:
+            # We use verify_track_version which checks for existence + version
+            # If version is None or 'studio', it just checks existence
+            if verifier.verify_track_version(artist, track, version or "studio"):
+                verified_tracks.append(item)
+            else:
+                rejected_tracks.append(f"{artist} - {track}")
+        except Exception as e:
+            logger.debug(f"Verification failed for {artist} - {track}: {e}")
+            # If API fails, we lean towards keeping it but maybe warning?
+            # For now, let's keep it if MB is down, but reject if MB says no.
+            verified_tracks.append(item)
+
+    return verified_tracks, rejected_tracks

@@ -125,8 +125,8 @@ key. Users can choose to store it in:
 
 ### Phase 3: UX & Polish
 
-* [ ] Create branch `feature/ai-ux-polish`.
-* [ ] Implement interactive Typer prompts (Mood, Artist, Count).
-* [ ] Add `generate --build` flag to chain the build process.
-* [ ] Add unit tests for AI logic (mocking the API).
-* [ ] Update documentation (README, SETUP).
+* [x] Create branch `feature/ai-ux-polish`.
+* [x] Implement interactive Typer prompts (Mood, Artist, Count).
+* [x] Add `generate --build` flag to chain the build process.
+* [x] Add unit tests for AI logic (mocking the API).
+* [x] Update documentation (README, SETUP).
