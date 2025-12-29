@@ -1,75 +1,46 @@
 # Playlist Builder
 
-A tool to programmatically create and manage playlists from local JSON data files, now
-evolving into a full-stack web application.
+An intelligent, full-stack application to generate and manage music playlists using Generative AI
+and external metadata verification.
 
-## What It Does
+## Core Features
 
-Feed it a JSON file with artist/track pairs, or use the web interface to:
+- **AI Generation**: Describe a mood or theme (e.g., "Deep space ambient") and get a curated list.
+- **Multi-Provider Verification**: Cross-references AI results with MusicBrainz and Discogs to
+    eliminate hallucinations.
+- **Service Sync**: Automatically creates and updates playlists on Spotify (with extensibility for
+    other providers).
+- **Modern Architecture**: FastAPI Backend + TanStack/React Frontend.
+- **Robust Background Processing**: Uses TaskIQ and Redis for reliable playlist building.
 
-- **Generate** playlists using AI (Gemini) based on mood or style.
-- **Verify** tracks against external metadata (MusicBrainz/Discogs).
-- **Search** Spotify for each track (with intelligent fuzzy matching).
-- **Create/Update** playlists on your account automatically.
+## Tech Stack
 
-## Getting Started
+- **Frontend**: React, TanStack Router, TanStack Query, Tailwind CSS, Lucide.
+- **Backend**: FastAPI, SQLAlchemy (Async), Pydantic, Google Gemini SDK.
+- **Infrastructure**: Docker, Redis, PostgreSQL (Production) / SQLite (Dev).
+- **Quality**: 95% test coverage enforced via CI/CD.
 
-1. **Register a Spotify App**: Get your API credentials by following the
-   [App Registration Guide](APP_REGISTRATION.md).
-2. **Setup AI (Optional)**: To use AI features, follow the [AI Setup Guide](AI_SETUP.md).
-3. **Install & Configure**: Follow the [Setup Guide](SETUP.md) to install dependencies and
-   configure your database, Redis, and credentials.
+## Quick Start
 
-## Usage
+### 1. Register Spotify App
 
-### 1. Web API & UI
+Get your credentials at the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard).
 
-Start the backend server:
+### 2. Configure & Install
 
-```bash
-uv run uvicorn backend.app.main:app --reload
-```
+Follow the [SETUP.md](SETUP.md) for detailed platform-specific installation.
 
-Start the background worker (for playlist builds):
-
-```bash
-PYTHONPATH=. uv run taskiq worker backend.app.core.tasks:broker
-```
-
-Start the frontend development server:
+### 3. Run with Docker
 
 ```bash
-cd frontend && npm run dev
+docker-compose up --build
 ```
 
-Access the interactive API documentation at [http://localhost:8000/docs](http://localhost:8000/docs).
+Open [http://localhost:80](http://localhost:80) to start building.
 
-### 2. CLI Tool
+## Development & Contribution
 
-The CLI remains functional for direct core access.
-
-```bash
-spotify-playlist-builder build playlists/my-playlist.json
-```
-
-## File Structure
-
-```sh
-spotify-playlist-builder/
-├── backend/
-│   ├── app/                 # FastAPI application
-│   │   ├── api/             # API Endpoints
-│   │   ├── core/auth/       # Identity & Authentication
-│   │   ├── db/              # Database & Migrations
-│   │   ├── models/          # SQLAlchemy Models
-│   │   └── services/        # Business Logic Services
-│   ├── core/                # Shared Core Logic (former spotify_playlist_builder)
-│   └── tests/               # Backend Test Suite
-├── frontend/                # (Under Development) Web UI
-├── planning/                # Project Roadmap & Phased Plans
-├── pyproject.toml           # Project config & dependencies
-└── playlists/               # Local JSON playlist files
-```
+See [CONTRIBUTING.md](CONTRIBUTING.md) for standards and testing guidelines.
 
 ## License
 

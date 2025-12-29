@@ -43,7 +43,11 @@ dev = [
     "black>=23.0",
     "ruff>=0.1.0",
     "pre-commit>=3.5.0",
+    "ty",
     "httpx",  # For TestClient
+    "pytest-asyncio",
+    "pytest-playwright",
+    "taskiq-redis",
 ]
 
 [project.scripts]
@@ -71,7 +75,6 @@ select = ["E", "F", "W"]
 [tool.pytest.ini_options]
 testpaths = ["backend/tests"]
 asyncio_mode = "auto"
-asyncio_default_test_loop_scope = "function"
 markers = [
     "ci: marks tests as ci-only (deselect with '-m \"not ci\"')",
 ]

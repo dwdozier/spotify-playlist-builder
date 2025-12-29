@@ -105,11 +105,13 @@ external metadata verification.
 
 **Goal:** Host the application.
 
-* [ ] **Docker:** Optimized multi-stage builds.
-* [ ] **Docker Compose:** Full local stack.
-* [ ] **CI/CD:** GitHub Actions (Lint, Test Backend, Test Frontend, Run E2E). Enforce 95%
-    coverage.
-* [ ] **Deployment:** Reference configs.
+* [x] **Docker:** Optimized multi-stage builds for Backend and Frontend.
+
+* [x] **Docker Compose:** Full local stack (App, DB, Redis).
+
+* [x] **CI/CD:** GitHub Actions (Lint, Test Backend, Test Frontend). Enforce 95% coverage.
+
+* [x] **Deployment:** Reference configs for cloud providers (`render.yaml`).
 
 ## 4. Quality Assurance Guidelines
 
