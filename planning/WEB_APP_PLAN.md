@@ -12,9 +12,13 @@ external metadata verification.
 ## 2. Technical Stack
 
 * **Backend:** Python (FastAPI).
+
 * **Database:** PostgreSQL (Production) / SQLite (Dev) with SQLAlchemy (Async) + Alembic.
-* **Frontend:** React (TypeScript) or Next.js.
+
+* **Frontend:** React (TypeScript) via **Vite** + **TanStack Router** + **TanStack Query**.
+
 * **Auth (Identity):** OAuth2 (Google/GitHub) via `fastapi-users` or similar.
+
 * **Auth (Integrations):** Custom OAuth2 flows for linking Streaming Services (Spotify, etc.).
 * **Infrastructure:** Docker, Docker Compose.
 * **Testing:**
@@ -67,12 +71,18 @@ external metadata verification.
 
 **Goal:** A functional UI with component-level testing.
 
-* [ ] **Frontend Setup:** Initialize React/Next.js. Configure `Vitest`.
-* [ ] **Auth UI:** Login page & "Connections" Settings page.
-* [ ] **Dashboard:** List user's saved playlists.
-* [ ] **Generator:** Form for AI prompts & Interactive Verification/Review list.
-* [ ] **Build/Sync:** Select *Connected Service* to push to.
-* [ ] **Testing:** Unit tests for complex components (Review List, Auth Hooks). **Target: 95%
+* [x] **Frontend Setup:** Initialize React/TanStack project.
+
+* [x] **Auth UI:** Login page & "Connections" Settings page.
+
+* [x] **Dashboard:** List user's saved playlists (Placeholder UI).
+
+* [x] **Generator:** Form for AI prompts & Interactive Verification/Review list.
+
+* [x] **Build/Sync:** Select *Connected Service* to push to (UI logic).
+
+* [x] **Testing:** Unit tests for complex components (Review List, Auth Hooks). **Target: 95%
+
     Logic Coverage.**
 
 ### Phase 4: E2E Testing & Advanced Features
