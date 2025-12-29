@@ -30,6 +30,10 @@ dependencies = [
     "google-genai>=1.56.0",
     "fastapi",
     "uvicorn",
+    "sqlalchemy[asyncio]",
+    "alembic",
+    "aiosqlite",
+    "fastapi-users[sqlalchemy]",
 ]
 
 [project.optional-dependencies]
@@ -66,6 +70,7 @@ select = ["E", "F", "W"]
 
 [tool.pytest.ini_options]
 testpaths = ["backend/tests"]
+asyncio_mode = "auto"
 markers = [
     "ci: marks tests as ci-only (deselect with '-m \"not ci\"')",
 ]

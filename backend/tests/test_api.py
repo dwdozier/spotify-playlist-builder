@@ -1,5 +1,5 @@
 from fastapi.testclient import TestClient
-from unittest.mock import MagicMock
+from unittest.mock import MagicMock, patch
 from backend.app.main import app
 from backend.app.api.v1.endpoints.playlists import get_ai_service
 
@@ -88,6 +88,66 @@ def test_verify_tracks_error():
     assert response.json()["detail"] == "Verify Error"
 
     app.dependency_overrides.clear()
+
+
+def test_spotify_login_endpoint():
+    """Test the Spotify login redirect URL generation."""
+    # We need a mocked user for Depends(current_active_user)
+    from backend.app.core.auth.fastapi_users import current_active_user
+
+    mock_user = MagicMock()
+    mock_user.id = "user_id"
+
+    app.dependency_overrides[current_active_user] = lambda: mock_user
+
+    response = client.get("/api/v1/integrations/spotify/login")
+    assert response.status_code == 200
+    assert "accounts.spotify.com/authorize" in response.json()["url"]
+
+    app.dependency_overrides.clear()
+
+
+def test_spotify_callback_endpoint():
+    """Test the Spotify callback handling."""
+    from backend.app.db.session import get_async_session
+    from unittest.mock import AsyncMock
+
+    mock_db = MagicMock()
+    mock_db.commit = AsyncMock()
+    app.dependency_overrides[get_async_session] = lambda: mock_db
+
+    mock_token_resp = MagicMock()
+    mock_token_resp.status_code = 200
+    mock_token_resp.json.return_value = {
+        "access_token": "acc",
+        "refresh_token": "ref",
+        "expires_in": 3600,
+    }
+
+    mock_user_resp = MagicMock()
+    mock_user_resp.json.return_value = {"id": "spotify_id"}
+
+    with (
+        patch("httpx.AsyncClient.post", return_value=mock_token_resp),
+        patch("httpx.AsyncClient.get", return_value=mock_user_resp),
+    ):
+
+        response = client.get("/api/v1/integrations/spotify/callback?code=abc&state=user_id")
+        assert response.status_code == 200
+        assert response.json()["status"] == "success"
+
+    app.dependency_overrides.clear()
+
+
+def test_spotify_callback_error():
+    """Test handling of Spotify token exchange error."""
+    mock_token_resp = MagicMock()
+    mock_token_resp.status_code = 400
+
+    with patch("httpx.AsyncClient.post", return_value=mock_token_resp):
+        response = client.get("/api/v1/integrations/spotify/callback?code=abc&state=user_id")
+        assert response.status_code == 400
+        assert "Failed to get tokens" in response.json()["detail"]
 
 
 def test_get_ai_service_dependency():

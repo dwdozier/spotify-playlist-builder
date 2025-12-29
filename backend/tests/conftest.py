@@ -1,12 +1,41 @@
 import os
 import sys
 import pytest
+import asyncio
 from unittest.mock import MagicMock, patch
+from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
+from backend.app.db.session import Base
 
-# Ensure we can import the script from the parent directory
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+# Ensure we can import from root
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
 from backend.core.client import SpotifyPlaylistBuilder
+
+TEST_DATABASE_URL = "sqlite+aiosqlite:///:memory:"
+
+
+@pytest.fixture(scope="session")
+def event_loop():
+    loop = asyncio.get_event_loop_policy().new_event_loop()
+    yield loop
+    loop.close()
+
+
+@pytest.fixture(scope="session")
+async def test_db():
+    engine = create_async_engine(TEST_DATABASE_URL)
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
+    yield engine
+    await engine.dispose()
+
+
+@pytest.fixture
+async def db_session(test_db):
+    async_session = async_sessionmaker(test_db, expire_on_commit=False, class_=AsyncSession)
+    async with async_session() as session:
+        yield session
+        await session.rollback()
 
 
 @pytest.fixture
