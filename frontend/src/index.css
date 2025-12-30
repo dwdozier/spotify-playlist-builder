@@ -1,13 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Varela+Round&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Varela Round', sans-serif;
+  --vibomat-teal: #50C8C6;
+  --vibomat-pink: #FF9AA2;
+  --vibomat-cream: #FFFDF5;
+  --vibomat-chrome: #E0E0E0;
+  --vibomat-dark: #2D3436;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--vibomat-cream);
+  color: var(--vibomat-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Righteous', cursive;
+  letter-spacing: 0.05em;
 }
