@@ -183,7 +183,7 @@ function Settings() {
               </div>
             </form>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-              {user.unskippable_albums?.map((album: any, i: number) => (
+              {user.unskippable_albums?.map((album, i: number) => (
                 <div key={i} className="flex items-center justify-between bg-white p-4 rounded-lg border-2 border-retro-dark">
                   <div className="flex items-center gap-3">
                     <Disc className="w-6 h-6 text-retro-dark" />

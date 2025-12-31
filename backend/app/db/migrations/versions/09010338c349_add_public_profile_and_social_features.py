@@ -31,7 +31,14 @@ def upgrade() -> None:
         sa.PrimaryKeyConstraint("user_id", "playlist_id"),
     )
     op.add_column("playlist", sa.Column("source_id", sa.UUID(), nullable=True))
-    op.create_foreign_key(None, "playlist", "playlist", ["source_id"], ["id"], ondelete="SET NULL")
+    op.create_foreign_key(
+        "playlist_source_id_fkey",
+        "playlist",
+        "playlist",
+        ["source_id"],
+        ["id"],
+        ondelete="SET NULL",
+    )
 
     # Add columns as nullable first
     op.add_column("user", sa.Column("is_public", sa.Boolean(), nullable=True))
@@ -56,7 +63,7 @@ def downgrade() -> None:
     op.drop_column("user", "unskippable_albums")
     op.drop_column("user", "favorite_artists")
     op.drop_column("user", "is_public")
-    op.drop_constraint(None, "playlist", type_="foreignkey")
+    op.drop_constraint("playlist_source_id_fkey", "playlist", type_="foreignkey")
     op.drop_column("playlist", "source_id")
     op.drop_table("user_favorite_playlists")
     # ### end Alembic commands ###
