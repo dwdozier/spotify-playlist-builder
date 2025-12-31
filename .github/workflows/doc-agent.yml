@@ -12,6 +12,7 @@ on:
       - 'docker-compose.yml'
       - 'SETUP.md'
       - 'scripts/agent_docs.py'
+      - '.github/workflows/doc-agent.yml'
 
 permissions:
   contents: write
