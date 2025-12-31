@@ -16,26 +16,72 @@ TEST_DATABASE_URL = os.getenv(
 
 
 @pytest.fixture(scope="session")
-async def test_db():
-    # Create the engine with NullPool to ensure connections are not shared or leaked between tests
-    # when using multiple loops or complex async setups.
-    from sqlalchemy.pool import NullPool
 
-    engine = create_async_engine(TEST_DATABASE_URL, poolclass=NullPool)
+
+async def test_db():
+
+
+    # Standard engine setup
+
+
+    engine = create_async_engine(TEST_DATABASE_URL)
+
+
     async with engine.begin() as conn:
+
+
         await conn.run_sync(Base.metadata.create_all)
+
+
     yield engine
+
+
     await engine.dispose()
 
 
+
+
+
+
+
+
 @pytest.fixture
+
+
 async def db_session(test_db):
-    async_session = async_sessionmaker(test_db, expire_on_commit=False, class_=AsyncSession)
+
+
+    # Use sessionmaker to create a fresh session for each test
+
+
+    async_session = async_sessionmaker(
+
+
+        test_db,
+
+
+        expire_on_commit=False,
+
+
+        class_=AsyncSession
+
+
+    )
+
+
     async with async_session() as session:
+
+
         yield session
-        # Ensure cleanup
+
+
+        # Ensure cleanup is within the async with block
+
+
         await session.rollback()
-        await session.close()
+
+
+
 
 
 @pytest.fixture
