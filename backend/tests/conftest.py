@@ -20,6 +20,7 @@ async def test_db():
     # Create the engine with NullPool to ensure connections are not shared or leaked between tests
     # when using multiple loops or complex async setups.
     from sqlalchemy.pool import NullPool
+
     engine = create_async_engine(TEST_DATABASE_URL, poolclass=NullPool)
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
@@ -35,7 +36,6 @@ async def db_session(test_db):
         # Ensure cleanup
         await session.rollback()
         await session.close()
-
 
 
 @pytest.fixture
