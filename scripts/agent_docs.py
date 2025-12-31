@@ -84,7 +84,9 @@ def update_readme(
 3. Check "docker-compose.yml" or "SETUP.md" for **Quick Start** instructions.
 4. Integrate all changes found into the README. If the project description in pyproject.toml
    changed, ensure the README's introductory section reflects it.
-5. If absolutely no relevant changes are found for README.md, return the **Current Content**
+5. **CRITICAL:** Do not mention new features or capabilities that are not explicitly
+   present in the provided Git Diff. Do not guess or "hallucinate" future features.
+6. If absolutely no relevant changes are found for README.md, return the **Current Content**
    exactly as is.
 """
 
