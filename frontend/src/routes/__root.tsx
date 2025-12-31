@@ -17,7 +17,6 @@ function RootLayout() {
     const checkStatus = async () => {
       // Use getCurrentUser which probes /users/me once
       const userData = await authService.getCurrentUser()
-      console.log("DEBUG: Root Auth Check", userData)
       setIsAuth(!!userData)
       setUser(userData)
     }
