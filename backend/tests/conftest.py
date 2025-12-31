@@ -1,8 +1,10 @@
+import asyncio
 import os
 import sys
 import pytest
 from unittest.mock import MagicMock, patch
-from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
+from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
+from sqlalchemy.pool import NullPool
 from backend.app.db.session import Base
 
 # Ensure we can import from root
@@ -15,30 +17,35 @@ TEST_DATABASE_URL = os.getenv(
 )
 
 
-@pytest.fixture
-async def test_db():
-    """Create a fresh database for each test to ensure event loop consistency."""
-    engine = create_async_engine(TEST_DATABASE_URL)
+@pytest.fixture(scope="session")
+def event_loop():
+    """Create a session-scoped event loop."""
+    loop = asyncio.get_event_loop_policy().new_event_loop()
+    yield loop
+    loop.close()
+
+
+@pytest.fixture(scope="session")
+async def test_db(event_loop):
+    """Create a session-scoped engine and tables."""
+    engine = create_async_engine(TEST_DATABASE_URL, poolclass=NullPool)
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
-
     yield engine
-
-    # Cleanup: Drop tables to keep the DB clean for the next test
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.drop_all)
     await engine.dispose()
 
 
 @pytest.fixture
 async def db_session(test_db):
-    """Create a fresh session for each test."""
-    async_session = async_sessionmaker(test_db, expire_on_commit=False, class_=AsyncSession)
-    async with async_session() as session:
+    """Create a fresh session for each test using a nested transaction."""
+    async with test_db.connect() as connection:
+        transaction = await connection.begin()
+        session = AsyncSession(bind=connection, expire_on_commit=False)
+
         yield session
-        # Transaction is automatically handled by the async with block
-        # but we rollback just in case
-        await session.rollback()
+
+        await session.close()
+        await transaction.rollback()
 
 
 @pytest.fixture
