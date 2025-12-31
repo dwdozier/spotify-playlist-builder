@@ -17,7 +17,6 @@ class UserManager(UUIDIDMixin, BaseUserManager[User, uuid.UUID]):
     verification_token_secret = SECRET
 
     async def on_after_register(self, user: User, request: Optional[Request] = None):
-        print(f"User {user.id} has registered.")
         await self._promote_if_admin(user)
 
         welcome_body = (
@@ -48,7 +47,6 @@ border-radius: 10px; background-color: #FFFDF5;">
         request: Optional[Request] = None,
         response: Optional[Response] = None,
     ):
-        print(f"User {user.id} logged in.")
         await self._promote_if_admin(user)
 
     async def _promote_if_admin(self, user: User):
@@ -57,7 +55,6 @@ border-radius: 10px; background-color: #FFFDF5;">
         admin_emails = [e.strip() for e in raw_admins.split(",") if e.strip()]
 
         if user.email in admin_emails and not user.is_superuser:
-            print(f"DEBUG: Promoting {user.email} to superuser.")
             await self.user_db.update(user, {"is_superuser": True, "is_verified": True})
 
 

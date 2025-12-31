@@ -2,7 +2,7 @@ import os
 import sys
 import pytest
 from unittest.mock import MagicMock, patch
-from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
+from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
 from backend.app.db.session import Base
 
 # Ensure we can import from root
@@ -10,24 +10,35 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../.
 
 from backend.core.client import SpotifyPlaylistBuilder
 
-TEST_DATABASE_URL = "sqlite+aiosqlite:///:memory:"
+TEST_DATABASE_URL = os.getenv(
+    "TEST_DATABASE_URL", "postgresql+asyncpg://user:pass@localhost:5432/vibomat_test"
+)
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture
 async def test_db():
+    """Create a fresh engine and tables for each test to avoid loop mismatches."""
     engine = create_async_engine(TEST_DATABASE_URL)
+
     async with engine.begin() as conn:
+        # Clean state for every test
+        await conn.run_sync(Base.metadata.drop_all)
         await conn.run_sync(Base.metadata.create_all)
+
     yield engine
+
     await engine.dispose()
 
 
 @pytest.fixture
 async def db_session(test_db):
+    """Create a fresh session for each test."""
     async_session = async_sessionmaker(test_db, expire_on_commit=False, class_=AsyncSession)
     async with async_session() as session:
         yield session
-        await session.rollback()
+        # Transaction is handled by context manager, but we rollback just in case
+        if session.is_active:
+            await session.rollback()
 
 
 @pytest.fixture
