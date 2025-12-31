@@ -40,12 +40,14 @@ function RootLayout() {
             >
               Home
             </Link>
-            <Link
-              to="/playlists"
-              className="px-4 py-2 font-display text-xl uppercase hover:text-retro-teal [&.active]:text-retro-teal transition-colors"
-            >
-              Generator
-            </Link>
+            {isAuth && (
+              <Link
+                to="/playlists"
+                className="px-4 py-2 font-display text-xl uppercase hover:text-retro-teal [&.active]:text-retro-teal transition-colors"
+              >
+                Generator
+              </Link>
+            )}
           </div>
 
           <div className="flex-grow" />
@@ -74,12 +76,14 @@ function RootLayout() {
                 Profile
               </Link>
             )}
-            <Link
-              to="/settings"
-              className="font-display text-xl uppercase hover:text-retro-teal [&.active]:text-retro-teal transition-colors"
-            >
-              Settings
-            </Link>
+            {isAuth && (
+              <Link
+                to="/settings"
+                className="font-display text-xl uppercase hover:text-retro-teal [&.active]:text-retro-teal transition-colors"
+              >
+                Settings
+              </Link>
+            )}
             {isAuth ? (
               <button
                 onClick={handleLogout}
