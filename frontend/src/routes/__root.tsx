@@ -36,8 +36,8 @@ function RootLayout() {
           </Link>
 
           {/* Primary Operations */}
-          <div className="flex gap-4 items-center border-l-4 border-retro-teal/30 pl-8 h-12 mt-2">
-            {isAuth && (
+          {isAuth && (
+            <div className="flex gap-4 items-center border-l-4 border-retro-teal/30 pl-8 h-12 mt-2">
               <Link
                 to="/playlists"
                 className="flex items-center gap-2 px-4 py-2 font-display text-xl uppercase hover:text-retro-teal [&.active]:text-retro-teal [&.active]:bg-retro-teal/10 rounded-lg transition-all"
@@ -45,8 +45,8 @@ function RootLayout() {
                 <Cpu className="w-5 h-5" />
                 Generator
               </Link>
-            )}
-          </div>
+            </div>
+          )}
 
           <div className="flex-grow" />
 
