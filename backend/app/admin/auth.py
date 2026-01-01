@@ -13,17 +13,24 @@ class AdminAuth(AuthenticationBackend):
     async def login(self, request: Request) -> bool:
         # Check if the user is already authenticated via our main cookie
         user = await self._get_current_user(request)
-        return user is not None and user.is_superuser
+        if user and user.is_superuser:
+            request.session.pop("admin_logout", None)
+            return True
+        return False
 
     async def logout(self, request: Request) -> bool:
         request.session.clear()
+        # Set a flag to prevent immediate auto-login from the main app cookie
+        request.session["admin_logout"] = True
         return True
 
     async def authenticate(self, request: Request) -> Union[Response, bool]:
+        # If the user explicitly logged out of admin, don't auto-login from cookie
+        if request.session.get("admin_logout"):
+            return RedirectResponse("/login")
+
         user = await self._get_current_user(request)
         if user and user.is_superuser:
-            # Set a session variable to satisfy any internal checks or state
-            # 'token' is the default key used by sqladmin
             request.session.update({"token": "valid_superuser"})
             return True
 

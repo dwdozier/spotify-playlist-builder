@@ -7,6 +7,77 @@ from starlette.responses import RedirectResponse
 
 
 @pytest.mark.asyncio
+async def test_admin_authenticate_fail():
+    """Test authenticate fails when no user is found."""
+    mock_request = MagicMock(spec=Request)
+    mock_request.session = {}
+    mock_request.cookies = {}
+
+    auth_backend = AdminAuth(secret_key="secret")
+    result = await auth_backend.authenticate(mock_request)
+
+    assert isinstance(result, RedirectResponse)
+    assert result.headers["location"] == "/login"
+
+
+@pytest.mark.asyncio
+async def test_admin_get_current_user_exception():
+    """Test _get_current_user handles exceptions."""
+    mock_request = MagicMock(spec=Request)
+    mock_request.cookies = {"fastapiusersauth": "valid"}
+
+    with patch("backend.app.admin.auth.get_jwt_strategy", side_effect=Exception("Error")):
+        auth_backend = AdminAuth(secret_key="secret")
+        user = await auth_backend._get_current_user(mock_request)
+        assert user is None
+
+
+@pytest.mark.asyncio
+async def test_admin_auth_logout():
+    """Test admin logout clears session and sets flag."""
+    mock_request = MagicMock(spec=Request)
+    mock_request.session = {"token": "some_token"}
+
+    auth_backend = AdminAuth(secret_key="secret")
+    result = await auth_backend.logout(mock_request)
+
+    assert result is True
+    assert "token" not in mock_request.session
+    assert mock_request.session["admin_logout"] is True
+
+
+@pytest.mark.asyncio
+async def test_admin_authenticate_with_logout_flag():
+    """Test authenticate redirects when logout flag is present."""
+    mock_request = MagicMock(spec=Request)
+    mock_request.session = {"admin_logout": True}
+
+    auth_backend = AdminAuth(secret_key="secret")
+    result = await auth_backend.authenticate(mock_request)
+
+    assert isinstance(result, RedirectResponse)
+    assert result.headers["location"] == "/login"
+
+
+@pytest.mark.asyncio
+async def test_admin_login_clears_flag():
+    """Test login clears admin_logout flag on success."""
+    mock_request = MagicMock(spec=Request)
+    mock_request.session = {"admin_logout": True}
+    mock_request.cookies = {"fastapiusersauth": "valid"}
+
+    mock_user = MagicMock(spec=User)
+    mock_user.is_superuser = True
+
+    with patch.object(AdminAuth, "_get_current_user", return_value=mock_user):
+        auth_backend = AdminAuth(secret_key="secret")
+        result = await auth_backend.login(mock_request)
+
+        assert result is True
+        assert "admin_logout" not in mock_request.session
+
+
+@pytest.mark.asyncio
 async def test_admin_auth_success():
     """Test successful admin authentication."""
     # Mock request with session

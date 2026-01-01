@@ -38,21 +38,12 @@ async def get_public_profile(
     db: AsyncSession = Depends(get_async_session),
 ):
     """
-
-
     Get a user's public profile.
-
-
     """
-
     result = await db.execute(select(User).where(User.id == user_id))
-
     user = result.unique().scalar_one_or_none()
-
     if not user or not user.is_public:
-
         raise HTTPException(status_code=404, detail="User not found or profile is private")
-
     return user
 
 
@@ -62,25 +53,15 @@ async def get_public_playlists(
     db: AsyncSession = Depends(get_async_session),
 ):
     """
-
-
     Get a user's public playlists.
-
-
     """
-
     # Verify user exists and is public
-
     user_result = await db.execute(select(User).where(User.id == user_id))
-
     user = user_result.unique().scalar_one_or_none()
-
     if not user or not user.is_public:
-
         raise HTTPException(status_code=404, detail="User not found or profile is private")
 
     result = await db.execute(select(Playlist).where(Playlist.user_id == user_id, Playlist.public))
-
     return result.scalars().all()
 
 
@@ -90,21 +71,12 @@ async def get_favorited_playlists(
     db: AsyncSession = Depends(get_async_session),
 ):
     """
-
-
     Get a user's favorited playlists from others.
-
-
     """
-
     # Verify user exists and is public
-
     user_result = await db.execute(select(User).where(User.id == user_id))
-
     user = user_result.unique().scalar_one_or_none()
-
     if not user or not user.is_public:
-
         raise HTTPException(status_code=404, detail="User not found or profile is private")
 
     result = await db.execute(
@@ -112,7 +84,6 @@ async def get_favorited_playlists(
         .join(user_favorite_playlists, Playlist.id == user_favorite_playlists.c.playlist_id)
         .where(user_favorite_playlists.c.user_id == user_id)
     )
-
     return result.scalars().all()
 
 
