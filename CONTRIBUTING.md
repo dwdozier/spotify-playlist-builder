@@ -8,6 +8,10 @@ testing, and clean architecture.
 - **Type Safety**: We use Pydantic for Backend schemas and TanStack Router/Query for Frontend types.
 - **Decoupling**: Identity is decoupled from service providers (Spotify).
 - **Quality**: We maintain **95% minimum test coverage** for all new logic.
+- **TanStack Patterns**: Prefer `loader` functions for data fetching on route entry. Avoid
+  `useEffect` for state synchronization where TanStack Query or Router hooks can be used.
+- **E2E Stability**: Use `data-play` attributes for all critical UI elements to ensure
+  Playwright tests are decoupled from CSS or text changes.
 - **Clean Code & Idiomatic Solutions:** ALWAYS prioritize "Pythonic," clean, and maintainable
   solutions over fragile workarounds, "hacks," or monkeypatching. If a library has a bug, seek a
   declarative or structural fix within the project's code first. Do not sacrifice code quality for
@@ -44,10 +48,12 @@ cd frontend && npm test
 
 ### Pre-Commit Hooks
 
-MANDATORY. Install before committing:
+MANDATORY. Install before committing. All hooks are configured to run via `uv run` to ensure
+environment stability:
 
 ```bash
 pre-commit install
+pre-commit run --all-files
 ```
 
 ## 5. Pull Requests
