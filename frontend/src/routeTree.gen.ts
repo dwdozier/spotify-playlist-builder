@@ -14,8 +14,12 @@ import { Route as PlaylistsRouteImport } from './routes/playlists'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as ProfileUserIdRouteImport } from './routes/profile.$userId'
 import { Route as AuthCallbackRouteImport } from './routes/auth.callback'
+import { Route as AdminUsersRouteImport } from './routes/admin.users'
+import { Route as AdminPlaylistsRouteImport } from './routes/admin.playlists'
+import { Route as AdminConnectionsRouteImport } from './routes/admin.connections'
 
 const SettingsRoute = SettingsRouteImport.update({
   id: '/settings',
@@ -42,6 +46,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminRoute,
+} as any)
 const ProfileUserIdRoute = ProfileUserIdRouteImport.update({
   id: '/profile/$userId',
   path: '/profile/$userId',
@@ -52,34 +61,60 @@ const AuthCallbackRoute = AuthCallbackRouteImport.update({
   path: '/auth/callback',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminUsersRoute = AdminUsersRouteImport.update({
+  id: '/users',
+  path: '/users',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminPlaylistsRoute = AdminPlaylistsRouteImport.update({
+  id: '/playlists',
+  path: '/playlists',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminConnectionsRoute = AdminConnectionsRouteImport.update({
+  id: '/connections',
+  path: '/connections',
+  getParentRoute: () => AdminRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/admin': typeof AdminRoute
+  '/admin': typeof AdminRouteWithChildren
   '/login': typeof LoginRoute
   '/playlists': typeof PlaylistsRoute
   '/settings': typeof SettingsRoute
+  '/admin/connections': typeof AdminConnectionsRoute
+  '/admin/playlists': typeof AdminPlaylistsRoute
+  '/admin/users': typeof AdminUsersRoute
   '/auth/callback': typeof AuthCallbackRoute
   '/profile/$userId': typeof ProfileUserIdRoute
+  '/admin/': typeof AdminIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/admin': typeof AdminRoute
   '/login': typeof LoginRoute
   '/playlists': typeof PlaylistsRoute
   '/settings': typeof SettingsRoute
+  '/admin/connections': typeof AdminConnectionsRoute
+  '/admin/playlists': typeof AdminPlaylistsRoute
+  '/admin/users': typeof AdminUsersRoute
   '/auth/callback': typeof AuthCallbackRoute
   '/profile/$userId': typeof ProfileUserIdRoute
+  '/admin': typeof AdminIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/admin': typeof AdminRoute
+  '/admin': typeof AdminRouteWithChildren
   '/login': typeof LoginRoute
   '/playlists': typeof PlaylistsRoute
   '/settings': typeof SettingsRoute
+  '/admin/connections': typeof AdminConnectionsRoute
+  '/admin/playlists': typeof AdminPlaylistsRoute
+  '/admin/users': typeof AdminUsersRoute
   '/auth/callback': typeof AuthCallbackRoute
   '/profile/$userId': typeof ProfileUserIdRoute
+  '/admin/': typeof AdminIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -89,17 +124,24 @@ export interface FileRouteTypes {
     | '/login'
     | '/playlists'
     | '/settings'
+    | '/admin/connections'
+    | '/admin/playlists'
+    | '/admin/users'
     | '/auth/callback'
     | '/profile/$userId'
+    | '/admin/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/admin'
     | '/login'
     | '/playlists'
     | '/settings'
+    | '/admin/connections'
+    | '/admin/playlists'
+    | '/admin/users'
     | '/auth/callback'
     | '/profile/$userId'
+    | '/admin'
   id:
     | '__root__'
     | '/'
@@ -107,13 +149,17 @@ export interface FileRouteTypes {
     | '/login'
     | '/playlists'
     | '/settings'
+    | '/admin/connections'
+    | '/admin/playlists'
+    | '/admin/users'
     | '/auth/callback'
     | '/profile/$userId'
+    | '/admin/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AdminRoute: typeof AdminRoute
+  AdminRoute: typeof AdminRouteWithChildren
   LoginRoute: typeof LoginRoute
   PlaylistsRoute: typeof PlaylistsRoute
   SettingsRoute: typeof SettingsRoute
@@ -158,6 +204,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/': {
+      id: '/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/profile/$userId': {
       id: '/profile/$userId'
       path: '/profile/$userId'
@@ -172,12 +225,49 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthCallbackRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/users': {
+      id: '/admin/users'
+      path: '/users'
+      fullPath: '/admin/users'
+      preLoaderRoute: typeof AdminUsersRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/playlists': {
+      id: '/admin/playlists'
+      path: '/playlists'
+      fullPath: '/admin/playlists'
+      preLoaderRoute: typeof AdminPlaylistsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/connections': {
+      id: '/admin/connections'
+      path: '/connections'
+      fullPath: '/admin/connections'
+      preLoaderRoute: typeof AdminConnectionsRouteImport
+      parentRoute: typeof AdminRoute
+    }
   }
 }
 
+interface AdminRouteChildren {
+  AdminConnectionsRoute: typeof AdminConnectionsRoute
+  AdminPlaylistsRoute: typeof AdminPlaylistsRoute
+  AdminUsersRoute: typeof AdminUsersRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminConnectionsRoute: AdminConnectionsRoute,
+  AdminPlaylistsRoute: AdminPlaylistsRoute,
+  AdminUsersRoute: AdminUsersRoute,
+  AdminIndexRoute: AdminIndexRoute,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AdminRoute: AdminRoute,
+  AdminRoute: AdminRouteWithChildren,
   LoginRoute: LoginRoute,
   PlaylistsRoute: PlaylistsRoute,
   SettingsRoute: SettingsRoute,
