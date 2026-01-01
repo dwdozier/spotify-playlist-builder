@@ -6,7 +6,13 @@ from uvicorn.middleware.proxy_headers import ProxyHeadersMiddleware
 from starlette.middleware.sessions import SessionMiddleware
 from sqladmin import Admin
 from backend.app.db.session import engine
-from backend.app.admin.views import UserAdmin, PlaylistAdmin, ServiceConnectionAdmin, BackToAppView
+from backend.app.admin.views import (
+    UserAdmin,
+    PlaylistAdmin,
+    ServiceConnectionAdmin,
+    BackToAppView,
+    GlobalLogoutView,
+)
 from backend.app.admin.auth import admin_auth
 from backend.app.core.auth.backend import SECRET
 
@@ -48,6 +54,8 @@ admin.add_view(PlaylistAdmin)
 admin.add_view(ServiceConnectionAdmin)
 
 admin.add_view(BackToAppView)
+
+admin.add_view(GlobalLogoutView)
 
 
 # Trust the headers from Nginx

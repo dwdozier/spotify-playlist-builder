@@ -14,6 +14,21 @@ class BackToAppView(BaseView):
         return RedirectResponse(url=str(request.base_url))
 
 
+class GlobalLogoutView(BaseView):
+    name = "Full System Logout"
+    icon = "fa-solid fa-sign-out-alt"
+
+    @expose("/logout", methods=["GET"])
+    async def full_logout(self, request):
+        # Clear the admin session
+        request.session.clear()
+        # Redirect to the main app login page
+        response = RedirectResponse(url="/login")
+        # Explicitly clear the main app auth cookie
+        response.delete_cookie("fastapiusersauth")
+        return response
+
+
 class UserAdmin(ModelView, model=User):
     column_list = ["id", "email", "is_active", "is_superuser", "is_verified", "is_public"]
     column_details_list = [

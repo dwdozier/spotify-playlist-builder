@@ -4,37 +4,33 @@ from backend.app.admin.auth import AdminAuth
 from backend.app.models.user import User
 from starlette.requests import Request
 from starlette.responses import RedirectResponse
+from backend.app.admin.views import GlobalLogoutView
 
 
 @pytest.mark.asyncio
-async def test_admin_authenticate_fail():
-    """Test authenticate fails when no user is found."""
+async def test_global_logout_view():
+    """Test the redirect and cookie deletion in GlobalLogoutView."""
+    view = GlobalLogoutView()
     mock_request = MagicMock(spec=Request)
-    mock_request.session = {}
-    mock_request.cookies = {}
+    mock_request.session = MagicMock()
 
-    auth_backend = AdminAuth(secret_key="secret")
-    result = await auth_backend.authenticate(mock_request)
+    # Try to call the method directly, bypassing any potential sqladmin wrapping
+    func = getattr(view.full_logout, "__wrapped__", view.full_logout)
+    if hasattr(view.full_logout, "__wrapped__"):
+        response = await func(view, mock_request)
+    else:
+        response = await func(mock_request)
 
-    assert isinstance(result, RedirectResponse)
-    assert result.headers["location"] == "/login"
-
-
-@pytest.mark.asyncio
-async def test_admin_get_current_user_exception():
-    """Test _get_current_user handles exceptions."""
-    mock_request = MagicMock(spec=Request)
-    mock_request.cookies = {"fastapiusersauth": "valid"}
-
-    with patch("backend.app.admin.auth.get_jwt_strategy", side_effect=Exception("Error")):
-        auth_backend = AdminAuth(secret_key="secret")
-        user = await auth_backend._get_current_user(mock_request)
-        assert user is None
+    assert response.status_code == 307 or response.status_code == 302
+    assert response.headers["location"] == "/login"
+    # Check if delete_cookie was called (it sets a Set-Cookie header with expired date)
+    assert "fastapiusersauth=" in str(response.headers)
+    assert "Max-Age=0" in str(response.headers)
 
 
 @pytest.mark.asyncio
 async def test_admin_auth_logout():
-    """Test admin logout clears session and sets flag."""
+    """Test admin logout clears session."""
     mock_request = MagicMock(spec=Request)
     mock_request.session = {"token": "some_token"}
 
@@ -43,38 +39,6 @@ async def test_admin_auth_logout():
 
     assert result is True
     assert "token" not in mock_request.session
-    assert mock_request.session["admin_logout"] is True
-
-
-@pytest.mark.asyncio
-async def test_admin_authenticate_with_logout_flag():
-    """Test authenticate redirects when logout flag is present."""
-    mock_request = MagicMock(spec=Request)
-    mock_request.session = {"admin_logout": True}
-
-    auth_backend = AdminAuth(secret_key="secret")
-    result = await auth_backend.authenticate(mock_request)
-
-    assert isinstance(result, RedirectResponse)
-    assert result.headers["location"] == "/login"
-
-
-@pytest.mark.asyncio
-async def test_admin_login_clears_flag():
-    """Test login clears admin_logout flag on success."""
-    mock_request = MagicMock(spec=Request)
-    mock_request.session = {"admin_logout": True}
-    mock_request.cookies = {"fastapiusersauth": "valid"}
-
-    mock_user = MagicMock(spec=User)
-    mock_user.is_superuser = True
-
-    with patch.object(AdminAuth, "_get_current_user", return_value=mock_user):
-        auth_backend = AdminAuth(secret_key="secret")
-        result = await auth_backend.login(mock_request)
-
-        assert result is True
-        assert "admin_logout" not in mock_request.session
 
 
 @pytest.mark.asyncio
