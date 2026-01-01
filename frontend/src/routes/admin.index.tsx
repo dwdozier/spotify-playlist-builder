@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import { useQuery } from '@tanstack/react-query'
 import { Users, Music, Link2, Database, Disc } from 'lucide-react'
 
@@ -27,18 +27,21 @@ function AdminDashboard() {
           label="Citizens"
           value={stats?.users}
           color="teal"
+          to="/admin/users"
         />
         <StatCard
           icon={<Music className="w-8 h-8 text-retro-pink" />}
           label="Archives"
           value={stats?.playlists}
           color="pink"
+          to="/admin/playlists"
         />
         <StatCard
           icon={<Link2 className="w-8 h-8 text-retro-yellow" />}
           label="Relays"
           value={stats?.connections}
           color="yellow"
+          to="/admin/connections"
         />
         <StatCard
           icon={<Database className="w-8 h-8 text-retro-chrome" />}
@@ -47,7 +50,6 @@ function AdminDashboard() {
           color="chrome"
         />
       </section>
-
       <div className="bg-white p-8 rounded-2xl border-8 border-retro-dark shadow-retro">
         <h2 className="text-3xl font-display text-retro-dark mb-6 uppercase border-b-4 border-retro-dark pb-4 border-dashed">
           System Overview
@@ -66,9 +68,10 @@ interface StatCardProps {
   label: string
   value?: number
   color: 'teal' | 'pink' | 'yellow' | 'chrome'
+  to?: string
 }
 
-function StatCard({ icon, label, value, color }: StatCardProps) {
+function StatCard({ icon, label, value, color, to }: StatCardProps) {
   const colorMap: Record<string, string> = {
     teal: 'bg-retro-teal/10 border-retro-teal',
     pink: 'bg-retro-pink/10 border-retro-pink',
@@ -76,8 +79,8 @@ function StatCard({ icon, label, value, color }: StatCardProps) {
     chrome: 'bg-retro-chrome/10 border-retro-chrome',
   }
 
-  return (
-    <div className={`p-8 rounded-2xl border-4 border-retro-dark shadow-retro-sm flex items-center gap-6 ${colorMap[color]}`}>
+  const content = (
+    <div className={`p-8 rounded-2xl border-4 border-retro-dark shadow-retro-sm flex items-center gap-6 w-full h-full transition-all ${colorMap[color]} ${to ? 'group-hover:shadow-retro group-hover:-translate-y-1 group-active:translate-x-1 group-active:translate-y-1 group-active:shadow-none' : ''}`}>
       <div className="p-4 bg-white rounded-xl border-2 border-retro-dark shadow-retro-xs">
         {icon}
       </div>
@@ -91,4 +94,14 @@ function StatCard({ icon, label, value, color }: StatCardProps) {
       </div>
     </div>
   )
+
+  if (to) {
+    return (
+      <Link to={to} className="group block h-full">
+        {content}
+      </Link>
+    )
+  }
+
+  return content
 }
