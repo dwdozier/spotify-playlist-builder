@@ -85,10 +85,26 @@ Use these commands to maintain code quality and run the application.
   speed; aim for standard solutions that are easy to reason about, even if they require multiple
   iterations to perfect.
 - **Type Checker:** Ty (via pre-commit).
-- **Pre-Commit:** **MANDATORY**: Run `black .` and `ruff check . --fix` before every code submission
-  to prevent CI/pre-commit failures.
+- **Pre-Commit Hooks:** Use `uv run <tool>` (e.g., `uv run ty`) in `.pre-commit-config.yaml` to
+  ensure the correct project environment is used regardless of the user's shell state.
+- **Documentation Linting:** Proactively verify `markdownlint` conformance (especially the
+  100-character line length limit) before every commit to ensure CI efficiency.
 
-## 6. Critical Rules
+## 6. Architecture & Implementation Patterns
+
+- **Admin Dashboard:** Favor native React/TanStack components over external libraries like
+  `sqladmin` to maintain a consistent tech stack and avoid legacy dependencies (jQuery, etc.).
+- **Vib-O-Mat Terminology:**
+  - **Citizens:** Users
+  - **Archives:** Playlists
+  - **Relays:** Service Connections
+  - **Nodes:** OAuth Identity Links
+- **E2E Sanity:** All PRs must pass the `e2e-sanity` playwright check, verifying core navigation
+  and site availability.
+- **Async DB Sessions:** Always use `async with request.state.session` or similar context
+  managers within admin/app routes to ensure proper connection pooling.
+
+## 7. Critical Rules
 
 - **CRITICAL RULE:** Never use write_file on an existing file unless specifically told to
   "overwrite" or "replace" it. Always read_file first to perform a merge, or use
