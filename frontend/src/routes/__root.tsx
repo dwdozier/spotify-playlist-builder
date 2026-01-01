@@ -73,13 +73,13 @@ function RootLayout() {
                 {/* System Controls */}
                 <div className="flex items-center gap-4 border-l-2 border-retro-teal/20 pl-6 ml-2">
                   {user?.is_superuser && (
-                    <a
-                      href="/admin"
+                    <Link
+                      to="/admin"
                       className="flex items-center gap-2 px-4 py-2 bg-retro-yellow text-retro-dark font-display text-sm uppercase rounded-xl border-2 border-retro-dark hover:bg-yellow-400 transition-all shadow-retro-xs active:shadow-none translate-y-[-1px] active:translate-y-[1px]"
                     >
                       <ShieldAlert className="w-4 h-4" />
                       Admin
-                    </a>
+                    </Link>
                   )}
 
                   <Link
