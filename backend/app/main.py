@@ -6,13 +6,12 @@ from uvicorn.middleware.proxy_headers import ProxyHeadersMiddleware
 from starlette.middleware.sessions import SessionMiddleware
 from sqladmin import Admin
 from backend.app.db.session import engine
-from starlette.responses import RedirectResponse
-from starlette.requests import Request
 from backend.app.admin.views import (
     UserAdmin,
     PlaylistAdmin,
     ServiceConnectionAdmin,
     DashboardView,
+    BackToAppView,
 )
 from backend.app.admin.auth import admin_auth
 from backend.app.core.auth.backend import SECRET
@@ -38,16 +37,6 @@ app = FastAPI(
 app.add_middleware(SessionMiddleware, secret_key=SECRET)  # type: ignore
 
 
-# Custom Admin Logout to clear main app cookies
-@app.get("/admin/logout")
-async def admin_logout(request: Request):
-    """Explicitly clear auth cookies and session on admin logout."""
-    request.session.clear()
-    response = RedirectResponse(url="/login")
-    response.delete_cookie("fastapiusersauth")
-    return response
-
-
 # Initialize Admin
 
 admin = Admin(
@@ -66,6 +55,8 @@ admin.add_view(UserAdmin)
 admin.add_view(PlaylistAdmin)
 
 admin.add_view(ServiceConnectionAdmin)
+
+admin.add_view(BackToAppView)
 
 
 app.add_middleware(ProxyHeadersMiddleware, trusted_hosts=["*"])  # type: ignore

@@ -20,18 +20,18 @@ class AdminAuth(AuthenticationBackend):
         return True
 
     async def authenticate(self, request: Request) -> Union[Response, bool]:
-        user = await self._get_current_user(request)
-        if user:
-            if user.is_superuser:
-                # Logged in as admin, grant access
-                request.session.update({"token": "valid_superuser"})
-                return True
-            else:
-                # Logged in but NOT an admin.
-                # Redirect to home with a clear indication of insufficient access
-                return RedirectResponse("/")
+        # Check if we have an active admin session
+        if request.session.get("token") == "valid_superuser":
+            return True
 
-        # Not logged in at all
+        # If no session, check the main app cookie
+        user = await self._get_current_user(request)
+        if user and user.is_superuser:
+            # Established main app session as admin, promote to admin session
+            request.session.update({"token": "valid_superuser"})
+            return True
+
+        # Not an admin or not logged in
         return RedirectResponse("/login")
 
     async def _get_current_user(self, request: Request) -> Optional[User]:

@@ -11,27 +11,30 @@
 
             <div class="row g-4 mt-2">
                 <div class="col-md-4">
-                    <div class="p-4 bg-light rounded-3 h-100">
-                        <i class="fa-solid fa-users fa-2x mb-3 text-secondary"></i>
-                        <h3>Citizens</h3>
-                        <p>Manage user accounts, verify clearance levels, and toggle public visibility.</p>
-                        <a href="{{ url_for('admin:list', identity='user') }}" class="btn btn-outline-primary mt-3">Manage Users</a>
+                    <div class="p-4 bg-light rounded-3 h-100 border-top border-4 border-primary">
+                        <i class="fa-solid fa-users fa-2x mb-3 text-primary"></i>
+                        <div class="h1 fw-bold">{{ stats.users }}</div>
+                        <h3 class="h5 text-muted uppercase">Citizens</h3>
+                        <p class="small">Registered users with active clearance.</p>
+                        <a href="{{ url_for('admin:list', identity='user') }}" class="btn btn-sm btn-outline-primary mt-2">Manage</a>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="p-4 bg-light rounded-3 h-100">
-                        <i class="fa-solid fa-music fa-2x mb-3 text-secondary"></i>
-                        <h3>Archives</h3>
-                        <p>Monitor broadcasted playlists and track original sources for proper attribution.</p>
-                        <a href="{{ url_for('admin:list', identity='playlist') }}" class="btn btn-outline-primary mt-3">Browse Playlists</a>
+                    <div class="p-4 bg-light rounded-3 h-100 border-top border-4 border-info">
+                        <i class="fa-solid fa-music fa-2x mb-3 text-info"></i>
+                        <div class="h1 fw-bold">{{ stats.playlists }}</div>
+                        <h3 class="h5 text-muted uppercase">Archives</h3>
+                        <p class="small">Broadcasted and private playlists.</p>
+                        <a href="{{ url_for('admin:list', identity='playlist') }}" class="btn btn-sm btn-outline-info mt-2">Browse</a>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="p-4 bg-light rounded-3 h-100">
-                        <i class="fa-solid fa-link fa-2x mb-3 text-secondary"></i>
-                        <h3>Relay Stations</h3>
-                        <p>Oversee active connections to external streaming services and check token health.</p>
-                        <a href="{{ url_for('admin:list', identity='serviceconnection') }}" class="btn btn-outline-primary mt-3">View Connections</a>
+                    <div class="p-4 bg-light rounded-3 h-100 border-top border-4 border-warning">
+                        <i class="fa-solid fa-link fa-2x mb-3 text-warning"></i>
+                        <div class="h1 fw-bold">{{ stats.connections }}</div>
+                        <h3 class="h5 text-muted uppercase">Relays</h3>
+                        <p class="small">Active streaming service connections.</p>
+                        <a href="{{ url_for('admin:list', identity='serviceconnection') }}" class="btn btn-sm btn-outline-warning mt-2">Monitor</a>
                     </div>
                 </div>
             </div>
