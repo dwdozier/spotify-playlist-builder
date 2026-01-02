@@ -1,16 +1,16 @@
 import uuid
-from datetime import datetime
-import uuid
 import json
 import os
-from datetime import datetime
-from sqlalchemy import ForeignKey, String, DateTime, UUID, JSON, TypeDecorator
-from sqlalchemy.orm import Mapped, mapped_column, relationship
-from backend.app.db.session import Base
-from typing import TYPE_CHECKING, Optional, Any
-from cryptography.fernet import Fernet
 import hashlib
 import base64
+from datetime import datetime
+from typing import TYPE_CHECKING, Optional, Any
+
+from sqlalchemy import ForeignKey, String, DateTime, UUID, TypeDecorator
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+from cryptography.fernet import Fernet
+
+from backend.app.db.session import Base
 
 if TYPE_CHECKING:
     from .user import User
@@ -27,6 +27,7 @@ class EncryptedJSON(TypeDecorator):
     """
     SQLAlchemy type for storing encrypted JSON data.
     """
+
     impl = String
     cache_ok = False
 

@@ -3,6 +3,13 @@ export interface Album {
   artist: string
 }
 
+export interface ServiceConnection {
+  provider_name: string
+  is_connected: boolean
+  client_id?: string
+  has_secret: boolean
+}
+
 export interface User {
   id: string
   email: string
@@ -12,6 +19,7 @@ export interface User {
   is_public: boolean
   favorite_artists: unknown[] // Keep unknown[] here for flexibility in the API schema
   unskippable_albums: Album[]
+  service_connections: ServiceConnection[]
 }
 
 export const authService = {
