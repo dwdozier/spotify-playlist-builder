@@ -1,5 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException, Response
 from typing import List
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import select
+from backend.app.db.session import get_async_session
+from backend.app.models.service_connection import ServiceConnection
 from backend.app.schemas.playlist import (
     GenerationRequest,
     VerificationRequest,
@@ -10,6 +14,7 @@ from backend.app.schemas.playlist import (
 from backend.app.services.ai_service import AIService
 from backend.app.core.auth.fastapi_users import current_active_user
 from backend.app.models.user import User
+from backend.core.client import SpotifyPlaylistBuilder
 
 router = APIRouter()
 
@@ -55,6 +60,53 @@ async def verify_tracks_endpoint(
         return {"verified": verified, "rejected": rejected}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.post("/build")
+async def build_playlist_endpoint(
+    playlist: PlaylistCreate,
+    user: User = Depends(current_active_user),
+    db: AsyncSession = Depends(get_async_session),
+):
+    """
+    Build a playlist on a connected service (Spotify).
+    """
+    # 1. Fetch Spotify connection for the user
+    result = await db.execute(
+        select(ServiceConnection).where(
+            ServiceConnection.user_id == user.id, ServiceConnection.provider_name == "spotify"
+        )
+    )
+    conn = result.scalar_one_or_none()
+
+    if not conn:
+        raise HTTPException(
+            status_code=400, detail="Spotify relay station not connected. Please go to Settings."
+        )
+
+    # 2. Use the token to build the playlist
+    try:
+        builder = SpotifyPlaylistBuilder(access_token=conn.access_token)
+        # Convert Pydantic tracks to dicts for the core logic
+        tracks_dict = [t.model_dump() for t in playlist.tracks]
+
+        # Use core logic to create the playlist
+        pid = builder.create_playlist(
+            playlist.name, playlist.description or "", public=playlist.public
+        )
+        failed = builder.add_tracks_to_playlist(pid, tracks_dict)
+
+        return {
+            "status": "success",
+            "playlist_id": pid,
+            "url": f"https://open.spotify.com/playlist/{pid}",
+            "failed_tracks": failed,
+        }
+    except Exception as e:
+        import traceback
+
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=f"Failed to build playlist: {str(e)}")
 
 
 @router.post("/export")

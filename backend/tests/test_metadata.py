@@ -103,27 +103,9 @@ def test_get_discogs_token_env():
         assert get_discogs_token() == "env_token"
 
 
-def test_get_discogs_token_keyring():
-    """Test retrieving Discogs token from keyring."""
-    mock_keyring = MagicMock()
-    mock_keyring.get_password.return_value = "keyring_token"
-    with (
-        patch.dict(os.environ, {}, clear=True),
-        patch.dict("sys.modules", {"keyring": mock_keyring}),
-    ):
-        from backend.core.metadata import get_discogs_token
-
-        assert get_discogs_token() == "keyring_token"
-
-
 def test_get_discogs_token_error():
     """Test get_discogs_token handles errors gracefully."""
-    mock_keyring = MagicMock()
-    mock_keyring.get_password.side_effect = Exception("Keyring Error")
-    with (
-        patch.dict(os.environ, {}, clear=True),
-        patch.dict("sys.modules", {"keyring": mock_keyring}),
-    ):
+    with patch.dict(os.environ, {}, clear=True):
         from backend.core.metadata import get_discogs_token
 
         assert get_discogs_token() is None

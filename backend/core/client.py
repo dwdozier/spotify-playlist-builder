@@ -14,26 +14,36 @@ logger = logging.getLogger("backend.core.client")
 class SpotifyPlaylistBuilder:
     def __init__(
         self,
-        client_id: str,
-        client_secret: str,
+        client_id: str | None = None,
+        client_secret: str | None = None,
         redirect_uri: str = "https://127.0.0.1:8888/callback",
+        sp_client: spotipy.Spotify | None = None,
+        access_token: str | None = None,
     ) -> None:
-        """Initialize Spotify API client with OAuth authentication."""
-        scope = [
-            "playlist-modify-public",
-            "playlist-modify-private",
-            "playlist-read-private",
-            "playlist-read-collaborative",
-        ]
-        self.sp = spotipy.Spotify(
-            auth_manager=SpotifyOAuth(
-                client_id=client_id,
-                client_secret=client_secret,
-                redirect_uri=redirect_uri,
-                scope=scope,
-                open_browser=True,
+        """Initialize Spotify API client."""
+        if sp_client:
+            self.sp = sp_client
+        elif access_token:
+            self.sp = spotipy.Spotify(auth=access_token)
+        else:
+            if not client_id or not client_secret:
+                raise ValueError("client_id and client_secret are required if no client provided")
+            scope = [
+                "playlist-modify-public",
+                "playlist-modify-private",
+                "playlist-read-private",
+                "playlist-read-collaborative",
+            ]
+            self.sp = spotipy.Spotify(
+                auth_manager=SpotifyOAuth(
+                    client_id=client_id,
+                    client_secret=client_secret,
+                    redirect_uri=redirect_uri,
+                    scope=scope,
+                    open_browser=True,
+                )
             )
-        )
+
         user = self.sp.current_user()
         if user is None:
             raise Exception("Failed to authenticate with Spotify")

@@ -15,27 +15,9 @@ def test_get_ai_api_key_env():
         assert get_ai_api_key() == "test_env_key"
 
 
-def test_get_ai_api_key_keyring():
-    """Test retrieving key from keyring."""
-    mock_keyring = MagicMock()
-    mock_keyring.get_password.return_value = "test_keyring_key"
-
-    with (
-        patch.dict(os.environ, {}, clear=True),
-        patch.dict("sys.modules", {"keyring": mock_keyring}),
-    ):
-        assert get_ai_api_key() == "test_keyring_key"
-
-
 def test_get_ai_api_key_missing():
     """Test failure when key is missing."""
-    mock_keyring = MagicMock()
-    mock_keyring.get_password.return_value = None
-
-    with (
-        patch.dict(os.environ, {}, clear=True),
-        patch.dict("sys.modules", {"keyring": mock_keyring}),
-    ):
+    with patch.dict(os.environ, {}, clear=True):
         with pytest.raises(ValueError, match="Gemini API Key not found"):
             get_ai_api_key()
 

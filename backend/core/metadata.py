@@ -8,23 +8,9 @@ logger = logging.getLogger("backend.core.metadata")
 
 
 def get_discogs_token() -> str | None:
-    """Retrieve Discogs PAT from env or keyring."""
+    """Retrieve Discogs PAT from environment variables."""
     try:
-        # Check env first
-        key = os.getenv("DISCOGS_PAT")
-        if key:
-            return key
-
-        # Check keyring (if available)
-        try:
-            import keyring
-
-            key = keyring.get_password("spotify-playlist-builder", "discogs_pat")
-            if key:
-                return key
-        except ImportError:
-            pass
-
+        return os.getenv("DISCOGS_PAT")
     except Exception as e:
         logger.debug(f"Failed to retrieve Discogs Token: {e}")
     return None

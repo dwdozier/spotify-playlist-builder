@@ -4,7 +4,7 @@ import subprocess
 from pathlib import Path
 from typing import Annotated
 import typer
-from .auth import CredentialSource, get_builder, store_credentials_in_keyring
+from .auth import get_builder
 
 logger = logging.getLogger("backend.core")
 app = typer.Typer(help="Spotify Playlist Builder CLI")
@@ -28,14 +28,13 @@ def main(
 @app.command()
 def build(
     json_file: Annotated[Path, typer.Argument(exists=True, help="Path to playlist JSON file")],
-    source: Annotated[CredentialSource | None, typer.Option(help="Credential source")] = None,
     dry_run: Annotated[
         bool, typer.Option("--dry-run", help="Verify tracks without creating playlist")
     ] = False,
 ) -> None:
     """Build or update a Spotify playlist from a JSON file."""
     try:
-        builder = get_builder(source)
+        builder = get_builder()
         builder.build_playlist_from_json(str(json_file), dry_run=dry_run)
     except Exception as e:
         logger.error(f"Error: {e}")
@@ -46,11 +45,10 @@ def build(
 def export(
     playlist_name: Annotated[str, typer.Argument(help="Name of the Spotify playlist to export")],
     output_file: Annotated[Path, typer.Argument(help="Path to save the JSON file")],
-    source: Annotated[CredentialSource | None, typer.Option(help="Credential source")] = None,
 ) -> None:
     """Export an existing Spotify playlist to a JSON file."""
     try:
-        builder = get_builder(source)
+        builder = get_builder()
         builder.export_playlist_to_json(playlist_name, str(output_file))
     except Exception as e:
         logger.error(f"Error: {e}")
@@ -62,32 +60,13 @@ def backup(
     output_dir: Annotated[Path, typer.Argument(help="Directory to save backup files")] = Path(
         "backups"
     ),
-    source: Annotated[CredentialSource | None, typer.Option(help="Credential source")] = None,
 ) -> None:
     """Backup all user playlists to JSON files."""
     try:
-        builder = get_builder(source)
+        builder = get_builder()
         builder.backup_all_playlists(str(output_dir))
     except Exception as e:
         logger.error(f"Error: {e}")
-        raise typer.Exit(code=1)
-
-
-@app.command("store-credentials")
-def store_credentials_cmd() -> None:
-    """Store Spotify credentials in macOS Keychain."""
-    logger.info("Store Spotify credentials in macOS Keychain")
-    client_id = typer.prompt("Enter Spotify Client ID")
-    client_secret = typer.prompt("Enter Spotify Client Secret", hide_input=True)
-    if client_id and client_secret:
-        try:
-            store_credentials_in_keyring(client_id, client_secret)
-            logger.info("\nCredentials stored! You can now use: --source keyring")
-        except Exception as e:
-            logger.error(f"Error storing credentials: {e}")
-            raise typer.Exit(code=1)
-    else:
-        logger.error("Error: Both Client ID and Client Secret are required")
         raise typer.Exit(code=1)
 
 
@@ -125,40 +104,6 @@ def install_zsh_completion() -> None:
 def uninstall_completion_cmd() -> None:
     """Show instructions to uninstall shell completion."""
     logger.info("To uninstall shell completion, identify which method you used...")
-
-
-@app.command("setup-ai")
-def setup_ai_cmd() -> None:
-    """Store Gemini API Key in system keyring."""
-    logger.info("Setup Gemini API Key")
-    key = typer.prompt("Enter your Google Gemini API Key", hide_input=True)
-    if key:
-        try:
-            import keyring
-
-            keyring.set_password("spotify-playlist-builder", "gemini_api_key", key)
-            logger.info("✓ API Key stored in keyring.")
-        except ImportError:
-            logger.error("Keyring not available. Please set GEMINI_API_KEY env var.")
-        except Exception as e:
-            logger.error(f"Error: {e}")
-
-
-@app.command("setup-discogs")
-def setup_discogs_cmd() -> None:
-    """Store Discogs Personal Access Token in system keyring."""
-    logger.info("Setup Discogs Personal Access Token")
-    token = typer.prompt("Enter your Discogs Personal Access Token", hide_input=True)
-    if token:
-        try:
-            import keyring
-
-            keyring.set_password("spotify-playlist-builder", "discogs_pat", token)
-            logger.info("✓ Discogs Token stored in keyring.")
-        except ImportError:
-            logger.error("Keyring not available. Please set DISCOGS_PAT env var.")
-        except Exception as e:
-            logger.error(f"Error: {e}")
 
 
 @app.command("ai-models")

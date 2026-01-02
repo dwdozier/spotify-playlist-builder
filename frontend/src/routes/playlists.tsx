@@ -1,8 +1,9 @@
 import { createFileRoute, redirect } from '@tanstack/react-router'
 import { useMutation } from '@tanstack/react-query'
-import { playlistService, type Track } from '../api/playlist'
+import { playlistService, type Track, type BuildResponse } from '../api/playlist'
 import { useState } from 'react'
-import { Loader2, X, Music2, Zap } from 'lucide-react'
+import { Loader2, X, Music2, Zap, CheckCircle2, ExternalLink } from 'lucide-react'
+import { Modal } from '../components/Modal'
 
 export const Route = createFileRoute('/playlists')({
   beforeLoad: async ({ context, location }) => {
@@ -22,6 +23,8 @@ export const Route = createFileRoute('/playlists')({
 function Playlists() {
   const [prompt, setPrompt] = useState('')
   const [generatedTracks, setGeneratedTracks] = useState<Track[]>([])
+  const [buildResult, setBuildResult] = useState<BuildResponse | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const mutation = useMutation({
     mutationFn: playlistService.generate,
@@ -30,10 +33,40 @@ function Playlists() {
     },
   })
 
+  const buildMutation = useMutation({
+    mutationFn: playlistService.build,
+    onSuccess: (data) => {
+      setBuildResult(data)
+      setIsModalOpen(true)
+      // Reset after successful build
+      setGeneratedTracks([])
+      setPrompt('')
+    },
+  })
+
   const handleGenerate = (e: React.FormEvent) => {
     e.preventDefault()
     if (!prompt) return
     mutation.mutate({ prompt })
+  }
+
+  const handleRemoveTrack = (index: number) => {
+    setGeneratedTracks((prev) => prev.filter((_, i) => i !== index))
+  }
+
+  const handleDiscard = () => {
+    setGeneratedTracks([])
+    setPrompt('')
+  }
+
+  const handleSaveToService = () => {
+    if (generatedTracks.length === 0) return
+    buildMutation.mutate({
+      name: `Vib-O-Mat: ${prompt.substring(0, 30)}`,
+      description: `Synthesized from prompt: ${prompt}`,
+      public: false,
+      tracks: generatedTracks,
+    })
   }
 
   return (
@@ -138,7 +171,10 @@ function Playlists() {
                     <td className="px-6 py-5 text-xl text-retro-dark font-body border-r-4 border-retro-dark italic">"{track.track}"</td>
                     <td className="px-6 py-5 text-xl text-retro-dark font-body border-r-4 border-retro-dark">{track.version || 'Original'}</td>
                     <td className="px-6 py-5 text-right">
-                      <button className="text-retro-dark hover:text-white hover:bg-retro-pink transition-all p-2 rounded-lg border-2 border-transparent hover:border-retro-dark">
+                      <button
+                        onClick={() => handleRemoveTrack(i)}
+                        className="text-retro-dark hover:text-white hover:bg-retro-pink transition-all p-2 rounded-lg border-2 border-transparent hover:border-retro-dark"
+                      >
                         <X className="h-8 w-8" />
                       </button>
                     </td>
@@ -148,15 +184,74 @@ function Playlists() {
             </table>
           </div>
           <div className="mt-10 flex justify-center gap-8">
-             <button className="px-10 py-4 text-xl font-display text-retro-dark bg-white border-4 border-retro-dark rounded-2xl hover:bg-gray-100 shadow-retro-sm active:shadow-none active:translate-x-1 active:translate-y-1 transition-all uppercase">
+             <button
+               onClick={handleDiscard}
+               className="px-10 py-4 text-xl font-display text-retro-dark bg-white border-4 border-retro-dark rounded-2xl hover:bg-gray-100 shadow-retro-sm active:shadow-none active:translate-x-1 active:translate-y-1 transition-all uppercase"
+             >
                Discard
              </button>
-             <button className="px-10 py-4 text-xl font-display text-retro-dark bg-retro-teal border-4 border-retro-dark rounded-2xl hover:bg-teal-400 shadow-retro-sm active:shadow-none active:translate-x-1 active:translate-y-1 transition-all uppercase">
-               Save to Service
+             <button
+               onClick={handleSaveToService}
+               disabled={buildMutation.isPending}
+               className="px-10 py-4 text-xl font-display text-retro-dark bg-retro-teal border-4 border-retro-dark rounded-2xl hover:bg-teal-400 shadow-retro-sm active:shadow-none active:translate-x-1 active:translate-y-1 transition-all uppercase flex items-center gap-3 disabled:opacity-50"
+             >
+               {buildMutation.isPending ? (
+                 <>
+                   <Loader2 className="animate-spin w-6 h-6" />
+                   TRANSMITTING...
+                 </>
+               ) : (
+                 'Save to Service'
+               )}
              </button>
           </div>
         </section>
       )}
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Transmission Successful"
+      >
+        {buildResult && (
+          <div className="space-y-8 text-center py-4">
+            <div className="flex justify-center">
+              <div className="bg-retro-teal/20 p-6 rounded-full border-4 border-retro-dark shadow-retro-sm">
+                <CheckCircle2 className="w-16 h-16 text-retro-teal" />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <h4 className="text-3xl font-display text-retro-dark uppercase">Archives Updated</h4>
+              <p className="font-body text-xl text-retro-dark/70 italic leading-relaxed">
+                Your playlist has been successfully compiled and broadcasted to your Spotify account.
+              </p>
+            </div>
+
+            {buildResult.failed_tracks.length > 0 && (
+              <div className="p-4 bg-retro-pink/10 border-4 border-retro-pink rounded-xl text-left">
+                <h5 className="font-display text-retro-dark uppercase mb-2 text-sm">Degraded Signals:</h5>
+                <ul className="text-xs font-body space-y-1 text-retro-dark/60">
+                  {buildResult.failed_tracks.map((t, i) => (
+                    <li key={i}>• {t} (Signal lost during search)</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            <div className="pt-4">
+              <a
+                href={buildResult.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-10 py-4 bg-retro-teal text-retro-dark font-display text-2xl uppercase rounded-2xl border-4 border-retro-dark shadow-retro hover:bg-teal-400 active:shadow-none active:translate-x-1 active:translate-y-1 transition-all"
+              >
+                Open in Spotify <ExternalLink className="w-6 h-6" />
+              </a>
+            </div>
+          </div>
+        )}
+      </Modal>
     </div>
   )
 }

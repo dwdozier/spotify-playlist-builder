@@ -22,6 +22,13 @@ export interface VerificationResponse {
   rejected: string[]
 }
 
+export interface BuildResponse {
+  status: string
+  playlist_id: string
+  url: string
+  failed_tracks: string[]
+}
+
 export const playlistService = {
   generate: (req: GenerationRequest) =>
     apiClient<Track[]>('/playlists/generate', {
@@ -31,6 +38,12 @@ export const playlistService = {
 
   verify: (req: VerificationRequest) =>
     apiClient<VerificationResponse>('/playlists/verify', {
+      method: 'POST',
+      body: JSON.stringify(req),
+    }),
+
+  build: (req: { name: string; description?: string; public?: boolean; tracks: Track[] }) =>
+    apiClient<BuildResponse>('/playlists/build', {
       method: 'POST',
       body: JSON.stringify(req),
     }),

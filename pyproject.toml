@@ -24,7 +24,6 @@ classifiers = [
 dependencies = [
     "spotipy",
     "python-dotenv",
-    "keyring",
     "typer",
     "tenacity",
     "google-genai>=1.56.0",

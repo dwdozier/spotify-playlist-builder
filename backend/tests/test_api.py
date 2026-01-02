@@ -1,5 +1,5 @@
 from fastapi.testclient import TestClient
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock, patch, AsyncMock
 from backend.app.main import app
 from backend.app.api.v1.endpoints.playlists import get_ai_service
 from backend.app.core.auth.fastapi_users import current_active_user
@@ -183,6 +183,93 @@ def test_export_playlist_endpoint():
     assert "attachment" in response.headers["content-disposition"]
     data = response.json()
     assert data["name"] == "Test Export"
+    app.dependency_overrides.clear()
+
+
+def test_build_playlist_endpoint_success():
+    """Test successful playlist building on Spotify."""
+    from backend.app.db.session import get_async_session
+    from backend.app.models.service_connection import ServiceConnection
+    from unittest.mock import AsyncMock
+
+    mock_db = MagicMock()
+    mock_conn = MagicMock(spec=ServiceConnection)
+    mock_conn.access_token = "fake_token"
+    mock_result = MagicMock()
+    mock_result.scalar_one_or_none.return_value = mock_conn
+    mock_db.execute = AsyncMock(return_value=mock_result)
+
+    app.dependency_overrides[get_async_session] = lambda: mock_db
+    app.dependency_overrides[current_active_user] = lambda: mock_user
+
+    payload = {
+        "name": "Test Build",
+        "description": "Desc",
+        "public": False,
+        "tracks": [{"artist": "A", "track": "T"}],
+    }
+
+    with patch("backend.app.api.v1.endpoints.playlists.SpotifyPlaylistBuilder") as mock_builder_cls:
+        mock_builder = MagicMock()
+        mock_builder.create_playlist.return_value = "new_pid"
+        mock_builder.add_tracks_to_playlist.return_value = []
+        mock_builder_cls.return_value = mock_builder
+
+        response = client.post("/api/v1/playlists/build", json=payload)
+        assert response.status_code == 200
+        assert response.json()["status"] == "success"
+        assert response.json()["playlist_id"] == "new_pid"
+
+    app.dependency_overrides.clear()
+
+
+def test_build_playlist_endpoint_no_connection():
+    """Test build failure when Spotify is not connected."""
+    from backend.app.db.session import get_async_session
+
+    mock_db = MagicMock()
+    mock_result = MagicMock()
+    mock_result.scalar_one_or_none.return_value = None
+    mock_db.execute = AsyncMock(return_value=mock_result)
+
+    app.dependency_overrides[get_async_session] = lambda: mock_db
+    app.dependency_overrides[current_active_user] = lambda: mock_user
+
+    payload = {"name": "Test", "tracks": []}
+    response = client.post("/api/v1/playlists/build", json=payload)
+    assert response.status_code == 400
+    assert "Spotify relay station not connected" in response.json()["detail"]
+
+    app.dependency_overrides.clear()
+
+    app.dependency_overrides.clear()
+
+
+def test_build_playlist_endpoint_failure():
+    """Test build failure handling in the endpoint."""
+    from backend.app.db.session import get_async_session
+    from backend.app.models.service_connection import ServiceConnection
+
+    mock_db = MagicMock()
+    mock_conn = MagicMock(spec=ServiceConnection)
+    mock_conn.access_token = "fake_token"
+    mock_result = MagicMock()
+    mock_result.scalar_one_or_none.return_value = mock_conn
+    mock_db.execute = AsyncMock(return_value=mock_result)
+
+    app.dependency_overrides[get_async_session] = lambda: mock_db
+    app.dependency_overrides[current_active_user] = lambda: mock_user
+
+    payload = {"name": "Fail", "tracks": []}
+
+    with patch(
+        "backend.app.api.v1.endpoints.playlists.SpotifyPlaylistBuilder",
+        side_effect=Exception("Build Error"),
+    ):
+        response = client.post("/api/v1/playlists/build", json=payload)
+        assert response.status_code == 500
+        assert "Failed to build playlist" in response.json()["detail"]
+
     app.dependency_overrides.clear()
 
 
