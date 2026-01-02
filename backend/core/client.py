@@ -107,6 +107,10 @@ class SpotifyPlaylistBuilder:
                     score += 30 if detected_version == "compilation" else 5
                 elif version == "remaster":
                     score += 30 if detected_version == "remaster" else 5
+                elif version == "instrumental":
+                    score += 30 if detected_version == "instrumental" else 5
+                elif version == "acoustic":
+                    score += 30 if detected_version == "acoustic" else 5
                 elif version == "original":
                     # For original, we specifically want studio and NOT remaster
                     if detected_version == "studio":

@@ -48,6 +48,10 @@ def _determine_version(track_name: str, album_name: str) -> str:
 
     if "remaster" in name_lower or "remaster" in album_lower:
         return "remaster"
+    if "instrumental" in name_lower:
+        return "instrumental"
+    if "acoustic" in name_lower:
+        return "acoustic"
 
     return "studio"
 

@@ -8,7 +8,8 @@ class TrackBase(BaseModel):
     track: str
     album: Optional[str] = None
     version: Optional[str] = Field(
-        None, pattern="^(live|studio|compilation|remix|original|remaster)$"
+        None,
+        pattern="^(live|studio|compilation|remix|original|remaster|instrumental|acoustic|any)$",
     )
 
 
