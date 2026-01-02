@@ -4,10 +4,20 @@ from pydantic import BaseModel, ConfigDict
 from fastapi_users import schemas
 
 
+class ServiceConnectionRead(BaseModel):
+    provider_name: str
+    is_connected: bool
+    client_id: Optional[str] = None
+    has_secret: bool = False
+
+    model_config = ConfigDict(from_attributes=True)
+
+
 class UserRead(schemas.BaseUser[uuid.UUID]):
     is_public: bool
     favorite_artists: List[Any]
     unskippable_albums: List[Any]
+    service_connections: List[ServiceConnectionRead] = []
 
 
 class UserCreate(schemas.BaseUserCreate):

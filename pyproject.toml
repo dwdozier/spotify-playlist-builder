@@ -40,6 +40,7 @@ dependencies = [
     "httpx-oauth",
     "sqladmin",
     "itsdangerous",
+    "cryptography",
 ]
 
 [project.optional-dependencies]

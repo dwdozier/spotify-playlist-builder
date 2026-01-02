@@ -1,5 +1,5 @@
 import { createFileRoute, redirect } from '@tanstack/react-router'
-import { Settings as SettingsIcon, Link2, Shield, User as UserIcon, Globe, Lock, Trash2, Plus, Disc, Info, ExternalLink } from 'lucide-react'
+import { Settings as SettingsIcon, Link2, Shield, User as UserIcon, Globe, Lock, Trash2, Plus, Disc, Info, ExternalLink, CheckCircle2 } from 'lucide-react'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { useState } from 'react'
 import { type User } from '../api/auth'
@@ -48,6 +48,8 @@ function Settings() {
     queryFn: () => auth.getCurrentUser()
   })
 
+  const spotifyConn = user?.service_connections?.find(c => c.provider_name === 'spotify')
+
   const relayMutation = useMutation({
     mutationFn: async (creds: typeof relayCreds) => {
       const res = await fetch('/api/v1/integrations/relay/config', {
@@ -62,8 +64,7 @@ function Settings() {
     },
     onSuccess: () => {
       setIsRelayModalOpen(false)
-      // Now trigger the actual OAuth login flow
-      handleConnectSpotify()
+      queryClient.invalidateQueries({ queryKey: ['me'] })
     }
   })
 
@@ -156,6 +157,10 @@ function Settings() {
   }
 
   const handleOpenRelayModal = () => {
+    setRelayCreds({
+      client_id: spotifyConn?.client_id || '',
+      client_secret: ''
+    })
     setIsRelayModalOpen(true)
   }
 
@@ -339,13 +344,24 @@ function Settings() {
                 onClick={handleOpenRelayModal}
                 className="px-6 py-3 bg-white text-retro-dark font-display text-lg uppercase rounded-xl border-4 border-retro-dark shadow-retro-sm hover:bg-gray-100 transition-all"
               >
-                Configure
+                {spotifyConn?.client_id ? 'Re-Configure' : 'Configure'}
               </button>
               <button
                 onClick={handleConnectSpotify}
-                className="px-8 py-3 bg-retro-teal text-retro-dark font-display text-xl uppercase rounded-xl border-4 border-retro-dark shadow-retro-sm hover:bg-teal-400 transition-all"
+                disabled={!spotifyConn?.client_id}
+                className={`px-8 py-3 font-display text-xl uppercase rounded-xl border-4 border-retro-dark shadow-retro-sm transition-all flex items-center gap-2 ${
+                  spotifyConn?.is_connected 
+                    ? 'bg-retro-teal hover:bg-teal-400 text-retro-dark' 
+                    : 'bg-retro-pink hover:bg-pink-400 text-retro-dark disabled:opacity-50 disabled:grayscale'
+                }`}
               >
-                Connect
+                {spotifyConn?.is_connected ? (
+                  <>
+                    <CheckCircle2 className="w-6 h-6" /> Synchronized
+                  </>
+                ) : (
+                  'Connect'
+                )}
               </button>
             </div>
           </div>
@@ -394,8 +410,8 @@ function Settings() {
                 type="password"
                 value={relayCreds.client_secret}
                 onChange={(e) => setRelayCreds({ ...relayCreds, client_secret: e.target.value })}
-                placeholder="••••••••••••••••"
-                className="w-full bg-white rounded-lg border-2 border-retro-dark p-3 font-body font-bold focus:outline-none focus:border-retro-teal"
+                placeholder={spotifyConn?.has_secret ? "SECRET KEY IS SET • TYPE TO OVERWRITE" : "••••••••••••••••"}
+                className="w-full bg-white rounded-lg border-2 border-retro-dark p-3 font-body font-bold focus:outline-none focus:border-retro-teal placeholder:text-retro-dark/30 placeholder:italic"
               />
             </div>
           </div>

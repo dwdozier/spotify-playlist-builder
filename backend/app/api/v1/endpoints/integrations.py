@@ -58,9 +58,12 @@ async def save_relay_config(
         )
         db.add(conn)
     else:
+        # Preserve existing secret if not provided
+        old_creds = conn.credentials or {}
+        new_secret = config.client_secret or old_creds.get("client_secret")
         conn.credentials = {
             "client_id": config.client_id,
-            "client_secret": config.client_secret,
+            "client_secret": new_secret,
         }
 
     await db.commit()
