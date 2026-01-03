@@ -58,9 +58,9 @@ async def test_integrations_service_token_valid():
     db = MagicMock()
     service = IntegrationsService(db)
 
-    conn = ServiceConnection(
-        access_token="valid_token", expires_at=datetime.now(UTC) + timedelta(hours=1)
-    )
+    # Use naive UTC for DB compatibility
+    future_time = (datetime.now(UTC) + timedelta(hours=1)).replace(tzinfo=None)
+    conn = ServiceConnection(access_token="valid_token", expires_at=future_time)
 
     token = await service.get_valid_spotify_token(conn)
     assert token == "valid_token"
@@ -80,10 +80,12 @@ async def test_integrations_service_token_refresh():
 
     service = IntegrationsService(db)
 
+    # Use naive UTC for DB compatibility
+    past_time = (datetime.now(UTC) - timedelta(hours=1)).replace(tzinfo=None)
     conn = ServiceConnection(
         access_token="expired_token",
         refresh_token="refresh_me",
-        expires_at=datetime.now(UTC) - timedelta(hours=1),
+        expires_at=past_time,
         credentials={"client_id": "cid", "client_secret": "csec"},
     )
 
@@ -101,7 +103,7 @@ async def test_integrations_service_token_refresh():
         assert token == "new_token"
         assert conn.access_token == "new_token"
         assert conn.refresh_token == "new_refresh"
-        assert conn.expires_at > datetime.now(UTC)
+        assert conn.expires_at > datetime.now(UTC).replace(tzinfo=None)
         db.commit.assert_called_once()
 
         mock_post.assert_called_once()
@@ -116,10 +118,11 @@ async def test_integrations_service_token_refresh_no_refresh_token():
     db = MagicMock()
     service = IntegrationsService(db)
 
+    past_time = (datetime.now(UTC) - timedelta(hours=1)).replace(tzinfo=None)
     conn = ServiceConnection(
         access_token="expired",
         refresh_token=None,
-        expires_at=datetime.now(UTC) - timedelta(hours=1),
+        expires_at=past_time,
     )
 
     with pytest.raises(Exception) as exc:
@@ -134,10 +137,11 @@ async def test_integrations_service_token_refresh_no_creds():
     service = IntegrationsService(db)
 
     # For now, let's test the path where credentials dict is present but empty keys
+    past_time = (datetime.now(UTC) - timedelta(hours=1)).replace(tzinfo=None)
     conn = ServiceConnection(
         access_token="expired",
         refresh_token="ref",
-        expires_at=datetime.now(UTC) - timedelta(hours=1),
+        expires_at=past_time,
         credentials={},
     )
 
@@ -157,10 +161,11 @@ async def test_integrations_service_token_refresh_api_error():
     db = MagicMock()
     service = IntegrationsService(db)
 
+    past_time = (datetime.now(UTC) - timedelta(hours=1)).replace(tzinfo=None)
     conn = ServiceConnection(
         access_token="expired",
         refresh_token="ref",
-        expires_at=datetime.now(UTC) - timedelta(hours=1),
+        expires_at=past_time,
         credentials={"client_id": "cid", "client_secret": "cs"},
     )
 

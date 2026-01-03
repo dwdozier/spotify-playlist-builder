@@ -152,10 +152,11 @@ def test_spotify_callback_endpoint():
     ):
 
         response = client.get(
-            f"/api/v1/integrations/spotify/callback?code=abc&state={mock_user.id}"
+            f"/api/v1/integrations/spotify/callback?code=abc&state={mock_user.id}",
+            follow_redirects=False,
         )
-        assert response.status_code == 200
-        assert response.json()["status"] == "success"
+        assert response.status_code == 307
+        assert response.headers["location"] == "/settings"
 
     app.dependency_overrides.clear()
 
@@ -313,10 +314,11 @@ def test_spotify_callback_existing_connection():
         patch("httpx.AsyncClient.get", return_value=mock_user_resp),
     ):
         response = client.get(
-            f"/api/v1/integrations/spotify/callback?code=abc&state={mock_user.id}"
+            f"/api/v1/integrations/spotify/callback?code=abc&state={mock_user.id}",
+            follow_redirects=False,
         )
-        assert response.status_code == 200
-        assert response.json()["message"] == "Spotify relay connected!"
+        assert response.status_code == 307
+        assert response.headers["location"] == "/settings"
 
     app.dependency_overrides.clear()
 

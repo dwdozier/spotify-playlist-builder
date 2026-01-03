@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException
+from fastapi.responses import RedirectResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from pydantic import BaseModel
@@ -171,7 +172,10 @@ async def spotify_callback(code: str, state: str, db: AsyncSession = Depends(get
         spotify_user = user_response.json()
 
         # 4. Update or Create Connection
-        expires_at = datetime.now(UTC) + timedelta(seconds=token_data["expires_in"])
+        # Note: Database expects naive timestamp (UTC)
+        expires_at = (datetime.now(UTC) + timedelta(seconds=token_data["expires_in"])).replace(
+            tzinfo=None
+        )
 
         if not conn:
             conn = ServiceConnection(
@@ -191,4 +195,5 @@ async def spotify_callback(code: str, state: str, db: AsyncSession = Depends(get
 
         await db.commit()
 
-        return {"status": "success", "message": "Spotify relay connected!"}
+        # Redirect to frontend settings page
+        return RedirectResponse(url="/settings")

@@ -16,9 +16,10 @@ class IntegrationsService:
         """
         Check if the current token is expired and refresh if necessary.
         """
-        if connection.expires_at and connection.expires_at > datetime.now(UTC) + timedelta(
-            minutes=5
-        ):
+        # DB stores naive UTC. Ensure we compare correctly.
+        now_naive = datetime.now(UTC).replace(tzinfo=None)
+
+        if connection.expires_at and connection.expires_at > now_naive + timedelta(minutes=5):
             return connection.access_token
 
         # Token is expired or expiring soon, refresh it
@@ -58,7 +59,9 @@ class IntegrationsService:
             if "refresh_token" in token_data:
                 connection.refresh_token = token_data["refresh_token"]
 
-            connection.expires_at = datetime.now(UTC) + timedelta(seconds=token_data["expires_in"])
+            connection.expires_at = (
+                datetime.now(UTC) + timedelta(seconds=token_data["expires_in"])
+            ).replace(tzinfo=None)
 
             await self.db.commit()
             return connection.access_token
