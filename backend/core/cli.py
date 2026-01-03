@@ -152,7 +152,10 @@ def generate_cmd(
         full_prompt += f". Inspired by artists: {artists}"
 
     try:
-        raw_tracks = generate_playlist(full_prompt, count)
+        generated_data = generate_playlist(full_prompt, count)
+        raw_tracks = generated_data["tracks"]
+        title = generated_data["title"]
+        description = generated_data.get("description", "")
 
         verified, rejected = verify_ai_tracks(raw_tracks)
 
@@ -169,9 +172,8 @@ def generate_cmd(
 
         # Prepare JSON data
         playlist_data = {
-            "name": f"AI: {prompt[:30]}...",
-            "description": f"AI generated playlist based on: {prompt}"
-            + (f" (Artists: {artists})" if artists else ""),
+            "name": title,
+            "description": description + (f" (Artists: {artists})" if artists else ""),
             "tracks": verified,
         }
 

@@ -5,7 +5,7 @@ from backend.core.ai import generate_playlist, verify_ai_tracks
 class AIService:
     def generate(
         self, prompt: str, count: int = 20, artists: Optional[str] = None
-    ) -> List[Dict[str, Any]]:
+    ) -> Dict[str, Any]:
         full_prompt = prompt
         if artists:
             full_prompt += f". Inspired by artists: {artists}"

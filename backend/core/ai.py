@@ -14,17 +14,23 @@ You are a professional music curator. Your goal is to generate a list of songs b
 description.
 
 CRITICAL OUTPUT RULES:
-1. Return ONLY a valid raw JSON array of objects.
+1. Return ONLY a valid raw JSON object.
 2. Do NOT include markdown formatting (like ```json ... ```).
 3. Do NOT include any explanatory text before or after the JSON.
 
-Each object must follow this schema:
+The object must follow this schema:
 {
-  "artist": "Artist Name",
-  "track": "Track Title",
-  "version": "studio" | "live" | "remix" | "original" | "remaster" | "instrumental"
-             | "acoustic" | null,
-  "duration_ms": Estimated duration in milliseconds (integer)
+  "title": "A short, creative, and catchy title for the playlist",
+  "description": "A brief description of the vibe/theme (max 100 chars)",
+  "tracks": [
+    {
+      "artist": "Artist Name",
+      "track": "Track Title",
+      "version": "studio" | "live" | "remix" | "original" | "remaster" | "instrumental"
+                 | "acoustic" | null,
+      "duration_ms": Estimated duration in milliseconds (integer)
+    }
+  ]
 }
 
 LOGIC:
@@ -106,7 +112,7 @@ def discover_fallback_model(client: genai.Client) -> str:
     return "gemini-2.0-flash"
 
 
-def generate_playlist(description: str, count: int = 20) -> list[dict[str, Any]]:
+def generate_playlist(description: str, count: int = 20) -> dict[str, Any]:
     """Generate a playlist structure using Google Gemini (via google-genai SDK)."""
     api_key = get_ai_api_key()
     client = genai.Client(api_key=api_key)
@@ -163,12 +169,14 @@ def generate_playlist(description: str, count: int = 20) -> list[dict[str, Any]]
 
     data = json.loads(text)
 
-    if not isinstance(data, list):
-        if isinstance(data, dict) and "tracks" in data:
-            return data["tracks"]
-        raise ValueError("AI response was not a list of tracks.")
+    if isinstance(data, list):
+        # Legacy format support: wrap it in a dict
+        return {"title": "AI Playlist", "description": description[:100], "tracks": data}
 
-    return data
+    if isinstance(data, dict) and "tracks" in data:
+        return data
+
+    raise ValueError("AI response format invalid (expected list or object with 'tracks').")
 
 
 def verify_ai_tracks(tracks: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[str]]:

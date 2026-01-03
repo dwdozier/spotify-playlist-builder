@@ -22,7 +22,7 @@ This plan outlines the steps to stabilize the Vibomat MVP for initial release.
 
 ## Phase 2: Playlist Management & UI Polish
 
-- [ ] **Task 1: AI-Powered Creative Naming**
+- [~] **Task 1: AI-Powered Creative Naming**
   - [ ] Update `backend/core/ai.py` to request a "title" and "description" in the JSON response.
   - [ ] Update `backend/app/services/ai_service.py` to handle the new response structure.
   - [ ] Add tests for title generation.

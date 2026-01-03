@@ -1,5 +1,4 @@
 from fastapi import APIRouter, Depends, HTTPException, Response
-from typing import List
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from backend.app.db.session import get_async_session
@@ -8,9 +7,9 @@ from backend.app.schemas.playlist import (
     GenerationRequest,
     VerificationRequest,
     VerificationResponse,
-    TrackCreate,
     PlaylistCreate,
     BuildResponse,
+    PlaylistGenerationResponse,
 )
 from backend.app.services.ai_service import AIService
 from backend.app.services.integrations_service import IntegrationsService
@@ -25,7 +24,7 @@ def get_ai_service():
     return AIService()
 
 
-@router.post("/generate", response_model=List[TrackCreate])
+@router.post("/generate", response_model=PlaylistGenerationResponse)
 async def generate_playlist_endpoint(
     request: GenerationRequest,
     ai_service: AIService = Depends(get_ai_service),
@@ -35,10 +34,11 @@ async def generate_playlist_endpoint(
     Generate a playlist based on a prompt and optional artists.
     """
     try:
-        tracks = ai_service.generate(
+        # ai_service.generate now returns {title, description, tracks}
+        result = ai_service.generate(
             prompt=request.prompt, count=request.count, artists=request.artists
         )
-        return tracks
+        return result
     except Exception as e:
         import traceback
 

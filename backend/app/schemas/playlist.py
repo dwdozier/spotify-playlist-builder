@@ -53,6 +53,12 @@ class GenerationRequest(BaseModel):
     artists: Optional[str] = None
 
 
+class PlaylistGenerationResponse(BaseModel):
+    title: str
+    description: Optional[str] = None
+    tracks: List[TrackCreate]
+
+
 class VerificationRequest(BaseModel):
     tracks: List[TrackCreate]
 

@@ -22,18 +22,28 @@ def test_health_check():
 def test_generate_playlist_endpoint():
     """Test the AI generation endpoint."""
     mock_tracks = [{"artist": "Test Artist", "track": "Test Track", "version": "studio"}]
-    expected_response = [
-        {
-            "artist": "Test Artist",
-            "track": "Test Track",
-            "version": "studio",
-            "album": None,
-            "duration_ms": None,
-        }
-    ]
+    mock_response_data = {
+        "title": "Test Playlist",
+        "description": "A test description",
+        "tracks": mock_tracks,
+    }
+
+    expected_response = {
+        "title": "Test Playlist",
+        "description": "A test description",
+        "tracks": [
+            {
+                "artist": "Test Artist",
+                "track": "Test Track",
+                "version": "studio",
+                "album": None,
+                "duration_ms": None,
+            }
+        ],
+    }
 
     mock_service = MagicMock()
-    mock_service.generate.return_value = mock_tracks
+    mock_service.generate.return_value = mock_response_data
 
     app.dependency_overrides[get_ai_service] = lambda: mock_service
     app.dependency_overrides[current_active_user] = lambda: mock_user

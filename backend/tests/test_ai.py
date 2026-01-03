@@ -26,15 +26,20 @@ def test_get_ai_api_key_missing():
 def test_generate_playlist_success():
     """Test successful playlist generation."""
     mock_response = MagicMock()
+    # Updated to new JSON schema
     mock_response.text = json.dumps(
-        [
-            {
-                "artist": "Artist 1",
-                "track": "Track 1",
-                "version": "studio",
-                "duration_ms": 180000,
-            }
-        ]
+        {
+            "title": "My Playlist",
+            "description": "Desc",
+            "tracks": [
+                {
+                    "artist": "Artist 1",
+                    "track": "Track 1",
+                    "version": "studio",
+                    "duration_ms": 180000,
+                }
+            ],
+        }
     )
 
     with (
@@ -43,15 +48,16 @@ def test_generate_playlist_success():
         patch("backend.core.ai.generate_content_with_retry", return_value=mock_response),
     ):
         result = generate_playlist("test prompt")
-        assert len(result) == 1
-        assert result[0]["artist"] == "Artist 1"
-        assert result[0]["duration_ms"] == 180000
+        assert result["title"] == "My Playlist"
+        assert len(result["tracks"]) == 1
+        assert result["tracks"][0]["artist"] == "Artist 1"
+        assert result["tracks"][0]["duration_ms"] == 180000
 
 
 def test_generate_playlist_json_cleanup():
     """Test that markdown code blocks are stripped."""
     mock_response = MagicMock()
-    mock_response.text = '```json\n[{"artist": "A", "track": "B"}]\n```'
+    mock_response.text = '```json\n{"tracks": [{"artist": "A", "track": "B"}]}\n```'
 
     with (
         patch("backend.core.ai.get_ai_api_key", return_value="key"),
@@ -63,7 +69,7 @@ def test_generate_playlist_json_cleanup():
         mock_client_cls.return_value = mock_client
 
         result = generate_playlist("mood")
-        assert result == [{"artist": "A", "track": "B"}]
+        assert result["tracks"] == [{"artist": "A", "track": "B"}]
 
 
 def test_generate_playlist_failure():
@@ -205,10 +211,10 @@ def test_generate_playlist_404_retry_same_model():
         assert mock_client.models.generate_content.call_count == 1
 
 
-def test_generate_playlist_dict_response():
-    """Test generating a playlist where the AI returns a dict with 'tracks' key."""
+def test_generate_playlist_legacy_list_support():
+    """Test that legacy list responses are wrapped in a dict."""
     mock_response = MagicMock()
-    mock_response.text = '{"tracks": [{"artist": "A", "track": "B"}]}'
+    mock_response.text = '[{"artist": "A", "track": "B"}]'
     with (
         patch("backend.core.ai.get_ai_api_key", return_value="key"),
         patch("google.genai.Client") as mock_client_cls,
@@ -217,7 +223,8 @@ def test_generate_playlist_dict_response():
         mock_client.models.generate_content.return_value = mock_response
         mock_client_cls.return_value = mock_client
         result = generate_playlist("mood")
-        assert result == [{"artist": "A", "track": "B"}]
+        assert result["title"] == "AI Playlist"
+        assert result["tracks"] == [{"artist": "A", "track": "B"}]
 
 
 def test_verify_ai_tracks_success():
