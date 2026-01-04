@@ -124,9 +124,11 @@ def test_spotify_login_endpoint():
     app.dependency_overrides[get_async_session] = lambda: mock_db
     app.dependency_overrides[current_active_user] = lambda: mock_user
 
-    response = client.get("/api/v1/integrations/spotify/login")
-    assert response.status_code == 200
-    assert "accounts.spotify.com/authorize" in response.json()["url"]
+    with patch("backend.app.api.v1.endpoints.integrations.DEFAULT_SPOTIFY_CLIENT_ID", "test_id"):
+        response = client.get("/api/v1/integrations/spotify/login")
+        assert response.status_code == 200
+        assert "accounts.spotify.com/authorize" in response.json()["url"]
+        assert "client_id=test_id" in response.json()["url"]
 
     app.dependency_overrides.clear()
 
@@ -159,6 +161,10 @@ def test_spotify_callback_endpoint():
     with (
         patch("httpx.AsyncClient.post", return_value=mock_token_resp),
         patch("httpx.AsyncClient.get", return_value=mock_user_resp),
+        patch("backend.app.api.v1.endpoints.integrations.DEFAULT_SPOTIFY_CLIENT_ID", "test_id"),
+        patch(
+            "backend.app.api.v1.endpoints.integrations.DEFAULT_SPOTIFY_CLIENT_SECRET", "test_secret"
+        ),
     ):
 
         response = client.get(
@@ -196,7 +202,13 @@ def test_spotify_callback_token_error_with_details():
         "error_description": "Invalid code",
     }
 
-    with patch("httpx.AsyncClient.post", return_value=mock_token_resp):
+    with (
+        patch("httpx.AsyncClient.post", return_value=mock_token_resp),
+        patch("backend.app.api.v1.endpoints.integrations.DEFAULT_SPOTIFY_CLIENT_ID", "test_id"),
+        patch(
+            "backend.app.api.v1.endpoints.integrations.DEFAULT_SPOTIFY_CLIENT_SECRET", "test_secret"
+        ),
+    ):
         response = client.get(
             f"/api/v1/integrations/spotify/callback?code=abc&state={mock_user.id}"
         )
