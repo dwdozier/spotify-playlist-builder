@@ -1,12 +1,47 @@
 import uuid
+import json
+import os
+import hashlib
+import base64
 from datetime import datetime
-from sqlalchemy import ForeignKey, String, DateTime, UUID
+from typing import TYPE_CHECKING, Optional, Any
+
+from sqlalchemy import ForeignKey, String, DateTime, UUID, TypeDecorator
 from sqlalchemy.orm import Mapped, mapped_column, relationship
+from cryptography.fernet import Fernet
+
 from backend.app.db.session import Base
-from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from .user import User
+
+# Get encryption key from environment
+SECRET_KEY = os.getenv("SECRET_KEY", "vibomat-dev-secret-key-at-least-32-chars-long!!")
+# Derive a valid 32-byte base64 key using SHA256
+key_bytes = hashlib.sha256(SECRET_KEY.encode()).digest()
+FERNET_KEY = base64.urlsafe_b64encode(key_bytes)
+fernet = Fernet(FERNET_KEY)
+
+
+class EncryptedJSON(TypeDecorator):
+    """
+    SQLAlchemy type for storing encrypted JSON data.
+    """
+
+    impl = String
+    cache_ok = False
+
+    def process_bind_param(self, value: Any, dialect: Any) -> Optional[str]:
+        if value is None:
+            return None
+        json_str = json.dumps(value)
+        return fernet.encrypt(json_str.encode()).decode()
+
+    def process_result_value(self, value: Optional[str], dialect: Any) -> Any:
+        if value is None:
+            return None
+        decrypted = fernet.decrypt(value.encode()).decode()
+        return json.loads(decrypted)
 
 
 class ServiceConnection(Base):
@@ -24,5 +59,28 @@ class ServiceConnection(Base):
     refresh_token: Mapped[str] = mapped_column(String(1024), nullable=True)
     expires_at: Mapped[datetime] = mapped_column(DateTime, nullable=True)
 
+    # User-supplied configuration (e.g., Client ID, Client Secret for custom app)
+    # Encrypted at rest
+    credentials: Mapped[Optional[dict[str, Any]]] = mapped_column(EncryptedJSON, nullable=True)
+
     # Relationships
     user: Mapped["User"] = relationship(back_populates="service_connections")
+
+    @property
+    def is_connected(self) -> bool:
+        """Check if the connection has a valid access token and provider ID."""
+        return bool(self.access_token and self.provider_user_id != "PENDING")
+
+    @property
+    def client_id(self) -> Optional[str]:
+        """Expose the client_id from credentials if set."""
+        if self.credentials:
+            return self.credentials.get("client_id")
+        return None
+
+    @property
+    def has_secret(self) -> bool:
+        """Check if a client_secret is set without exposing it."""
+        if self.credentials:
+            return bool(self.credentials.get("client_secret"))
+        return False

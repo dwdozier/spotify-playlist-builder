@@ -8,23 +8,9 @@ logger = logging.getLogger("backend.core.metadata")
 
 
 def get_discogs_token() -> str | None:
-    """Retrieve Discogs PAT from env or keyring."""
+    """Retrieve Discogs PAT from environment variables."""
     try:
-        # Check env first
-        key = os.getenv("DISCOGS_PAT")
-        if key:
-            return key
-
-        # Check keyring (if available)
-        try:
-            import keyring
-
-            key = keyring.get_password("spotify-playlist-builder", "discogs_pat")
-            if key:
-                return key
-        except ImportError:
-            pass
-
+        return os.getenv("DISCOGS_PAT")
     except Exception as e:
         logger.debug(f"Failed to retrieve Discogs Token: {e}")
     return None
@@ -183,8 +169,9 @@ class MetadataVerifier:
                         # For 'studio' or unspecified, simple existence in MB is enough
                         # provided we aren't looking for a specific alternate version
                         return True
-        except Exception:
-            pass
+        except Exception as e:
+            logger.warning(f"MusicBrainz verification failed for {artist} - {track}: {e}")
+            # Continue to Discogs fallback
 
         # 2. Fallback to Discogs if MusicBrainz didn't confirm the specific version
         # OR if MusicBrainz didn't find the track at all.
@@ -192,9 +179,47 @@ class MetadataVerifier:
             logger.info(f"Verified {artist} - {track} ({version}) via Discogs.")
             return True
 
-        # If MB found it but we were looking for a specific version (e.g. remix)
-        # and didn't find it in MB, we still fell through to Discogs.
-        # If Discogs also failed, we return False.
-        # However, if we just wanted 'studio' (default) and MB found it, we returned True above.
-
         return False
+
+    @retry(
+        retry=retry_if_exception_type(requests.RequestException),
+        wait=wait_fixed(2),
+        stop=stop_after_attempt(3),
+    )
+    def search_artist(self, artist_name: str) -> dict | None:
+        """Search MusicBrainz for artist metadata."""
+        self._enforce_rate_limit()
+        url = "https://musicbrainz.org/ws/2/artist"
+        params = {"query": f'artist:"{artist_name}"', "fmt": "json", "limit": 1}
+        try:
+            response = requests.get(url, headers=self.headers, params=params)
+            response.raise_for_status()
+            data = response.json()
+            artists = data.get("artists", [])
+            if artists:
+                return artists[0]
+        except Exception as e:
+            logger.debug(f"Failed to fetch artist metadata for {artist_name}: {e}")
+        return None
+
+    @retry(
+        retry=retry_if_exception_type(requests.RequestException),
+        wait=wait_fixed(2),
+        stop=stop_after_attempt(3),
+    )
+    def search_album(self, artist_name: str, album_name: str) -> dict | None:
+        """Search MusicBrainz for album (release-group) metadata."""
+        self._enforce_rate_limit()
+        url = "https://musicbrainz.org/ws/2/release-group"
+        query = f'artist:"{artist_name}" AND releasegroup:"{album_name}"'
+        params = {"query": query, "fmt": "json", "limit": 1}
+        try:
+            response = requests.get(url, headers=self.headers, params=params)
+            response.raise_for_status()
+            data = response.json()
+            groups = data.get("release-groups", [])
+            if groups:
+                return groups[0]
+        except Exception as e:
+            logger.debug(f"Failed to fetch album metadata for {artist_name} - {album_name}: {e}")
+        return None

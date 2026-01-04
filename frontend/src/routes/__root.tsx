@@ -59,8 +59,7 @@ function RootLayout() {
                 {/* Identity Card */}
                 <div className="flex items-center gap-1 bg-retro-teal/10 rounded-2xl border-4 border-retro-dark p-1 pr-4 shadow-retro-sm">
                   <Link
-                    to="/profile/$userId"
-                    params={{ userId: user.id }}
+                    to="/profile/me"
                     data-play="nav-profile"
                     className="flex items-center gap-2 px-3 py-1 bg-retro-teal text-retro-dark rounded-xl font-display text-sm uppercase hover:bg-teal-400 transition-colors"
                   >

@@ -31,7 +31,7 @@ class User(SQLAlchemyBaseUserTableUUID, Base):
 
     # Public Profile
     is_public: Mapped[bool] = mapped_column(Boolean, default=True)
-    favorite_artists: Mapped[List[str]] = mapped_column(JSON, default=list)
+    favorite_artists: Mapped[List[Any]] = mapped_column(JSON, default=list)
     unskippable_albums: Mapped[List[Any]] = mapped_column(JSON, default=list)
 
     oauth_accounts: Mapped[List[OAuthAccount]] = relationship(
@@ -40,7 +40,10 @@ class User(SQLAlchemyBaseUserTableUUID, Base):
 
     # Relationships
     service_connections: Mapped[List["ServiceConnection"]] = relationship(
-        "ServiceConnection", back_populates="user", cascade="all, delete-orphan"
+        "ServiceConnection",
+        back_populates="user",
+        cascade="all, delete-orphan",
+        lazy="joined",
     )
     playlists: Mapped[List["Playlist"]] = relationship(
         "Playlist",

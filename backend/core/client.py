@@ -14,31 +14,47 @@ logger = logging.getLogger("backend.core.client")
 class SpotifyPlaylistBuilder:
     def __init__(
         self,
-        client_id: str,
-        client_secret: str,
+        client_id: str | None = None,
+        client_secret: str | None = None,
         redirect_uri: str = "https://127.0.0.1:8888/callback",
+        sp_client: spotipy.Spotify | None = None,
+        access_token: str | None = None,
     ) -> None:
-        """Initialize Spotify API client with OAuth authentication."""
-        scope = [
-            "playlist-modify-public",
-            "playlist-modify-private",
-            "playlist-read-private",
-            "playlist-read-collaborative",
-        ]
-        self.sp = spotipy.Spotify(
-            auth_manager=SpotifyOAuth(
-                client_id=client_id,
-                client_secret=client_secret,
-                redirect_uri=redirect_uri,
-                scope=scope,
-                open_browser=True,
+        """Initialize Spotify API client."""
+        if sp_client:
+            self.sp = sp_client
+        elif access_token:
+            self.sp = spotipy.Spotify(auth=access_token)
+        else:
+            if not client_id or not client_secret:
+                raise ValueError("client_id and client_secret are required if no client provided")
+            scope = [
+                "playlist-modify-public",
+                "playlist-modify-private",
+                "playlist-read-private",
+                "playlist-read-collaborative",
+            ]
+            self.sp = spotipy.Spotify(
+                auth_manager=SpotifyOAuth(
+                    client_id=client_id,
+                    client_secret=client_secret,
+                    redirect_uri=redirect_uri,
+                    scope=scope,
+                    open_browser=True,
+                )
             )
-        )
-        user = self.sp.current_user()
-        if user is None:
-            raise Exception("Failed to authenticate with Spotify")
-        self.user_id = user["id"]
+
+        self._user_id = None
         self.metadata_verifier = MetadataVerifier()
+
+    @property
+    def user_id(self) -> str:
+        if self._user_id is None:
+            user = self.sp.current_user()
+            if user is None:
+                raise Exception("Failed to authenticate with Spotify")
+            self._user_id = user["id"]
+        return self._user_id
 
     def _similarity(self, s1: str, s2: str) -> float:
         """Proxy to similarity helper."""
@@ -97,6 +113,10 @@ class SpotifyPlaylistBuilder:
                     score += 30 if detected_version == "compilation" else 5
                 elif version == "remaster":
                     score += 30 if detected_version == "remaster" else 5
+                elif version == "instrumental":
+                    score += 30 if detected_version == "instrumental" else 5
+                elif version == "acoustic":
+                    score += 30 if detected_version == "acoustic" else 5
                 elif version == "original":
                     # For original, we specifically want studio and NOT remaster
                     if detected_version == "studio":
@@ -212,36 +232,49 @@ class SpotifyPlaylistBuilder:
             batch = track_uris[i : i + 100]
             self.sp.playlist_add_items(playlist_id, batch)
 
-    def add_tracks_to_playlist(self, playlist_id: str, tracks: list[dict[str, Any]]) -> list[str]:
-        """Add tracks to a playlist, handling batch operations."""
-        uris = []
+    def add_tracks_to_playlist(
+        self, playlist_id: str, tracks: list[dict[str, Any]]
+    ) -> tuple[list[dict[str, Any]], list[str]]:
+        """Add tracks to a playlist, returning actual metadata and failed tracks."""
+        actual_tracks = []
         failed_tracks = []
+        uris = []
 
         for i, track in enumerate(tracks):
-            # Ensure we have strings, defaulting to empty string if missing
             artist = str(track.get("artist", ""))
             track_name = str(track.get("track", ""))
             album = track.get("album")
-            version = track.get("version")
+
+            # search_track only returns URI, we need full metadata for duration
+            query = f"track:{track_name} artist:{artist}"
             if album:
-                album = str(album)
-            if version:
-                version = str(version)
+                query += f" album:{album}"
 
-            uri = self.search_track(artist, track_name, album, version)
+            search_results = self.sp.search(q=query, type="track", limit=1)
+            items = search_results["tracks"]["items"] if search_results else []
 
-            if uri:
-                uris.append(uri)
+            if items:
+                best_match = items[0]
+                uris.append(best_match["uri"])
+                actual_tracks.append(
+                    {
+                        "artist": best_match["artists"][0]["name"],
+                        "track": best_match["name"],
+                        "album": best_match["album"]["name"],
+                        "uri": best_match["uri"],
+                        "duration_ms": best_match["duration_ms"],
+                    }
+                )
             else:
                 failed_tracks.append(f"{artist} - {track_name}")
 
-            # Add in batches of 100 (Spotify API limit)
+            # Add in batches of 100
             if len(uris) == 100 or i == len(tracks) - 1:
                 if uris:
                     self._add_track_uris_to_playlist(playlist_id, uris)
                     uris = []
 
-        return failed_tracks
+        return actual_tracks, failed_tracks
 
     @rate_limit_retry
     def get_playlist_tracks_details(self, playlist_id: str) -> list[dict[str, str]]:
