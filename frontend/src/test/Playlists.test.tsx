@@ -19,7 +19,14 @@ vi.mock('@tanstack/react-router', async () => {
   return {
     ...actual,
     useNavigate: () => vi.fn(),
-    createFileRoute: (path: string) => (options: any) => ({ ...options, options }),
+    useSearch: () => ({}),
+    createFileRoute: (path: string) => (options: any) => ({
+        ...options,
+        options,
+        useSearch: () => ({}),
+        useParams: () => ({}),
+        useLoaderData: () => ({})
+    }),
   }
 })
 

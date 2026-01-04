@@ -1,9 +1,10 @@
 import { createFileRoute, redirect, useNavigate } from '@tanstack/react-router'
-import { useMutation } from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { playlistService, type Track, type BuildResponse, type PlaylistGenerationResponse, type Playlist } from '../api/playlist'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Loader2, X, Music2, Zap, CheckCircle2, ExternalLink, Save } from 'lucide-react'
 import { Modal } from '../components/Modal'
+import { z } from 'zod'
 
 // Helper to format milliseconds to MM:SS or HH:MM:SS
 const formatDuration = (ms?: number) => {
@@ -19,7 +20,12 @@ const formatDuration = (ms?: number) => {
   return parts.join(':')
 }
 
+const playlistsSearchSchema = z.object({
+  edit: z.string().optional(),
+})
+
 export const Route = createFileRoute('/playlists')({
+  validateSearch: playlistsSearchSchema,
   beforeLoad: async ({ context, location }) => {
     const user = await context.auth.getCurrentUser()
     if (!user) {
@@ -36,17 +42,42 @@ export const Route = createFileRoute('/playlists')({
 
 function Playlists() {
   const navigate = useNavigate()
+  const search = Route.useSearch()
+  const queryClient = useQueryClient()
+
   const [prompt, setPrompt] = useState('')
   const [generatedPlaylist, setGeneratedPlaylist] = useState<PlaylistGenerationResponse | null>(null)
   const [savedDraft, setSavedDraft] = useState<Playlist | null>(null)
   const [buildResult, setBuildResult] = useState<BuildResponse | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
+  // Fetch playlist for editing
+  const { data: existingPlaylist } = useQuery({
+    queryKey: ['playlist', search.edit],
+    queryFn: () => playlistService.getPlaylist(search.edit!),
+    enabled: !!search.edit,
+  })
+
+  // Populate state when existing playlist is loaded
+  useEffect(() => {
+    if (existingPlaylist) {
+        setSavedDraft(existingPlaylist)
+        setGeneratedPlaylist({
+            title: existingPlaylist.name,
+            description: existingPlaylist.description || "",
+            tracks: existingPlaylist.content_json.tracks
+        })
+        setPrompt(existingPlaylist.name.replace("AI: ", "").replace("...", ""))
+    }
+  }, [existingPlaylist])
+
   const generateMutation = useMutation({
     mutationFn: playlistService.generate,
     onSuccess: (data) => {
       setGeneratedPlaylist(data)
-      setSavedDraft(null) // Reset draft if new generation
+      // If we are editing, we keep the savedDraft reference to update it later
+      // unless user wants to treat this as a totally new thing?
+      // Let's assume re-generating overwrites the draft content in UI but keeps ID linkage
     },
   })
 
@@ -54,7 +85,16 @@ function Playlists() {
     mutationFn: playlistService.create,
     onSuccess: (data) => {
       setSavedDraft(data)
+      queryClient.invalidateQueries({ queryKey: ['my-playlists'] })
     },
+  })
+
+  const updateMutation = useMutation({
+    mutationFn: (vars: {id: string, data: any}) => playlistService.update(vars.id, vars.data),
+    onSuccess: (data) => {
+      setSavedDraft(data)
+      queryClient.invalidateQueries({ queryKey: ['my-playlists'] })
+    }
   })
 
   const buildMutation = useMutation({
@@ -62,7 +102,7 @@ function Playlists() {
     onSuccess: (data) => {
       setBuildResult(data)
       setIsModalOpen(true)
-      // We don't clear generatedPlaylist here so user can see it, but we could.
+      queryClient.invalidateQueries({ queryKey: ['my-playlists'] })
     },
   })
 
@@ -82,28 +122,50 @@ function Playlists() {
     setGeneratedPlaylist(null)
     setSavedDraft(null)
     setPrompt('')
+    navigate({ to: '/playlists', search: {} }) // Clear edit param
   }
 
   const handleSaveDraft = () => {
     if (!generatedPlaylist) return
-    saveMutation.mutate({
+
+    const payload = {
       name: generatedPlaylist.title,
       description: generatedPlaylist.description,
       public: false,
       tracks: generatedPlaylist.tracks,
-    })
+    }
+
+    if (savedDraft) {
+        updateMutation.mutate({ id: savedDraft.id, data: payload })
+    } else {
+        saveMutation.mutate(payload)
+    }
   }
 
   const handleTransmit = async () => {
     if (!generatedPlaylist) return
 
-    // If already saved, build from ID
+    // If already saved (or editing), ensure it's up to date then build
     if (savedDraft) {
-      buildMutation.mutate({ playlist_id: savedDraft.id })
+      // Should we update first? Probably safer.
+      try {
+          await updateMutation.mutateAsync({
+              id: savedDraft.id,
+              data: {
+                name: generatedPlaylist.title,
+                description: generatedPlaylist.description,
+                public: false,
+                tracks: generatedPlaylist.tracks,
+              }
+          })
+          buildMutation.mutate({ playlist_id: savedDraft.id })
+      } catch(e) {
+          console.error("Update failed before transmit", e)
+      }
       return
     }
 
-    // Otherwise save then build (or build with data - let's save first for persistence)
+    // Otherwise create then build
     try {
       const draft = await saveMutation.mutateAsync({
         name: generatedPlaylist.title,
@@ -111,12 +173,13 @@ function Playlists() {
         public: false,
         tracks: generatedPlaylist.tracks,
       })
-      setSavedDraft(draft) // Update UI
       buildMutation.mutate({ playlist_id: draft.id })
     } catch (e) {
       console.error("Failed to auto-save before transmit", e)
     }
   }
+
+  const isSaving = saveMutation.isPending || updateMutation.isPending;
 
   return (
     <div className="space-y-12 max-w-5xl mx-auto px-4 pb-20">
@@ -255,31 +318,30 @@ function Playlists() {
                Discard
              </button>
 
-             <button
-               onClick={handleSaveDraft}
-               disabled={saveMutation.isPending || !!savedDraft}
-               className={`px-8 py-4 text-xl font-display border-4 border-retro-dark rounded-2xl shadow-retro-sm active:shadow-none active:translate-x-1 active:translate-y-1 transition-all uppercase flex items-center gap-3 justify-center ${
-                   savedDraft
-                   ? 'bg-retro-cream text-retro-dark/50 cursor-default'
-                   : 'bg-retro-teal text-retro-dark hover:bg-teal-400'
-               }`}
-             >
-               {savedDraft ? (
-                   <>
-                    <CheckCircle2 className="w-6 h-6" /> Saved as Draft
-                   </>
-               ) : saveMutation.isPending ? (
-                   <>
-                    <Loader2 className="animate-spin w-6 h-6" /> Saving...
-                   </>
-               ) : (
-                   <>
-                    <Save className="w-6 h-6" /> Save Draft
-                   </>
-               )}
-             </button>
-
-             <button
+                          <button
+                            onClick={handleSaveDraft}
+                            disabled={isSaving || (!!savedDraft && savedDraft.status !== 'draft')}
+                            className={`px-8 py-4 text-xl font-display border-4 border-retro-dark rounded-2xl shadow-retro-sm active:shadow-none active:translate-x-1 active:translate-y-1 transition-all uppercase flex items-center gap-3 justify-center ${
+                                (savedDraft && !isSaving)
+                                ? 'bg-retro-cream text-retro-dark/50'
+                                : 'bg-retro-teal text-retro-dark hover:bg-teal-400'
+                            }`}
+                          >
+                            {isSaving ? (
+                                <>
+                                 <Loader2 className="animate-spin w-6 h-6" /> Saving...
+                                </>
+                            ) : savedDraft ? (
+                                <>
+                                 <CheckCircle2 className="w-6 h-6" /> Saved
+                                </>
+                            ) : (
+                                <>
+                                 <Save className="w-6 h-6" /> Save Draft
+                                </>
+                            )}
+                          </button>
+                          <button
                onClick={handleTransmit}
                disabled={buildMutation.isPending}
                className="px-8 py-4 text-xl font-display text-retro-dark bg-retro-pink border-4 border-retro-dark rounded-2xl hover:bg-pink-400 shadow-retro-sm active:shadow-none active:translate-x-1 active:translate-y-1 transition-all uppercase flex items-center gap-3 justify-center disabled:opacity-50"

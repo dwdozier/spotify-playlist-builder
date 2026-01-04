@@ -129,10 +129,13 @@ function MyProfile() {
                             </div>
 
                             <div className="flex items-center gap-3">
-                                {/* Actions will go here. For now just placeholders or View */}
-                                <button className="px-4 py-2 bg-retro-cream text-retro-dark font-display rounded-lg border-2 border-retro-dark hover:bg-white transition-all uppercase text-sm flex items-center gap-2">
+                                <Link
+                                    to="/playlists"
+                                    search={{ edit: playlist.id }}
+                                    className="px-4 py-2 bg-retro-cream text-retro-dark font-display rounded-lg border-2 border-retro-dark hover:bg-white transition-all uppercase text-sm flex items-center gap-2"
+                                >
                                     <Edit className="w-4 h-4" /> Edit
-                                </button>
+                                </Link>
                                 {playlist.status === 'draft' && (
                                     <button
                                       onClick={() => handleTransmit(playlist.id)}
