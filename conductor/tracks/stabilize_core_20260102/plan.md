@@ -38,11 +38,11 @@ This plan outlines the steps to stabilize the Vibomat MVP for initial release.
   - [x] Add "Transmit to Spotify" button to the Playlist Details view.
 - [x] **Task 4: Thematic UI Polish** <!-- 9c1a9c3 -->
   - [x] Apply Art Deco borders and "Automat" styling to the new Playlist views.
-- [~] **Task 5: Edit Playlist Functionality**
-  - [ ] Update `frontend/src/routes/playlists.tsx` to support editing existing drafts via query param.
-  - [ ] Implement `update` logic in frontend.
-  - [ ] Connect "Edit" button in `profile.me.tsx`.
-- [ ] **Task 6: Conductor - User Manual Verification 'Playlist Management & UI Polish' (Protocol in
+- [x] **Task 5: Edit Playlist Functionality** <!-- a6aeab1 -->
+  - [x] Update `frontend/src/routes/playlists.tsx` to support editing existing drafts via query param.
+  - [x] Implement `update` logic in frontend.
+  - [x] Connect "Edit" button in `profile.me.tsx`.
+- [x] **Task 6: Conductor - User Manual Verification 'Playlist Management & UI Polish' (Protocol in
     workflow.md)**
 
 ---
