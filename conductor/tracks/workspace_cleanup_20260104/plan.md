@@ -3,7 +3,7 @@
 This plan outlines the migration of legacy AI directives into the Conductor framework and the
 subsequent cleanup of the workspace.
 
-## Phase 1: Directive Migration
+## Phase 1: Directive Migration [checkpoint: 5c5a783]
 
 Consolidate all useful information from `GEMINI.md` into the structured Conductor files.
 
@@ -18,7 +18,7 @@ Consolidate all useful information from `GEMINI.md` into the structured Conducto
       `GEMINI.md`. e07dd7d
 - [x] Task: Update `conductor/workflow.md` with "Key Commands", "Critical Rules", and the
       "Branching Strategy" section. d23603f
-- [ ] Task: Conductor - User Manual Verification 'Directive Migration' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Directive Migration' (Protocol in workflow.md) 5c5a783
 
 ## Phase 2: Protocol Refinement and Cleanup
 
