@@ -3,10 +3,7 @@ import pytest
 from unittest.mock import MagicMock, patch
 from backend.core.auth import (
     get_credentials_from_env,
-    get_credentials_from_keyring,
-    store_credentials_in_keyring,
     get_credentials,
-    CredentialSource,
 )
 from backend.core import get_builder, SpotifyPlaylistBuilder
 
@@ -32,58 +29,11 @@ def test_get_credentials_from_env_missing():
         assert "SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET not found" in str(exc.value)
 
 
-def test_get_credentials_from_keyring_success():
-    """Test retrieving credentials from keyring."""
-    with patch("backend.core.auth.keyring") as mock_keyring:
-        mock_keyring.get_password.side_effect = ["my_id", "my_secret"]
-
-        result = get_credentials_from_keyring()
-        assert result is not None
-        cid, secret = result
-
-        assert cid == "my_id"
-        assert secret == "my_secret"
-        assert mock_keyring.get_password.call_count == 2
-
-
-def test_get_credentials_from_keyring_missing():
-    """Test error when credentials are missing in keyring."""
-    with patch("backend.core.auth.keyring") as mock_keyring:
-        mock_keyring.get_password.return_value = None
-
-        with pytest.raises(Exception) as exc:
-            get_credentials_from_keyring()
-
-        assert "Credentials not found in keychain" in str(exc.value)
-
-
-def test_store_credentials_in_keyring():
-    """Test storing credentials in keyring."""
-    with patch("backend.core.auth.keyring") as mock_keyring:
-        store_credentials_in_keyring("new_id", "new_secret")
-
-        mock_keyring.set_password.assert_any_call("vibomat", "client_id", "new_id")
-        mock_keyring.set_password.assert_any_call("vibomat", "client_secret", "new_secret")
-
-
-def test_get_credentials_dispatch():
-    """Test that get_credentials calls the correct implementation."""
+def test_get_credentials_success():
+    """Test that get_credentials calls the env implementation."""
     with patch("backend.core.auth.get_credentials_from_env", return_value=("a", "b")) as mock_env:
-        assert get_credentials("env") == ("a", "b")
+        assert get_credentials() == ("a", "b")
         mock_env.assert_called_once()
-
-    with patch(
-        "backend.core.auth.get_credentials_from_keyring", return_value=("c", "d")
-    ) as mock_keyring:
-        assert get_credentials("keyring") == ("c", "d")
-        mock_keyring.assert_called_once()
-
-
-def test_get_credentials_invalid_source():
-    """Test error for unknown credential source."""
-    with pytest.raises(ValueError) as exc:
-        get_credentials("invalid")
-    assert "Unknown credential source" in str(exc.value)
 
 
 def test_get_builder():
@@ -92,24 +42,33 @@ def test_get_builder():
         patch("backend.core.auth.get_credentials", return_value=("cid", "sec")),
         patch("backend.core.client.SpotifyPlaylistBuilder") as mock_cls,
     ):
-        get_builder(CredentialSource.env)
+        get_builder()
         mock_cls.assert_called_once()
 
 
-def test_keyring_dependency_missing():
-    """Test error message when keyring module is not installed."""
-    # Simulate keyring being None (ImportError fallback)
-    with patch("backend.core.auth.keyring", None):
-        with pytest.raises(Exception) as exc:
-            get_credentials_from_keyring()
-        assert "keyring library not available" in str(exc.value)
-
-        with pytest.raises(Exception) as exc:
-            store_credentials_in_keyring("id", "secret")
-        assert "keyring library not available" in str(exc.value)
-
-
 # Core Logic Tests
+
+
+def test_init_with_access_token():
+    """Test initializing builder with a direct access token."""
+    with (
+        patch("backend.core.client.spotipy.Spotify") as mock_spotify,
+        patch("backend.core.client.MetadataVerifier"),
+    ):
+        mock_spotify.return_value.current_user.return_value = {"id": "token_user"}
+        builder = SpotifyPlaylistBuilder(access_token="valid_token")
+        assert builder.user_id == "token_user"
+        mock_spotify.assert_called_with(auth="valid_token")
+
+
+def test_init_with_client():
+    """Test initializing builder with an existing spotipy client."""
+    mock_sp = MagicMock()
+    mock_sp.current_user.return_value = {"id": "client_user"}
+    with patch("backend.core.client.MetadataVerifier"):
+        builder = SpotifyPlaylistBuilder(sp_client=mock_sp)
+        assert builder.user_id == "client_user"
+        assert builder.sp == mock_sp
 
 
 def test_init_auth_failure():
@@ -120,9 +79,10 @@ def test_init_auth_failure():
     ):
         # Mock auth returning None
         mock_spotify.return_value.current_user.return_value = None
+        builder = SpotifyPlaylistBuilder(client_id="id", client_secret="secret")
         with pytest.raises(Exception) as exc:
-            SpotifyPlaylistBuilder("id", "secret")
-        assert "Failed to authenticate" in str(exc.value)
+            _ = builder.user_id
+        assert "Failed to authenticate with Spotify" in str(exc.value)
 
 
 def test_similarity(builder):
@@ -364,34 +324,65 @@ def test_update_playlist_details_no_change(builder, mock_spotify):
 
 def test_add_tracks_to_playlist_batching(builder, mock_spotify):
     """Test that tracks are added in batches of 100."""
-    with patch.object(builder, "search_track", return_value="spotify:track:1"):
-        # Create 105 dummy tracks
-        tracks = [{"artist": "A", "track": "B"}] * 105
-        builder.add_tracks_to_playlist("pid", tracks)
+    # Mock search to return a track with duration
+    mock_spotify.search.return_value = {
+        "tracks": {
+            "items": [
+                {
+                    "name": "B",
+                    "artists": [{"name": "A"}],
+                    "album": {"name": "Album"},
+                    "uri": "spotify:track:1",
+                    "duration_ms": 200000,
+                }
+            ]
+        }
+    }
+    # Create 105 dummy tracks
+    tracks = [{"artist": "A", "track": "B"}] * 105
+    actual, failed = builder.add_tracks_to_playlist("pid", tracks)
 
-        # Should be called twice: once for 100 tracks, once for 5 tracks
-        assert mock_spotify.playlist_add_items.call_count == 2
+    # Should be called twice: once for 100 tracks, once for 5 tracks
+    assert mock_spotify.playlist_add_items.call_count == 2
+    assert len(actual) == 105
+    assert len(failed) == 0
 
 
 def test_add_tracks_to_playlist_failures(builder, mock_spotify):
     """Test adding tracks where some are not found."""
     # Mock search_track to find first, fail second
-    with patch.object(builder, "search_track", side_effect=["uri:1", None]):
-        tracks = [{"artist": "A", "track": "Found"}, {"artist": "B", "track": "Missing"}]
-        failed = builder.add_tracks_to_playlist("pid", tracks)
+    mock_spotify.search.side_effect = [
+        {
+            "tracks": {
+                "items": [
+                    {
+                        "name": "Found",
+                        "artists": [{"name": "A"}],
+                        "album": {"name": "Album"},
+                        "uri": "uri:1",
+                        "duration_ms": 100,
+                    }
+                ]
+            }
+        },
+        {"tracks": {"items": []}},
+    ]
+    tracks = [{"artist": "A", "track": "Found"}, {"artist": "B", "track": "Missing"}]
+    actual, failed = builder.add_tracks_to_playlist("pid", tracks)
 
-        assert len(failed) == 1
-        assert failed[0] == "B - Missing"
-        # Verify only one track was added
-        mock_spotify.playlist_add_items.assert_called_with("pid", ["uri:1"])
+    assert len(failed) == 1
+    assert failed[0] == "B - Missing"
+    assert len(actual) == 1
+    # Verify only one track was added
+    mock_spotify.playlist_add_items.assert_called_with("pid", ["uri:1"])
 
 
 def test_add_tracks_all_missing(builder, mock_spotify):
     """Test adding tracks where none are found."""
-    with patch.object(builder, "search_track", return_value=None):
-        tracks = [{"artist": "A", "track": "B"}]
-        builder.add_tracks_to_playlist("pid", tracks)
-        mock_spotify.playlist_add_items.assert_not_called()
+    mock_spotify.search.return_value = {"tracks": {"items": []}}
+    tracks = [{"artist": "A", "track": "B"}]
+    builder.add_tracks_to_playlist("pid", tracks)
+    mock_spotify.playlist_add_items.assert_not_called()
 
 
 def test_add_track_uris_empty(builder, mock_spotify):
@@ -790,40 +781,6 @@ def test_search_track_with_external_verification(builder, mock_spotify):
     assert builder.metadata_verifier.verify_track_version.call_count >= 1
 
 
-def test_get_credentials_auto_discovery_keyring(builder):
-    """Test auto-discovery finding credentials in keyring."""
-    with patch("backend.core.auth.get_credentials_from_keyring", return_value=("id", "secret")):
-        result = get_credentials(None)
-        assert result is not None
-        cid, secret = result
-        assert cid == "id"
-        assert secret == "secret"
-
-
-def test_get_credentials_auto_discovery_env(builder):
-    """Test auto-discovery falling back to env when keyring fails."""
-    with (
-        patch("backend.core.auth.get_credentials_from_keyring", return_value=None),
-        patch("backend.core.auth.get_credentials_from_env", return_value=("id", "secret")),
-    ):
-        result = get_credentials(None)
-        assert result is not None
-        cid, secret = result
-        assert cid == "id"
-        assert secret == "secret"
-
-
-def test_get_credentials_auto_discovery_failure(builder):
-    """Test auto-discovery failing when both sources are missing."""
-    with (
-        patch("backend.core.auth.get_credentials_from_keyring", return_value=None),
-        patch("backend.core.auth.get_credentials_from_env", return_value=None),
-    ):
-        with pytest.raises(Exception) as exc:
-            get_credentials(None)
-        assert "Credentials not found" in str(exc.value)
-
-
 def test_to_snake_case():
     """Test the snake_case conversion utility."""
     from backend.core.utils.helpers import to_snake_case
@@ -949,14 +906,3 @@ def test_build_playlist_uses_provided_uri_fallback(builder, mock_spotify):
 
                 # 2. We called add_items with found URI and fallback URI
                 mock_add.assert_called_with("new_pid", ["uri:found", "uri:fallback"])
-
-
-def test_get_credentials_auto_discovery_fallback():
-    """Test get_credentials auto-discovery falls back to env."""
-    from backend.core.auth import get_credentials
-
-    with (
-        patch("backend.core.auth.get_credentials_from_keyring", return_value=None),
-        patch("backend.core.auth.get_credentials_from_env", return_value=("id", "secret")),
-    ):
-        assert get_credentials(None) == ("id", "secret")

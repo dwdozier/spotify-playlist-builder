@@ -16,7 +16,7 @@ def test_cli_build_success():
         with runner.isolated_filesystem():
             with open("playlist.json", "w") as f:
                 f.write("{}")
-            result = runner.invoke(app, ["build", "playlist.json", "--source", "env"])
+            result = runner.invoke(app, ["build", "playlist.json"])
             assert result.exit_code == 0
             mock_builder.build_playlist_from_json.assert_called_once()
 
@@ -72,31 +72,6 @@ def test_cli_backup_error():
         mock_builder.backup_all_playlists.side_effect = Exception("Backup failed")
         mock_get_builder.return_value = mock_builder
         result = runner.invoke(app, ["backup", "backups"])
-        assert result.exit_code == 1
-
-
-def test_cli_store_credentials():
-    """Test storing credentials interactively."""
-    with patch("backend.core.cli.store_credentials_in_keyring") as mock_store:
-        # Simulate user input: client_id, then client_secret
-        result = runner.invoke(app, ["store-credentials"], input="my_id\nmy_secret\n")
-        assert result.exit_code == 0
-        mock_store.assert_called_with("my_id", "my_secret")
-
-
-def test_cli_store_credentials_missing_input():
-    """Test error when input is missing."""
-    result = runner.invoke(app, ["store-credentials"], input="\n\n")  # Empty inputs
-    assert result.exit_code == 1
-
-
-def test_cli_store_credentials_exception():
-    """Test exception handling in store-credentials command."""
-    with patch(
-        "backend.core.cli.store_credentials_in_keyring",
-        side_effect=Exception("Keyring error"),
-    ):
-        result = runner.invoke(app, ["store-credentials"], input="user\npass\n")
         assert result.exit_code == 1
 
 
@@ -186,34 +161,12 @@ def test_cli_uninstall_completion():
     assert result.exit_code == 0
 
 
-def test_cli_setup_ai_success():
-    """Test setup-ai command success."""
-    # Since keyring is imported inside the function, we patch sys.modules to inject a mock
-    mock_keyring = MagicMock()
-    with patch.dict("sys.modules", {"keyring": mock_keyring}):
-        result = runner.invoke(app, ["setup-ai"], input="my_api_key\n")
-        assert result.exit_code == 0
-        mock_keyring.set_password.assert_called_with(
-            "spotify-playlist-builder", "gemini_api_key", "my_api_key"
-        )
-
-
-def test_cli_setup_discogs_success():
-    """Test setup-discogs command success."""
-    mock_keyring = MagicMock()
-    with patch.dict("sys.modules", {"keyring": mock_keyring}):
-        result = runner.invoke(app, ["setup-discogs"], input="my_token\n")
-        assert result.exit_code == 0
-        mock_keyring.set_password.assert_called_with(
-            "spotify-playlist-builder", "discogs_pat", "my_token"
-        )
-
-
 def test_cli_generate_success():
     """Test generate command."""
     mock_tracks = [{"artist": "Artist", "track": "Track", "version": "studio"}]
+    mock_response = {"title": "Test Playlist", "description": "Desc", "tracks": mock_tracks}
     with (
-        patch("backend.core.ai.generate_playlist", return_value=mock_tracks),
+        patch("backend.core.ai.generate_playlist", return_value=mock_response),
         patch("backend.core.ai.verify_ai_tracks", return_value=(mock_tracks, [])),
     ):
         result = runner.invoke(app, ["generate", "--prompt", "test mood"], input="\n")
@@ -225,8 +178,9 @@ def test_cli_generate_success():
 def test_cli_generate_with_output():
     """Test generate command with --output flag."""
     mock_tracks = [{"artist": "A", "track": "B"}]
+    mock_response = {"title": "Test Playlist", "description": "Desc", "tracks": mock_tracks}
     with (
-        patch("backend.core.ai.generate_playlist", return_value=mock_tracks),
+        patch("backend.core.ai.generate_playlist", return_value=mock_response),
         patch("backend.core.ai.verify_ai_tracks", return_value=(mock_tracks, [])),
         runner.isolated_filesystem(),
     ):
@@ -241,8 +195,9 @@ def test_cli_generate_with_output():
 def test_cli_generate_interactive_save():
     """Test interactive saving flow in generate command."""
     mock_tracks = [{"artist": "A", "track": "B"}]
+    mock_response = {"title": "Test Playlist", "description": "Desc", "tracks": mock_tracks}
     with (
-        patch("backend.core.ai.generate_playlist", return_value=mock_tracks),
+        patch("backend.core.ai.generate_playlist", return_value=mock_response),
         patch("backend.core.ai.verify_ai_tracks", return_value=(mock_tracks, [])),
         runner.isolated_filesystem(),
     ):
@@ -256,8 +211,9 @@ def test_cli_generate_interactive_save():
 def test_cli_generate_interactive():
     """Test generate command with interactive input."""
     mock_tracks = [{"artist": "A", "track": "B"}]
+    mock_response = {"title": "Test Playlist", "description": "Desc", "tracks": mock_tracks}
     with (
-        patch("backend.core.ai.generate_playlist", return_value=mock_tracks),
+        patch("backend.core.ai.generate_playlist", return_value=mock_response),
         patch("backend.core.ai.verify_ai_tracks", return_value=(mock_tracks, [])),
     ):
         # Mood -> Artist -> Save (y) -> Filename
@@ -287,8 +243,9 @@ def test_cli_ai_models_success():
 def test_cli_generate_chain_build():
     """Test generate command chained with build."""
     mock_tracks = [{"artist": "A", "track": "B"}]
+    mock_response = {"title": "Test Playlist", "description": "Desc", "tracks": mock_tracks}
     with (
-        patch("backend.core.ai.generate_playlist", return_value=mock_tracks),
+        patch("backend.core.ai.generate_playlist", return_value=mock_response),
         patch("backend.core.ai.verify_ai_tracks", return_value=(mock_tracks, [])),
         patch("backend.core.cli.build") as mock_build,
         runner.isolated_filesystem(),
@@ -300,10 +257,15 @@ def test_cli_generate_chain_build():
 
 def test_cli_generate_no_verified_tracks():
     """Test generate command when no tracks are verified."""
+    mock_response = {
+        "title": "Test Playlist",
+        "description": "Desc",
+        "tracks": [{"artist": "A", "track": "T"}],
+    }
     with (
         patch(
             "backend.core.ai.generate_playlist",
-            return_value=[{"artist": "A", "track": "T"}],
+            return_value=mock_response,
         ),
         patch("backend.core.ai.verify_ai_tracks", return_value=([], ["Rejected"])),
     ):
@@ -316,8 +278,9 @@ def test_cli_generate_no_verified_tracks():
 def test_cli_generate_with_rejections():
     """Test generate command showing rejections."""
     mock_tracks = [{"artist": "A", "track": "T"}]
+    mock_response = {"title": "Test Playlist", "description": "Desc", "tracks": mock_tracks}
     with (
-        patch("backend.core.ai.generate_playlist", return_value=mock_tracks),
+        patch("backend.core.ai.generate_playlist", return_value=mock_response),
         patch(
             "backend.core.ai.verify_ai_tracks",
             return_value=(mock_tracks, ["Rejected - Song"]),
@@ -338,23 +301,3 @@ def test_cli_ai_models_error():
         result = runner.invoke(app, ["ai-models"])
         assert result.exit_code == 0
         assert "Error fetching models" in result.output
-
-
-def test_cli_setup_ai_error():
-    """Test setup-ai command failure."""
-    mock_keyring = MagicMock()
-    mock_keyring.set_password.side_effect = Exception("Keyring error")
-    with patch.dict("sys.modules", {"keyring": mock_keyring}):
-        result = runner.invoke(app, ["setup-ai"], input="key\n")
-        assert result.exit_code == 0
-        assert "Error: Keyring error" in result.output
-
-
-def test_cli_setup_discogs_error():
-    """Test setup-discogs command failure."""
-    mock_keyring = MagicMock()
-    mock_keyring.set_password.side_effect = Exception("Keyring error")
-    with patch.dict("sys.modules", {"keyring": mock_keyring}):
-        result = runner.invoke(app, ["setup-discogs"], input="token\n")
-        assert result.exit_code == 0
-        assert "Error: Keyring error" in result.output

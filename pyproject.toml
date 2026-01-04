@@ -24,7 +24,6 @@ classifiers = [
 dependencies = [
     "spotipy",
     "python-dotenv",
-    "keyring",
     "typer",
     "tenacity",
     "google-genai>=1.56.0",
@@ -41,6 +40,7 @@ dependencies = [
     "httpx-oauth",
     "sqladmin",
     "itsdangerous",
+    "cryptography",
 ]
 
 [project.optional-dependencies]

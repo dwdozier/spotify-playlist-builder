@@ -11,15 +11,34 @@ logger = logging.getLogger("backend.core.ai")
 
 SYSTEM_PROMPT = """
 You are a professional music curator. Your goal is to generate a list of songs based on the user's
-description. Return ONLY a raw JSON array of objects. Do not include markdown formatting, code
-blocks, or explanatory text.
-Each object must follow this schema:
+description.
+
+CRITICAL OUTPUT RULES:
+1. Return ONLY a valid raw JSON object.
+2. Do NOT include markdown formatting (like ```json ... ```).
+3. Do NOT include any explanatory text before or after the JSON.
+
+The object must follow this schema:
 {
-  "artist": "Artist Name",
-  "track": "Track Title",
-  "version": "studio" | "live" | "remix" | "original" | "remaster" | null
+  "title": "A short, creative, and catchy title for the playlist",
+  "description": "A brief description of the vibe/theme (max 100 chars)",
+  "tracks": [
+    {
+      "artist": "Artist Name",
+      "track": "Track Title",
+      "version": "studio" | "live" | "remix" | "original" | "remaster" | "instrumental"
+                 | "acoustic" | null,
+      "duration_ms": Estimated duration in milliseconds (integer)
+    }
+  ]
 }
-If the user specifies a number of songs, try to meet that count. Default to 20 if unspecified.
+
+LOGIC:
+- If the user specifies a specific number of tracks, follow that.
+- If the user specifies a total playlist duration (e.g., 'roughly 2 hours'), calculate the
+  appropriate number of tracks to fill that duration based on the typical lengths of songs
+  in the requested genre.
+- Default to 20 tracks if no count or duration is specified.
 """
 
 
@@ -30,30 +49,17 @@ def is_retryable_error(e: BaseException) -> bool:
 
 
 def get_ai_api_key() -> str:
-    """Retrieve the AI API Key from keyring or env."""
-    try:
-        # Check env first
-        key = os.getenv("GEMINI_API_KEY")
-        if key:
-            return key
+    """Retrieve the AI API Key from environment variables."""
 
-        # Check keyring (if available)
-        try:
-            import keyring
+    key = os.getenv("GEMINI_API_KEY")
 
-            key = keyring.get_password("spotify-playlist-builder", "gemini_api_key")
-            if key:
-                return key
-        except ImportError:
-            pass
+    if key:
 
-        raise ValueError(
-            "Gemini API Key not found. Run 'spotify-playlist-builder setup-ai' or set "
-            "GEMINI_API_KEY."
-        )
+        return key
 
-    except Exception as e:
-        raise ValueError(f"Failed to retrieve API Key: {e}")
+    # Final failure if no key found
+
+    raise ValueError("Gemini API Key not found. Please set GEMINI_API_KEY in your environment.")
 
 
 @retry(
@@ -106,7 +112,7 @@ def discover_fallback_model(client: genai.Client) -> str:
     return "gemini-2.0-flash"
 
 
-def generate_playlist(description: str, count: int = 20) -> list[dict[str, Any]]:
+def generate_playlist(description: str, count: int = 20) -> dict[str, Any]:
     """Generate a playlist structure using Google Gemini (via google-genai SDK)."""
     api_key = get_ai_api_key()
     client = genai.Client(api_key=api_key)
@@ -116,10 +122,12 @@ def generate_playlist(description: str, count: int = 20) -> list[dict[str, Any]]
 
     # Construct the user prompt
     user_message = f"""
-    Create a playlist with {count} songs based on this description:
-    "{description}"
-    """
+    Create a playlist based on this description: "{description}".
 
+    CRITICAL: If the description mentions a total duration or runtime (e.g. '2 hours'),
+    ignore the default count of {count} and instead generate enough tracks to satisfy
+    that total runtime. Otherwise, generate exactly {count} tracks.
+    """
     contents = [SYSTEM_PROMPT, user_message]
     config = types.GenerateContentConfig(response_mime_type="application/json")
 
@@ -145,6 +153,10 @@ def generate_playlist(description: str, count: int = 20) -> list[dict[str, Any]]
 
     logger.info("Received response from Gemini.")
 
+    if not response or not hasattr(response, "text") or not response.text:
+        logger.error(f"Invalid or empty response from Gemini. Response: {response}")
+        raise ValueError("AI failed to generate a valid response. Please try a different prompt.")
+
     text = response.text.strip()
 
     # Clean up response text if it accidentally contains markdown
@@ -157,12 +169,14 @@ def generate_playlist(description: str, count: int = 20) -> list[dict[str, Any]]
 
     data = json.loads(text)
 
-    if not isinstance(data, list):
-        if isinstance(data, dict) and "tracks" in data:
-            return data["tracks"]
-        raise ValueError("AI response was not a list of tracks.")
+    if isinstance(data, list):
+        # Legacy format support: wrap it in a dict
+        return {"title": "AI Playlist", "description": description[:100], "tracks": data}
 
-    return data
+    if isinstance(data, dict) and "tracks" in data:
+        return data
+
+    raise ValueError("AI response format invalid (expected list or object with 'tracks').")
 
 
 def verify_ai_tracks(tracks: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[str]]:

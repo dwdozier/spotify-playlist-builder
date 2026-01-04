@@ -103,27 +103,9 @@ def test_get_discogs_token_env():
         assert get_discogs_token() == "env_token"
 
 
-def test_get_discogs_token_keyring():
-    """Test retrieving Discogs token from keyring."""
-    mock_keyring = MagicMock()
-    mock_keyring.get_password.return_value = "keyring_token"
-    with (
-        patch.dict(os.environ, {}, clear=True),
-        patch.dict("sys.modules", {"keyring": mock_keyring}),
-    ):
-        from backend.core.metadata import get_discogs_token
-
-        assert get_discogs_token() == "keyring_token"
-
-
 def test_get_discogs_token_error():
     """Test get_discogs_token handles errors gracefully."""
-    mock_keyring = MagicMock()
-    mock_keyring.get_password.side_effect = Exception("Keyring Error")
-    with (
-        patch.dict(os.environ, {}, clear=True),
-        patch.dict("sys.modules", {"keyring": mock_keyring}),
-    ):
+    with patch.dict(os.environ, {}, clear=True):
         from backend.core.metadata import get_discogs_token
 
         assert get_discogs_token() is None
@@ -296,6 +278,52 @@ def test_discogs_verify_no_token():
     with patch("backend.core.metadata.get_discogs_token", return_value=None):
         verifier = DiscogsVerifier()
         assert verifier.verify_track_version("Artist", "Track", "studio") is False
+
+
+def test_search_artist_success(verifier):
+    """Test successful artist search."""
+    mock_response = MagicMock()
+    mock_response.json.return_value = {"artists": [{"name": "Test Artist", "id": "123"}]}
+    mock_response.raise_for_status.return_value = None
+
+    with patch("requests.get", return_value=mock_response) as mock_get:
+        result = verifier.search_artist("Test Artist")
+        assert result["name"] == "Test Artist"
+        mock_get.assert_called_once()
+
+
+def test_search_artist_not_found(verifier):
+    """Test artist search when no artist is found."""
+    mock_response = MagicMock()
+    mock_response.json.return_value = {"artists": []}
+    mock_response.raise_for_status.return_value = None
+
+    with patch("requests.get", return_value=mock_response):
+        result = verifier.search_artist("Unknown Artist")
+        assert result is None
+
+
+def test_search_album_success(verifier):
+    """Test successful album search."""
+    mock_response = MagicMock()
+    mock_response.json.return_value = {"release-groups": [{"title": "Test Album", "id": "456"}]}
+    mock_response.raise_for_status.return_value = None
+
+    with patch("requests.get", return_value=mock_response) as mock_get:
+        result = verifier.search_album("Artist", "Album")
+        assert result["title"] == "Test Album"
+        mock_get.assert_called_once()
+
+
+def test_search_album_not_found(verifier):
+    """Test album search when no album is found."""
+    mock_response = MagicMock()
+    mock_response.json.return_value = {"release-groups": []}
+    mock_response.raise_for_status.return_value = None
+
+    with patch("requests.get", return_value=mock_response):
+        result = verifier.search_album("Artist", "Unknown")
+        assert result is None
 
 
 def test_metadata_verifier_rate_limit(verifier):
