@@ -2,16 +2,15 @@
 
 ## [0.2.0](https://github.com/dwdozier/vibomat/compare/vibomat-v0.1.0...vibomat-v0.2.0) (2026-01-04)
 
-
 ### Features
 
-* Phase 1.5 - Stability & Metadata Enrichment (Finalized) ([#65](https://github.com/dwdozier/vibomat/issues/65)) ([dcbeb7c](https://github.com/dwdozier/vibomat/commit/dcbeb7c60747ea4afbcc17939cb96314ed9d6559))
-
+* Phase 1.5 - Stability & Metadata Enrichment (Finalized) ([#65](https://github.com/dwdozier/vibomat/issues/65))
+  ([dcbeb7c](https://github.com/dwdozier/vibomat/commit/dcbeb7c60747ea4afbcc17939cb96314ed9d6559))
 
 ### Bug Fixes
 
-* Ensure homepage CTA accurately reflects authentication status ([#64](https://github.com/dwdozier/vibomat/issues/64)) ([f90464b](https://github.com/dwdozier/vibomat/commit/f90464b185ae6dcab56b0c957899260143dc9e38))
-
+* Ensure homepage CTA accurately reflects authentication status ([#64](https://github.com/dwdozier/vibomat/issues/64))
+  ([f90464b](https://github.com/dwdozier/vibomat/commit/f90464b185ae6dcab56b0c957899260143dc9e38))
 
 ### Documentation
 
