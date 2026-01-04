@@ -26,12 +26,12 @@ This plan outlines the steps to stabilize the Vibomat MVP for initial release.
   - [ ] Update `backend/core/ai.py` to request a "title" and "description" in the JSON response.
   - [ ] Update `backend/app/services/ai_service.py` to handle the new response structure.
   - [ ] Add tests for title generation.
-- [~] **Task 2: Playlist Persistence & Tracking**
-  - [ ] Verify `Playlist` model in `backend/app/models/playlist.py` supports tracking status
+- [x] **Task 2: Playlist Persistence & Tracking** <!-- 98abd69 -->
+  - [x] Verify `Playlist` model in `backend/app/models/playlist.py` supports tracking status
         (draft/transmitted).
-  - [ ] Implement `create_playlist` and `update_playlist` endpoints to save AI results *before*
+  - [x] Implement `create_playlist` and `update_playlist` endpoints to save AI results *before*
         Spotify transmission.
-- [ ] **Task 3: Profile & Playlist View (Frontend)**
+- [~] **Task 3: Profile & Playlist View (Frontend)**
   - [ ] Create/Update `frontend/src/routes/profile.$userId.tsx` to list user's playlists
         (transmitted and drafts).
   - [ ] Implement a "Playlist Details" view (modal or page) to see tracks and metadata.
