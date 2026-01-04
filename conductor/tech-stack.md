@@ -7,8 +7,7 @@
   - `cli.py`: Defines the Typer application and commands.
   - `auth.py`: Handles credential auto-discovery and storage.
   - `metadata.py`: Handles external metadata verification (MusicBrainz).
-- **Credential Management:** Supports `.env` and system keychain, with auto-discovery logic
-  in `auth.py`.
+- **Credential Management:** Supports `.env` files with auto-discovery logic in `auth.py`.
 - **Configuration:** Project dependencies and tool settings are defined in `pyproject.toml`.
 
 ## Backend
