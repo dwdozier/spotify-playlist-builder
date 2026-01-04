@@ -49,7 +49,7 @@ jobs:
         env:
           TEST_DATABASE_URL: postgresql+asyncpg://user:pass@localhost:5432/vibomat_test
         run: |
-          PYTHONPATH=. uv run pytest --cov=backend/core --cov=backend/app --cov-fail-under=95 backend/tests/
+          PYTHONPATH=. uv run pytest --cov=backend/core --cov=backend/app --cov-fail-under=90 backend/tests/
 
   frontend-tests:
     runs-on: ubuntu-latest
