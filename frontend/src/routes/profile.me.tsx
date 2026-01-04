@@ -1,7 +1,9 @@
 import { createFileRoute, redirect, Link } from '@tanstack/react-router'
-import { useQuery } from '@tanstack/react-query'
-import { User as UserIcon, Music, Disc, Heart, Globe, Lock, Plus, Settings, Edit, Zap, CheckCircle2 } from 'lucide-react'
-import { playlistService, type Playlist } from '../api/playlist'
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
+import { User as UserIcon, Music, Disc, Heart, Globe, Lock, Plus, Settings, Edit, Zap, CheckCircle2, Loader2, ExternalLink } from 'lucide-react'
+import { playlistService, type Playlist, type BuildResponse } from '../api/playlist'
+import { useState } from 'react'
+import { Modal } from '../components/Modal'
 
 export const Route = createFileRoute('/profile/me')({
   beforeLoad: async ({ context, location }) => {
@@ -20,8 +22,11 @@ export const Route = createFileRoute('/profile/me')({
 
 function MyProfile() {
   const { auth } = Route.useRouteContext()
-  // We can assume user exists because of beforeLoad
-  // But let's fetch fresh data to be sure or use context
+  const queryClient = useQueryClient()
+  const [buildResult, setBuildResult] = useState<BuildResponse | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [transmittingId, setTransmittingId] = useState<string | null>(null)
+
   const { data: user } = useQuery({
     queryKey: ['me'],
     queryFn: () => auth.getCurrentUser()
@@ -31,6 +36,25 @@ function MyProfile() {
     queryKey: ['my-playlists'],
     queryFn: playlistService.getMyPlaylists
   })
+
+  const buildMutation = useMutation({
+    mutationFn: playlistService.build,
+    onSuccess: (data) => {
+      setBuildResult(data)
+      setIsModalOpen(true)
+      setTransmittingId(null)
+      queryClient.invalidateQueries({ queryKey: ['my-playlists'] })
+    },
+    onError: () => {
+      setTransmittingId(null)
+      alert("Transmission failed. Please check your Relay connection in Settings.")
+    }
+  })
+
+  const handleTransmit = (id: string) => {
+    setTransmittingId(id)
+    buildMutation.mutate({ playlist_id: id })
+  }
 
   if (!user) return null
 
@@ -110,8 +134,13 @@ function MyProfile() {
                                     <Edit className="w-4 h-4" /> Edit
                                 </button>
                                 {playlist.status === 'draft' && (
-                                    <button className="px-4 py-2 bg-retro-pink text-retro-dark font-display rounded-lg border-2 border-retro-dark hover:bg-pink-400 transition-all uppercase text-sm flex items-center gap-2">
-                                        <Zap className="w-4 h-4" /> Transmit
+                                    <button
+                                      onClick={() => handleTransmit(playlist.id)}
+                                      disabled={transmittingId === playlist.id}
+                                      className="px-4 py-2 bg-retro-pink text-retro-dark font-display rounded-lg border-2 border-retro-dark hover:bg-pink-400 transition-all uppercase text-sm flex items-center gap-2 disabled:opacity-50"
+                                    >
+                                        {transmittingId === playlist.id ? <Loader2 className="w-4 h-4 animate-spin" /> : <Zap className="w-4 h-4" />}
+                                        {transmittingId === playlist.id ? 'Sending...' : 'Transmit'}
                                     </button>
                                 )}
                             </div>
@@ -130,6 +159,40 @@ function MyProfile() {
             </div>
         )}
       </div>
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Transmission Successful"
+      >
+        {buildResult && (
+          <div className="space-y-8 text-center py-4">
+            <div className="flex justify-center">
+              <div className="bg-retro-teal/20 p-6 rounded-full border-4 border-retro-dark shadow-retro-sm">
+                <CheckCircle2 className="w-16 h-16 text-retro-teal" />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <h4 className="text-3xl font-display text-retro-dark uppercase">Archives Updated</h4>
+              <p className="font-body text-xl text-retro-dark/70 italic leading-relaxed">
+                Your playlist has been successfully broadcasted.
+              </p>
+            </div>
+
+            <div className="pt-4">
+              <a
+                href={buildResult.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-10 py-4 bg-retro-teal text-retro-dark font-display text-2xl uppercase rounded-2xl border-4 border-retro-dark shadow-retro hover:bg-teal-400 active:shadow-none active:translate-x-1 active:translate-y-1 transition-all"
+              >
+                Open in Spotify <ExternalLink className="w-6 h-6" />
+              </a>
+            </div>
+          </div>
+        )}
+      </Modal>
     </div>
   )
 }
