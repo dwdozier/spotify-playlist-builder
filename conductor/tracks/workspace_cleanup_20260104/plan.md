@@ -1,0 +1,34 @@
+# Implementation Plan - AI Workspace Cleanup and Conductor Standardization
+
+This plan outlines the migration of legacy AI directives into the Conductor framework and the
+subsequent cleanup of the workspace.
+
+## Phase 1: Directive Migration
+
+Consolidate all useful information from `GEMINI.md` into the structured Conductor files.
+
+- [x] Task: Update `conductor/product.md` with "Project Summary" and "Vib-O-Mat Terminology" from
+      `GEMINI.md`. edc3013
+- [ ] Task: Update `conductor/tech-stack.md` with "Core Architecture" and "Coding Standards"
+      overview.
+- [ ] Task: Explicitly document the Testing Stack (Pytest for backend, Playwright for frontend/E2E)
+      in `conductor/tech-stack.md`.
+- [ ] Task: Update `conductor/code_styleguides/python.md` and
+      `conductor/code_styleguides/typescript.md` with the specific rules from `GEMINI.md`.
+- [ ] Task: Update `conductor/workflow.md` with "Key Commands", "Critical Rules", and the
+      "Branching Strategy" section.
+- [ ] Task: Conductor - User Manual Verification 'Directive Migration' (Protocol in workflow.md)
+
+## Phase 2: Protocol Refinement and Cleanup
+
+Formalize the lessons learned from the initial setup and remove legacy files.
+
+- [ ] Task: Review and refine the "Phase Completion Verification and Checkpointing Protocol" in
+      `conductor/workflow.md` to ensure it is robust and actionable.
+- [ ] Task: Perform a final cross-reference check between the new Conductor files and `GEMINI.md` to
+      ensure no "global directives" or critical context was lost.
+- [ ] Task: Delete the legacy `GEMINI.md` file.
+- [ ] Task: Delete the `planning/` directory and its contents, as they are now superseded by
+      Conductor tracks.
+- [ ] Task: Conductor - User Manual Verification 'Cleanup and Standardization' (Protocol in
+      workflow.md)
