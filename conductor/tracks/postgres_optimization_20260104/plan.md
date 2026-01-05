@@ -46,11 +46,11 @@ Implement advanced search features for Artists and Tracks using FTS and Trigrams
 
 Establish the database layer for storing and querying AI-generated embeddings.
 
-- [~] Task: Create unit tests for vector similarity search (top-k nearest neighbors).
-- [ ] Task: Create the `AIInteractionEmbeddings` table with a `vector` column (dimension based on
-      target model, e.g., 768 or 1536).
+- [x] Task: Create unit tests for vector similarity search (top-k nearest neighbors). 5dfcfbb
+- [x] Task: Create the `AIInteractionEmbeddings` table with a `vector` column (dimension based on
+      target model, e.g., 768 or 1536). 163afd9
 - [ ] Task: Create a data migration strategy (or script) to generate and store embeddings for
       historical AI logs if applicable.
-- [ ] Task: Implement HNSW or IVFFlat indices for efficient similarity searches.
+- [~] Task: Implement HNSW or IVFFlat indices for efficient similarity searches.
 - [ ] Task: Implement a basic repository method to store and retrieve nearest neighbor embeddings.
 - [ ] Task: Conductor - User Manual Verification 'Vector Store Foundation' (Protocol in workflow.md)
