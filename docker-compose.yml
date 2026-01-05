@@ -46,6 +46,8 @@ services:
     environment:
       - DATABASE_URL=postgresql+asyncpg://user:pass@db:5432/vibomat
       - REDIS_URL=redis://redis:6379
+      - SECRET_KEY=${SECRET_KEY}
+      - FASTAPI_SECRET=${FASTAPI_SECRET}
       - SPOTIFY_CLIENT_ID=${SPOTIFY_CLIENT_ID}
       - SPOTIFY_CLIENT_SECRET=${SPOTIFY_CLIENT_SECRET}
       - SPOTIFY_REDIRECT_URI=${SPOTIFY_REDIRECT_URI}
@@ -79,6 +81,8 @@ services:
     environment:
       - DATABASE_URL=postgresql+asyncpg://user:pass@db:5432/vibomat
       - REDIS_URL=redis://redis:6379
+      - SECRET_KEY=${SECRET_KEY}
+      - FASTAPI_SECRET=${FASTAPI_SECRET}
       - SPOTIFY_CLIENT_ID=${SPOTIFY_CLIENT_ID}
       - SPOTIFY_CLIENT_SECRET=${SPOTIFY_CLIENT_SECRET}
       - SPOTIFY_REDIRECT_URI=${SPOTIFY_REDIRECT_URI}

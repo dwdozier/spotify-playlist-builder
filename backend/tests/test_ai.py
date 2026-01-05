@@ -1,4 +1,3 @@
-import os
 import json
 import pytest
 from unittest.mock import MagicMock, patch
@@ -8,17 +7,18 @@ from backend.core.ai import (
     list_available_models,
     discover_fallback_model,
 )
+from backend.app.core.config import settings
 
 
 def test_get_ai_api_key_env():
     """Test retrieving key from env."""
-    with patch.dict(os.environ, {"GEMINI_API_KEY": "test_env_key"}):
+    with patch.object(settings, "GEMINI_API_KEY", "test_env_key"):
         assert get_ai_api_key() == "test_env_key"
 
 
 def test_get_ai_api_key_missing():
     """Test failure when key is missing."""
-    with patch.dict(os.environ, {}, clear=True):
+    with patch.object(settings, "GEMINI_API_KEY", None):
         with pytest.raises(ValueError, match="Gemini API Key not found"):
             get_ai_api_key()
 
@@ -167,7 +167,7 @@ def test_generate_playlist_404_retry():
         patch("backend.core.ai.get_ai_api_key", return_value="key"),
         patch("google.genai.Client") as mock_client_cls,
         patch("backend.core.ai.discover_fallback_model", return_value="fallback-model"),
-        patch.dict(os.environ, {}, clear=True),  # Ensure no env var overrides
+        patch.object(settings, "GEMINI_MODEL", "gemini-flash-latest"),
     ):
         mock_client = MagicMock()
         # First call fails, Second call succeeds
@@ -198,7 +198,7 @@ def test_generate_playlist_404_retry_same_model():
             "backend.core.ai.discover_fallback_model",
             return_value="gemini-flash-latest",
         ),
-        patch.dict(os.environ, {}, clear=True),
+        patch.object(settings, "GEMINI_MODEL", "gemini-flash-latest"),
     ):
         mock_client = MagicMock()
         mock_client.models.generate_content.side_effect = Exception("404 Model not found")

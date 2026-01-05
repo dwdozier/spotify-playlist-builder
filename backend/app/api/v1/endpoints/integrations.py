@@ -7,18 +7,10 @@ from backend.app.db.session import get_async_session
 from backend.app.core.auth.fastapi_users import current_active_user
 from backend.app.models.user import User
 from backend.app.models.service_connection import ServiceConnection
-import os
+from backend.app.core.config import settings
 import uuid
 
 router = APIRouter()
-
-# System defaults
-DEFAULT_SPOTIFY_CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
-DEFAULT_SPOTIFY_CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
-SPOTIFY_REDIRECT_URI = os.getenv(
-    "SPOTIFY_REDIRECT_URI",
-    "http://localhost/api/v1/integrations/spotify/callback",
-)
 
 
 class RelayConfig(BaseModel):
@@ -89,7 +81,7 @@ async def spotify_login(
     )
     conn = result.scalar_one_or_none()
 
-    client_id = DEFAULT_SPOTIFY_CLIENT_ID
+    client_id = settings.SPOTIFY_CLIENT_ID
     if conn and conn.credentials:
         client_id = conn.credentials.get("client_id", client_id)
 
@@ -101,7 +93,7 @@ async def spotify_login(
     params = {
         "client_id": client_id,
         "response_type": "code",
-        "redirect_uri": SPOTIFY_REDIRECT_URI,
+        "redirect_uri": settings.SPOTIFY_REDIRECT_URI,
         "scope": "playlist-modify-public playlist-modify-private",
         "state": str(user.id),
     }
@@ -130,8 +122,8 @@ async def spotify_callback(code: str, state: str, db: AsyncSession = Depends(get
     )
     conn = result.scalar_one_or_none()
 
-    client_id = DEFAULT_SPOTIFY_CLIENT_ID
-    client_secret = DEFAULT_SPOTIFY_CLIENT_SECRET
+    client_id = settings.SPOTIFY_CLIENT_ID
+    client_secret = settings.SPOTIFY_CLIENT_SECRET
 
     if conn and conn.credentials:
         client_id = conn.credentials.get("client_id", client_id)
@@ -147,7 +139,7 @@ async def spotify_callback(code: str, state: str, db: AsyncSession = Depends(get
             data={
                 "grant_type": "authorization_code",
                 "code": code,
-                "redirect_uri": SPOTIFY_REDIRECT_URI,
+                "redirect_uri": settings.SPOTIFY_REDIRECT_URI,
                 "client_id": client_id,
                 "client_secret": client_secret,
             },

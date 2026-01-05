@@ -1,10 +1,10 @@
-import os
 import json
 import logging
 from typing import Any
 from google import genai
 from google.genai import types
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception
+from backend.app.core.config import settings
 from .metadata import MetadataVerifier
 
 logger = logging.getLogger("backend.core.ai")
@@ -51,7 +51,7 @@ def is_retryable_error(e: BaseException) -> bool:
 def get_ai_api_key() -> str:
     """Retrieve the AI API Key from environment variables."""
 
-    key = os.getenv("GEMINI_API_KEY")
+    key = settings.GEMINI_API_KEY
 
     if key:
 
@@ -118,7 +118,7 @@ def generate_playlist(description: str, count: int = 20) -> dict[str, Any]:
     client = genai.Client(api_key=api_key)
 
     # Default to user preference or the latest alias
-    model_name = os.getenv("GEMINI_MODEL", "gemini-flash-latest")
+    model_name = settings.GEMINI_MODEL
 
     # Construct the user prompt
     user_message = f"""

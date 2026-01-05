@@ -1,8 +1,7 @@
-import os
 from taskiq_redis import ListQueueBroker
+from backend.app.core.config import settings
 
-redis_url = os.getenv("REDIS_URL", "redis://localhost:6379")
-broker = ListQueueBroker(redis_url)
+broker = ListQueueBroker(str(settings.REDIS_URL))
 
 
 @broker.task

@@ -1,6 +1,5 @@
 import uuid
 import json
-import os
 import hashlib
 import base64
 from datetime import datetime
@@ -11,12 +10,13 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from cryptography.fernet import Fernet
 
 from backend.app.db.session import Base
+from backend.app.core.config import settings
 
 if TYPE_CHECKING:
     from .user import User
 
 # Get encryption key from environment
-SECRET_KEY = os.getenv("SECRET_KEY", "vibomat-dev-secret-key-at-least-32-chars-long!!")
+SECRET_KEY = settings.SECRET_KEY
 # Derive a valid 32-byte base64 key using SHA256
 key_bytes = hashlib.sha256(SECRET_KEY.encode()).digest()
 FERNET_KEY = base64.urlsafe_b64encode(key_bytes)

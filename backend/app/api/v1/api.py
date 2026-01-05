@@ -14,7 +14,7 @@ from backend.app.core.auth.oauth import (
     microsoft_oauth_client,
     apple_oauth_client,
 )
-import os
+from backend.app.core.config import settings
 
 api_router = APIRouter()
 
@@ -40,7 +40,7 @@ api_router.include_router(
     fastapi_users.get_oauth_router(
         google_oauth_client,
         auth_backend,
-        os.getenv("FASTAPI_SECRET", "devsecret"),
+        settings.SECRET_KEY,
         associate_by_email=True,
         is_verified_by_default=True,
     ),
@@ -51,7 +51,7 @@ api_router.include_router(
     fastapi_users.get_oauth_router(
         github_oauth_client,
         auth_backend,
-        os.getenv("FASTAPI_SECRET", "devsecret"),
+        settings.SECRET_KEY,
         associate_by_email=True,
     ),
     prefix="/auth/github",
@@ -61,7 +61,7 @@ api_router.include_router(
     fastapi_users.get_oauth_router(
         microsoft_oauth_client,
         auth_backend,
-        os.getenv("FASTAPI_SECRET", "devsecret"),
+        settings.SECRET_KEY,
         associate_by_email=True,
     ),
     prefix="/auth/microsoft",
@@ -71,7 +71,7 @@ api_router.include_router(
     fastapi_users.get_oauth_router(
         apple_oauth_client,
         auth_backend,
-        os.getenv("FASTAPI_SECRET", "devsecret"),
+        settings.SECRET_KEY,
         associate_by_email=True,
     ),
     prefix="/auth/apple",
