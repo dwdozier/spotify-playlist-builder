@@ -12,10 +12,13 @@
 
 ## Phase 2: Session Security & Auth Guards (Frontend)
 
-- [ ] Implement global Axios/Fetch interceptor for 401 handling.
-- [ ] Create/Update the `ProtectedRoute` wrapper (or TanStack Router equivalent).
-- [ ] Implement "Redirect to Login and Return" logic (saving `redirect_url` in query param or state).
-- [ ] Verify `test_auth_flow.py` (E2E) covers session expiry/redirection.
+- [x] Implement global Axios/Fetch interceptor for 401 handling.
+
+- [x] Create/Update the `ProtectedRoute` wrapper (or TanStack Router equivalent).
+
+- [x] Implement "Redirect to Login and Return" logic (saving `redirect_url` in query param or state).
+
+- [x] Verify `test_auth_flow.py` (E2E) covers session expiry/redirection.
 
 ## Phase 3: OAuth Scope Transparency
 

@@ -94,7 +94,10 @@ async def spotify_login(
         "client_id": client_id,
         "response_type": "code",
         "redirect_uri": settings.SPOTIFY_REDIRECT_URI,
-        "scope": "playlist-modify-public playlist-modify-private",
+        "scope": (
+            "playlist-modify-public playlist-modify-private "
+            "playlist-read-private playlist-read-collaborative"
+        ),
         "state": str(user.id),
     }
     url = "https://accounts.spotify.com/authorize?" + urllib.parse.urlencode(params)
@@ -155,6 +158,7 @@ async def spotify_callback(code: str, state: str, db: AsyncSession = Depends(get
             )
 
         token_data = response.json()
+        granted_scopes = token_data.get("scope", "").split(" ")
 
         # 3. Get user info from Spotify
         user_response = await client.get(
@@ -177,6 +181,7 @@ async def spotify_callback(code: str, state: str, db: AsyncSession = Depends(get
                 access_token=token_data["access_token"],
                 refresh_token=token_data.get("refresh_token"),
                 expires_at=expires_at,
+                scopes=granted_scopes,
             )
             db.add(conn)
         else:
@@ -184,6 +189,7 @@ async def spotify_callback(code: str, state: str, db: AsyncSession = Depends(get
             conn.access_token = token_data["access_token"]
             conn.refresh_token = token_data.get("refresh_token")
             conn.expires_at = expires_at
+            conn.scopes = granted_scopes
 
         await db.commit()
 

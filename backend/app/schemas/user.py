@@ -9,6 +9,7 @@ class ServiceConnectionRead(BaseModel):
     is_connected: bool
     client_id: Optional[str] = None
     has_secret: bool = False
+    scopes: Optional[List[str]] = None
 
     model_config = ConfigDict(from_attributes=True)
 

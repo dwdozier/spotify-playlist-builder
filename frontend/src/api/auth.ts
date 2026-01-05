@@ -10,6 +10,7 @@ export interface ServiceConnection {
   is_connected: boolean
   client_id?: string
   has_secret: boolean
+  scopes?: string[]
 }
 
 export interface User {
