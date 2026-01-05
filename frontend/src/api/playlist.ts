@@ -52,6 +52,14 @@ export interface PlaylistGenerationResponse {
   tracks: Track[]
 }
 
+export interface BuildResponse {
+  status: string
+  message: string
+  playlist_id?: string
+  url?: string
+  failed_tracks: string[]
+}
+
 export const playlistService = {
   generate: (req: GenerationRequest) =>
     apiClient<PlaylistGenerationResponse>('/playlists/generate', {

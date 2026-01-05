@@ -1,4 +1,4 @@
-import { createRootRouteWithContext, Link, Outlet } from '@tanstack/react-router'
+import { createRootRouteWithContext, Link, Outlet, redirect } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import { authService } from '../api/auth'
 import { UserCheck, Settings, User, LogOut, ShieldAlert, Cpu } from 'lucide-react'
@@ -8,8 +8,19 @@ interface MyRouterContext {
 }
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
-  loader: async ({ context }) => {
+  loader: async ({ context, location }) => {
     const user = await context.auth.getCurrentUser()
+    const isPublicRoute = ['/', '/login', '/auth/callback'].includes(location.pathname)
+
+    if (!user && !isPublicRoute) {
+      throw redirect({
+        to: '/login',
+        search: {
+          redirect: location.href,
+        },
+      })
+    }
+
     return { user }
   },
   component: RootLayout,

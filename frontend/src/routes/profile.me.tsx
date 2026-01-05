@@ -1,7 +1,7 @@
 import { createFileRoute, redirect, Link } from '@tanstack/react-router'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
-import { User as UserIcon, Music, Disc, Heart, Globe, Lock, Plus, Settings, Edit, Zap, CheckCircle2, Loader2, ExternalLink } from 'lucide-react'
-import { playlistService, type Playlist, type BuildResponse } from '../api/playlist'
+import { User as UserIcon, Music, Disc, Plus, Settings, Edit, Zap, CheckCircle2, Loader2, ExternalLink } from 'lucide-react'
+import { playlistService, type BuildResponse } from '../api/playlist'
 import { useState } from 'react'
 import { Modal } from '../components/Modal'
 

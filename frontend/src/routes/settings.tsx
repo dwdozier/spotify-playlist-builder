@@ -43,12 +43,12 @@ function Settings() {
   const [activeMetadata, setActiveMetadata] = useState<EnrichedMetadata | null>(null)
   const [relayCreds, setRelayCreds] = useState({ client_id: '', client_secret: '' })
 
-  const { data: user, isLoading } = useQuery<User>({
+  const { data: user, isLoading } = useQuery<User | null>({
     queryKey: ['me'],
     queryFn: () => auth.getCurrentUser()
   })
 
-  const spotifyConn = user?.service_connections?.find(c => c.provider_name === 'spotify')
+  const spotifyConn = user?.service_connections?.find((c: any) => c.provider_name === 'spotify')
 
   const relayMutation = useMutation({
     mutationFn: async (creds: typeof relayCreds) => {

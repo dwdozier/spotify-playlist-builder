@@ -2,10 +2,13 @@
 
 ## Phase 1: Configuration & Environment Audit
 
-- [ ] Audit `config.py` against `.env` files.
-- [ ] Refactor `.env.example` to be the single source of truth for required keys.
-- [ ] Ensure `pydantic-settings` models enforce required fields in production mode.
-- [ ] Update documentation (README/SETUP) to reflect new env var structure.
+- [x] Audit `config.py` against `.env` files.
+
+- [x] Refactor `.env.example` to be the single source of truth for required keys.
+
+- [x] Ensure `pydantic-settings` models enforce required fields in production mode.
+
+- [x] Update documentation (README/SETUP) to reflect new env var structure.
 
 ## Phase 2: Session Security & Auth Guards (Frontend)
 

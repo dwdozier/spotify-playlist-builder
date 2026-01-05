@@ -1,7 +1,7 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Route } from '../routes/playlists'
-import { playlistService, type Track, type PlaylistGenerationResponse } from '../api/playlist'
+import { playlistService, type PlaylistGenerationResponse } from '../api/playlist'
 import { vi, describe, it, expect, beforeEach } from 'vitest'
 
 // Mock the API service
@@ -20,7 +20,7 @@ vi.mock('@tanstack/react-router', async () => {
     ...actual,
     useNavigate: () => vi.fn(),
     useSearch: () => ({}),
-    createFileRoute: (path: string) => (options: any) => ({
+    createFileRoute: (_path: string) => (options: any) => ({
         ...options,
         options,
         useSearch: () => ({}),

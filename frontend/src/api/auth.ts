@@ -1,3 +1,5 @@
+import { apiClient, UnauthorizedError } from './client'
+
 export interface Album {
   name: string
   artist: string
@@ -35,23 +37,19 @@ export const authService = {
   },
   checkAuth: async () => {
     try {
-      const response = await fetch('/api/v1/users/me', {
-        credentials: 'include'
-      })
-      return response.ok
+      await apiClient<User>('/users/me')
+      return true
     } catch {
       return false
     }
   },
   getCurrentUser: async () => {
     try {
-      const response = await fetch('/api/v1/users/me', {
-        credentials: 'include'
-      })
-      if (response.ok) {
-        return await response.json()
-      }
+      return await apiClient<User>('/users/me')
     } catch (e) {
+      if (e instanceof UnauthorizedError) {
+        return null
+      }
       console.error("Auth check failed", e)
     }
     return null

@@ -273,7 +273,7 @@ function Playlists() {
                     </p>
                 </div>
                 <div className="bg-retro-dark text-retro-teal px-4 py-2 rounded-lg font-display text-lg shadow-retro-xs whitespace-nowrap">
-                {formatDuration(generatedPlaylist.tracks?.reduce((acc, t) => acc + (t.duration_ms || 0), 0) || 0)}
+                {formatDuration(generatedPlaylist.tracks?.reduce((acc: number, t: Track) => acc + (t.duration_ms || 0), 0) || 0)}
                 </div>
             </div>
           </div>
@@ -290,7 +290,7 @@ function Playlists() {
                 </tr>
               </thead>
               <tbody className="divide-y-4 divide-retro-dark bg-retro-cream">
-                {(generatedPlaylist.tracks || []).map((track, i) => (
+                {(generatedPlaylist.tracks || []).map((track: Track, i: number) => (
                   <tr key={i} className="hover:bg-retro-teal/10 transition-colors">
                     <td className="px-6 py-5 text-xl text-retro-dark font-body font-bold border-r-4 border-retro-dark">{track.artist}</td>
                     <td className="px-6 py-5 text-xl text-retro-dark font-body border-r-4 border-retro-dark italic">"{track.track}"</td>
