@@ -22,10 +22,13 @@
 
 ## Phase 3: OAuth Scope Transparency
 
-- [ ] Audit current Spotify scopes in `backend/app/core/providers/spotify.py`.
-- [ ] Update `ServiceConnection` model (or API response) to include `scopes` list.
-- [ ] Update "Relay Station" UI to display these scopes in a user-friendly way.
-- [ ] Verify backend validates scopes upon connection.
+- [x] Audit current Spotify scopes in `backend/app/core/providers/spotify.py`.
+
+- [x] Update `ServiceConnection` model (or API response) to include `scopes` list.
+
+- [x] Update "Relay Station" UI to display these scopes in a user-friendly way.
+
+- [x] Verify backend validates scopes upon connection.
 
 ## Phase 4: Verification
 

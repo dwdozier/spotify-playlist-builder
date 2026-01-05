@@ -16,8 +16,8 @@ and external metadata verification.
 ## Tech Stack
 
 - **Frontend**: React, TanStack Router, TanStack Query, Tailwind CSS, Lucide.
-- **Backend**: FastAPI, SQLAlchemy (Async), Pydantic, Google Gemini SDK.
-- **Infrastructure**: Docker, Redis, PostgreSQL (Production) / SQLite (Dev).
+- **Backend**: FastAPI, SQLAlchemy (Async), Pydantic Settings, Google Gemini SDK.
+- **Infrastructure**: Docker, Redis, PostgreSQL (pgvector).
 - **Quality**: 90% test coverage enforced via CI/CD.
 
 ## Quick Start
