@@ -259,6 +259,27 @@ async def build_playlist_endpoint(
         raise HTTPException(status_code=500, detail=f"Failed to build playlist: {str(e)}")
 
 
+@router.get("/search/tracks", response_model=List[PlaylistRead])
+async def search_playlists_by_track(
+    artist: str,
+    user: User = Depends(current_active_user),
+    db: AsyncSession = Depends(get_async_session),
+):
+    """
+    Search for playlists containing a specific artist using JSONB containment.
+    """
+    # Optimized query using @> operator
+    from sqlalchemy import cast
+    from sqlalchemy.dialects.postgresql import JSONB
+
+    stmt = select(PlaylistModel).where(
+        PlaylistModel.user_id == user.id,
+        cast(PlaylistModel.content_json, JSONB).contains({"tracks": [{"artist": artist}]}),
+    )
+    result = await db.execute(stmt)
+    return result.scalars().all()
+
+
 @router.post("/export")
 async def export_playlist(
     playlist: PlaylistCreate,
