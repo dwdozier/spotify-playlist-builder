@@ -15,7 +15,7 @@ Enable the necessary PostgreSQL extensions in the development and production env
 - [x] Task: Conductor - User Manual Verification 'Infrastructure & Extensions' (Protocol in
       workflow.md) 01202a4
 
-## Phase 2: Hybrid Storage & JSONB Optimization (Archives)
+## Phase 2: Hybrid Storage & JSONB Optimization (Archives) [checkpoint: 5a33049]
 
 Optimize the storage and querying of playlist data within the `Archives` table.
 
@@ -26,9 +26,9 @@ Optimize the storage and querying of playlist data within the `Archives` table.
       optimized key-value lookups. 1b39edb
 - [x] Task: Refactor existing repository methods to use path-based JSONB queries where performance
       benefits are identified. d60580e
-- [~] Task: (Research/Optional) Analyze table partitioning strategies for `Archives` based on
-      `user_id` or `created_at`.
-- [ ] Task: Conductor - User Manual Verification 'JSONB Optimization' (Protocol in workflow.md)
+- [x] Task: (Research/Optional) Analyze table partitioning strategies for `Archives` based on
+      `user_id` or `created_at`. c075a99
+- [x] Task: Conductor - User Manual Verification 'JSONB Optimization' (Protocol in workflow.md) 5a33049
 
 ## Phase 3: Search & Discovery (Metadata)
 
