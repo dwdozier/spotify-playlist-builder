@@ -280,6 +280,55 @@ async def search_playlists_by_track(
     return result.scalars().all()
 
 
+@router.get("/search/metadata")
+async def search_metadata(
+    q: str,
+    db: AsyncSession = Depends(get_async_session),
+    user: User = Depends(current_active_user),
+):
+    """
+    Search for artists and tracks using FTS and Trigrams.
+    """
+    from backend.app.models.metadata import Artist, Track
+    from sqlalchemy import func, or_
+
+    # Trigram fuzzy search for artists
+    artist_stmt = (
+        select(Artist)
+        .where(
+            or_(
+                func.similarity(Artist.name, q) > 0.3,
+                func.to_tsvector("english", Artist.name).bool_op("@@")(
+                    func.plainto_tsquery("english", q)
+                ),
+            )
+        )
+        .limit(10)
+    )
+
+    # FTS for tracks
+    track_stmt = (
+        select(Track)
+        .where(
+            or_(
+                func.similarity(Track.title, q) > 0.3,
+                func.to_tsvector("english", Track.title).bool_op("@@")(
+                    func.plainto_tsquery("english", q)
+                ),
+            )
+        )
+        .limit(10)
+    )
+
+    artist_results = await db.execute(artist_stmt)
+    track_results = await db.execute(track_stmt)
+
+    return {
+        "artists": artist_results.scalars().all(),
+        "tracks": track_results.scalars().all(),
+    }
+
+
 @router.post("/export")
 async def export_playlist(
     playlist: PlaylistCreate,

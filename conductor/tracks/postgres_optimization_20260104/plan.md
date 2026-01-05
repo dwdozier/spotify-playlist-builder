@@ -38,8 +38,8 @@ Implement advanced search features for Artists and Tracks using FTS and Trigrams
 - [x] Task: Create a migration to populate `tsvector` columns for existing Artist/Track records
       (backfill data). 836c942
 - [x] Task: Create functional GIN indices for Full Text Search on Artist/Track names. 130b7a2
-- [~] Task: Implement `pg_trgm` indices for fuzzy name matching.
-- [ ] Task: Update the search service/API to leverage these new indexing strategies.
+- [x] Task: Implement `pg_trgm` indices for fuzzy name matching. cbed1ac
+- [~] Task: Update the search service/API to leverage these new indexing strategies.
 - [ ] Task: Conductor - User Manual Verification 'Search & Discovery' (Protocol in workflow.md)
 
 ## Phase 4: Vector Store Foundation (AI Logs)
