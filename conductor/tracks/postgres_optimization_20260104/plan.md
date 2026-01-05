@@ -30,7 +30,7 @@ Optimize the storage and querying of playlist data within the `Archives` table.
       `user_id` or `created_at`. c075a99
 - [x] Task: Conductor - User Manual Verification 'JSONB Optimization' (Protocol in workflow.md) 5a33049
 
-## Phase 3: Search & Discovery (Metadata) [checkpoint: 56231f5]
+## Phase 3: Search & Discovery (Metadata) [checkpoint: 163afd9]
 
 Implement advanced search features for Artists and Tracks using FTS and Trigrams.
 
@@ -40,7 +40,7 @@ Implement advanced search features for Artists and Tracks using FTS and Trigrams
 - [x] Task: Create functional GIN indices for Full Text Search on Artist/Track names. 130b7a2
 - [x] Task: Implement `pg_trgm` indices for fuzzy name matching. cbed1ac
 - [x] Task: Update the search service/API to leverage these new indexing strategies. d2443a7
-- [x] Task: Conductor - User Manual Verification 'Search & Discovery' (Protocol in workflow.md) 56231f5
+- [x] Task: Conductor - User Manual Verification 'Search & Discovery' (Protocol in workflow.md) 163afd9
 
 ## Phase 4: Vector Store Foundation (AI Logs)
 
