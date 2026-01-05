@@ -2,7 +2,7 @@ import pytest
 from sqlalchemy.ext.asyncio import AsyncSession
 from backend.app.models.user import User
 from backend.app.models.playlist import Playlist
-from sqlalchemy import select, text
+from sqlalchemy import select, text, func
 
 
 @pytest.mark.asyncio
@@ -41,3 +41,46 @@ async def test_jsonb_deep_query(db_session: AsyncSession):
     result = await db_session.execute(stmt)
     db_pl = result.scalar_one()
     assert db_pl.name == "Deep Query Test"
+
+
+@pytest.mark.asyncio
+async def test_full_text_search(db_session: AsyncSession):
+    """Test full-text search on Artist and Track names."""
+    from backend.app.models.metadata import Artist
+
+    artists = [
+        Artist(name="The Midnight"),
+        Artist(name="Midnight City"),
+        Artist(name="After Midnight"),
+    ]
+    db_session.add_all(artists)
+    await db_session.flush()
+
+    # Create a basic FTS query using plainto_tsquery
+    stmt = select(Artist).where(
+        func.to_tsvector("english", Artist.name).bool_op("@@")(
+            func.plainto_tsquery("english", "midnight")
+        )
+    )
+    result = await db_session.execute(stmt)
+    results = result.scalars().all()
+    assert len(results) >= 3
+
+
+@pytest.mark.asyncio
+async def test_fuzzy_search_trigram(db_session: AsyncSession):
+    """Test fuzzy search using pg_trgm similarity."""
+    from backend.app.models.metadata import Artist
+
+    # Ensure pg_trgm is available
+    await db_session.execute(text("CREATE EXTENSION IF NOT EXISTS pg_trgm"))
+
+    artist = Artist(name="Daft Punk")
+    db_session.add(artist)
+    await db_session.flush()
+
+    # Search with a typo using raw SQL to be sure about the operator/function
+    stmt = select(Artist).where(text("similarity(name, 'Daft Punc') > 0.3"))
+    result = await db_session.execute(stmt)
+    db_artist = result.scalar_one()
+    assert db_artist.name == "Daft Punk"
