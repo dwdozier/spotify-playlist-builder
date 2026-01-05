@@ -3,17 +3,17 @@
 This plan outlines the multi-phase modernization of the Vibomat data layer to leverage advanced
 PostgreSQL features for performance, search, and AI-driven discovery.
 
-## Phase 1: Infrastructure & Database Extensions
+## Phase 1: Infrastructure & Database Extensions [checkpoint: 01202a4]
 
 Enable the necessary PostgreSQL extensions in the development and production environments.
 
 - [x] Task: Update `docker-compose.yml` to use a PostgreSQL image that supports `pgvector` or
       ensure the build process installs it. 5c2c887
-- [~] Task: Create a migration to enable `pgvector` and `pg_trgm` extensions in the database.
-- [ ] Task: Verify extensions are active and accessible via a database client.
-- [ ] Task: Update `conductor/tech-stack.md` to reflect the new database extensions.
-- [ ] Task: Conductor - User Manual Verification 'Infrastructure & Extensions' (Protocol in
-      workflow.md)
+- [x] Task: Create a migration to enable `pgvector` and `pg_trgm` extensions in the database. 3b874e1
+- [x] Task: Verify extensions are active and accessible via a database client. 3b874e1
+- [x] Task: Update `conductor/tech-stack.md` to reflect the new database extensions. 4d2f302
+- [x] Task: Conductor - User Manual Verification 'Infrastructure & Extensions' (Protocol in
+      workflow.md) 01202a4
 
 ## Phase 2: Hybrid Storage & JSONB Optimization (Archives)
 
