@@ -1,4 +1,5 @@
 import uuid
+from datetime import datetime
 from typing import List, Optional, Any, Dict
 from pydantic import BaseModel, Field, ConfigDict
 
@@ -42,6 +43,7 @@ class Playlist(PlaylistBase):
     status: str = "draft"
     provider: Optional[str] = None
     provider_id: Optional[str] = None
+    deleted_at: Optional[datetime] = None
 
     model_config = ConfigDict(from_attributes=True)
 

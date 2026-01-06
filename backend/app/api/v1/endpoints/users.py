@@ -105,7 +105,11 @@ async def get_public_playlists(
     if not user or not user.is_public:
         raise HTTPException(status_code=404, detail="User not found or profile is private")
 
-    result = await db.execute(select(Playlist).where(Playlist.user_id == user_id, Playlist.public))
+    result = await db.execute(
+        select(Playlist).where(
+            Playlist.user_id == user_id, Playlist.public, Playlist.deleted_at.is_(None)
+        )
+    )
     return result.scalars().all()
 
 
@@ -126,7 +130,7 @@ async def get_favorited_playlists(
     result = await db.execute(
         select(Playlist)
         .join(user_favorite_playlists, Playlist.id == user_favorite_playlists.c.playlist_id)
-        .where(user_favorite_playlists.c.user_id == user_id)
+        .where(user_favorite_playlists.c.user_id == user_id, Playlist.deleted_at.is_(None))
     )
     return result.scalars().all()
 
@@ -141,7 +145,9 @@ async def favorite_playlist(
     Favorite a playlist.
     """
     # Check if playlist exists and is public
-    playlist_result = await db.execute(select(Playlist).where(Playlist.id == playlist_id))
+    playlist_result = await db.execute(
+        select(Playlist).where(Playlist.id == playlist_id, Playlist.deleted_at.is_(None))
+    )
     playlist = playlist_result.scalar_one_or_none()
     if not playlist or not playlist.public:
         raise HTTPException(status_code=404, detail="Playlist not found or private")

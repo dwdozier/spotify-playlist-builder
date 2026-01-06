@@ -65,7 +65,7 @@ async def get_my_playlists(
     """
     result = await db.execute(
         select(PlaylistModel)
-        .where(PlaylistModel.user_id == user.id)
+        .where(PlaylistModel.user_id == user.id, PlaylistModel.deleted_at.is_(None))
         .order_by(PlaylistModel.id.desc())
     )
     return result.scalars().all()
@@ -80,7 +80,11 @@ async def get_playlist(
     """
     Get a specific playlist by ID.
     """
-    result = await db.execute(select(PlaylistModel).where(PlaylistModel.id == playlist_id))
+    result = await db.execute(
+        select(PlaylistModel).where(
+            PlaylistModel.id == playlist_id, PlaylistModel.deleted_at.is_(None)
+        )
+    )
     playlist = result.scalar_one_or_none()
 
     if not playlist:
@@ -103,7 +107,11 @@ async def update_playlist(
     """
     Update a playlist (e.g. content, name).
     """
-    result = await db.execute(select(PlaylistModel).where(PlaylistModel.id == playlist_id))
+    result = await db.execute(
+        select(PlaylistModel).where(
+            PlaylistModel.id == playlist_id, PlaylistModel.deleted_at.is_(None)
+        )
+    )
     db_playlist = result.scalar_one_or_none()
 
     if not db_playlist:
@@ -179,7 +187,9 @@ async def build_playlist_endpoint(
 
     if request.playlist_id:
         result = await db.execute(
-            select(PlaylistModel).where(PlaylistModel.id == request.playlist_id)
+            select(PlaylistModel).where(
+                PlaylistModel.id == request.playlist_id, PlaylistModel.deleted_at.is_(None)
+            )
         )
         db_playlist = result.scalar_one_or_none()
         if db_playlist and db_playlist.user_id == user.id:
@@ -274,6 +284,7 @@ async def search_playlists_by_track(
 
     stmt = select(PlaylistModel).where(
         PlaylistModel.user_id == user.id,
+        PlaylistModel.deleted_at.is_(None),
         cast(PlaylistModel.content_json, JSONB).contains({"tracks": [{"artist": artist}]}),
     )
     result = await db.execute(stmt)
