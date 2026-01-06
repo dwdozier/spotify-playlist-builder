@@ -1,19 +1,22 @@
-import os
 import pytest
+import os
 from unittest.mock import MagicMock, patch
 from backend.core.auth import (
     get_credentials_from_env,
     get_credentials,
 )
 from backend.core import get_builder, SpotifyPlaylistBuilder
+from backend.app.core.config import settings
 
 # Credential Tests
 
 
 def test_get_credentials_from_env_success():
     """Test retrieving credentials from environment variables."""
-    env_vars = {"SPOTIFY_CLIENT_ID": "test_id", "SPOTIFY_CLIENT_SECRET": "test_secret"}
-    with patch("dotenv.load_dotenv"), patch.dict(os.environ, env_vars):
+    with (
+        patch.object(settings, "SPOTIFY_CLIENT_ID", "test_id"),
+        patch.object(settings, "SPOTIFY_CLIENT_SECRET", "test_secret"),
+    ):
         result = get_credentials_from_env()
         assert result is not None
         cid, secret = result
@@ -23,7 +26,10 @@ def test_get_credentials_from_env_success():
 
 def test_get_credentials_from_env_missing():
     """Test error when environment variables are missing."""
-    with patch("dotenv.load_dotenv"), patch.dict(os.environ, {}, clear=True):
+    with (
+        patch.object(settings, "SPOTIFY_CLIENT_ID", None),
+        patch.object(settings, "SPOTIFY_CLIENT_SECRET", None),
+    ):
         with pytest.raises(Exception) as exc:
             get_credentials_from_env()
         assert "SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET not found" in str(exc.value)

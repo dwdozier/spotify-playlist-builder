@@ -238,7 +238,12 @@ If no (e.g., minor bug fix, dependency update), return "NO_GUIDE".
             ),
         )
 
-        content = response.text.strip()
+        text_content = response.text
+        if not text_content:
+            typer.echo("No content generated.")
+            return
+
+        content = text_content.strip()
 
         if content == "NO_GUIDE":
             typer.echo("No guide generated (changes deemed minor).")

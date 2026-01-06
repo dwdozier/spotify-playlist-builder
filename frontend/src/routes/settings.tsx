@@ -43,12 +43,12 @@ function Settings() {
   const [activeMetadata, setActiveMetadata] = useState<EnrichedMetadata | null>(null)
   const [relayCreds, setRelayCreds] = useState({ client_id: '', client_secret: '' })
 
-  const { data: user, isLoading } = useQuery<User>({
+  const { data: user, isLoading } = useQuery<User | null>({
     queryKey: ['me'],
     queryFn: () => auth.getCurrentUser()
   })
 
-  const spotifyConn = user?.service_connections?.find(c => c.provider_name === 'spotify')
+  const spotifyConn = user?.service_connections?.find((c: any) => c.provider_name === 'spotify')
 
   const relayMutation = useMutation({
     mutationFn: async (creds: typeof relayCreds) => {
@@ -337,6 +337,15 @@ function Settings() {
               <div>
                 <h4 className="text-2xl font-display text-retro-dark uppercase">Spotify</h4>
                 <p className="font-body text-retro-dark/60 italic">High-fidelity playlist broadcasting.</p>
+                {spotifyConn?.is_connected && spotifyConn.scopes && (
+                  <div className="mt-3 flex flex-wrap gap-2 max-w-md">
+                    {spotifyConn.scopes.map(scope => (
+                      <span key={scope} className="px-2 py-0.5 bg-retro-teal/10 border-2 border-retro-teal/20 rounded text-[10px] font-display uppercase text-retro-teal tracking-tighter" title="Permission granted">
+                        {scope.replace(/-/g, ' ')}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
             <div className="flex gap-4">

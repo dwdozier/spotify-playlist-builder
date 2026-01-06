@@ -1,8 +1,8 @@
 import pytest
-import os
 import time
 from unittest.mock import MagicMock, patch
 from backend.core.metadata import MetadataVerifier
+from backend.app.core.config import settings
 import requests
 
 
@@ -97,7 +97,7 @@ def test_verify_track_version_no_match(verifier):
 
 def test_get_discogs_token_env():
     """Test retrieving Discogs token from env."""
-    with patch.dict(os.environ, {"DISCOGS_PAT": "env_token"}):
+    with patch.object(settings, "DISCOGS_PAT", "env_token"):
         from backend.core.metadata import get_discogs_token
 
         assert get_discogs_token() == "env_token"
@@ -105,7 +105,7 @@ def test_get_discogs_token_env():
 
 def test_get_discogs_token_error():
     """Test get_discogs_token handles errors gracefully."""
-    with patch.dict(os.environ, {}, clear=True):
+    with patch.object(settings, "DISCOGS_PAT", None):
         from backend.core.metadata import get_discogs_token
 
         assert get_discogs_token() is None

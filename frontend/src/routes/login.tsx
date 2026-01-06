@@ -1,12 +1,17 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Music2, Loader2, ArrowRight } from 'lucide-react'
 import { useState } from 'react'
+import { z } from 'zod'
 
 export const Route = createFileRoute('/login')({
+  validateSearch: z.object({
+    redirect: z.string().optional(),
+  }),
   component: Login,
 })
 
 function Login() {
+  const { redirect } = Route.useSearch()
   const [isLogin, setIsLogin] = useState(true)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -41,8 +46,17 @@ function Login() {
       if (response.ok) {
         if (isLogin) {
           setMessage('Access Granted! Teleporting...')
-          // Use window.location to ensure fresh state/cookies are picked up
-          window.location.href = '/playlists'
+
+          if (redirect) {
+            // Use window.location for external redirects or full refresh
+            if (redirect.startsWith('http')) {
+              window.location.href = redirect
+            } else {
+              window.location.href = redirect
+            }
+          } else {
+            window.location.href = '/playlists'
+          }
         } else {
           setMessage('Registration Successful! You may now authenticate.')
           setIsLogin(true)

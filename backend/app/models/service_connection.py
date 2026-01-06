@@ -1,22 +1,22 @@
 import uuid
 import json
-import os
 import hashlib
 import base64
 from datetime import datetime
-from typing import TYPE_CHECKING, Optional, Any
+from typing import TYPE_CHECKING, Optional, Any, List
 
-from sqlalchemy import ForeignKey, String, DateTime, UUID, TypeDecorator
+from sqlalchemy import ForeignKey, String, DateTime, UUID, TypeDecorator, JSON
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from cryptography.fernet import Fernet
 
 from backend.app.db.session import Base
+from backend.app.core.config import settings
 
 if TYPE_CHECKING:
     from .user import User
 
 # Get encryption key from environment
-SECRET_KEY = os.getenv("SECRET_KEY", "vibomat-dev-secret-key-at-least-32-chars-long!!")
+SECRET_KEY = settings.SECRET_KEY
 # Derive a valid 32-byte base64 key using SHA256
 key_bytes = hashlib.sha256(SECRET_KEY.encode()).digest()
 FERNET_KEY = base64.urlsafe_b64encode(key_bytes)
@@ -58,6 +58,9 @@ class ServiceConnection(Base):
     access_token: Mapped[str] = mapped_column(String(1024), nullable=False)
     refresh_token: Mapped[str] = mapped_column(String(1024), nullable=True)
     expires_at: Mapped[datetime] = mapped_column(DateTime, nullable=True)
+
+    # Scopes granted by the user
+    scopes: Mapped[Optional[List[str]]] = mapped_column(JSON, nullable=True)
 
     # User-supplied configuration (e.g., Client ID, Client Secret for custom app)
     # Encrypted at rest

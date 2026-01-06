@@ -115,6 +115,7 @@ def test_verify_tracks_error():
 def test_spotify_login_endpoint():
     """Test the Spotify login redirect URL generation."""
     from backend.app.db.session import get_async_session
+    from backend.app.core.config import settings
 
     mock_db = MagicMock()
     mock_result = MagicMock()
@@ -124,7 +125,7 @@ def test_spotify_login_endpoint():
     app.dependency_overrides[get_async_session] = lambda: mock_db
     app.dependency_overrides[current_active_user] = lambda: mock_user
 
-    with patch("backend.app.api.v1.endpoints.integrations.DEFAULT_SPOTIFY_CLIENT_ID", "test_id"):
+    with patch.object(settings, "SPOTIFY_CLIENT_ID", "test_id"):
         response = client.get("/api/v1/integrations/spotify/login")
         assert response.status_code == 200
         assert "accounts.spotify.com/authorize" in response.json()["url"]
@@ -137,6 +138,7 @@ def test_spotify_callback_endpoint():
     """Test the Spotify callback handling."""
     from backend.app.db.session import get_async_session
     from unittest.mock import AsyncMock
+    from backend.app.core.config import settings
 
     mock_db = MagicMock()
     mock_db.commit = AsyncMock()
@@ -161,10 +163,8 @@ def test_spotify_callback_endpoint():
     with (
         patch("httpx.AsyncClient.post", return_value=mock_token_resp),
         patch("httpx.AsyncClient.get", return_value=mock_user_resp),
-        patch("backend.app.api.v1.endpoints.integrations.DEFAULT_SPOTIFY_CLIENT_ID", "test_id"),
-        patch(
-            "backend.app.api.v1.endpoints.integrations.DEFAULT_SPOTIFY_CLIENT_SECRET", "test_secret"
-        ),
+        patch.object(settings, "SPOTIFY_CLIENT_ID", "test_id"),
+        patch.object(settings, "SPOTIFY_CLIENT_SECRET", "test_secret"),
     ):
 
         response = client.get(
@@ -187,6 +187,7 @@ def test_spotify_callback_invalid_uuid():
 def test_spotify_callback_token_error_with_details():
     """Test Spotify callback handling when token exchange fails with details."""
     from backend.app.db.session import get_async_session
+    from backend.app.core.config import settings
 
     mock_db = MagicMock()
     mock_result = MagicMock()
@@ -204,10 +205,8 @@ def test_spotify_callback_token_error_with_details():
 
     with (
         patch("httpx.AsyncClient.post", return_value=mock_token_resp),
-        patch("backend.app.api.v1.endpoints.integrations.DEFAULT_SPOTIFY_CLIENT_ID", "test_id"),
-        patch(
-            "backend.app.api.v1.endpoints.integrations.DEFAULT_SPOTIFY_CLIENT_SECRET", "test_secret"
-        ),
+        patch.object(settings, "SPOTIFY_CLIENT_ID", "test_id"),
+        patch.object(settings, "SPOTIFY_CLIENT_SECRET", "test_secret"),
     ):
         response = client.get(
             f"/api/v1/integrations/spotify/callback?code=abc&state={mock_user.id}"

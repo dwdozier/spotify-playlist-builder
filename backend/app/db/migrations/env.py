@@ -5,9 +5,10 @@ from sqlalchemy import pool
 from sqlalchemy.ext.asyncio import create_async_engine
 
 from alembic import context
+from backend.app.core.config import settings
 
 # Import your models here for autogenerate support
-from backend.app.db.session import Base, DATABASE_URL
+from backend.app.db.session import Base
 from backend.app.models import *  # noqa: F401, F403
 
 # this is the Alembic Config object, which provides
@@ -23,7 +24,7 @@ target_metadata = Base.metadata
 
 # Set sqlalchemy.url from env if not already set
 if not config.get_main_option("sqlalchemy.url"):
-    config.set_main_option("sqlalchemy.url", DATABASE_URL)
+    config.set_main_option("sqlalchemy.url", str(settings.DATABASE_URL))
 
 
 def run_migrations_offline() -> None:
@@ -54,9 +55,9 @@ def run_migrations_online() -> None:
     """Run migrations in 'online' mode."""
     configuration = config.get_section(config.config_ini_section, {})
     if not configuration.get("sqlalchemy.url"):
-        configuration["sqlalchemy.url"] = DATABASE_URL
+        configuration["sqlalchemy.url"] = str(settings.DATABASE_URL)
 
-    connectable = create_async_engine(DATABASE_URL, poolclass=pool.NullPool)
+    connectable = create_async_engine(str(settings.DATABASE_URL), poolclass=pool.NullPool)
 
     async def do_run_migrations():
         async with connectable.connect() as connection:

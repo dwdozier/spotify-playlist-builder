@@ -2,6 +2,7 @@ import pytest
 from backend.app.core.auth.manager import UserManager
 from backend.app.models.user import User
 from unittest.mock import MagicMock, patch, AsyncMock
+from backend.app.core.config import settings
 
 
 @pytest.mark.asyncio
@@ -28,7 +29,7 @@ async def test_promote_admin_on_login():
     manager = UserManager(mock_user_db)
     user = User(id="123", email="admin@vibomat.com", is_superuser=False)
 
-    with patch("os.getenv", return_value="admin@vibomat.com, other@vibomat.com"):
+    with patch.object(settings, "ADMIN_EMAILS", ["admin@vibomat.com", "other@vibomat.com"]):
         await manager.on_after_login(user)
 
     mock_user_db.update.assert_called_once()
@@ -47,7 +48,7 @@ async def test_no_promote_if_not_admin_email():
     manager = UserManager(mock_user_db)
     user = User(id="123", email="regular@vibomat.com", is_superuser=False)
 
-    with patch("os.getenv", return_value="admin@vibomat.com"):
+    with patch.object(settings, "ADMIN_EMAILS", ["admin@vibomat.com"]):
         await manager.on_after_login(user)
 
     mock_user_db.update.assert_not_called()
@@ -62,7 +63,7 @@ async def test_no_promote_if_already_admin():
     manager = UserManager(mock_user_db)
     user = User(id="123", email="admin@vibomat.com", is_superuser=True)
 
-    with patch("os.getenv", return_value="admin@vibomat.com"):
+    with patch.object(settings, "ADMIN_EMAILS", ["admin@vibomat.com"]):
         await manager.on_after_login(user)
 
     mock_user_db.update.assert_not_called()

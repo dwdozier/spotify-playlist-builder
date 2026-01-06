@@ -1,11 +1,8 @@
-import os
 import httpx
 from datetime import datetime, timedelta, UTC
 from sqlalchemy.ext.asyncio import AsyncSession
 from backend.app.models.service_connection import ServiceConnection
-
-DEFAULT_SPOTIFY_CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
-DEFAULT_SPOTIFY_CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
+from backend.app.core.config import settings
 
 
 class IntegrationsService:
@@ -26,8 +23,8 @@ class IntegrationsService:
         if not connection.refresh_token:
             raise Exception("No refresh token available for Spotify relay.")
 
-        client_id = DEFAULT_SPOTIFY_CLIENT_ID
-        client_secret = DEFAULT_SPOTIFY_CLIENT_SECRET
+        client_id = settings.SPOTIFY_CLIENT_ID
+        client_secret = settings.SPOTIFY_CLIENT_SECRET
 
         if connection.credentials:
             client_id = connection.credentials.get("client_id", client_id)

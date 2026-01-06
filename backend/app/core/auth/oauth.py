@@ -1,8 +1,8 @@
-import os
 from httpx_oauth.clients.google import GoogleOAuth2
 from httpx_oauth.clients.github import GitHubOAuth2
 from httpx_oauth.clients.microsoft import MicrosoftGraphOAuth2
 from httpx_oauth.oauth2 import BaseOAuth2
+from backend.app.core.config import settings
 
 
 # Note: Apple requires a custom client_secret generation (JWT signed with .p8 key)
@@ -19,21 +19,23 @@ class AppleOAuth2(BaseOAuth2):
 
 
 google_oauth_client = GoogleOAuth2(
-    os.getenv("GOOGLE_OAUTH_CLIENT_ID", ""),
-    os.getenv("GOOGLE_OAUTH_CLIENT_SECRET", ""),
+    settings.GOOGLE_OAUTH_CLIENT_ID or "",
+    settings.GOOGLE_OAUTH_CLIENT_SECRET or "",
 )
 
 github_oauth_client = GitHubOAuth2(
-    os.getenv("GITHUB_OAUTH_CLIENT_ID", ""),
-    os.getenv("GITHUB_OAUTH_CLIENT_SECRET", ""),
+    settings.GITHUB_OAUTH_CLIENT_ID or "",
+    settings.GITHUB_OAUTH_CLIENT_SECRET or "",
 )
 
+# TODO: Add Microsoft OAuth credentials to settings
 microsoft_oauth_client = MicrosoftGraphOAuth2(
-    os.getenv("MICROSOFT_OAUTH_CLIENT_ID", ""),
-    os.getenv("MICROSOFT_OAUTH_CLIENT_SECRET", ""),
+    "",
+    "",
 )
 
+# TODO: Add Apple OAuth credentials to settings
 apple_oauth_client = AppleOAuth2(
-    os.getenv("APPLE_OAUTH_CLIENT_ID", ""),
-    os.getenv("APPLE_OAUTH_CLIENT_SECRET", ""),
+    "",
+    "",
 )

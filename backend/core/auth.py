@@ -1,17 +1,15 @@
-import os
 import logging
 from typing import Tuple
+from backend.app.core.config import settings
 
 logger = logging.getLogger("backend.core.auth")
 
 
 def get_credentials_from_env(silent: bool = False) -> Tuple[str, str] | None:
     """Get credentials from .env file or environment variables."""
-    from dotenv import load_dotenv
 
-    load_dotenv()
-    client_id = os.getenv("SPOTIFY_CLIENT_ID")
-    client_secret = os.getenv("SPOTIFY_CLIENT_SECRET")
+    client_id = settings.SPOTIFY_CLIENT_ID
+    client_secret = settings.SPOTIFY_CLIENT_SECRET
 
     if not client_id or not client_secret:
         if silent:

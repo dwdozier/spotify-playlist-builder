@@ -1,5 +1,4 @@
 import uuid
-import os
 from typing import Optional
 from fastapi import Depends, Request, Response
 from fastapi_users import BaseUserManager, UUIDIDMixin
@@ -7,8 +6,9 @@ from backend.app.models.user import User, OAuthAccount
 from backend.app.db.session import get_async_session
 from fastapi_users.db import SQLAlchemyUserDatabase
 from backend.app.core.utils.email import send_email
+from backend.app.core.config import settings
 
-SECRET = os.getenv("FASTAPI_SECRET", "DEVELOPMENT_SECRET_CHANGE_ME")
+SECRET = settings.SECRET_KEY
 
 
 class UserManager(UUIDIDMixin, BaseUserManager[User, uuid.UUID]):
@@ -50,11 +50,7 @@ border-radius: 10px; background-color: #FFFDF5;">
         await self._promote_if_admin(user)
 
     async def _promote_if_admin(self, user: User):
-        # Cleanly parse emails (handles quotes and whitespace)
-        raw_admins = os.getenv("ADMIN_EMAILS", "").replace('"', "").replace("'", "")
-        admin_emails = [e.strip() for e in raw_admins.split(",") if e.strip()]
-
-        if user.email in admin_emails and not user.is_superuser:
+        if user.email in settings.ADMIN_EMAILS and not user.is_superuser:
             await self.user_db.update(user, {"is_superuser": True, "is_verified": True})
 
 

@@ -1,8 +1,8 @@
 import logging
 import requests
 import time
-import os
 from tenacity import retry, wait_fixed, stop_after_attempt, retry_if_exception_type
+from backend.app.core.config import settings
 
 logger = logging.getLogger("backend.core.metadata")
 
@@ -10,7 +10,7 @@ logger = logging.getLogger("backend.core.metadata")
 def get_discogs_token() -> str | None:
     """Retrieve Discogs PAT from environment variables."""
     try:
-        return os.getenv("DISCOGS_PAT")
+        return settings.DISCOGS_PAT
     except Exception as e:
         logger.debug(f"Failed to retrieve Discogs Token: {e}")
     return None

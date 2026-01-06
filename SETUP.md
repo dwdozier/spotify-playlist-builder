@@ -46,13 +46,15 @@ To interact with Spotify, you must register an application:
     ```
 
 3. **Environment Configuration**:
-    Create a `.env` file in the root:
+    Create a `.env` file in the root (see `.env.example` for all options):
 
     ```env
     SPOTIFY_CLIENT_ID=your_id
     SPOTIFY_CLIENT_SECRET=your_secret
     SPOTIFY_REDIRECT_URI=http://localhost:8000/api/v1/integrations/spotify/callback
-    FASTAPI_SECRET=random_secure_string
+    SECRET_KEY=at_least_32_chars_long_random_string
+    FASTAPI_SECRET=at_least_32_chars_long_random_string
+    ADMIN_EMAILS=admin@example.com
     GEMINI_API_KEY=your_google_ai_key # Optional
     ```
 

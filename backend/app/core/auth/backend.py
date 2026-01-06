@@ -1,11 +1,11 @@
-import os
 from fastapi_users.authentication import (
     AuthenticationBackend,
     CookieTransport,
     JWTStrategy,
 )
+from backend.app.core.config import settings
 
-SECRET = os.getenv("FASTAPI_SECRET", "DEVELOPMENT_SECRET_CHANGE_ME")
+SECRET = settings.SECRET_KEY
 
 
 cookie_transport = CookieTransport(
