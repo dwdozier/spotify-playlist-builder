@@ -2,7 +2,7 @@
 
 ## Phase 1: Soft-Delete Implementation
 
-- [~] Add `deleted_at` column to `Playlist` model and migration.
+- [x] Add `deleted_at` column to `Playlist` model and migration. 10d1c13
 - [ ] Update `Playlist` CRUD operations to handle soft-deletes (filter out deleted by default).
 - [ ] Implement `delete` endpoint to perform soft-delete.
 - [ ] Implement `restore` endpoint to recover soft-deleted playlists.
