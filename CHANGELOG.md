@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.4.0](https://github.com/dwdozier/vibomat/compare/vibomat-v0.3.0...vibomat-v0.4.0) (2026-01-06)
+
+
+### Features
+
+* Centralize configuration with pydantic-settings ([276dc90](https://github.com/dwdozier/vibomat/commit/276dc907ebbad82316cb3ee846342d71a0b43df3))
+* Foundation & Security Hygiene ([4000bef](https://github.com/dwdozier/vibomat/commit/4000bef83420de674c35b227fee03a79efbd17ec))
+* Implement global auth guards and session expiry handling ([65bd6d5](https://github.com/dwdozier/vibomat/commit/65bd6d5fd54cb731d6b90b0e74cdad7ab10ab645))
+* Implement OAuth scope transparency ([2a6985b](https://github.com/dwdozier/vibomat/commit/2a6985be0bc5aa01caa88cf24e84472f483fdb79))
+
+
+### Bug Fixes
+
+* **docker:** Auto-run migrations in dev backend ([#77](https://github.com/dwdozier/vibomat/issues/77)) ([77dbb33](https://github.com/dwdozier/vibomat/commit/77dbb334901185dc033e04d2ace980760cd6c18e))
+
+
+### Documentation
+
+* Auto-update documentation via Gemini Agent ([97c1ddc](https://github.com/dwdozier/vibomat/commit/97c1ddc2103e7474d70ab7387aadd4d81e3c9b33))
+* Auto-update documentation via Gemini Agent ([8f7f3af](https://github.com/dwdozier/vibomat/commit/8f7f3afe9555612bc5dc84025c0009c7d4b22770))
+* Auto-update documentation via Gemini Agent ([#78](https://github.com/dwdozier/vibomat/issues/78)) ([2905df5](https://github.com/dwdozier/vibomat/commit/2905df5b26c106d798e5378dd9b8f7ac29984798))
+* Update environment and tech stack documentation ([e02123c](https://github.com/dwdozier/vibomat/commit/e02123c7ce858f8efa1509bf8607f2af6fad5bbc))
+
 ## [0.3.0](https://github.com/dwdozier/vibomat/compare/vibomat-v0.2.0...vibomat-v0.3.0) (2026-01-05)
 
 
