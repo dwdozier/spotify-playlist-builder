@@ -10,6 +10,7 @@ class TrackBase(BaseModel):
     album: Optional[str] = None
     version: Optional[str] = Field(None, pattern="^[a-zA-Z0-9| ]*$")
     duration_ms: Optional[int] = None
+    uri: Optional[str] = None
 
 
 class TrackCreate(TrackBase):
@@ -44,6 +45,7 @@ class Playlist(PlaylistBase):
     provider: Optional[str] = None
     provider_id: Optional[str] = None
     deleted_at: Optional[datetime] = None
+    last_synced_at: Optional[datetime] = None
 
     model_config = ConfigDict(from_attributes=True)
 
@@ -77,3 +79,9 @@ class VerificationRequest(BaseModel):
 class VerificationResponse(BaseModel):
     verified: List[TrackCreate]
     rejected: List[str]
+
+
+class PlaylistImport(BaseModel):
+    provider: str = Field(..., description="Provider name (e.g. 'spotify')")
+    provider_playlist_id: str
+    import_tracks: bool = True

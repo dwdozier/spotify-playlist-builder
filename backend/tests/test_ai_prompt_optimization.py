@@ -55,7 +55,10 @@ def test_generate_playlist_fallback_logic(mock_genai_client):
     mock_response = MagicMock()
     mock_response.text = '{"title": "Fallback", "tracks": []}'
 
-    mock_client_instance.models.generate_content.side_effect = [error_404, mock_response]
+    mock_client_instance.models.generate_content.side_effect = [
+        error_404,
+        mock_response,
+    ]
 
     with patch("backend.core.ai.get_ai_api_key", return_value="fake_key"):
         generate_playlist("desc")

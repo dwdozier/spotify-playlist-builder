@@ -12,7 +12,9 @@ from backend.app.services.metadata_service import MetadataService
 async def test_enrich_artist_success():
     """Test successful artist metadata enrichment."""
     mock_user = User(
-        id="550e8400-e29b-41d4-a716-446655440000", email="user@example.com", is_active=True
+        id="550e8400-e29b-41d4-a716-446655440000",
+        email="user@example.com",
+        is_active=True,
     )
     mock_service = MagicMock()
     mock_service.get_artist_info.return_value = {
@@ -38,7 +40,9 @@ async def test_enrich_artist_success():
 async def test_enrich_album_success():
     """Test successful album metadata enrichment."""
     mock_user = User(
-        id="550e8400-e29b-41d4-a716-446655440000", email="user@example.com", is_active=True
+        id="550e8400-e29b-41d4-a716-446655440000",
+        email="user@example.com",
+        is_active=True,
     )
     mock_service = MagicMock()
     mock_service.get_album_info.return_value = {
@@ -54,7 +58,8 @@ async def test_enrich_album_success():
         transport=httpx.ASGITransport(app=app), base_url="http://test"
     ) as ac:
         response = await ac.post(
-            "/api/v1/profile/me/enrich/album", json={"artist_name": "Artist", "album_name": "Album"}
+            "/api/v1/profile/me/enrich/album",
+            json={"artist_name": "Artist", "album_name": "Album"},
         )
         assert response.status_code == 200
         assert response.json()["name"] == "Enriched Album"
@@ -66,7 +71,9 @@ async def test_enrich_album_success():
 async def test_enrich_not_found():
     """Test enrichment failure (not found)."""
     mock_user = User(
-        id="550e8400-e29b-41d4-a716-446655440000", email="user@example.com", is_active=True
+        id="550e8400-e29b-41d4-a716-446655440000",
+        email="user@example.com",
+        is_active=True,
     )
     mock_service = MagicMock()
     mock_service.get_artist_info.return_value = None

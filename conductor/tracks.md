@@ -2,14 +2,14 @@
 
 ## Active Track
 
-### [~] Track: Playlist Lifecycle & Sync Engine
+### [x] Track: Playlist Lifecycle & Sync Engine (Completed)
 
 - **Goal:** Make playlists robust with recovery options and bi-directional synchronization.
 - **Link:** [View Track Folder](conductor/tracks/playlist_lifecycle_sync)
 - **Key Features:**
-  - Implement "Soft-Delete" for playlists with a 30-day auto-purge policy.
-  - Import existing playlists from services.
-  - Build the bi-directional sync engine (Periodic + On-Demand).
+  - [x] Implement "Soft-Delete" for playlists with a 30-day auto-purge policy. (Phase 1 Complete)
+  - [x] Import existing playlists from services. (Phase 2 Complete)
+  - [x] Build the bi-directional sync engine (Periodic + On-Demand). (Phase 3 Complete)
 
 ## Backlog
 

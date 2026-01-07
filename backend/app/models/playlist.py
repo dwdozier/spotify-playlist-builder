@@ -29,6 +29,11 @@ class Playlist(Base):
     # Soft delete
     deleted_at: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=True), nullable=True)
 
+    # Sync Engine
+    last_synced_at: Mapped[Optional[datetime]] = mapped_column(
+        DateTime(timezone=True), nullable=True
+    )
+
     # Store the tracks as JSON for flexibility
     content_json: Mapped[Dict[str, Any]] = mapped_column(JSON, nullable=False)
 

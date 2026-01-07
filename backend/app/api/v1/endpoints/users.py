@@ -129,7 +129,10 @@ async def get_favorited_playlists(
 
     result = await db.execute(
         select(Playlist)
-        .join(user_favorite_playlists, Playlist.id == user_favorite_playlists.c.playlist_id)
+        .join(
+            user_favorite_playlists,
+            Playlist.id == user_favorite_playlists.c.playlist_id,
+        )
         .where(user_favorite_playlists.c.user_id == user_id, Playlist.deleted_at.is_(None))
     )
     return result.scalars().all()

@@ -16,7 +16,12 @@ user_favorite_playlists = Table(
     "user_favorite_playlists",
     Base.metadata,
     Column("user_id", UUID, ForeignKey("user.id", ondelete="CASCADE"), primary_key=True),
-    Column("playlist_id", UUID, ForeignKey("playlist.id", ondelete="CASCADE"), primary_key=True),
+    Column(
+        "playlist_id",
+        UUID,
+        ForeignKey("playlist.id", ondelete="CASCADE"),
+        primary_key=True,
+    ),
 )
 
 

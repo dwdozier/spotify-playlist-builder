@@ -17,7 +17,10 @@ async def test_playlist_soft_delete_column(db_session: AsyncSession):
     # This should fail if deleted_at is not defined on the model
     try:
         playlist = Playlist(
-            user_id=user.id, name="Lifecycle Playlist", content_json={"tracks": []}, deleted_at=now
+            user_id=user.id,
+            name="Lifecycle Playlist",
+            content_json={"tracks": []},
+            deleted_at=now,
         )
         db_session.add(playlist)
         await db_session.commit()
