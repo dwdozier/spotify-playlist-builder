@@ -106,7 +106,6 @@ async def test_periodic_sync_dispatch_task():
     """Test that periodic_sync_dispatch_task correctly finds and dispatches tasks."""
     from backend.app.core.tasks import (
         periodic_sync_dispatch_task,
-        sync_playlist_task,
     )
     from unittest.mock import AsyncMock
     import uuid
@@ -123,7 +122,7 @@ async def test_periodic_sync_dispatch_task():
     # Mock task dispatch
     with (
         patch("backend.app.core.tasks.async_session_maker", return_value=mock_session),
-        patch.object(sync_playlist_task, "kiq") as mock_kiq,
+        patch("backend.app.core.tasks.sync_playlist_task") as mock_task,
     ):
         # Mock DB result with two playlist IDs
         pl1_id = uuid.uuid4()
@@ -136,6 +135,6 @@ async def test_periodic_sync_dispatch_task():
 
         assert "Dispatched 2 sync tasks" in result
         # Check that the task was dispatched for both IDs
-        mock_kiq.assert_any_call(pl1_id)
-        mock_kiq.assert_any_call(pl2_id)
-        assert mock_kiq.call_count == 2
+        mock_task.send.assert_any_call(pl1_id)
+        mock_task.send.assert_any_call(pl2_id)
+        assert mock_task.send.call_count == 2

@@ -129,7 +129,7 @@ async def periodic_sync_dispatch_task() -> str:
 
         # Dispatch sync tasks
         for p_id in playlist_ids:
-            sync_playlist_task.kiq(p_id)
+            sync_playlist_task.send(p_id)
 
         return f"Dispatched {len(playlist_ids)} sync tasks."
 

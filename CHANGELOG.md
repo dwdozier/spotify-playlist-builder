@@ -1,7 +1,18 @@
 # Changelog
 
-## [0.4.0](https://github.com/dwdozier/vibomat/compare/vibomat-v0.3.0...vibomat-v0.4.0) (2026-01-06)
+## [0.5.0](https://github.com/dwdozier/vibomat/compare/vibomat-v0.4.0...vibomat-v0.5.0) (2026-01-06)
 
+
+### Features
+
+* **user:** Implement User Identity, Handles, and Public Profiles ([#81](https://github.com/dwdozier/vibomat/issues/81)) ([909c7ee](https://github.com/dwdozier/vibomat/commit/909c7ee3ab69ca2f9c63629f3f10b732ab6ff22f))
+
+
+### Documentation
+
+* Auto-update documentation via Gemini Agent ([#83](https://github.com/dwdozier/vibomat/issues/83)) ([9e3b0b4](https://github.com/dwdozier/vibomat/commit/9e3b0b44cbe6bbc14a33d656d2aed2f82afe5aa3))
+
+## [0.4.0](https://github.com/dwdozier/vibomat/compare/vibomat-v0.3.0...vibomat-v0.4.0) (2026-01-06)
 
 ### Features
 
@@ -10,11 +21,10 @@
 * Implement global auth guards and session expiry handling ([65bd6d5](https://github.com/dwdozier/vibomat/commit/65bd6d5fd54cb731d6b90b0e74cdad7ab10ab645))
 * Implement OAuth scope transparency ([2a6985b](https://github.com/dwdozier/vibomat/commit/2a6985be0bc5aa01caa88cf24e84472f483fdb79))
 
-
 ### Bug Fixes
 
-* **docker:** Auto-run migrations in dev backend ([#77](https://github.com/dwdozier/vibomat/issues/77)) ([77dbb33](https://github.com/dwdozier/vibomat/commit/77dbb334901185dc033e04d2ace980760cd6c18e))
-
+* **docker:** Auto-run migrations in dev backend ([#77](https://github.com/dwdozier/vibomat/issues/77))
+    ([77dbb33](https://github.com/dwdozier/vibomat/commit/77dbb334901185dc033e04d2ace980760cd6c18e))
 
 ### Documentation
 
@@ -25,11 +35,9 @@
 
 ## [0.3.0](https://github.com/dwdozier/vibomat/compare/vibomat-v0.2.0...vibomat-v0.3.0) (2026-01-05)
 
-
 ### Features
 
 * Modern PostgreSQL Optimization ([#72](https://github.com/dwdozier/vibomat/issues/72)) ([58f0642](https://github.com/dwdozier/vibomat/commit/58f0642c31ce6cbb7c89d89e12710b51711dbb82))
-
 
 ### Documentation
 
