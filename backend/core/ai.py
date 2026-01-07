@@ -171,7 +171,11 @@ def generate_playlist(description: str, count: int = 20) -> dict[str, Any]:
 
     if isinstance(data, list):
         # Legacy format support: wrap it in a dict
-        return {"title": "AI Playlist", "description": description[:100], "tracks": data}
+        return {
+            "title": "AI Playlist",
+            "description": description[:100],
+            "tracks": data,
+        }
 
     if isinstance(data, dict) and "tracks" in data:
         return data
@@ -179,7 +183,9 @@ def generate_playlist(description: str, count: int = 20) -> dict[str, Any]:
     raise ValueError("AI response format invalid (expected list or object with 'tracks').")
 
 
-def verify_ai_tracks(tracks: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[str]]:
+def verify_ai_tracks(
+    tracks: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[str]]:
     """Verify AI-generated tracks against MusicBrainz."""
     verifier = MetadataVerifier()
     verified_tracks = []

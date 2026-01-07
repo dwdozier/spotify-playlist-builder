@@ -173,7 +173,10 @@ async def test_integrations_service_token_refresh_api_error():
 
     mock_resp = MagicMock()
     mock_resp.status_code = 400
-    mock_resp.json.return_value = {"error": "invalid_grant", "error_description": "Bad token"}
+    mock_resp.json.return_value = {
+        "error": "invalid_grant",
+        "error_description": "Bad token",
+    }
 
     with patch("httpx.AsyncClient.post", return_value=mock_resp):
         with pytest.raises(Exception) as exc:

@@ -164,7 +164,11 @@ def test_cli_uninstall_completion():
 def test_cli_generate_success():
     """Test generate command."""
     mock_tracks = [{"artist": "Artist", "track": "Track", "version": "studio"}]
-    mock_response = {"title": "Test Playlist", "description": "Desc", "tracks": mock_tracks}
+    mock_response = {
+        "title": "Test Playlist",
+        "description": "Desc",
+        "tracks": mock_tracks,
+    }
     with (
         patch("backend.core.ai.generate_playlist", return_value=mock_response),
         patch("backend.core.ai.verify_ai_tracks", return_value=(mock_tracks, [])),
@@ -178,7 +182,11 @@ def test_cli_generate_success():
 def test_cli_generate_with_output():
     """Test generate command with --output flag."""
     mock_tracks = [{"artist": "A", "track": "B"}]
-    mock_response = {"title": "Test Playlist", "description": "Desc", "tracks": mock_tracks}
+    mock_response = {
+        "title": "Test Playlist",
+        "description": "Desc",
+        "tracks": mock_tracks,
+    }
     with (
         patch("backend.core.ai.generate_playlist", return_value=mock_response),
         patch("backend.core.ai.verify_ai_tracks", return_value=(mock_tracks, [])),
@@ -195,7 +203,11 @@ def test_cli_generate_with_output():
 def test_cli_generate_interactive_save():
     """Test interactive saving flow in generate command."""
     mock_tracks = [{"artist": "A", "track": "B"}]
-    mock_response = {"title": "Test Playlist", "description": "Desc", "tracks": mock_tracks}
+    mock_response = {
+        "title": "Test Playlist",
+        "description": "Desc",
+        "tracks": mock_tracks,
+    }
     with (
         patch("backend.core.ai.generate_playlist", return_value=mock_response),
         patch("backend.core.ai.verify_ai_tracks", return_value=(mock_tracks, [])),
@@ -211,7 +223,11 @@ def test_cli_generate_interactive_save():
 def test_cli_generate_interactive():
     """Test generate command with interactive input."""
     mock_tracks = [{"artist": "A", "track": "B"}]
-    mock_response = {"title": "Test Playlist", "description": "Desc", "tracks": mock_tracks}
+    mock_response = {
+        "title": "Test Playlist",
+        "description": "Desc",
+        "tracks": mock_tracks,
+    }
     with (
         patch("backend.core.ai.generate_playlist", return_value=mock_response),
         patch("backend.core.ai.verify_ai_tracks", return_value=(mock_tracks, [])),
@@ -243,7 +259,11 @@ def test_cli_ai_models_success():
 def test_cli_generate_chain_build():
     """Test generate command chained with build."""
     mock_tracks = [{"artist": "A", "track": "B"}]
-    mock_response = {"title": "Test Playlist", "description": "Desc", "tracks": mock_tracks}
+    mock_response = {
+        "title": "Test Playlist",
+        "description": "Desc",
+        "tracks": mock_tracks,
+    }
     with (
         patch("backend.core.ai.generate_playlist", return_value=mock_response),
         patch("backend.core.ai.verify_ai_tracks", return_value=(mock_tracks, [])),
@@ -278,7 +298,11 @@ def test_cli_generate_no_verified_tracks():
 def test_cli_generate_with_rejections():
     """Test generate command showing rejections."""
     mock_tracks = [{"artist": "A", "track": "T"}]
-    mock_response = {"title": "Test Playlist", "description": "Desc", "tracks": mock_tracks}
+    mock_response = {
+        "title": "Test Playlist",
+        "description": "Desc",
+        "tracks": mock_tracks,
+    }
     with (
         patch("backend.core.ai.generate_playlist", return_value=mock_response),
         patch(

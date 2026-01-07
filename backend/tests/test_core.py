@@ -206,7 +206,11 @@ def test_find_playlist_by_name_found(builder, mock_spotify):
     """Test finding a playlist that exists."""
     mock_spotify.current_user_playlists.return_value = {
         "items": [
-            {"name": "Other Playlist", "owner": {"id": "test_user_id"}, "id": "other_id"},
+            {
+                "name": "Other Playlist",
+                "owner": {"id": "test_user_id"},
+                "id": "other_id",
+            },
             {"name": "My Playlist", "owner": {"id": "test_user_id"}, "id": "target_id"},
         ],
         "next": None,
@@ -314,7 +318,10 @@ def test_create_playlist_failure(builder, mock_spotify):
 def test_update_playlist_details(builder, mock_spotify):
     """Test updating playlist details when changes are needed."""
     # Current state: different description, different public status
-    mock_spotify.playlist.return_value = {"description": "Old Description", "public": True}
+    mock_spotify.playlist.return_value = {
+        "description": "Old Description",
+        "public": True,
+    }
     builder.update_playlist_details("pid", "New Description", public=False)
     mock_spotify.playlist_change_details.assert_called_with(
         "pid", description="New Description", public=False
@@ -323,7 +330,10 @@ def test_update_playlist_details(builder, mock_spotify):
 
 def test_update_playlist_details_no_change(builder, mock_spotify):
     """Test that no update call is made if details match."""
-    mock_spotify.playlist.return_value = {"description": "Same Description", "public": False}
+    mock_spotify.playlist.return_value = {
+        "description": "Same Description",
+        "public": False,
+    }
     builder.update_playlist_details("pid", "Same Description", public=False)
     mock_spotify.playlist_change_details.assert_not_called()
 
@@ -434,7 +444,9 @@ def test_export_playlist_to_json(builder, mock_spotify):
         mock_spotify.playlist.return_value = {"description": "Desc", "public": True}
         # Mock getting tracks
         with patch.object(
-            builder, "get_playlist_tracks_details", return_value=[{"artist": "A", "track": "B"}]
+            builder,
+            "get_playlist_tracks_details",
+            return_value=[{"artist": "A", "track": "B"}],
         ):
             # Mock file I/O
             with patch("builtins.open", new_callable=MagicMock) as mock_open:
@@ -481,10 +493,14 @@ def test_backup_all_playlists(builder, mock_spotify):
         assert mock_export.call_count == 2
         # Check filename sanitization (slashes removed/replaced)
         mock_export.assert_any_call(
-            "Playlist 1", os.path.join("backups_dir", "playlist_1.json"), playlist_id="p1"
+            "Playlist 1",
+            os.path.join("backups_dir", "playlist_1.json"),
+            playlist_id="p1",
         )
         mock_export.assert_any_call(
-            "Playlist/2", os.path.join("backups_dir", "playlist_2.json"), playlist_id="p2"
+            "Playlist/2",
+            os.path.join("backups_dir", "playlist_2.json"),
+            playlist_id="p2",
         )
 
 
@@ -506,7 +522,10 @@ def test_backup_all_playlists_exception(builder, mock_spotify):
 def test_build_playlist_from_json_dry_run(builder, mock_spotify):
     """Test dry run mode does not create/update playlists."""
     playlist_data = {"name": "New Playlist", "tracks": [{"artist": "A", "track": "B"}]}
-    with patch("json.load", return_value=playlist_data), patch("builtins.open", MagicMock()):
+    with (
+        patch("json.load", return_value=playlist_data),
+        patch("builtins.open", MagicMock()),
+    ):
         with patch.object(builder, "search_track", return_value="uri:1"):
             builder.build_playlist_from_json("file.json", dry_run=True)
             # Should not check for existing playlist or create one
@@ -517,7 +536,10 @@ def test_build_playlist_from_json_dry_run(builder, mock_spotify):
 def test_build_dry_run_with_failures(builder, mock_spotify):
     """Test dry run mode reporting missing tracks."""
     playlist_data = {"name": "New Playlist", "tracks": [{"artist": "A", "track": "B"}]}
-    with patch("json.load", return_value=playlist_data), patch("builtins.open", MagicMock()):
+    with (
+        patch("json.load", return_value=playlist_data),
+        patch("builtins.open", MagicMock()),
+    ):
         with patch.object(builder, "search_track", return_value=None):  # Fail search
             builder.build_playlist_from_json("file.json", dry_run=True)
 
@@ -525,7 +547,10 @@ def test_build_dry_run_with_failures(builder, mock_spotify):
 def test_build_playlist_from_json_create_new(builder, mock_spotify):
     """Test creating a new playlist from JSON."""
     playlist_data = {"name": "New Playlist", "tracks": [{"artist": "A", "track": "B"}]}
-    with patch("json.load", return_value=playlist_data), patch("builtins.open", MagicMock()):
+    with (
+        patch("json.load", return_value=playlist_data),
+        patch("builtins.open", MagicMock()),
+    ):
         # Mock: Playlist doesn't exist
         with (
             patch.object(builder, "find_playlist_by_name", return_value=None),
@@ -540,8 +565,14 @@ def test_build_playlist_from_json_create_new(builder, mock_spotify):
 
 def test_build_playlist_from_json_update_existing(builder, mock_spotify):
     """Test updating an existing playlist from JSON."""
-    playlist_data = {"name": "Existing Playlist", "tracks": [{"artist": "A", "track": "B"}]}
-    with patch("json.load", return_value=playlist_data), patch("builtins.open", MagicMock()):
+    playlist_data = {
+        "name": "Existing Playlist",
+        "tracks": [{"artist": "A", "track": "B"}],
+    }
+    with (
+        patch("json.load", return_value=playlist_data),
+        patch("builtins.open", MagicMock()),
+    ):
         # Mock: Playlist exists
         with (
             patch.object(builder, "find_playlist_by_name", return_value="existing_pid"),
@@ -818,7 +849,9 @@ def test_backup_all_playlists_includes_followed(builder, mock_spotify):
             "Owned", os.path.join("backups", "owned.json"), playlist_id="owned_id"
         )
         mock_export.assert_any_call(
-            "Followed", os.path.join("backups", "followed.json"), playlist_id="followed_id"
+            "Followed",
+            os.path.join("backups", "followed.json"),
+            playlist_id="followed_id",
         )
 
 

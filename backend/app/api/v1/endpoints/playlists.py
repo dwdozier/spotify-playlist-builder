@@ -1,7 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException, Response
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
-from typing import List
+from typing import List, Dict
+from datetime import datetime, timezone
 from backend.app.db.session import get_async_session
 from backend.app.models.service_connection import ServiceConnection
 from backend.app.schemas.playlist import (
@@ -13,12 +14,14 @@ from backend.app.schemas.playlist import (
     PlaylistGenerationResponse,
     PlaylistRead,
     PlaylistBuildRequest,
+    PlaylistImport,
 )
 from backend.app.services.ai_service import AIService
 from backend.app.services.integrations_service import IntegrationsService
 from backend.app.core.auth.fastapi_users import current_active_user
 from backend.app.models.user import User
 from backend.app.models.playlist import Playlist as PlaylistModel
+from backend.app.core.tasks import sync_playlist_task
 from backend.core.client import SpotifyPlaylistBuilder
 import uuid
 
@@ -65,7 +68,7 @@ async def get_my_playlists(
     """
     result = await db.execute(
         select(PlaylistModel)
-        .where(PlaylistModel.user_id == user.id)
+        .where(PlaylistModel.user_id == user.id, PlaylistModel.deleted_at.is_(None))
         .order_by(PlaylistModel.id.desc())
     )
     return result.scalars().all()
@@ -80,7 +83,11 @@ async def get_playlist(
     """
     Get a specific playlist by ID.
     """
-    result = await db.execute(select(PlaylistModel).where(PlaylistModel.id == playlist_id))
+    result = await db.execute(
+        select(PlaylistModel).where(
+            PlaylistModel.id == playlist_id, PlaylistModel.deleted_at.is_(None)
+        )
+    )
     playlist = result.scalar_one_or_none()
 
     if not playlist:
@@ -103,7 +110,11 @@ async def update_playlist(
     """
     Update a playlist (e.g. content, name).
     """
-    result = await db.execute(select(PlaylistModel).where(PlaylistModel.id == playlist_id))
+    result = await db.execute(
+        select(PlaylistModel).where(
+            PlaylistModel.id == playlist_id, PlaylistModel.deleted_at.is_(None)
+        )
+    )
     db_playlist = result.scalar_one_or_none()
 
     if not db_playlist:
@@ -123,6 +134,182 @@ async def update_playlist(
     await db.commit()
     await db.refresh(db_playlist)
     return db_playlist
+
+
+@router.post("/{playlist_id}/sync", response_model=Dict[str, str])
+async def sync_playlist_endpoint(
+    playlist_id: uuid.UUID,
+    user: User = Depends(current_active_user),
+    db: AsyncSession = Depends(get_async_session),
+):
+    """
+    Manually trigger a background synchronization task for a playlist.
+    """
+    result = await db.execute(
+        select(PlaylistModel).where(
+            PlaylistModel.id == playlist_id, PlaylistModel.deleted_at.is_(None)
+        )
+    )
+    db_playlist = result.scalar_one_or_none()
+
+    if not db_playlist:
+        raise HTTPException(status_code=404, detail="Playlist not found")
+
+    if db_playlist.user_id != user.id:
+        raise HTTPException(status_code=403, detail="Not authorized to sync this playlist")
+
+    if not db_playlist.provider or not db_playlist.provider_id:
+        raise HTTPException(
+            status_code=400,
+            detail="Playlist is not linked to a remote service and cannot be synced",
+        )
+
+    # Dispatch the task to the worker
+    sync_playlist_task.send(db_playlist.id)
+
+    return {"status": "success", "message": "Playlist synchronization task enqueued"}
+
+
+@router.delete("/{playlist_id}", status_code=204)
+async def delete_playlist(
+    playlist_id: uuid.UUID,
+    user: User = Depends(current_active_user),
+    db: AsyncSession = Depends(get_async_session),
+):
+    """
+    Soft-delete a playlist.
+    """
+    result = await db.execute(
+        select(PlaylistModel).where(
+            PlaylistModel.id == playlist_id, PlaylistModel.deleted_at.is_(None)
+        )
+    )
+    db_playlist = result.scalar_one_or_none()
+
+    if not db_playlist:
+        raise HTTPException(status_code=404, detail="Playlist not found")
+
+    if db_playlist.user_id != user.id:
+        raise HTTPException(status_code=403, detail="Not authorized to delete this playlist")
+
+    db_playlist.deleted_at = datetime.now(timezone.utc)
+    await db.commit()
+    return None
+
+
+@router.post("/{playlist_id}/restore", response_model=PlaylistRead)
+async def restore_playlist(
+    playlist_id: uuid.UUID,
+    user: User = Depends(current_active_user),
+    db: AsyncSession = Depends(get_async_session),
+):
+    """
+    Restore a soft-deleted playlist.
+    """
+    result = await db.execute(
+        select(PlaylistModel).where(
+            PlaylistModel.id == playlist_id, PlaylistModel.deleted_at.is_not(None)
+        )
+    )
+    db_playlist = result.scalar_one_or_none()
+
+    if not db_playlist:
+        raise HTTPException(status_code=404, detail="Playlist not found or not deleted")
+
+    if db_playlist.user_id != user.id:
+        raise HTTPException(status_code=403, detail="Not authorized to restore this playlist")
+
+    db_playlist.deleted_at = None
+    await db.commit()
+    await db.refresh(db_playlist)
+    return db_playlist
+
+
+@router.post("/import", response_model=PlaylistRead)
+async def import_playlist_endpoint(
+    request: PlaylistImport,
+    user: User = Depends(current_active_user),
+    db: AsyncSession = Depends(get_async_session),
+):
+    """
+    Import an existing playlist from a provider (Spotify).
+    """
+    # 1. Check connection
+    result = await db.execute(
+        select(ServiceConnection).where(
+            ServiceConnection.user_id == user.id,
+            ServiceConnection.provider_name == request.provider,
+        )
+    )
+    conn = result.scalar_one_or_none()
+    if not conn:
+        raise HTTPException(
+            status_code=400,
+            detail=f"{request.provider} not connected. Please go to Settings.",
+        )
+
+    # 2. Get token
+    integrations_service = IntegrationsService(db)
+    try:
+        if request.provider == "spotify":
+            access_token = await integrations_service.get_valid_spotify_token(conn)
+        else:
+            raise HTTPException(status_code=400, detail="Provider not supported")
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Failed to refresh token: {str(e)}")
+
+    # 3. Fetch playlist details
+    from backend.core.providers.spotify import SpotifyProvider
+
+    provider = SpotifyProvider(auth_token=access_token)
+
+    try:
+        pl_data = await provider.get_playlist(request.provider_playlist_id)
+
+        name = pl_data["name"]
+        description = pl_data.get("description", "")
+        public = pl_data.get("public", False)
+
+        tracks = []
+        if request.import_tracks:
+            for item in pl_data["tracks"]["items"]:
+                track = item.get("track")
+                if track:
+                    tracks.append(
+                        {
+                            "artist": (
+                                track["artists"][0]["name"] if track["artists"] else "Unknown"
+                            ),
+                            "track": track["name"],
+                            "album": track["album"]["name"] if track["album"] else None,
+                            "duration_ms": track["duration_ms"],
+                            "uri": track["uri"],
+                        }
+                    )
+
+        # Save to DB
+        db_playlist = PlaylistModel(
+            user_id=user.id,
+            name=name,
+            description=description,
+            public=public,
+            status="imported",
+            provider=request.provider,
+            provider_id=request.provider_playlist_id,
+            content_json={"tracks": tracks},
+            # total_duration_ms can be sum of tracks
+            total_duration_ms=sum(t.get("duration_ms", 0) for t in tracks),
+        )
+        db.add(db_playlist)
+        await db.commit()
+        await db.refresh(db_playlist)
+        return db_playlist
+
+    except Exception as e:
+        import traceback
+
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=f"Failed to import playlist: {str(e)}")
 
 
 @router.post("/generate", response_model=PlaylistGenerationResponse)
@@ -179,7 +366,10 @@ async def build_playlist_endpoint(
 
     if request.playlist_id:
         result = await db.execute(
-            select(PlaylistModel).where(PlaylistModel.id == request.playlist_id)
+            select(PlaylistModel).where(
+                PlaylistModel.id == request.playlist_id,
+                PlaylistModel.deleted_at.is_(None),
+            )
         )
         db_playlist = result.scalar_one_or_none()
         if db_playlist and db_playlist.user_id == user.id:
@@ -193,14 +383,16 @@ async def build_playlist_endpoint(
     # 1. Fetch Spotify connection for the user
     result = await db.execute(
         select(ServiceConnection).where(
-            ServiceConnection.user_id == user.id, ServiceConnection.provider_name == "spotify"
+            ServiceConnection.user_id == user.id,
+            ServiceConnection.provider_name == "spotify",
         )
     )
     conn = result.scalar_one_or_none()
 
     if not conn:
         raise HTTPException(
-            status_code=400, detail="Spotify relay station not connected. Please go to Settings."
+            status_code=400,
+            detail="Spotify relay station not connected. Please go to Settings.",
         )
 
     # 2. Ensure token is valid
@@ -274,6 +466,7 @@ async def search_playlists_by_track(
 
     stmt = select(PlaylistModel).where(
         PlaylistModel.user_id == user.id,
+        PlaylistModel.deleted_at.is_(None),
         cast(PlaylistModel.content_json, JSONB).contains({"tracks": [{"artist": artist}]}),
     )
     result = await db.execute(stmt)

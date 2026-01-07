@@ -36,7 +36,7 @@ class MetadataService:
             "first_release_date": data.get("first-release-date"),
             "primary_type": data.get("primary-type"),
             "id": mb_id,
-            "source_url": f"https://musicbrainz.org/release-group/{mb_id}" if mb_id else None,
+            "source_url": (f"https://musicbrainz.org/release-group/{mb_id}" if mb_id else None),
             "source_name": "MusicBrainz",
         }
         return None

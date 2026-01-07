@@ -6,7 +6,12 @@ from pathlib import Path
 from typing import Any
 from spotipy.oauth2 import SpotifyOAuth
 from .metadata import MetadataVerifier
-from .utils.helpers import _similarity, _determine_version, rate_limit_retry, to_snake_case
+from .utils.helpers import (
+    _similarity,
+    _determine_version,
+    rate_limit_retry,
+    to_snake_case,
+)
 
 logger = logging.getLogger("backend.core.client")
 
@@ -66,7 +71,11 @@ class SpotifyPlaylistBuilder:
 
     @rate_limit_retry
     def search_track(
-        self, artist: str, track: str, album: str | None = None, version: str | None = None
+        self,
+        artist: str,
+        track: str,
+        album: str | None = None,
+        version: str | None = None,
     ) -> str | None:
         """Search for a track on Spotify using fuzzy matching and external verification."""
         if album:
@@ -200,7 +209,10 @@ class SpotifyPlaylistBuilder:
     ) -> str:
         """Create a new playlist for the authenticated user."""
         playlist = self.sp.user_playlist_create(
-            user=self.user_id, name=playlist_name, public=public, description=description
+            user=self.user_id,
+            name=playlist_name,
+            public=public,
+            description=description,
         )
         if playlist is None:
             raise Exception(f"Failed to create playlist '{playlist_name}'")
@@ -358,7 +370,10 @@ class SpotifyPlaylistBuilder:
 
         for track in data.get("tracks", []):
             uri = self.search_track(
-                track.get("artist"), track.get("track"), track.get("album"), track.get("version")
+                track.get("artist"),
+                track.get("track"),
+                track.get("album"),
+                track.get("version"),
             )
             if uri:
                 new_track_uris.append(uri)

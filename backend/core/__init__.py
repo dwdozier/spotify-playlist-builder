@@ -4,4 +4,9 @@ from .metadata import MetadataVerifier
 
 __version__ = "0.1.0"
 
-__all__ = ["SpotifyPlaylistBuilder", "get_credentials", "get_builder", "MetadataVerifier"]
+__all__ = [
+    "SpotifyPlaylistBuilder",
+    "get_credentials",
+    "get_builder",
+    "MetadataVerifier",
+]

@@ -2,19 +2,18 @@
 
 ## Active Track
 
-None
+### [~] Track: User Identity & Privacy
+
+- **Goal:** Expand the user model to support social features and privacy controls.
+- **Link:** [View Track Folder](conductor/tracks/user_identity_privacy)
+- **Key Features:**
+  - Add User Handle, First/Last Name, and display logic (Handle > First Name > Username).
+  - Implement "Public vs. Private" profile visibility controls.
+  - "View As" feature to preview the public profile.
 
 ## Backlog
 
-### 1. Playlist Lifecycle & Sync Engine
-
-- **Goal:** Make playlists robust with recovery options and bi-directional synchronization.
-- **Key Features:**
-  - Implement "Soft-Delete" for playlists with a 30-day auto-purge policy.
-  - Import existing playlists from services.
-  - Build the bi-directional sync engine (Periodic + On-Demand).
-
-### 2. Advanced Metadata & Matching Intelligence
+### 1. Advanced Metadata & Matching Intelligence
 
 - **Goal:** Improve match quality and provide transparency when tracks are missing.
 - **Key Features:**
@@ -25,10 +24,8 @@ None
 
 ## Archive
 
-- [x] **User Identity & Privacy** (2026-01-05)
-
+- [x] **Playlist Lifecycle & Sync Engine** (2026-01-07)
 - [x] **Foundation & Security Hygiene** (2026-01-04)
-
 - [x] **Stabilize Core Services & Tests** (2026-01-02)
 - [x] **Project Workspace Cleanup** (2026-01-04)
 - [x] **Preemptive Formatting & Linting** (2026-01-04)

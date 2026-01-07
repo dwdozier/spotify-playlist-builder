@@ -7,7 +7,11 @@ class BaseMusicProvider(ABC):
 
     @abstractmethod
     async def search_track(
-        self, artist: str, track: str, album: Optional[str] = None, version: Optional[str] = None
+        self,
+        artist: str,
+        track: str,
+        album: Optional[str] = None,
+        version: Optional[str] = None,
     ) -> Optional[str]:
         """Search for a track and return its provider-specific URI."""
         pass
@@ -20,4 +24,9 @@ class BaseMusicProvider(ABC):
     @abstractmethod
     async def add_tracks_to_playlist(self, playlist_id: str, track_uris: List[str]) -> None:
         """Add track URIs to a specific playlist."""
+        pass
+
+    @abstractmethod
+    async def get_playlist(self, playlist_id: str) -> dict:
+        """Fetch playlist details including tracks."""
         pass

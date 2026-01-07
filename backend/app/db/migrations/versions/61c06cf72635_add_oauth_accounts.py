@@ -37,10 +37,16 @@ def upgrade() -> None:
         sa.PrimaryKeyConstraint("id"),
     )
     op.create_index(
-        op.f("ix_oauth_account_account_id"), "oauth_account", ["account_id"], unique=False
+        op.f("ix_oauth_account_account_id"),
+        "oauth_account",
+        ["account_id"],
+        unique=False,
     )
     op.create_index(
-        op.f("ix_oauth_account_oauth_name"), "oauth_account", ["oauth_name"], unique=False
+        op.f("ix_oauth_account_oauth_name"),
+        "oauth_account",
+        ["oauth_name"],
+        unique=False,
     )
     # ### end Alembic commands ###
 

@@ -105,7 +105,11 @@ async def test_favoriting_logic(db_session):
     """Test favoriting and unfavoriting playlists."""
     user_id = uuid.uuid4()
     user = User(
-        id=user_id, email="fav@example.com", hashed_password="...", is_active=True, is_verified=True
+        id=user_id,
+        email="fav@example.com",
+        hashed_password="...",
+        is_active=True,
+        is_verified=True,
     )
     db_session.add(user)
 
@@ -235,7 +239,11 @@ async def test_favorite_edge_cases(db_session):
         )
         db_session.add(owner)
         private_playlist = Playlist(
-            id=uuid.uuid4(), user_id=owner_id, name="Private", public=False, content_json={}
+            id=uuid.uuid4(),
+            user_id=owner_id,
+            name="Private",
+            public=False,
+            content_json={},
         )
         db_session.add(private_playlist)
         await db_session.commit()

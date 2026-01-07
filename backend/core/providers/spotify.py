@@ -24,7 +24,11 @@ class SpotifyProvider(BaseMusicProvider):
         return self._user_id
 
     async def search_track(
-        self, artist: str, track: str, album: Optional[str] = None, version: Optional[str] = None
+        self,
+        artist: str,
+        track: str,
+        album: Optional[str] = None,
+        version: Optional[str] = None,
     ) -> Optional[str]:
         # Implementation logic moved from client.py, adapted for async if needed
         # For now, keeping synchronous calls but wrapped in async interface
@@ -84,3 +88,30 @@ class SpotifyProvider(BaseMusicProvider):
         for i in range(0, len(track_uris), 100):
             batch = track_uris[i : i + 100]
             self.sp.playlist_add_items(playlist_id, batch)
+
+    async def replace_playlist_tracks(self, playlist_id: str, track_uris: List[str]) -> None:
+        """Replace all tracks in a Spotify playlist with the given list of URIs."""
+        # Spotify has a 100-track limit per request for this endpoint as well
+        first_batch = track_uris[:100]
+        remaining_uris = track_uris[100:]
+
+        # First call uses replace_playlist_items
+        self.sp.playlist_replace_items(playlist_id, first_batch)
+
+        # Subsequent calls use playlist_add_items
+        for i in range(0, len(remaining_uris), 100):
+            batch = remaining_uris[i : i + 100]
+            self.sp.playlist_add_items(playlist_id, batch)
+
+    async def get_playlist(self, playlist_id: str) -> dict:
+        results = self.sp.playlist(playlist_id)
+        tracks = results["tracks"]["items"]
+
+        # Helper to follow pagination
+        current_page = results["tracks"]
+        while current_page["next"]:
+            current_page = self.sp.next(current_page)
+            tracks.extend(current_page["items"])
+
+        results["tracks"]["items"] = tracks
+        return results

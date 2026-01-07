@@ -38,10 +38,10 @@ def test_generate_playlist_endpoint():
                 "version": "studio",
                 "album": None,
                 "duration_ms": None,
+                "uri": None,
             }
         ],
     }
-
     mock_service = MagicMock()
     mock_service.generate.return_value = mock_response_data
 
@@ -58,7 +58,14 @@ def test_verify_tracks_endpoint():
     """Test the track verification endpoint."""
     mock_verified = [{"artist": "V", "track": "T", "version": "studio"}]
     expected_verified = [
-        {"artist": "V", "track": "T", "version": "studio", "album": None, "duration_ms": None}
+        {
+            "artist": "V",
+            "track": "T",
+            "version": "studio",
+            "album": None,
+            "duration_ms": None,
+            "uri": None,
+        }
     ]
     mock_rejected = ["R - S"]
 
@@ -359,7 +366,11 @@ def test_save_relay_config():
     app.dependency_overrides[get_async_session] = lambda: mock_db
     app.dependency_overrides[current_active_user] = lambda: mock_user
 
-    payload = {"provider": "spotify", "client_id": "custom_id", "client_secret": "custom_secret"}
+    payload = {
+        "provider": "spotify",
+        "client_id": "custom_id",
+        "client_secret": "custom_secret",
+    }
     response = client.post("/api/v1/integrations/relay/config", json=payload)
     assert response.status_code == 200
     assert response.json()["status"] == "success"

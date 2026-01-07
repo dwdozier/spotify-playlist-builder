@@ -133,7 +133,8 @@ def generate_cmd(
         Path | None, typer.Option("--output", "-o", help="Path to save the JSON file")
     ] = None,
     build_playlist: Annotated[
-        bool, typer.Option("--build", "-b", help="Immediately build playlist on Spotify")
+        bool,
+        typer.Option("--build", "-b", help="Immediately build playlist on Spotify"),
     ] = False,
 ) -> None:
     """Generate a playlist using AI and verify tracks."""

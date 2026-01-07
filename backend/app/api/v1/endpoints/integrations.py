@@ -76,7 +76,8 @@ async def spotify_login(
     # 1. Look for user-specific credentials
     result = await db.execute(
         select(ServiceConnection).where(
-            ServiceConnection.user_id == user.id, ServiceConnection.provider_name == "spotify"
+            ServiceConnection.user_id == user.id,
+            ServiceConnection.provider_name == "spotify",
         )
     )
     conn = result.scalar_one_or_none()
@@ -120,7 +121,8 @@ async def spotify_callback(code: str, state: str, db: AsyncSession = Depends(get
     # 1. Fetch credentials for this user
     result = await db.execute(
         select(ServiceConnection).where(
-            ServiceConnection.user_id == user_id, ServiceConnection.provider_name == "spotify"
+            ServiceConnection.user_id == user_id,
+            ServiceConnection.provider_name == "spotify",
         )
     )
     conn = result.scalar_one_or_none()
