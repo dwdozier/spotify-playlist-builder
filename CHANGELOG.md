@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.6.0](https://github.com/dwdozier/vibomat/compare/vibomat-v0.5.0...vibomat-v0.6.0) (2026-01-08)
+
+
+### Features
+
+* **playlist:** Complete Playlist Lifecycle and Sync Engine track ([#87](https://github.com/dwdozier/vibomat/issues/87)) ([c62b87c](https://github.com/dwdozier/vibomat/commit/c62b87cc8a33312618c7ac6cda2900598633aa59))
+
+
+### Documentation
+
+* Auto-update documentation via Gemini Agent ([#84](https://github.com/dwdozier/vibomat/issues/84)) ([615b3aa](https://github.com/dwdozier/vibomat/commit/615b3aa06da48a276f7049a4d5cd15f0cbfc9665))
+* Auto-update documentation via Gemini Agent ([#86](https://github.com/dwdozier/vibomat/issues/86)) ([42259bf](https://github.com/dwdozier/vibomat/commit/42259bfd3148990f6fa714d5509f304c7b2eebab))
+* Auto-update documentation via Gemini Agent ([#86](https://github.com/dwdozier/vibomat/issues/86)) ([#89](https://github.com/dwdozier/vibomat/issues/89)) ([cc09608](https://github.com/dwdozier/vibomat/commit/cc09608ee41843ca62364d6e79bd50f3706d3771))
+
 ## [0.5.0](https://github.com/dwdozier/vibomat/compare/vibomat-v0.4.0...vibomat-v0.5.0) (2026-01-06)
 
 
