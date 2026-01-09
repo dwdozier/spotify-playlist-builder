@@ -5,6 +5,9 @@ import os
 from pathlib import Path
 from typing import Any
 from spotipy.oauth2 import SpotifyOAuth
+import asyncio
+from unittest.mock import AsyncMock
+import httpx
 from .metadata import MetadataVerifier
 from .utils.helpers import (
     _similarity,
@@ -50,7 +53,8 @@ class SpotifyPlaylistBuilder:
             )
 
         self._user_id = None
-        self.metadata_verifier = MetadataVerifier()
+        # MetadataVerifier is async, so we use a mock client for the synchronous CLI
+        self.metadata_verifier = MetadataVerifier(http_client=AsyncMock(spec=httpx.AsyncClient))
 
     @property
     def user_id(self) -> str:
@@ -147,8 +151,10 @@ class SpotifyPlaylistBuilder:
             if version in ["live", "remix", "remaster"]:
                 try:
                     primary_artist = item_artists[0] if item_artists else artist
-                    if self.metadata_verifier.verify_track_version(
-                        primary_artist, item_name, version
+                    if asyncio.run(
+                        self.metadata_verifier.verify_track_version(
+                            primary_artist, item_name, version
+                        )
                     ):
                         score += 20
                 except Exception as e:

@@ -2,11 +2,9 @@
 
 ## [0.5.0](https://github.com/dwdozier/vibomat/compare/vibomat-v0.4.0...vibomat-v0.5.0) (2026-01-06)
 
-
 ### Features
 
 * **user:** Implement User Identity, Handles, and Public Profiles ([#81](https://github.com/dwdozier/vibomat/issues/81)) ([909c7ee](https://github.com/dwdozier/vibomat/commit/909c7ee3ab69ca2f9c63629f3f10b732ab6ff22f))
-
 
 ### Documentation
 

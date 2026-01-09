@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Annotated
 import typer
 from .auth import get_builder
+import asyncio
 
 logger = logging.getLogger("backend.core")
 app = typer.Typer(help="Spotify Playlist Builder CLI")
@@ -141,6 +142,8 @@ def generate_cmd(
     from .ai import generate_playlist, verify_ai_tracks
     import json
     from .utils.helpers import to_snake_case
+    import httpx
+    from unittest.mock import AsyncMock
 
     if not prompt:
         prompt = typer.prompt("Describe the playlist mood/theme")
@@ -158,7 +161,10 @@ def generate_cmd(
         title = generated_data["title"]
         description = generated_data.get("description", "")
 
-        verified, rejected = verify_ai_tracks(raw_tracks)
+        # We must use a temporary client for this synchronous context
+        # We pass a mock AsyncClient to avoid needing a real lifespan management here
+        mock_client = AsyncMock(spec=httpx.AsyncClient)
+        verified, rejected = asyncio.run(verify_ai_tracks(raw_tracks, http_client=mock_client))
 
         logger.info("\nVerification Results:")
         logger.info(f"✓ {len(verified)} tracks verified.")

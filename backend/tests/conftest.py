@@ -15,6 +15,13 @@ TEST_DATABASE_URL = os.getenv(
 )
 
 
+@pytest.fixture(autouse=True)
+def mock_discogs_pat_global():
+    """Mock DISCOGS_PAT globally for tests that instantiate DiscogsClient."""
+    with patch("backend.app.core.config.settings.DISCOGS_PAT", "mock-pat"):
+        yield
+
+
 @pytest.fixture
 async def test_db():
     """Create a fresh engine and tables for each test to avoid loop mismatches."""

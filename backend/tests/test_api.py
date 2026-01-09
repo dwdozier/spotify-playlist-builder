@@ -70,7 +70,7 @@ def test_verify_tracks_endpoint():
     mock_rejected = ["R - S"]
 
     mock_service = MagicMock()
-    mock_service.verify_tracks.return_value = (mock_verified, mock_rejected)
+    mock_service.verify_tracks = AsyncMock(return_value=(mock_verified, mock_rejected))
 
     app.dependency_overrides[get_ai_service] = lambda: mock_service
     app.dependency_overrides[current_active_user] = lambda: mock_user
@@ -104,7 +104,7 @@ def test_generate_playlist_error():
 def test_verify_tracks_error():
     """Test error handling in verification endpoint."""
     mock_service = MagicMock()
-    mock_service.verify_tracks.side_effect = Exception("Verify Error")
+    mock_service.verify_tracks = AsyncMock(side_effect=Exception("Verify Error"))
 
     app.dependency_overrides[get_ai_service] = lambda: mock_service
     app.dependency_overrides[current_active_user] = lambda: mock_user

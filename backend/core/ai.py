@@ -6,6 +6,7 @@ from google.genai import types
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception
 from backend.app.core.config import settings
 from .metadata import MetadataVerifier
+import httpx
 
 logger = logging.getLogger("backend.core.ai")
 
@@ -183,11 +184,11 @@ def generate_playlist(description: str, count: int = 20) -> dict[str, Any]:
     raise ValueError("AI response format invalid (expected list or object with 'tracks').")
 
 
-def verify_ai_tracks(
-    tracks: list[dict[str, Any]],
+async def verify_ai_tracks(
+    tracks: list[dict[str, Any]], http_client: httpx.AsyncClient
 ) -> tuple[list[dict[str, Any]], list[str]]:
     """Verify AI-generated tracks against MusicBrainz."""
-    verifier = MetadataVerifier()
+    verifier = MetadataVerifier(http_client=http_client)
     verified_tracks = []
     rejected_tracks = []
 
@@ -204,7 +205,7 @@ def verify_ai_tracks(
         try:
             # We use verify_track_version which checks for existence + version
             # If version is None or 'studio', it just checks existence
-            if verifier.verify_track_version(artist, track, version or "studio"):
+            if await verifier.verify_track_version(artist, track, version or "studio"):
                 verified_tracks.append(item)
             else:
                 rejected_tracks.append(f"{artist} - {track}")

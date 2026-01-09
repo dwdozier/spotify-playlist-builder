@@ -346,7 +346,7 @@ async def verify_tracks_endpoint(
     try:
         # Convert Pydantic models to dicts for the service
         tracks_dict = [t.model_dump() for t in request.tracks]
-        verified, rejected = ai_service.verify_tracks(tracks_dict)
+        verified, rejected = await ai_service.verify_tracks(tracks_dict)
         return {"verified": verified, "rejected": rejected}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
