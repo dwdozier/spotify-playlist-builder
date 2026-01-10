@@ -99,6 +99,41 @@ class DiscogsClient(BaseMusicProvider):
 
         return None
 
+    async def get_metadata(self, discogs_uri: str) -> Optional[Dict[str, Any]]:
+        """
+        Fetches detailed metadata from a Discogs URI (e.g., discogs:master:12345).
+        """
+        try:
+            uri_type, uri_id = discogs_uri.split(":")[1:]
+        except ValueError:
+            logger.warning(f"Invalid Discogs URI format: {discogs_uri}")
+            return None
+
+        if uri_type == "master":
+            endpoint = f"/masters/{uri_id}"
+        elif uri_type == "release":
+            endpoint = f"/releases/{uri_id}"
+        else:
+            logger.warning(f"Unsupported Discogs URI type: {uri_type}")
+            return None
+
+        data = await self._get(endpoint)
+
+        if not data:
+            return None
+
+        # Transform the raw API response into a cleaner format
+        artist_name = "Unknown"
+        if data.get("artists"):
+            artist_name = data["artists"][0].get("name", "Unknown")
+
+        return {
+            "id": data.get("id"),
+            "title": data.get("title"),
+            "artist": artist_name,
+            "year": data.get("year"),
+        }
+
     # BaseMusicProvider methods (not used for Discogs, but required by abstract class)
     async def create_playlist(self, name: str, description: str = "", public: bool = False) -> str:
         raise NotImplementedError("Discogs is for metadata only.")
