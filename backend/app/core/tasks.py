@@ -130,7 +130,7 @@ async def periodic_sync_dispatch_task() -> str:
 
         # Dispatch sync tasks
         for p_id in playlist_ids:
-            await sync_playlist_task.kiq(p_id)
+            await sync_playlist_task.kiq(p_id)  # type: ignore[no-matching-overload]
 
         return f"Dispatched {len(playlist_ids)} sync tasks."
 

@@ -165,7 +165,7 @@ async def sync_playlist_endpoint(
         )
 
     # Dispatch the task to the worker
-    await sync_playlist_task.kiq(db_playlist.id)
+    await sync_playlist_task.kiq(db_playlist.id)  # type: ignore[no-matching-overload]
 
     return {"status": "success", "message": "Playlist synchronization task enqueued"}
 

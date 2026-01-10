@@ -252,3 +252,55 @@ async def test_search_album_success(verifier, mock_httpx_client):
         result = await verifier.search_album("Artist", "Album")
 
     assert result["title"] == "Test Album"
+
+
+async def test_verify_track_version_remaster(verifier, mock_httpx_client):
+    """Test verification for remastered version match."""
+    mock_response = MagicMock(
+        status_code=200,
+        json=MagicMock(
+            return_value={
+                "recordings": [
+                    {"title": "Song (2024 Remaster)", "disambiguation": "Remastered"},
+                ]
+            }
+        ),
+    )
+    mock_httpx_client.get.return_value = mock_response
+
+    with patch("backend.core.metadata.asyncio.sleep", new=AsyncMock()):
+        assert await verifier.verify_track_version("Artist", "Song", "remaster") is True
+
+
+async def test_verify_track_version_remix(verifier, mock_httpx_client):
+    """Test verification for remix version match."""
+    mock_response = MagicMock(
+        status_code=200,
+        json=MagicMock(
+            return_value={
+                "recordings": [
+                    {"title": "Song (Radio Mix)", "disambiguation": "Remix"},
+                ]
+            }
+        ),
+    )
+    mock_httpx_client.get.return_value = mock_response
+
+    with patch("backend.core.metadata.asyncio.sleep", new=AsyncMock()):
+        assert await verifier.verify_track_version("Artist", "Song", "remix") is True
+
+
+async def test_search_artist_error_edge(verifier, mock_httpx_client):
+    """Test search_artist with an error during request."""
+    mock_httpx_client.get.side_effect = Exception("Artist search failed")
+    with patch("backend.core.metadata.asyncio.sleep", new=AsyncMock()):
+        result = await verifier.search_artist("Artist")
+    assert result is None
+
+
+async def test_search_album_error_edge(verifier, mock_httpx_client):
+    """Test search_album with an error during request."""
+    mock_httpx_client.get.side_effect = Exception("Album search failed")
+    with patch("backend.core.metadata.asyncio.sleep", new=AsyncMock()):
+        result = await verifier.search_album("Artist", "Album")
+    assert result is None
