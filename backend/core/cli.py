@@ -13,9 +13,7 @@ app = typer.Typer(help="Spotify Playlist Builder CLI")
 
 @app.callback()
 def main(
-    verbose: Annotated[
-        bool, typer.Option("--verbose", "-v", help="Enable verbose logging")
-    ] = False,
+    verbose: Annotated[bool, typer.Option("--verbose", "-v", help="Enable verbose logging")] = False,
 ) -> None:
     """Spotify Playlist Builder CLI to create and manage playlists from JSON files."""
     level = logging.DEBUG if verbose else logging.INFO
@@ -29,9 +27,7 @@ def main(
 @app.command()
 def build(
     json_file: Annotated[Path, typer.Argument(exists=True, help="Path to playlist JSON file")],
-    dry_run: Annotated[
-        bool, typer.Option("--dry-run", help="Verify tracks without creating playlist")
-    ] = False,
+    dry_run: Annotated[bool, typer.Option("--dry-run", help="Verify tracks without creating playlist")] = False,
 ) -> None:
     """Build or update a Spotify playlist from a JSON file."""
     try:
@@ -58,9 +54,7 @@ def export(
 
 @app.command()
 def backup(
-    output_dir: Annotated[Path, typer.Argument(help="Directory to save backup files")] = Path(
-        "backups"
-    ),
+    output_dir: Annotated[Path, typer.Argument(help="Directory to save backup files")] = Path("backups"),
 ) -> None:
     """Backup all user playlists to JSON files."""
     try:
@@ -123,16 +117,10 @@ def ai_models_cmd() -> None:
 
 @app.command("generate")
 def generate_cmd(
-    prompt: Annotated[
-        str | None, typer.Option("--prompt", "-p", help="Description of playlist")
-    ] = None,
-    artists: Annotated[
-        str | None, typer.Option("--artists", "-a", help="Preferred artists")
-    ] = None,
+    prompt: Annotated[str | None, typer.Option("--prompt", "-p", help="Description of playlist")] = None,
+    artists: Annotated[str | None, typer.Option("--artists", "-a", help="Preferred artists")] = None,
     count: Annotated[int, typer.Option("--count", "-c", help="Number of songs")] = 20,
-    output: Annotated[
-        Path | None, typer.Option("--output", "-o", help="Path to save the JSON file")
-    ] = None,
+    output: Annotated[Path | None, typer.Option("--output", "-o", help="Path to save the JSON file")] = None,
     build_playlist: Annotated[
         bool,
         typer.Option("--build", "-b", help="Immediately build playlist on Spotify"),

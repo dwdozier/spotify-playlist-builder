@@ -81,9 +81,7 @@ class SpotifyProvider(BaseMusicProvider):
         return None
 
     async def create_playlist(self, name: str, description: str = "", public: bool = False) -> str:
-        playlist = self.sp.user_playlist_create(
-            user=self.user_id, name=name, public=public, description=description
-        )
+        playlist = self.sp.user_playlist_create(user=self.user_id, name=name, public=public, description=description)
         return playlist["id"]
 
     async def add_tracks_to_playlist(self, playlist_id: str, track_uris: List[str]) -> None:

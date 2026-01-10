@@ -49,9 +49,7 @@ async def test_spotify_callback_no_creds(mock_db):
 
     with patch.object(settings, "SPOTIFY_CLIENT_ID", None):
         async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as ac:
-            response = await ac.get(
-                f"/api/v1/integrations/spotify/callback?code=abc&state={uuid.uuid4()}"
-            )
+            response = await ac.get(f"/api/v1/integrations/spotify/callback?code=abc&state={uuid.uuid4()}")
 
     assert response.status_code == 400
     app.dependency_overrides.clear()

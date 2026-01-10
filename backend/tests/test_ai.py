@@ -183,10 +183,7 @@ def test_generate_playlist_404_retry():
 
         assert mock_client.models.generate_content.call_count == 2
         # First call with default
-        assert (
-            mock_client.models.generate_content.call_args_list[0][1]["model"]
-            == "gemini-flash-latest"
-        )
+        assert mock_client.models.generate_content.call_args_list[0][1]["model"] == "gemini-flash-latest"
         # Second call with fallback
         assert mock_client.models.generate_content.call_args_list[1][1]["model"] == "fallback-model"
 

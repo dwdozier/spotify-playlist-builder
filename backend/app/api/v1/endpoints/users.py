@@ -130,9 +130,7 @@ async def get_public_playlists(
         raise HTTPException(status_code=404, detail="User not found or profile is private")
 
     result = await db.execute(
-        select(Playlist).where(
-            Playlist.user_id == user_id, Playlist.public, Playlist.deleted_at.is_(None)
-        )
+        select(Playlist).where(Playlist.user_id == user_id, Playlist.public, Playlist.deleted_at.is_(None))
     )
     return result.scalars().all()
 
@@ -189,9 +187,7 @@ async def favorite_playlist(
     if fav_result.scalar_one_or_none():
         return {"status": "success", "message": "Already favorited"}
 
-    await db.execute(
-        user_favorite_playlists.insert().values(user_id=user.id, playlist_id=playlist_id)
-    )
+    await db.execute(user_favorite_playlists.insert().values(user_id=user.id, playlist_id=playlist_id))
     await db.commit()
     return {"status": "success", "message": "Playlist favorited"}
 

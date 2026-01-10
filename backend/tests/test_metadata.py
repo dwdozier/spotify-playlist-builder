@@ -138,9 +138,7 @@ async def test_verify_track_version_live_match(verifier, mock_httpx_client):
         assert await verifier.verify_track_version("Artist", "Song", "live") is True
 
 
-async def test_verify_track_version_no_match_fallback_fail(
-    verifier, mock_httpx_client, mock_discogs_client
-):
+async def test_verify_track_version_no_match_fallback_fail(verifier, mock_httpx_client, mock_discogs_client):
     """Test verification returns False when MB fails and Discogs fails."""
     # 1. MB Fails to find version
     mock_response = MagicMock(
@@ -164,14 +162,10 @@ async def test_verify_track_version_no_match_fallback_fail(
 # --- Multi-Source (Discogs Fallback) Tests ---
 
 
-async def test_verify_track_mb_fail_discogs_success(
-    verifier, mock_httpx_client, mock_discogs_client
-):
+async def test_verify_track_mb_fail_discogs_success(verifier, mock_httpx_client, mock_discogs_client):
     """Test that if MusicBrainz finds nothing, Discogs is called and succeeds."""
     # 1. MB Fails (returns empty list)
-    mock_response = MagicMock(
-        status_code=200, json=MagicMock(return_value={"recordings": []}), text="mock"
-    )
+    mock_response = MagicMock(status_code=200, json=MagicMock(return_value={"recordings": []}), text="mock")
     mock_httpx_client.get.return_value = mock_response
 
     # 2. Discogs Succeeds (returns a URI)
@@ -185,9 +179,7 @@ async def test_verify_track_mb_fail_discogs_success(
     mock_discogs_client.search_track.assert_called_once()
 
 
-async def test_verify_track_mb_http_error_discogs_success(
-    verifier, mock_httpx_client, mock_discogs_client
-):
+async def test_verify_track_mb_http_error_discogs_success(verifier, mock_httpx_client, mock_discogs_client):
     """Test that if MusicBrainz throws an HTTP error, Discogs is called and succeeds."""
     # 1. MB Throws 400 Bad Request (MusicBrainzAPIError)
     mock_response = MagicMock(status_code=400, text="Bad Request")

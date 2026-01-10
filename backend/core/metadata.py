@@ -27,8 +27,7 @@ class MetadataVerifier:
         self.http_client = http_client
         self.base_url = "https://musicbrainz.org/ws/2/recording"
         self.headers = {
-            "User-Agent": f"{settings.PROJECT_NAME}/0.1.0 "
-            "( https://github.com/dwdozier/vibomat )",
+            "User-Agent": f"{settings.PROJECT_NAME}/0.1.0 " "( https://github.com/dwdozier/vibomat )",
             "Accept": "application/json",
         }
         self.last_request_time = 0.0
@@ -48,9 +47,7 @@ class MetadataVerifier:
         wait=wait_fixed(2),
         stop=stop_after_attempt(3),
         retry_error_callback=lambda retry_state: (
-            retry_state.outcome.result()
-            if retry_state.outcome and retry_state.outcome.result() is not None
-            else None
+            retry_state.outcome.result() if retry_state.outcome and retry_state.outcome.result() is not None else None
         ),
     )
     async def search_recording(self, artist: str, track: str) -> List[Dict[str, Any]]:

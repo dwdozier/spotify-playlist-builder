@@ -19,9 +19,7 @@ def mock_httpx_client():
 def mock_metadata_verifier_cls():
     """Mocks the MetadataVerifier class to track instantiations and methods."""
     # Ensure the class itself returns a mock instance suitable for awaiting its methods.
-    with patch(
-        "backend.app.services.metadata_service.MetadataVerifier", spec=MetadataVerifier
-    ) as mock_cls:
+    with patch("backend.app.services.metadata_service.MetadataVerifier", spec=MetadataVerifier) as mock_cls:
         mock_instance = AsyncMock(spec=MetadataVerifier)
         mock_cls.return_value = mock_instance
         yield mock_cls

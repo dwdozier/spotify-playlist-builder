@@ -17,9 +17,7 @@ def mock_httpx_client():
 @pytest.fixture
 def mock_metadata_verifier_cls():
     """Mocks the MetadataVerifier class to track instantiations and methods."""
-    with patch(
-        "backend.app.services.metadata_service.MetadataVerifier", spec=MetadataVerifier
-    ) as mock_cls:
+    with patch("backend.app.services.metadata_service.MetadataVerifier", spec=MetadataVerifier) as mock_cls:
         mock_instance = AsyncMock(spec=MetadataVerifier)
         mock_cls.return_value = mock_instance
         yield mock_cls
@@ -34,9 +32,7 @@ def metadata_service(mock_httpx_client):
 async def test_metadata_service_enrich_artist(mock_metadata_verifier_cls):
     """Test successful artist enrichment."""
     mock_verifier = mock_metadata_verifier_cls.return_value
-    mock_verifier.search_artist.return_value = {
-        "name": "Enriched", "id": "123"
-    }
+    mock_verifier.search_artist.return_value = {"name": "Enriched", "id": "123"}
 
     metadata_service = MetadataService(http_client=AsyncMock(spec=AsyncClient))
     result = await metadata_service.get_artist_info("Artist")
@@ -48,9 +44,7 @@ async def test_metadata_service_enrich_artist(mock_metadata_verifier_cls):
 async def test_metadata_service_enrich_album(mock_metadata_verifier_cls):
     """Test successful album enrichment."""
     mock_verifier = mock_metadata_verifier_cls.return_value
-    mock_verifier.search_album.return_value = {
-        "title": "Album", "id": "456"
-    }
+    mock_verifier.search_album.return_value = {"title": "Album", "id": "456"}
 
     metadata_service = MetadataService(http_client=AsyncMock(spec=AsyncClient))
     result = await metadata_service.get_album_info("Artist", "Album")

@@ -135,18 +135,14 @@ def generate_playlist(description: str, count: int = 20) -> dict[str, Any]:
     response = None
     try:
         logger.info(f"Sending request to Gemini (Model: {model_name})...")
-        response = generate_content_with_retry(
-            client=client, model=model_name, contents=contents, config=config
-        )
+        response = generate_content_with_retry(client=client, model=model_name, contents=contents, config=config)
     except Exception as e:
         if not is_retryable_error(e):
             logger.warning(f"Model '{model_name}' not found or unavailable. Attempting fallback...")
             fallback = discover_fallback_model(client)
             if fallback and fallback != model_name:
                 logger.info(f"Retrying with fallback model: {fallback}")
-                response = generate_content_with_retry(
-                    client=client, model=fallback, contents=contents, config=config
-                )
+                response = generate_content_with_retry(client=client, model=fallback, contents=contents, config=config)
             else:
                 raise
         else:

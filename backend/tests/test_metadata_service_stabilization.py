@@ -19,9 +19,7 @@ def mock_httpx_client():
 @pytest.fixture
 def mock_metadata_verifier_cls():
     """Mocks the MetadataVerifier class to track instantiations and methods."""
-    with patch(
-        "backend.app.services.metadata_service.MetadataVerifier", spec=MetadataVerifier
-    ) as mock_cls:
+    with patch("backend.app.services.metadata_service.MetadataVerifier", spec=MetadataVerifier) as mock_cls:
         # The class mock needs to return an AsyncMock instance when instantiated by the service
         mock_instance = AsyncMock(spec=MetadataVerifier)
         mock_cls.return_value = mock_instance
@@ -37,9 +35,7 @@ def metadata_service(mock_httpx_client):
 # --- Service Tests (formerly sync, now async) ---
 
 
-async def test_metadata_service_get_artist_info_success(
-    mock_metadata_verifier_cls
-):
+async def test_metadata_service_get_artist_info_success(mock_metadata_verifier_cls):
     """Test successful fetching of artist info."""
     mock_verifier = mock_metadata_verifier_cls.return_value
     mock_data = {"id": "123", "name": "Artist", "type": "Group", "country": "US"}
@@ -54,9 +50,7 @@ async def test_metadata_service_get_artist_info_success(
     mock_verifier.search_artist.assert_called_once_with("Artist")
 
 
-async def test_metadata_service_get_artist_info_not_found(
-    mock_metadata_verifier_cls
-):
+async def test_metadata_service_get_artist_info_not_found(mock_metadata_verifier_cls):
     """Test MetadataService when artist info is not found."""
     mock_verifier = mock_metadata_verifier_cls.return_value
     mock_verifier.search_artist.return_value = None
@@ -67,9 +61,7 @@ async def test_metadata_service_get_artist_info_not_found(
     mock_verifier.search_artist.assert_called_once_with("Unknown")
 
 
-async def test_metadata_service_get_album_info_success(
-    mock_metadata_verifier_cls
-):
+async def test_metadata_service_get_album_info_success(mock_metadata_verifier_cls):
     """Test successful fetching of album info."""
     mock_verifier = mock_metadata_verifier_cls.return_value
     mock_data = {
@@ -89,9 +81,7 @@ async def test_metadata_service_get_album_info_success(
     mock_verifier.search_album.assert_called_once_with("Artist", "Album")
 
 
-async def test_metadata_service_get_album_info_not_found(
-    mock_metadata_verifier_cls
-):
+async def test_metadata_service_get_album_info_not_found(mock_metadata_verifier_cls):
     """Test MetadataService when album info is not found."""
     mock_verifier = mock_metadata_verifier_cls.return_value
     mock_verifier.search_album.return_value = None

@@ -77,9 +77,7 @@ async def test_create_playlist_endpoint(mock_user, mock_db):
 
     try:
         async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as ac:
-            response = await ac.post(
-                "/api/v1/playlists/", json={"name": "New PL", "description": "Desc", "tracks": []}
-            )
+            response = await ac.post("/api/v1/playlists/", json={"name": "New PL", "description": "Desc", "tracks": []})
 
         assert response.status_code == 200
         assert response.json()["name"] == "New PL"
@@ -109,9 +107,7 @@ async def test_update_playlist_endpoint(mock_user, mock_db):
 
     try:
         async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as ac:
-            response = await ac.patch(
-                f"/api/v1/playlists/{playlist.id}", json={"name": "New Name", "tracks": []}
-            )
+            response = await ac.patch(f"/api/v1/playlists/{playlist.id}", json={"name": "New Name", "tracks": []})
 
         assert response.status_code == 200
         assert response.json()["name"] == "New Name"
