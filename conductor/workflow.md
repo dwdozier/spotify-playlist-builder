@@ -99,7 +99,8 @@ project documentation.
       pytest --cov=app --cov-report=html
       ```
 
-      Target: >90% coverage for new code. The specific tools and commands will vary by language and framework.
+      Target: >90% coverage for new code. The specific tools and commands will vary by language
+      and framework.
 
 7. **Document Deviations:** If implementation differs from tech stack:
    - **STOP** implementation
