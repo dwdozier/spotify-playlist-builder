@@ -55,7 +55,7 @@ async def test_search_track_success(mock_httpx_client):
     result = await client.search_track(artist="The Band", track="The Song")
 
     # Assertions
-    assert result == "discogs:master:12345"
+    assert result == {"uri": "discogs:master:12345"}
     mock_httpx_client.get.assert_called_once()
 
 

@@ -70,9 +70,9 @@ class DiscogsClient(BaseMusicProvider):
         track: str,
         album: Optional[str] = None,
         version: Optional[str] = None,
-    ) -> Optional[str]:
+    ) -> Optional[dict]:
         """
-        Searches Discogs for a track and returns a Discogs URI or ID.
+        Searches Discogs for a track and returns a dict with the Discogs URI.
         This implementation is deliberately minimal for now.
         """
         query_parts = [f"{artist} - {track}"]
@@ -93,9 +93,9 @@ class DiscogsClient(BaseMusicProvider):
             # For simplicity, we just return the first match's URI
             result = master_data["results"][0]
             if result.get("type") == "master":
-                return f"discogs:master:{result.get('id')}"
+                return {"uri": f"discogs:master:{result.get('id')}"}
             elif result.get("type") == "release":
-                return f"discogs:release:{result.get('id')}"
+                return {"uri": f"discogs:release:{result.get('id')}"}
 
         return None
 
