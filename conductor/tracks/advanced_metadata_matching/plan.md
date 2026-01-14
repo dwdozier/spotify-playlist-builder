@@ -6,7 +6,7 @@
 - [x] Update `backend/core/metadata.py` to use a multi-source lookup (Spotify -> [154730e]
   Discogs/MusicBrainz) to reduce missing data.
 - [x] Enhance `MetadataVerifier` to flag tracks missing core data as "degraded signal." [2f105c3]
-- [ ] Update track schema to include fields for Discogs URI and degradation flag.
+- [x] Update track schema to include fields for Discogs URI and degradation flag. [9511ded]
 - [ ] Unit Test (Red/Green/Refactor): Verify multi-source lookup logic.
 
 ## Phase 2: Frontend Display of Degraded Signals
